@@ -19,7 +19,7 @@ Xamarin.Forms includes its own animation infrastructure that's straightforward f
 
 ## [BoxView](boxview.md)
 
-The `BoxView` is just a simple colored rectangle, but it can be used for decorative items, rudimentary graphics, and for obtaining interative touch input.
+The `BoxView` is just a simple colored rectangle, but it can be used for decorative items, rudimentary graphics, and for obtaining interactive touch input.
 
 ## [Button](button.md)
 
