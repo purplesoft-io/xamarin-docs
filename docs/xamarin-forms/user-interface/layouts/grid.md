@@ -11,18 +11,20 @@ ms.date: 10/26/2017
 
 # Xamarin.Forms Grid
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+
 [`Grid`](xref:Xamarin.Forms.Grid) supports arranging views into rows and columns. Rows and columns can be set to have proportional sizes or absolute sizes. The `Grid` layout should not be confused with traditional tables and is not intended to present tabular data. `Grid` does not have the concept of row, column or cell formatting. Unlike HTML tables, `Grid` is purely intended for laying out content.
 
 [![](grid-images/layouts-sml.png "Xamarin.Forms Layouts")](grid-images/layouts.png#lightbox "Xamarin.Forms Layouts")
 
 This article will cover:
 
-- **[Purpose](#Purpose)** &ndash; common uses for `Grid`.
-- **[Usage](#Usage)** &ndash; how to use `Grid` to achieve your desired design.
-  - **[Rows and Columns](#Rows_and_Columns)** &ndash; specify rows and columns for the `Grid`.
-  - **[Placing Views](#Placing_Views)** &ndash; add views to the grid at specific rows and columns.
-  - **[Spacing](#Spacing)** &ndash; configure the spaces between rows and columns.
-  - **[Spans](#Spans)** &ndash; configure elements to span across multiple rows or columns.
+- **[Purpose](#purpose)** &ndash; common uses for `Grid`.
+- **[Usage](#usage)** &ndash; how to use `Grid` to achieve your desired design.
+  - **[Rows and Columns](#rows-and-columns)** &ndash; specify rows and columns for the `Grid`.
+  - **[Placing Views](#placing-views-in-a-grid)** &ndash; add views to the grid at specific rows and columns.
+  - **[Spacing](#spacing)** &ndash; configure the spaces between rows and columns.
+  - **[Spans](#spans)** &ndash; configure elements to span across multiple rows or columns.
 
 ![](grid-images/grid.png "Grid Exploration")
 
@@ -37,8 +39,6 @@ This article will cover:
 ## Usage
 
 Unlike traditional tables, `Grid` does not infer the number and sizes of rows and columns from the content. Instead, `Grid` has `RowDefinitions` and `ColumnDefinitions` collections. These hold definitions of how many rows and columns will be laid out. Views are added to `Grid` with specified row and column indices, which identify which row and column a view should be placed in.
-
-<a name="Rows_and_Columns" />
 
 ### Rows and Columns
 
@@ -78,8 +78,6 @@ grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (1, GridUni
 grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength(200)});
 grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (200) });
 ```
-
-<a name="Placing_Views" />
 
 ### Placing Views in a Grid
 
@@ -151,10 +149,10 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2);
 
 ### Spacing
 
-`Grid` has properties to control spacing between rows and columns.  The following properties are available for customizing the `Grid`:
+`Grid` has properties to control spacing between rows and columns. The following properties are available for customizing the `Grid`:
 
-- **ColumnSpacing** &ndash; the amount of space between columns.
-- **RowSpacing** &ndash; the amount of space between rows.
+- **ColumnSpacing** &ndash; the amount of space between columns. The default value of this property is 6.
+- **RowSpacing** &ndash; the amount of space between rows. The default value of this property is 6.
 
 The following XAML specifies a `Grid` with two columns, one row, and 5 px of spacing between columns:
 
@@ -171,8 +169,8 @@ In C#:
 
 ```csharp
 var grid = new Grid { ColumnSpacing = 5 };
-grid.ColumnDefnitions.Add(new ColumnDefinition { Width = new GridLength (1, GridUnitType.Star)});
-grid.ColumnDefnitions.Add(new ColumnDefinition { Width = new GridLength (1, GridUnitType.Star)});
+grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength (1, GridUnitType.Star)});
+grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength (1, GridUnitType.Star)});
 ```
 
 ### Spans

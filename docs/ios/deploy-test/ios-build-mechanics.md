@@ -4,8 +4,8 @@ description: "This guide explores how to time your apps and how to use methods t
 ms.prod: xamarin
 ms.assetid: 06FD3940-D666-4C9E-BC3E-BBE481EF8012
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
 ---
 
@@ -22,7 +22,7 @@ Xamarin build speeds can also be affected by various capacities and capabilities
 
 ## Timing apps
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 To enable diagnostic MSBuild output within Visual Studio for Mac:
 
@@ -36,7 +36,7 @@ To enable diagnostic MSBuild output within Visual Studio for Mac:
 7. View diagnostic output within the Errors Pad ( View > Pads > Errors ) by clicking the Build Output button
 
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 To enable diagnostic MSBuild output within Visual Studio:
 

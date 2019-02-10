@@ -11,6 +11,8 @@ ms.date: 12/01/2017
 
 # Xamarin.Forms Master-Detail Page
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/Navigation/MasterDetailPage/)
+
 _The Xamarin.Forms MasterDetailPage is a page that manages two related pages of information – a master page that presents items, and a detail page that presents details about items on the master page. This article explains how to use a MasterDetailPage and navigate between its pages of information._
 
 ## Overview
@@ -40,7 +42,7 @@ The detail page contains a navigation bar, whose contents are platform-dependent
 The behavior of the navigation experience between master and detail pages is platform dependent:
 
 - On iOS, the detail page *slides* to the right as the master page slides from the left, and the left part of the detail page is still visible.
-- On Android, the detail and master pages are *overlayed* on each other.
+- On Android, the detail and master pages are *overlaid* on each other.
 - On UWP, the detail and master pages are *swapped*.
 
 Similar behavior will be observed in landscape mode, except that the master page on iOS and Android has a similar width as the master page in portrait mode, so more of the detail page will be visible.

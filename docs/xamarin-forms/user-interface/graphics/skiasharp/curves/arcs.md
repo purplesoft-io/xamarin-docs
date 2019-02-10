@@ -4,12 +4,14 @@ description: "This article explains how to use SkiaSharp to define arcs in three
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/10/2017
 ---
 
 # Three Ways to Draw an Arc
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _Learn how to use SkiaSharp to define arcs in three different ways_
 
@@ -31,7 +33,7 @@ public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
 public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean forceMoveTo)
 ```
 
-These methods are identical to the Android [`AddArc`](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/) and [`ArcTo`](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/) methods. The iOS [`AddArc`](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArc/p/System.Boolean/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) method is similar but is restricted to arcs on the circumference of a circle rather than generalized to an ellipse.
+These methods are identical to the Android [`AddArc`](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/) and [`ArcTo`](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/) methods. The iOS [`AddArc`](xref:CoreGraphics.CGPath.AddArc(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.Boolean)) method is similar but is restricted to arcs on the circumference of a circle rather than generalized to an ellipse.
 
 Both methods begin with an `SKRect` value that defines both the location and size of an ellipse:
 
@@ -219,7 +221,7 @@ public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
 public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 ```
 
-This `ArcTo` method is similar to the PostScript [`arct`](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) (page 532) function and the iOS [`AddArcToPoint`](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) method.
+This `ArcTo` method is similar to the PostScript [`arct`](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) (page 532) function and the iOS [`AddArcToPoint`](xref:CoreGraphics.CGPath.AddArcToPoint(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat)) method.
 
 The `ArcTo` method involves three points:
 
@@ -407,7 +409,7 @@ public partial class TangentArcPage : InteractivePage
 }
 ```
 
-Here's the **Tangent Arc** page running on all three platforms:
+Here's the **Tangent Arc** page running:
 
 [![](arcs-images/tangentarc-small.png "Triple screenshot of the Tangent Arc page")](arcs-images/tangentarc-large.png#lightbox "Triple screenshot of the Tangent Arc page")
 
@@ -482,7 +484,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-Here's the program running on the three platforms:
+Here's the program running:
 
 [![](arcs-images/roundedheptagon-small.png "Triple screenshot of the Rounded Heptagon page")](arcs-images/roundedheptagon-large.png#lightbox "Triple screenshot of the Rounded Heptagon page")
 
@@ -577,7 +579,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-Here it is running on the three platforms:
+Here it is running:
 
 [![](arcs-images/ellipticalarc-small.png "Triple screenshot of the Elliptical Arc page")](arcs-images/ellipticalarc-large.png#lightbox "Triple screenshot of the Elliptical Arc page")
 

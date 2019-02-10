@@ -4,14 +4,17 @@ description: "This document describes the Preferences class in Xamarin.Essential
 ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
+ms.date: 01/15/2019
+ms.custom: video
 ---
 
 # Xamarin.Essentials: Preferences
 
-![Pre-release NuGet](~/media/shared/pre-release.png)
-
 The **Preferences** class helps to store application preferences in a key/value store.
+
+## Get started
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## Using Preferences
 
@@ -71,11 +74,11 @@ All data is stored into [Shared Preferences](https://developer.android.com/train
 
 # [iOS](#tab/ios)
 
-[NSUserDefaults](https://docs.microsoft.com/en-us/xamarin/ios/app-fundamentals/user-defaults) is used to store values on iOS devices. If no `sharedName` is specified the `StandardUserDefaults` are used, else the name is used to create a new `NSUserDefaults` with the specified name used for the `NSUserDefaultsType.SuiteName`.
+[NSUserDefaults](https://docs.microsoft.com/xamarin/ios/app-fundamentals/user-defaults) is used to store values on iOS devices. If no `sharedName` is specified the `StandardUserDefaults` are used, else the name is used to create a new `NSUserDefaults` with the specified name used for the `NSUserDefaultsType.SuiteName`.
 
 # [UWP](#tab/uwp)
 
-[ApplicationDataContainer](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdatacontainer) is used to store the values on the device. If no `sharedName` is specified the `LocalSettings` are used, else the name is used to create a new container inside of `LocalSettings`.
+[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) is used to store the values on the device. If no `sharedName` is specified the `LocalSettings` are used, else the name is used to create a new container inside of `LocalSettings`.
 
 --------------
 
@@ -91,3 +94,9 @@ When storing a string, this API is intended to store small amounts of text.  Per
 
 - [Preferences source code](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Preferences)
 - [Preferences API documentation](xref:Xamarin.Essentials.Preferences)
+
+## Related Video
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Preferences-Essential-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

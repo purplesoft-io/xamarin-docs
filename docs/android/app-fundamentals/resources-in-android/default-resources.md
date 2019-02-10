@@ -3,8 +3,8 @@ title: "Default Resources"
 ms.prod: xamarin
 ms.assetid: 762572F0-173A-D994-0510-8F36BEF3D487
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/13/2018
 ---
 
@@ -17,7 +17,7 @@ the most common type of resource to create. They're organized into
 sub-directories of the **Resources** directory according to their
 resource type:
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ![Default resource files](default-resources-images/01-resource-files-vs.png)
 
@@ -73,10 +73,10 @@ A complete list of resource types is provided below:
 
 -  **xml** &ndash; XML files that are similar in function to the .NET
    configuration files. These are arbitrary XML that can be read at run
-   time by the application
+   time by the application.
 
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ![Default resource files](default-resources-images/01-resource-files-xs.png)
 
@@ -106,7 +106,8 @@ A complete list of resource types is provided below:
 -  **font** &ndash; Starting in API level 26, it is possible to embed
    fonts as a resource in an Android application. The Support Library
    26 will backport fonts to API level 14. Embedding fonts allows
-   applications to
+   applications to load custom fonts directly from XML layouts without
+   needing to import them as assets before use.
 
 -  **mipmap** &ndash; Drawable resources are a general
    concept for graphics that can be compiled into the application and

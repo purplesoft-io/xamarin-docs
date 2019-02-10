@@ -11,6 +11,8 @@ ms.date: 10/24/2017
 
 # Xamarin.Forms Fast Renderers
 
+![Preview](~/media/shared/preview.png)
+
 _This article introduces fast renderers, which reduce the inflation and rendering costs of a Xamarin.Forms control on Android by flattening the resulting native control hierarchy._
 
 Traditionally, most of the original control renderers on Android are composed of two views:
@@ -27,6 +29,7 @@ Fast renderers are available for the following controls in Xamarin.Forms 2.4 on 
 - [`Button`](xref:Xamarin.Forms.Button)
 - [`Image`](xref:Xamarin.Forms.Image)
 - [`Label`](xref:Xamarin.Forms.Label)
+- [`Frame`](xref:Xamarin.Forms.Frame)
 
 Functionally, these fast renderers are no different to the original renderers. However, they are currently experimental and can only be used by adding the following line of code to your `MainActivity` class before calling `Forms.Init`:
 

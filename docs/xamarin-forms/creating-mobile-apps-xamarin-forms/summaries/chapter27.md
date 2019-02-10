@@ -4,12 +4,14 @@ description: "Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 27. Cu
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/18/2018
 ---
 
 # Summary of Chapter 27. Custom renderers
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27)
 
 > [!NOTE] 
 > Notes on this page indicate areas where Xamarin.Forms has diverged from the material presented in the book.
@@ -39,7 +41,7 @@ You'll notice an important class named `ViewRenderer`. This is the class you der
 The iOS [`ViewRenderer<TView, TNativeView>`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs#L25) has generic arguments:
 
 - `TView` constrained to [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
-- `TNativeView` constrained to [`UIKit.UIView`](https://developer.xamarin.com/api/type/UIKit.UIView/)
+- `TNativeView` constrained to [`UIKit.UIView`](xref:UIKit.UIView)
 
 The Android [`ViewRenderer<TView, TNativeView>`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/ViewRenderer.cs#L17) has generic arguments:
 

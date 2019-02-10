@@ -4,8 +4,8 @@ description: "This guide will explain file access in Xamarin.Android"
 ms.prod: xamarin
 ms.assetid: FC1CFC58-B799-4DD6-8ED1-DE36B0E56856
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 07/23/2018
 ---
 
@@ -19,7 +19,7 @@ A common requirement for Android apps is to manipulate files &ndash; saving pict
 These groupings are conceptual only, and don't necessarily refer to a single partition or directory on the device. An Android device will always provide partition for internal storage and external storage. It is possible that certain devices may have multiple partitions that are considered to be external storage. Regardless of the partition the APIs for reading, writing, or creating files is the same. There are two sets of APIs that a Xamarin.Android application may use for file access:
 
 1. **The .NET APIs (provided by Mono and wrapped by Xamarin.Android)** &ndash;  These includes the [file system helpers](~/essentials/file-system-helpers.md?context=xamarin/android) provided by [Xamarin.Essentials](~/essentials/index.md?context=xamarin/android). The .NET APIs provide the best cross-platform compatibility and as such the focus of this guide will be on these APIs.
-1. **The native Java file access APIs (provided by Java and wrapped by Xamarin.Android)** &ndash; Java provides its own APIs for reading and writing files. These are a completely acceptable alternative to to the .NET APIs, but are specific to Android and are not suitable for apps that are intended to be cross-platform.
+1. **The native Java file access APIs (provided by Java and wrapped by Xamarin.Android)** &ndash; Java provides its own APIs for reading and writing files. These are a completely acceptable alternative to the .NET APIs, but are specific to Android and are not suitable for apps that are intended to be cross-platform.
 
 Reading and writing to files is almost identical in Xamarin.Android as it is to any other .NET application. The Xamarin.Android app determines the path to the file that will be manipulated, then uses standard .NET idioms for file access. Because the actual paths to internal and external storage may vary from device to device or from Android version to Android version, it is not recommended to hard code the path to the files. Instead, use the Xamarin.Android APIs to determine the path to files. That way, the .NET APIs for reading and writing files exposes the native Android APIs that will help with determining the path to files on internal and external storage.
 
@@ -74,7 +74,7 @@ To maximize code sharing, Xamarin.Android apps (or Xamarin.Forms apps targeting 
 
 ### Reading or Writing to files on internal storage
 
-Any of the [C# APIs for writing](https://docs.microsoft.com/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file) to a file are sufficient; all that is necessary is to get the path to the file that is in the directory allocated to the the application. It is strongly recommended that the async versions of the .NET APIs are used to minimize any issues that may be associate with file access blocking the main thread.
+Any of the [C# APIs for writing](https://docs.microsoft.com/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file) to a file are sufficient; all that is necessary is to get the path to the file that is in the directory allocated to the application. It is strongly recommended that the async versions of the .NET APIs are used to minimize any issues that may be associate with file access blocking the main thread.
 
 This code snippet is one example of writing an integer to a UTF-8 text file to the internal storage directory of an application:
 

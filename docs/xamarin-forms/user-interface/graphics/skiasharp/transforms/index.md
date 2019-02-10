@@ -4,12 +4,14 @@ description: "This article explores transforms for displaying SkiaSharp graphics
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
 ---
 
 # SkiaSharp Transforms
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _Learn about transforms for displaying SkiaSharp graphics_
 

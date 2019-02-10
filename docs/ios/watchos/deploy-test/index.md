@@ -4,8 +4,8 @@ description: "This document describes how to deploy and test watchOS apps built 
 ms.prod: xamarin
 ms.assetid: 98257399-E9B3-4BAB-9204-0E89117DEA6D
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
 ---
 
@@ -48,7 +48,7 @@ All three projects require a matching Distribution Provisioning Profile,
 
 ### Explicit App IDs
 
-Create an **App ID** for each each project's Bundle ID (which will look like
+Create an **App ID** for each project's Bundle ID (which will look like
   this on the iOS Dev Center):
 
 ![The Bundle IDs in the iOS Dev Center](images/appids-specific-sml.png)
@@ -103,7 +103,7 @@ Once the group is created, it can be referenced in your
   **App ID** configuration. Remember to include it both the
   iOS App and Watch Extension **App IDs**.
 
-![Available consifurations](images/appgroups-sml.png)
+![Available configurations](images/appgroups-sml.png)
 
 Do **not** enable App Groups in the Apple Watch App ID. It is not
   required to be enabled on the watch itself.

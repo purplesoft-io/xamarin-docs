@@ -3,8 +3,8 @@ title: "GDB"
 ms.prod: xamarin
 ms.assetid: CD0BE462-FA38-4881-B481-82AD05B3B8FE
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/05/2018
 ---
 
@@ -13,7 +13,7 @@ ms.date: 02/05/2018
 ## Overview
 
 Xamarin.Android 4.10 introduced partial support for using `gdb` 
-by using the the `_Gdb` MSBuild target. 
+by using the `_Gdb` MSBuild target. 
 
 > [!NOTE]
 > `gdb` support requires that the
@@ -36,7 +36,7 @@ When things go wrong, please see the
 When building and deploying a Debug build with Fast Deployment enabled,
 `gdb` can be attached by using the `_Gdb` MSBuild target.
 
-First, install the the app. This can be done via the IDE, or via the
+First, install the app. This can be done via the IDE, or via the
 command line:
 
 ```bash

@@ -4,8 +4,8 @@ description: "XAML is a declarative markup language that can be used to define u
 ms.prod: xamarin
 ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 06/18/2018
 ---
 
@@ -32,11 +32,15 @@ XAML can be optionally compiled directly into intermediate language (IL) with th
 
 ## [XAML Previewer](xaml-previewer.md)
 
-The [XAML Previewer](~/xamarin-forms/xaml/xaml-previewer.md) announced at Xamarin Evolve 2016 is available for testing in the Alpha channel.
+The [XAML Previewer](~/xamarin-forms/xaml/xaml-previewer.md) renders a live preview of a page side-by-side with the XAML markup, allowing you to see your user interface rendered as you type.
 
 ## [XAML Namespaces](namespaces.md)
 
 XAML uses the `xmlns` XML attribute for namespace declarations. This article introduces the XAML namespace syntax, and demonstrates how to declare a XAML namespace to access a type.
+
+## [XAML Custom Namespace Schemas](custom-namespace-schemas.md)
+
+A XAML custom namespace schema can be defined with the `XmlnsDefinitionAttribute` class, which specifies a mapping between a custom URL and one or more CLR namespaces. The custom namespace schema can then be used in XAML namespace declarations.
 
 ## [XAML Markup Extensions](markup-extensions/index.md)
 
@@ -61,3 +65,7 @@ An attached property is a special type of bindable property, defined in one clas
 ## [Resource Dictionaries](resource-dictionaries.md)
 
 XAML resources are definitions of objects that can be used more than once. A [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) allows resources to be defined in a single location, and re-used throughout a Xamarin.Forms application. This article demonstrates how to create and consume a `ResourceDictionary`, and how to merge one `ResourceDictionary` into another.
+
+## [Loading XAML at Runtime](runtime-load.md)
+
+XAML can be loaded and parsed at runtime with the [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) extension methods.

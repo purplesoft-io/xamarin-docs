@@ -4,12 +4,14 @@ description: "This article explains how to create SkiaSharp graphics that respon
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 02/09/2017
 ---
 
 # Integrating with Xamarin.Forms
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _Create SkiaSharp graphics that respond to touch and Xamarin.Forms elements_
 

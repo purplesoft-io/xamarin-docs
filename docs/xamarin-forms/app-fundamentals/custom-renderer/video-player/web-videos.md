@@ -11,6 +11,8 @@ ms.date: 02/12/2018
 
 # Playing a Web video
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+
 The `VideoPlayer` class defines a `Source` property used to specify the source of the video file, as well as an `AutoPlay` property. `AutoPlay` has a default setting of `true`, which means that the video should begin playing automatically after `Source` has been set:
 
 ```csharp
@@ -460,7 +462,7 @@ The `VideoSourceConverter` class converts the string to a `UriVideoSource`. When
 
 [![Play Web Video](web-videos-images/playwebvideo-small.png "Play Web Video")](web-videos-images/playwebvideo-large.png#lightbox "Play Web Video")
 
-On each of the three platforms, the transport controls fade out if they're not used but can be restored to view by tapping the video.
+On each of the platforms, the transport controls fade out if they're not used but can be restored to view by tapping the video.
 
 You can prevent the video from automatically starting by setting the `AutoPlay` property to `false`:
 

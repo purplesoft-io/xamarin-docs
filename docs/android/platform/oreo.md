@@ -5,8 +5,8 @@ ms.prod: xamarin
 ms.assetid: EAEF7341-7A00-4439-9FAF-43882637BEF8
 ms.technology: xamarin-android
 ms.custom: video
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/06/2018
 ---
 
@@ -19,7 +19,7 @@ latest version of Android available from Google. Android Oreo offers
 many new features of interest to Xamarin.Android developers. These
 features include notification channels, notification badges, custom
 fonts in XML, downloadable fonts, autofill, and picture in picture
-(PIP). Android Oreo includes new APIs for these new capabilties, and
+(PIP). Android Oreo includes new APIs for these new capabilities, and
 these APIs are available to Xamarin.Android apps when you use
 Xamarin.Android 8.0 and later.
 
@@ -74,7 +74,7 @@ Each of these steps is explained in the following sections:
 
 To add Android Oreo support to Visual Studio, do the following:
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 -   If you are using Visual Studio 2017: 
 
@@ -84,13 +84,13 @@ To add Android Oreo support to Visual Studio, do the following:
     2. Use the [SDK Manager](~/android/get-started/installation/android-sdk.md) to install 
        API level 26.0 or later.
 
--   If you are using Visual Studio 2015, we we recommend downgrading
+-   If you are using Visual Studio 2015, we recommend downgrading
     SDK Tools to 25 and using the old Google Emulator manager GUI. SDK
     tools 25 can still be used alongside API 26, 27, and newer, and
     won't impact development for new platforms. This will give you an
     interface for managing your Android SDK for older versions of VS.
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 -   Update to the latest stable version of Visual Studio 2017 for Mac as explained in
     [Updating Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/update).
@@ -98,7 +98,7 @@ To add Android Oreo support to Visual Studio, do the following:
 -----
 
 For more information about Xamarin support for Android Oreo, see the
-[Xamarin.Android 8.0 release notes](https://developer.xamarin.com/releases/android/xamarin.android_8/xamarin.android_8.0/).
+[Xamarin.Android 8.0 release notes](https://docs.microsoft.com/xamarin/android/release-notes/8/8.0/).
 
 
 
@@ -109,7 +109,7 @@ Xamarin Android SDK Manager to install the SDK platform for **Android
 8.0 - Oreo** or later. You must also install Android SDK Tools 26.0 or
 later.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1. Start the SDK Manager (in Visual Studio, click **Tools >
    Android > Android SDK Manager**).
@@ -126,7 +126,7 @@ later.
 
     [![Selecting Android SDK Tools 26 in the Android SDK Manager](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1. Start the SDK Manager (in Visual Studio for Mac, click **Tools > SDK Manager**).
 
@@ -169,17 +169,17 @@ installing Android SDK Tools 26.0 or later, you may get the following
 error dialog, which instructs you to use the command line AVD manager
 tool **avdmanager** instead:
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ![Android Emulator Manager warning dialog](oreo-images/win/03-avd-warning.png)
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ![Android Emulator Manager warning dialog](oreo-images/mac/03-avd-warning.png)
 
 -----
 
-This message is displayed because Google no longer provides a standlone
+This message is displayed because Google no longer provides a standalone
 GUI AVD manager that supports API 26.0 and later. For Android 8.0 Oreo,
 you must use either the Xamarin Android Emulator Manager or the
 command-line `avdmanager` tool to create virtual devices for Android
@@ -197,7 +197,7 @@ follow the steps in the next section.
 To use **avdmanager** to create a new virtual device, follow these
 steps:
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1.  Open a Command Prompt window and set `JAVA_HOME` to the location of
     the Java SDK on your computer. For a typical Xamarin installation,
@@ -236,7 +236,7 @@ included in the device pull-down menu:
 
 [![New AVD added to device pull-down menu](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1.  Open a **Terminal** window and change to the location of the
     Android SDK tools directory on your Mac. For a typical Xamarin
@@ -259,7 +259,7 @@ included in the device pull-down menu:
     hardware profile
     [no]** you can enter **no** and accept the default hardware
     profile. If you say **yes**, **avdmanager** will prompt you with a
-    list of questions for customizing the the hardware profile.
+    list of questions for customizing the hardware profile.
 
 After you use **avdmanager** to create your virtual device, it will be
 included in the device pull-down menu:
@@ -374,7 +374,7 @@ Beginning with Android Oreo, apps can request fonts from a provider rather
 than bundling them into the APK. Fonts are downloaded from the network
 only as needed. This feature reduces APK size, conserving phone memory
 and cellular data usage. You can also use this feature on Android API
-versions 14 and higher by installing the Android Support Libary 26
+versions 14 and higher by installing the Android Support Library 26
 package.
 
 When your app needs a font, you create a `FontsRequest` object

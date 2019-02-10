@@ -4,12 +4,14 @@ description: "The Button responds to a tap or click that directs an application 
 ms.prod: xamarin
 ms.assetid: 62CAEB63-0800-44F4-9B8C-EE632138C2F5
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
-ms.date: 06/01/2018
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/19/2018
 ---
 
 # Xamarin.Forms Button
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)
 
 _The Button responds to a tap or click that directs an application to carry out a particular task._
 
@@ -417,7 +419,10 @@ The `Button` inherits or defines several properties that affect its appearance:
 - [`FontSize`](xref:Xamarin.Forms.Button.FontSize) is the size of the text
 - [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes) indicates if the text is italic or bold
 - [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) is the width of the border
-- [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) rounds the corners
+- [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) is the corner radius of the `Button`
+
+> [!NOTE]
+> The `Button` class also has [`Margin`](xref:Xamarin.Forms.View.Margin) and [`Padding`](xref:Xamarin.Forms.Button.Padding) properties that control the layout behavior of the `Button`. For more information, see [Margin and Padding](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
 
 The effects of six of these properties (excluding `FontFamily` and `FontAttributes`) are demonstrated in the **Button Appearance** page. Another property, [`Image`](xref:Xamarin.Forms.Button.Image), is discussed in the section [**Using bitmaps with button**](#image-button).
 
@@ -535,6 +540,40 @@ To see the `Button` border, you'll need to set a `BorderColor` to something othe
 On iOS, you'll notice that large border widths intrude into the interior of the `Button` and interfere with the display of text. If you choose to use a border with an iOS `Button`, you'll probably want to begin and end the `Text` property with spaces to retain its visibility.
 
 On UWP, selecting a `CornerRadius` that exceeds half the height of the `Button` raises an exception.
+
+## Button visual states
+
+[`Button`](xref:Xamarin.Forms.Button) has a `Pressed` [`VisualState`](xref:Xamarin.Forms.VisualState) that can be used to initiate a visual change to the `Button` when pressed by the user, provided that it's enabled.
+
+The following XAML example shows how to define a visual state for the `Pressed` state:
+
+```xaml
+<Button Text="Click me!"
+        ...>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+            <VisualState x:Name="Normal">
+                <VisualState.Setters>
+                    <Setter Property="Scale"
+                            Value="1" />
+                </VisualState.Setters>
+            </VisualState>
+
+            <VisualState x:Name="Pressed">
+                <VisualState.Setters>
+                    <Setter Property="Scale"
+                            Value="0.8" />
+                </VisualState.Setters>
+            </VisualState>
+
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+</Button>
+```
+
+The `Pressed` [`VisualState`](xref:Xamarin.Forms.VisualState) specifies that when the [`Button`](xref:Xamarin.Forms.Button) is pressed, its [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) property will be changed from its default value of 1 to 0.8. The `Normal` `VisualState` specifies that when the `Button` is in a normal state, its `Scale` property will be set to 1. Therefore, the overall effect is that when the `Button` is pressed, it's rescaled to be slightly smaller, and when the `Button` is released, it's rescaled to its default size.
+
+For more information about visual states, see [The Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
 
 ## Creating a toggle button
 
@@ -730,7 +769,7 @@ For the Android project, the bitmaps all have the same name, but they are stored
 
 These were given a **Build Action** of **AndroidResource**.
 
-In the the UWP project, bitmaps can be stored anywhere in the project, but they are generally stored in a custom folder or the **Assets** existing folder. The UWP project contains these bitmaps:
+In the UWP project, bitmaps can be stored anywhere in the project, but they are generally stored in a custom folder or the **Assets** existing folder. The UWP project contains these bitmaps:
 
 - A 48-pixel square bitmap stored as **/Assets/MonkeyFace.scale-100.png**
 - A 96-pixel square bitmap stored as **/Assets/MonkeyFace.scale-200.png**
@@ -767,7 +806,7 @@ In XAML, you need specify only the enumeration member, or the spacing, or both i
         ContentLayout="Right, 20" />
 ```
 
-The **Image Button Demo** page uses `OnPlatform` to specify different filenames for the iOS, Android, and UWP bitmap files. If you want to use the same filename for all three platforms and avoid the use of `OnPlatform`, you'll need to store the UWP bitmaps in the root directory of the project.
+The **Image Button Demo** page uses `OnPlatform` to specify different filenames for the iOS, Android, and UWP bitmap files. If you want to use the same filename for each platform and avoid the use of `OnPlatform`, you'll need to store the UWP bitmaps in the root directory of the project.
 
 The first `Button` on the **Image Button Demo** page sets the `Image` property but not the `Text` property:
 

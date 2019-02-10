@@ -4,8 +4,8 @@ description: "The HttpClient Stack and SSL/TLS Implementation selectors determin
 ms.prod: xamarin
 ms.assetid: D7ABAFAB-5CA2-443D-B902-2C7F3AD69CE2
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 04/20/2018
 ---
 # HttpClient Stack and SSL/TLS Implementation Selector for Android
@@ -167,7 +167,7 @@ the BoringSSL library.
 
 There are three ways that a Xamarin.Android application can control the TLS settings:
 
-1. Select the HttpClient implmentation and default TLS library in the Project Options.
+1. Select the HttpClient implementation and default TLS library in the Project Options.
 2. Programatically using `Xamarin.Android.Net.AndroidClientHandler`.
 3. Declare environment variables (optional).
 

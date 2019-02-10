@@ -4,8 +4,8 @@ description: "This document describes how to create create generic subclasses of
 ms.prod: xamarin
 ms.assetid: BB99EBD7-308A-C865-1829-4DFFDB1BBCA4
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
 ---
 
@@ -14,7 +14,7 @@ ms.date: 03/21/2017
 ## Using generics with NSObjects
 
 Starting with Xamarin.iOS 7.2.1 you can use generics in
-subclasses of `NSObject` (for example [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)).
+subclasses of `NSObject` (for example [UIView](xref:UIKit.UIView).
 
 You can now create generic classes, like this one:
 

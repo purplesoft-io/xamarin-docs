@@ -4,14 +4,14 @@ description: "This article covers working with dialogs and modal windows in a Xa
 ms.prod: xamarin
 ms.assetid: 55451990-B77B-4D44-B8BB-F874EC503B0C
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
 ---
 
 # Dialogs in Xamarin.Mac
 
-When working with C# and .NET in a Xamarin.Mac application, you have access to the same Dialogs and Modal Windows that a developer working in in *Objective-C* and *Xcode* does. Because Xamarin.Mac integrates directly with Xcode, you can use Xcode's _Interface Builder_ to create and maintain your Modal Windows (or optionally create them directly in C# code).
+When working with C# and .NET in a Xamarin.Mac application, you have access to the same Dialogs and Modal Windows that a developer working in *Objective-C* and *Xcode* does. Because Xamarin.Mac integrates directly with Xcode, you can use Xcode's _Interface Builder_ to create and maintain your Modal Windows (or optionally create them directly in C# code).
 
 A dialog appears in response to a user action and typically provides ways users can complete the action. A dialog requires a response from the user before it can be closed.
 
@@ -530,16 +530,16 @@ namespace SourceWriter
 	public class AppPreferences : NSObject
 	{
 		#region Computed Properties
-		[Export("DefaultLangauge")]
+		[Export("DefaultLanguage")]
 		public int DefaultLanguage {
 			get { 
-				var value = LoadInt ("DefaultLangauge", 0);
+				var value = LoadInt ("DefaultLanguage", 0);
 				return value; 
 			}
 			set {
-				WillChangeValue ("DefaultLangauge");
-				SaveInt ("DefaultLangauge", value, true);
-				DidChangeValue ("DefaultLangauge");
+				WillChangeValue ("DefaultLanguage");
+				SaveInt ("DefaultLanguage", value, true);
+				DidChangeValue ("DefaultLanguage");
 			}
 		}
 
@@ -828,7 +828,7 @@ using Foundation;
 
 namespace SourceWriter
 {
-	public class PreferenceWidowDelegate : NSWindowDelegate
+	public class PreferenceWindowDelegate : NSWindowDelegate
 	{
 		#region Application Access
 		public static AppDelegate App {
@@ -841,7 +841,7 @@ namespace SourceWriter
 		#endregion
 
 		#region constructors
-		public PreferenceWidowDelegate (NSWindow window)
+		public PreferenceWindowDelegate (NSWindow window)
 		{
 			// Initialize
 			this.Window = window;
@@ -888,7 +888,7 @@ namespace SourceWriter
 			base.WindowDidLoad ();
 
 			// Initialize
-			Window.Delegate = new PreferenceWidowDelegate(Window);
+			Window.Delegate = new PreferenceWindowDelegate(Window);
 			Toolbar.SelectedItemIdentifier = "General";
 		}
 		#endregion
@@ -1085,7 +1085,7 @@ The user can expand the dialog:
 
 [![](dialog-images/save04.png "An expanded save sheet")](dialog-images/save04.png#lightbox)
 
-For more more information on working with the Save Dialog, please see Apple's [NSSavePanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098) documentation.
+For more information on working with the Save Dialog, please see Apple's [NSSavePanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098) documentation.
 
 <a name="Summary" />
 

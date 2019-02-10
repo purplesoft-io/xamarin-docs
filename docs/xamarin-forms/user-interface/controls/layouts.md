@@ -11,6 +11,8 @@ ms.date: 05/21/2018
 
 # Xamarin.Forms Layouts
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/FormsGallery/)
+
 _Xamarin.Forms Layouts are used to compose user-interface controls into visual structures._
 
 The [`Layout`](xref:Xamarin.Forms.Layout) and [`Layout<T>`](xref:Xamarin.Forms.Layout`1) classes in Xamarin.Forms are specialized subtypes of views that act as containers for views and other layouts. The `Layout` class itself derives from [`View`](views.md). A `Layout` derivative typically contains logic to set the position and size of child elements in Xamarin.Forms applications.
@@ -109,7 +111,6 @@ These classes derive from [`Layout<View>`](xref:Xamarin.Forms.Layout`1).
 
 ## Related Links
 
-- [Introduction To Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Xamarin.Forms FormsGallery sample](https://developer.xamarin.com/samples/FormsGallery/)
 - [Xamarin.Forms Samples](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API Documentation](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

@@ -12,6 +12,8 @@ ms.date: 05/07/2018
 
 # Right-to-left localization
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalizedRTL/)
+
 _Right-to-left localization adds support for right-to-left flow direction to Xamarin.Forms applications._
 
 > [!NOTE]
@@ -67,7 +69,7 @@ The required right-to-left locale should be added as a supported language to the
 
 ![Info.plist supported languages](rtl-images/ios-locales.png "Info.plist supported languages")
 
-For more information, see [Localization Basics in iOS](https://docs.microsoft.com/en-gb/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios).
+For more information, see [Localization Basics in iOS](https://docs.microsoft.com/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios).
 
 Right-to-left localization can then be tested by changing the language and region on the device/simulator to a right-to-left locale that was specified in **Info.plist**.
 

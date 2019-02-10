@@ -4,12 +4,14 @@ description: "Learn about the different types of gradients based on circles."
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 400AE23A-6A0B-4FA8-BD6B-DE4146B04732
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 08/23/2018
 ---
 
 # The SkiaSharp circular gradients
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 The [`SKShader`](xref:SkiaSharp.SKShader) class defines static methods to create four different types of gradients. The [**SkiaSharp linear gradient**](linear-gradient.md) article discusses the [`CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) method. This article covers the other three types of gradients, all of which are based on circles.
 

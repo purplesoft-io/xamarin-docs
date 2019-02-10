@@ -3,8 +3,8 @@ title: "Using UrhoSharp To Build A 3D Game"
 description: "This document provides an overview of UrhoSharp, describing scenes, components, shapes, cameras, actions, user input, sound, and more."
 ms.prod: xamarin
 ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
 ---
 
@@ -178,7 +178,7 @@ so changing it has no effect and it should be left as it is (position
 at origin, no rotation, no scaling.)
 
 [`Scene`](https://developer.xamarin.com/api/type/Urho.Node/) nodes can be freely reparented. In contrast components always
-belong to to the node they attached to, and can not be moved between
+belong to the node they attached to, and can not be moved between
 nodes. Both nodes and components provide a [`Remove()`](https://developer.xamarin.com/api/member/Urho.Node.Remove()/) function to
 accomplish this without having to go through the parent. Once the node
 is removed, no operations on the node or component in question are
@@ -798,8 +798,3 @@ latest version.
 This documentation contains original content from Xamarin Inc, but
 draws extensively from the open source documentation for the Urho3D
 project and contains screenshots from the Cocos2D project.
-
-## Related Links
-
-- [Planet Earth Workbook](https://developer.xamarin.com/workbooks/graphics/urhosharp/planetearth/planetearth.workbook)
-- [Exploring Coordinates Workbook](https://developer.xamarin.com/workbooks/graphics/urhosharp/coordinates/ExploringUrhoCoordinates.workbook)

@@ -4,8 +4,8 @@ description: "This guide will discuss the differences between a system app and a
 ms.prod: xamarin
 ms.assetid: 0113143B-7D8D-4C4C-B2F5-B966A2E7CE1F
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/15/2018
 ---
 
@@ -92,7 +92,7 @@ system app.
    **/system/lib/** folder on the custom ROM.
 
 4. **Copy the APK file to /system/app** &ndash; The final step is
-   to copy the APK file to the **/system/app** folder on the the ROM.
+   to copy the APK file to the **/system/app** folder on the ROM.
 
 
 ## Summary

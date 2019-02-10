@@ -4,8 +4,8 @@ description: "How to implement Google Maps API v2 features in your Xamarin.Andro
 ms.prod: xamarin
 ms.assetid: C0589878-2D04-180E-A5B9-BB41D5AF6E02
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 09/07/2018
 ---
 
@@ -14,7 +14,7 @@ ms.date: 09/07/2018
 Using the Maps application is great, but sometimes you want to include
 maps directly in your application. In addition to the built-in maps
 application, Google also offers a
-[native mapping API for Android](hhttps://developers.google.com/maps/documentation/android-sdk/intro).
+[native mapping API for Android](https://developers.google.com/maps/documentation/android-sdk/intro).
 The Maps API is suitable for cases where you want to maintain more
 control over the mapping experience. Things that are possible with the
 Maps API include:
@@ -43,7 +43,7 @@ Several steps need to be taken before you can use the Maps API, including:
 
 ### <a name="obtain-maps-key" />Obtain a Google Maps API Key
 
-The final step is to get a Google Maps API key (note that you cannot
+The first step is to get a Google Maps API key (note that you cannot
 reuse an API key from the legacy Google Maps v1 API). For information about
 how to obtain and use the API key with Xamarin.Android, see 
 [Obtaining A Google Maps API Key](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
@@ -54,7 +54,7 @@ how to obtain and use the API key with Xamarin.Android, see
 Google Play Services is a technology from Google that allows Android
 applications to take advantage of various Google features such as
 Google+, In-App Billing, and Maps. These features are accessible on
-Android devices as background services,f which are contained in the
+Android devices as background services, which are contained in the
 [Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en).
 
 Android applications interact with Google Play Services through the
@@ -243,7 +243,7 @@ Similar to other Fragment classes, there are two ways to add a
               class="com.google.android.gms.maps.MapFragment" />
     ```
 
--   **Programmaatically** - The `MapFragment` can be programmatically instantiated using the [`MapFragment.NewInstance`](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance()) method and then added to an Activity. This snippet shows the simplest way to instantiate a `MapFragment` object and add to an Activity:
+-   **Programmatically** - The `MapFragment` can be programmatically instantiated using the [`MapFragment.NewInstance`](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance()) method and then added to an Activity. This snippet shows the simplest way to instantiate a `MapFragment` object and add to an Activity:
     
     ```csharp
         var mapFrag = MapFragment.NewInstance();
@@ -285,7 +285,7 @@ There are five different types of maps available from the Google Maps
 API:
 
 -  **Normal** - This is the default map type. It shows roads and
-   important natural features along with some artifical points of
+   important natural features along with some artificial points of
    interest (such as buildings and bridges).
 
 -  **Satellite** - This map shows satellite photography.

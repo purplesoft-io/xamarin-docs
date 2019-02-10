@@ -4,8 +4,8 @@ description: "This walkthrough provides a step-by-step explanation of how to use
 ms.prod: xamarin
 ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/31/2018
 ---
 
@@ -56,7 +56,7 @@ yet downloaded the **google-services.json** file), see
 To run the example app, you will need an Android test device or
 emulator that is compatibile with Firebase. Firebase Cloud Messaging
 supports clients running on Android 4.0 or higher, and
-these devices must also have the the Google Play Store app installed
+these devices must also have the Google Play Store app installed
 (Google Play Services 9.2.1 or later is required). If you do not yet
 have the Google Play Store app installed on your device, visit the
 [Google Play](https://support.google.com/googleplay) web site to
@@ -82,7 +82,7 @@ you specified a package name for the FCM-enabled app. This package name
 also serves as the [*application ID*](./firebase-cloud-messaging.md#fcm-in-action-app-id) that is associated with the [API
 key](firebase-cloud-messaging.md#fcm-in-action-api-key). Configure the app to use this package name:
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1.  Open the properties for the **FCMClient** project.
 
@@ -95,7 +95,7 @@ In the following example, the package name is set to `com.xamarin.fcmexample`:
 While you are updating the **Android Manifest**, also check to be sure that the
 `Internet` permission is enabled.
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1.  Open the properties for the **FCMClient** project.
 
@@ -120,7 +120,7 @@ Because Firebase Cloud Messaging depends on Google Play Services, the
 NuGet package must be added to the Xamarin.Android project. You will need
 version 29.0.0.2 or later.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1.  In Visual Studio, right-click **References > Manage NuGet Packages ...**.
 
@@ -130,7 +130,7 @@ version 29.0.0.2 or later.
 
     [![Installing Google Play Services Base](remote-notifications-with-fcm-images/02-google-play-services-vs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-vs.png#lightbox)
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1.  In Visual Studio for Mac, right-click **Packages > Add Packages...**.
 
@@ -166,7 +166,7 @@ To receive messages from FCM, the
 NuGet package must be added to the app project. Without this package, an Android
 application cannot receive messages from FCM servers.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1.  In Visual Studio, right-click **References > Manage NuGet Packages ...**.
 
@@ -176,11 +176,11 @@ application cannot receive messages from FCM servers.
 
     [![Installing Xamarin Firebase Messaging](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png#lightbox)
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1.  In Visual Studio for Mac, right-click **Packages > Add Packages...**.
 
-2.  Check **Show pre-release packages** and search for **Xamarin.Firebase.Messaging**.
+2.  Search for **Xamarin.Firebase.Messaging**.
 
 3.  Install this package into the **FCMClient** project:
 
@@ -209,7 +209,7 @@ observe transactions with FMS.
 The next step is to add the **google-services.json** file to the root
 directory of your project:
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1.  Copy **google-services.json** to the project folder.
 
@@ -220,12 +220,14 @@ directory of your project:
 3.  Select **google-services.json** in the **Solution Explorer** window.
 
 4.  In the **Properties** pane, set the **Build Action** to
-    **GoogleServicesJson** (if the **GoogleServicesJson** build action is
-    not shown, save and close the Solution, then reopen it):
+    **GoogleServicesJson**:
 
     [![Setting the build action to GoogleServicesJson](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png#lightbox)
 
-# [Visual Studio for Mac](#tab/vsmac)
+    > [!NOTE] 
+    > If the **GoogleServicesJson** build action is not shown, save and close the solution, then reopen it.
+
+# [Visual Studio for Mac](#tab/macos)
 
 1.  Copy **google-services.json** to the project folder.
 
@@ -342,7 +344,7 @@ void CreateNotificationChannel()
         return;
     }
 
-    var channel = new NotificationChannel(MyFirebaseMessagingService.CHANNEL_ID,
+    var channel = new NotificationChannel(CHANNEL_ID,
                                           "FCM Notifications",
                                           NotificationImportance.Default)
                   {
@@ -537,7 +539,7 @@ view `Intent` information when the app is launched from a notification:
 
 [![Log Token button added to app screen](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png#lightbox)
 
-### Log tokes
+### Log tokens
 
 The code added in this step is intended only for demonstration purposes
 &ndash; a production client app would have no need to log registration
@@ -562,8 +564,8 @@ logTokenButton.Click += delegate {
 };
 ```
 
-This code logs the current token to the output window when the **Log
-Token** button is tapped.
+This code logs the current token to the output window when the **Log Token**
+button is tapped.
 
 ### Handle notification intents
 
@@ -1020,7 +1022,7 @@ class. For example:
 FirebaseInstanceId.Instance.DeleteInstanceId();
 ```
 
-This method call deletes the the instance ID and the data associated
+This method call deletes the instance ID and the data associated
 with it. As a result, the periodic sending of FCM data to the device is
 halted.
 
@@ -1041,9 +1043,7 @@ Make sure to call FirebaseApp.initializeApp(Context) first.
 
 This is a known problem that you can work around by cleaning the
 solution and rebuilding the project (**Build > Clean Solution**,
-**Build > Rebuild Solution**). For more information, see this
-[forum discussion](https://forums.xamarin.com/discussion/96263/default-firebaseapp-is-not-initialized-in-this-process).
-
+**Build > Rebuild Solution**).
 
 ## Summary
 

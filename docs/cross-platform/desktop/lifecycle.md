@@ -1,7 +1,7 @@
 ---
 ms.assetid: 7C132A7C-4973-4B2D-98DC-3661C08EA33F
 title: "WPF vs. Xamarin.Forms App Lifecycle"
-description: "This document compares the the similarities and differences between the application lifecycle for Xamarin.Forms and WPF applications. It also looks at the visual tree, graphics, resources, and styles."
+description: "This document compares the similarities and differences between the application lifecycle for Xamarin.Forms and WPF applications. It also looks at the visual tree, graphics, resources, and styles."
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
@@ -48,7 +48,7 @@ It is technically possible to render to two separate platform views (e.g. define
 
 ### Views
 
-The visual hierachy for both frameworks is similar. WPF is a bit deeper due to it's support for WYSIWYG documents.
+The visual hierarchy for both frameworks is similar. WPF is a bit deeper due to its support for WYSIWYG documents.
 
 **WPF**
 
@@ -78,7 +78,7 @@ Xamarin.Forms is primarily oriented around mobile scenarios. As such, applicatio
 |--- |--- |--- |
 |Initial activation|ctor + Window.OnLoaded|ctor + Page.OnStart|
 |Shown|Window.IsVisibleChanged|Page.Appearing|
-|Hidden|Window.IsVisibleChanged|Page.Disapearing|
+|Hidden|Window.IsVisibleChanged|Page.Disappearing|
 |Suspend/Lost focus|Window.OnDeactivated|Page.OnSleep|
 |Activated/Got focus|Window.OnActivated|Page.OnResume|
 |Closed|Window.OnClosing + Window.OnClosed|n/a|
@@ -134,7 +134,7 @@ Both platforms use _attached properties_ to fine-tune children.
 
 The rendering mechanics for WPF and Xamarin.Forms are radically different. In WPF, the controls you create directly render content to pixels on the screen. WPF maintains two object graphs (_trees_) to represent this - the _logical tree_ represents the controls as defined in code or XAML, and the _visual tree_ represents the actual rendering that occurs on the screen which is performed either directly by the visual element (through a virtual draw method), or through a XAML-defined `ControlTemplate` which can be replaced or customized. Typically, the visual tree is more complex as it includes this such as borders around controls, labels for implicit content, etc. WPF includes a set of APIs (`LogicalTreeHelper` and `VisualTreeHelper`) to examine these two object graphs.
 
-In Xamarin.Forms, the controls you define in a `Page` are really just simple data objects. They are similar to the logical tree representation, but never render content on their own. Instead, they are the _data model_ which influences the rendering of elements. The actual rendering is done by a [separate set of _visual renderers_ which are mapped to each control type](~/xamarin-forms/app-fundamentals/custom-renderer/index.md). These renderers are registered in each of the platform-specific projects by platform-specific Xamarin.Forms assemblies. You can see a list [here](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md). In addition to replacing or extending the renderer, Xamarin.Forms also has support for [Effects](~/xamarin-forms/app-fundamentals/effects/index.md) which can be used to influence the native rendering on a per-plaform basis.
+In Xamarin.Forms, the controls you define in a `Page` are really just simple data objects. They are similar to the logical tree representation, but never render content on their own. Instead, they are the _data model_ which influences the rendering of elements. The actual rendering is done by a [separate set of _visual renderers_ which are mapped to each control type](~/xamarin-forms/app-fundamentals/custom-renderer/index.md). These renderers are registered in each of the platform-specific projects by platform-specific Xamarin.Forms assemblies. You can see a list [here](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md). In addition to replacing or extending the renderer, Xamarin.Forms also has support for [Effects](~/xamarin-forms/app-fundamentals/effects/index.md) which can be used to influence the native rendering on a per-platform basis.
 
 #### The Logical/Visual Tree
 
@@ -174,11 +174,11 @@ If you do not define the `ResourceDictionary`, a runtime error is generated.
 
 ## Styles
 
-Styles are also fully supported in Xamarin.Forms and can be used to theme the Xamarin.Forms elements that make up the UI. They support triggers (property, event and data), inheritance through `BasedOn`, and resource lookups for values. Styles are applied to elements either explicitely through the `Style` property, or implicitely by not supplying a resource key - just like WPF.
+Styles are also fully supported in Xamarin.Forms and can be used to theme the Xamarin.Forms elements that make up the UI. They support triggers (property, event and data), inheritance through `BasedOn`, and resource lookups for values. Styles are applied to elements either explicitly through the `Style` property, or implicitly by not supplying a resource key - just like WPF.
 
 ### Device Styles
 
-WPF has a set of predefined properties (stored as static values on a set of static classes such as `SystemColors`) which dictate systme colors, fonts and metrics in the form of values and resource keys. Xamarin.Forms is similar, but defines a set of [Device Styles](~/xamarin-forms/user-interface/styles/device.md) to represent the same things. These styles are supplied by the frameowrk and set to values based on the runtime environment (e.g. accessibility).
+WPF has a set of predefined properties (stored as static values on a set of static classes such as `SystemColors`) which dictate system colors, fonts and metrics in the form of values and resource keys. Xamarin.Forms is similar, but defines a set of [Device Styles](~/xamarin-forms/user-interface/styles/device.md) to represent the same things. These styles are supplied by the framework and set to values based on the runtime environment (e.g. accessibility).
 
 **WPF**
 

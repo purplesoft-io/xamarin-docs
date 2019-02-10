@@ -4,8 +4,8 @@ description: "This document describes how to use background tasks with watchOS i
 ms.prod: xamarin
 ms.assetid: 2049C430-7566-45F8-9E3D-1446F484981E
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/13/2017
 ---
 
@@ -419,7 +419,7 @@ namespace MonkeySoccer.MonkeySoccerExtension
 }
 ```
 
-When initialized, it keeps a handle to both the `ExtensionDelegate` and the `WKRefreshBackgroundTask` that spawned it. It overrides the `DidFinishDownloading` method to handle the download completing. Then uses the `CompleteTask` method of the `ExtensionDelegate` to inform the the Task that it has completed and remove it from the collection of pending tasks. See [Handling Background Tasks](#Handling-Background-Tasks) above.
+When initialized, it keeps a handle to both the `ExtensionDelegate` and the `WKRefreshBackgroundTask` that spawned it. It overrides the `DidFinishDownloading` method to handle the download completing. Then uses the `CompleteTask` method of the `ExtensionDelegate` to inform the Task that it has completed and remove it from the collection of pending tasks. See [Handling Background Tasks](#Handling-Background-Tasks) above.
 
 <a name="Scheduling-a-Snapshot-Update" />
 
@@ -686,7 +686,7 @@ Apple has the following suggestions:
 - When testing an app in the watchOS Simulator, none of the Task budgets will be enforced so an app can refresh as much as needed to properly test a feature.
 - Always test on real Apple Watch hardware to ensure that the app isn't running past its budgets before publishing to iTunes Connect.
 - Apple suggests keeping the Apple Watch on the charger while testing and debugging.
-- Ensure that both cold launching and resuming an app are throughly tested.
+- Ensure that both cold launching and resuming an app are thoroughly tested.
 - Verify that all app Tasks are being completed.
 - Vary the number of apps that are pinned in the Dock to test both the best and worst case scenarios.
 

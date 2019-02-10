@@ -4,8 +4,8 @@ description: "This topic explains how to define resources that will be used only
 ms.prod: xamarin
 ms.assetid: 2111C18A-3EDA-3787-25E1-3869FF4BE441
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/25/2018
 ---
 
@@ -19,7 +19,7 @@ additional languages. All resource types can be qualified, including
 the layout itself._
 
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ## Resource qualifier options
 
@@ -157,7 +157,7 @@ For more information about resource types, see
 
 
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ## Resource qualifier options
 

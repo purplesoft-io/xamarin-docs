@@ -4,8 +4,8 @@ description: "This article covers how to create an IPA file that can be used to 
 ms.prod: xamarin
 ms.assetid: D253C2DB-852E-6FC6-C9FD-574730B8DB19
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
 ---
 
@@ -49,7 +49,7 @@ Please see the [iTunes Artwork](~/ios/app-fundamentals/images-icons/app-icons.md
 
 ## Creating an IPA
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 Creating an IPA is now built into the new publishing workflow. To do this, follow the instructions below to archive your app, sign it, and save your IPA.
 
@@ -133,7 +133,7 @@ In certain cases, such as in a CI environment, it may be necessary to build you 
     /Library/Frameworks/Mono.framework/Commands/msbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
     ```
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 Once the provisioning profile has been created and selected, the optional **iTunesMetadata.plist** file has been created and the iTunes Artwork set in Visual Studio, you can build an IPA for distribution. Next, you'll need to configure your project. Do the following:
 
@@ -228,11 +228,11 @@ The resulting IPA Package can be delivered to your test users for installing on 
 
 The new iOS application will be shown in the **My Apps** section, where you can right-click on it and get information about the application:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
  ![](ipa-support-images/installxs01.png "The new iOS application in the My Apps section")
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
  ![](ipa-support-images/installvs01.png "The new iOS application in the My Apps section")
 
@@ -257,4 +257,5 @@ This article covered the setup required to prepare a Xamarin.iOS application for
 - [The iTunesMetadata.plist File](~/ios/deploy-test/app-distribution/itunesmetadata.md)
 - [Troubleshooting](~/ios/deploy-test/troubleshooting.md)
 - [iTunes Artwork](~/ios/app-fundamentals/images-icons/app-icons.md#itunes)
-- [Distributing Enterprise Apps for iOS Devices](http://developer.apple.com/library/ios/#featuredarticles/FA_Wireless_Enterprise_App_Distribution/Introduction/Introduction.html)
+- [Develop and distribute enterprise apps (Apple)](https://help.apple.com/xcode/mac/current/#/devba5e7054d)
+- [Distributing Enterprise Apps (WWDC Video)](https://developer.apple.com/videos/play/wwdc2014/705/)

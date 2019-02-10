@@ -4,16 +4,17 @@ description: "The Connectivity class in Xamarin.Essentials lets you monitor for 
 ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
+ms.date: 01/08/2019
+ms.custom: video
 ---
 
 # Xamarin.Essentials: Connectivity
 
-![Pre-release NuGet](~/media/shared/pre-release.png)
-
 The **Connectivity** class lets you monitor for changes in the device's network conditions, check the current network access, and how it is currently connected.
 
-## Getting Started
+## Get started
+
+[!include[](~/essentials/includes/get-started.md)]
 
 To access the **Connectivity** functionality the following platform specific setup is required.
 
@@ -77,7 +78,7 @@ if (current == NetworkAccess.Internet)
 You can check what type of [connection profile](xref:Xamarin.Essentials.ConnectionProfile) the device is actively using:
 
 ```csharp
-var profiles = Connectivity.Profiles;
+var profiles = Connectivity.ConnectionProfiles;
 if (profiles.Contains(ConnectionProfile.WiFi))
 {
     // Active Wi-Fi connection.
@@ -95,10 +96,10 @@ public class ConnectivityTest
         Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
     }
 
-    void Connectivity_ConnectivityChanged(ConnectivityChangedEventArgs  e)
+    void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs  e)
     {
         var access = e.NetworkAccess;
-        var profiles = e.Profiles;
+        var profiles = e.ConnectionProfiles;
     }
 }
 ```
@@ -111,3 +112,9 @@ It is important to note that it is possible that `Internet` is reported by `Netw
 
 * [Connectivity source code](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
 * [Connectivity API documentation](xref:Xamarin.Essentials.Connectivity)
+
+## Related Video
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Connectivity-Essential-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

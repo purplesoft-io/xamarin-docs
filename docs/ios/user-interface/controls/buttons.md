@@ -4,8 +4,8 @@ description: "The UIButton class is used to represent various different styles o
 ms.prod: xamarin
 ms.assetid: 304229E5-8FA8-41BD-8563-D19E1D2A0296
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/11/2018
 ---
 
@@ -78,7 +78,7 @@ button.TouchUpInside += (sender, e) => {
 > [!NOTE]
 > `TouchUpInside` is not the only available button event. `UIButton` is a
 > child class of `UIControl`, which defines
-> [many different events](https://developer.xamarin.com/api/type/UIKit.UIControlEvent/).
+> [many different events](xref:UIKit.UIControlEvent).
 
 ### Using the iOS Designer to specify button event handlers
 
@@ -100,7 +100,7 @@ specified programmatically or with the iOS Designer.
 
 > [!NOTE]
 > For a complete list of all `UIControlState` values, take a look at the
-> [`UIKit.UIControlState enumeration`](https://developer.xamarin.com/api/type/UIKit.UIControlState/)
+> [`UIKit.UIControlState enumeration`](xref:UIKit.UIControlState)
 > documentation.
 
 For example, to set the title color and shadow color for
@@ -147,6 +147,3 @@ For more information about working with custom buttons, refer to the
 [Use an image for a button](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/use_an_image_for_a_button)
 recipe.
 
-## Related links
-
-- [UIButton workbook](https://developer.xamarin.com/workbooks/ios/user-interface/UIbutton/uibutton.workbook)

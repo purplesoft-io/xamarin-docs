@@ -4,8 +4,8 @@ description: "This article explains how to debug a Xamarin.Android application o
 ms.prod: xamarin
 ms.assetid: 153D3746-A27F-198B-48FE-D219C0133A79
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
 ---
 
@@ -31,7 +31,7 @@ configuration and the external device is selected in the IDE, this will
 ensure that the necessary debug symbols are available and that the IDE 
 can connect to the running application: 
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ![Debug configuration selected](debug-on-device-images/image1-vs.png)
 
@@ -47,7 +47,7 @@ application:
 
 ![Breakpoint reached](debug-on-device-images/image3-vs.png)
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ![Debug configuration selected](debug-on-device-images/image1-xs.png)
 

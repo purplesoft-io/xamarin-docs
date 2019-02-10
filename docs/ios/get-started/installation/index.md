@@ -4,24 +4,23 @@ description: "This document links to guides that describe how to install Xamarin
 ms.prod: xamarin
 ms.assetid: E5A29963-C8BD-465B-BFC1-7FAC9CC64BD3
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 12/02/2016
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
 ---
-
 # Xamarin.iOS Installation
 
 ## Required Components
 
 To build for Xamarin.iOS, the following are required:
 
--	 the latest iOS SDK.
--	 the latest version of Xcode.
--	 Mac OS X Sierra(10.12) and above.
+- the latest iOS SDK
+- the latest version of Xcode
+- macOS High Sierra (10.13) and above
 
 The latest version of Xcode can be downloaded from the [iOS Developer Center](https://developer.apple.com/devcenter/ios/index.action#downloads) (login required), or via the Mac App Store:
 
-![](images/xcode.png "Xcode in the Mac App Store")
+![Screenshot of Xcode listing page in Mac App Store](images/xcode.png "Xcode in the Mac App Store")
 
 ## Mac Installation
 

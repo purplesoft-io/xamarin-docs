@@ -4,8 +4,8 @@ description: "This topic introduces Xamarin.Android Designer features, explains 
 ms.prod: xamarin
 ms.assetid: 48B20C9A-B2A2-AE82-76B2-A3C1E5A4050D
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 09/05/2018
 ---
 
@@ -16,7 +16,7 @@ to launch the Designer, describes the Design Surface, and details how
 to use the Properties pane to edit widget properties._
 
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ## Launching the Designer
 
@@ -470,7 +470,7 @@ Surface**).
 
 
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ## Launching the Designer
 

@@ -4,8 +4,8 @@ description: "This guide walks through creating your first Xamarin.tvOS app and 
 ms.prod: xamarin
 ms.assetid: 6E0AFE58-A13B-492F-861E-D5D73EB1C4A3
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 02/02/2018
 ---
 
@@ -363,7 +363,7 @@ We are now ready to start updating the label!
 
 ### How controls are accessed
 
-If you select the `ViewController.designer.cs` in the **Solution Explorer** you'll be able to see how the the `ClickedLabel` label and the `Clicked` event handler have been mapped to an **Outlet** and **Action** in C#:
+If you select the `ViewController.designer.cs` in the **Solution Explorer** you'll be able to see how the `ClickedLabel` label and the `Clicked` event handler have been mapped to an **Outlet** and **Action** in C#:
 
 [![](hello-tvos-images/accesscontrol.png "Outlets and Actions")](hello-tvos-images/accesscontrol.png#lightbox)
 

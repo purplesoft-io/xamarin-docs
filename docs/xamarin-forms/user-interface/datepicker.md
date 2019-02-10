@@ -1,17 +1,19 @@
 ---
 title: "Xamarin.Forms DatePicker"
-description: "The DatePicker is Xamarin.Forms view that allows the user to select a date. This article explains how to consume a DatePicker in a Xamarin.Forms application."
+description: "The DatePicker is a Xamarin.Forms view that allows the user to select a date. This article explains how to consume a DatePicker in a Xamarin.Forms application."
 ms.prod: xamarin
 ms.assetid: 68E8EF8A-42E7-4939-8ABE-64D060E609D9
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 06/04/2018
 ---
 
 # Xamarin.Forms DatePicker
 
-_A Xamarin.Forms view that allows the user to select a date_
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
+
+_A Xamarin.Forms view that allows the user to select a date._
 
 The Xamarin.Forms [`DatePicker`](xref:Xamarin.Forms.DatePicker) invokes the platform's date-picker control and allows the user to select a date. `DatePicker` defines eight properties:
 
@@ -176,9 +178,12 @@ When the sample is first run, both `DatePicker` views are initialized to today's
 
 [![Days Between Dates Start](datepicker-images/DaysBetweenDatesStart.png "Days Between Dates Start")](datepicker-images/DaysBetweenDatesStart-Large.png#lightbox "Days Between Dates Start")
 
-Tapping either of the `DatePicker` displays invokes the platform date picker. The three platforms implement this date picker in very different ways, but each approach is familiar to users of that platform:
+Tapping either of the `DatePicker` displays invokes the platform date picker. The platforms implement this date picker in very different ways, but each approach is familiar to users of that platform:
 
 [![Days Between Dates Select](datepicker-images/DaysBetweenDatesSelect.png "Days Between Dates Select")](datepicker-images/DaysBetweenDatesSelect-Large.png#lightbox "Days Between Dates Select")
+
+> [!TIP]
+> On Android, the `DatePicker` dialog can be customized by overriding the `CreateDatePickerDialog` method in a custom renderer. This allows, for example, additional buttons to be added to the dialog.
 
 After two dates are selected, the application displays the number of days between those dates:
 

@@ -4,8 +4,8 @@ description: "This document describes how to customize a table's appearance in X
 ms.prod: xamarin
 ms.assetid: 8A83DE38-0028-CB61-66F9-0FB9DE552286
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
 ---
 
@@ -40,7 +40,7 @@ cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
 //cell = new UITableViewCell (UITableViewCellStyle.Value2, cellIdentifier);
 ```
 
-[Supported properties](http://developer.xamarin.com/api/type/UIKit.UITableViewCell/) of the cell style can then be set:
+[Supported properties](xref:UIKit.UITableViewCell) of the cell style can then be set:
 
 ```csharp
 cell.TextLabel.Text = tableItems[indexPath.Row].Heading;

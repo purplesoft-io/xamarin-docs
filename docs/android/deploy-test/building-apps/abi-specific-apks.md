@@ -4,8 +4,8 @@ description: "This document will discuss how to build an APK that will target a 
 ms.prod: xamarin
 ms.assetid: D21B195B-4530-4EB2-8704-5C4349A2CDD8
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/15/2018
 ---
 
@@ -256,7 +256,7 @@ of these folders with their contents:
 > The build process outlined in this guide may be
 implemented in one of many different build systems. Although we don't
 have a pre-written example, it should also be possible with
-[Powershell](http://technet.microsoft.com/en-ca/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) or
+[Powershell](http://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) or
 [Fake](http://fsharp.github.io/FAKE/).
 
 

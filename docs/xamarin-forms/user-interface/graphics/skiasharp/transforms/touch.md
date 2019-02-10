@@ -4,12 +4,14 @@ description: "This article explains how to use matrix transforms to implement to
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 09/14/2018
 ---
 
 # Touch Manipulations
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _Use matrix transforms to implement touch dragging, pinching, and rotation_
 
@@ -224,7 +226,7 @@ public partial class BitmapScalingPage : ContentPage
                         if (!float.IsNaN(scaleX) && !float.IsInfinity(scaleX) &&
                             !float.IsNaN(scaleY) && !float.IsInfinity(scaleY))
                         {
-                            // If smething bad hasn't happened, calculate a scale and translation matrix
+                            // If something bad hasn't happened, calculate a scale and translation matrix
                             SKMatrix scaleMatrix = 
                                 SKMatrix.MakeScale(scaleX, scaleY, pivotPoint.X, pivotPoint.Y);
 
@@ -1055,7 +1057,7 @@ The code loops through the collection and displays the pile of bitmaps from the 
 
 A scaling operation generally requires a pinch gesture using two fingers. However, it's possible to implement scaling with a single finger by having the finger move the corners of a bitmap.
 
-This is demonstrated in the **Single Finger Corner Scale** page. Because this sample uses a somewhat different type of scaling that that implemented in the `TouchManipulationManager` class, it does not use that class or the `TouchManipulationBitmap` class. Instead, all the touch logic is in the code-behind file. This is somewhat simpler logic than usual because it tracks only one finger at a time, and simply ignores any secondary fingers that might be touching the screen.
+This is demonstrated in the **Single Finger Corner Scale** page. Because this sample uses a somewhat different type of scaling than that implemented in the `TouchManipulationManager` class, it does not use that class or the `TouchManipulationBitmap` class. Instead, all the touch logic is in the code-behind file. This is somewhat simpler logic than usual because it tracks only one finger at a time, and simply ignores any secondary fingers that might be touching the screen.
 
 The [**SingleFingerCornerScale.xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml) page instantiates the `SKCanvasView` class and creates a `TouchEffect` object for tracking touch events:
 

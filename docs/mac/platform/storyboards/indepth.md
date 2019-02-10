@@ -4,8 +4,8 @@ description: "This document describes how to work with storyboards in Xamarin.Ma
 ms.prod: xamarin
 ms.assetid: DF4DF7C2-DDD7-4A32-B375-5C5446301EC5
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
 ---
 
@@ -63,7 +63,7 @@ Several new methods have been added to the `NSViewController` class to support S
 - `ViewDidDisappear` - This method is called directly after the view has been removed from the screen.
 - `UpdateViewConstraints` - This method is called when the constraints that define a view auto layout position and size need to be updated.
 - `ViewWillLayout` - This method is called just before the subviews of this view are laid out on screen.
-- `ViewDidLayout` - This method is called directly after the subviews of view view are laid out on screen.
+- `ViewDidLayout` - This method is called directly after the subviews of view are laid out on screen.
 
 <a name="The-Responder-Chain" />
 
@@ -145,7 +145,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 }
 ```
 
-Optionally, you can override the `ShouldPerfromSegue` method and control whether or not the Segue is actually executed via C# code. For manually presented View Controllers, call their `DismissController` method to remove them from display when they are no longer needed.
+Optionally, you can override the `ShouldPerformSegue` method and control whether or not the Segue is actually executed via C# code. For manually presented View Controllers, call their `DismissController` method to remove them from display when they are no longer needed.
 
 <a name="Creating-Custom-Segues" />
 
@@ -222,11 +222,11 @@ Window Controllers contain and control the different Window types that your macO
 2. The `Storyboard` property will contain the Storyboard that the Window Controller was loaded from, else `null` if not loaded from a Storyboard.
 3. You can call the `DismissController` method to close the given Window and remove it from view.
 
-Like View Controllers, Window Controllers implement the `PerformSegue`, `PrepareForSegue` and the `ShouldPerfromSegue` methods and can be used as the source of a Segue operation.
+Like View Controllers, Window Controllers implement the `PerformSegue`, `PrepareForSegue` and the `ShouldPerformSegue` methods and can be used as the source of a Segue operation.
 
 Window Controller are responsible for the following features of a macOS app:
 
-- They manage a specific Widow.
+- They manage a specific Window.
 - They manage the Window's Title Bar and Toolbar (if available).
 - They manage the Content View Controller to display the contents of the Window.
 
@@ -254,7 +254,7 @@ The following Gesture Recognizers are available in macOS:
 
 ## Using Storyboard References
 
-A Storyboard Reference allows you to take a large, complex Storyboard design and break it into smaller Storyboards that get referenced from the original, thus removing removing complexity and making the resulting individual Storyboards easier to design and maintain.
+A Storyboard Reference allows you to take a large, complex Storyboard design and break it into smaller Storyboards that get referenced from the original, thus removing complexity and making the resulting individual Storyboards easier to design and maintain.
 
 Additionally, a Storyboard Reference can provide an _anchor_ to another scene within the same Storyboard or a specific scene on a different one.
 

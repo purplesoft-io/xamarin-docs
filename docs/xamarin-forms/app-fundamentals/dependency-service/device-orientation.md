@@ -11,6 +11,8 @@ ms.date: 08/09/2016
 
 # Checking Device Orientation
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/UsingDependencyService)
+
 This article will guide you to use [`DependencyService`](xref:Xamarin.Forms.DependencyService) to check the device orientation from shared code using the native APIs on each platform. This walkthrough is based on the existing `DeviceOrientation` plugin by Ali Özgür. See the [GitHub repo](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) for more information.
 
 - **[Creating the Interface](#Creating_the_Interface)** &ndash; understand how to the interface is created in shared code.
@@ -24,7 +26,7 @@ The application using `DependencyService` will have the following structure:
 ![](device-orientation-images/orientation-diagram.png "DependencyService Application Structure")
 
 > [!NOTE]
-> It is possible to detect whether the device is in portrait or landscape orientation in shared code, as demonstrated in [Device Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation). The method described in this article uses native features to get more information about orientation, including whether the device is upside down.
+> It is possible to detect whether the device is in portrait or landscape orientation in shared code, as demonstrated in [Device Orientation](~/xamarin-forms/user-interface/layouts/device-orientation.md#Reacting_to_Changes_in_Orientation). The method described in this article uses native features to get more information about orientation, including whether the device is upside down.
 
 <a name="Creating_the_Interface" />
 
@@ -210,7 +212,7 @@ public MainPage ()
 }
 ```
 
-Running this application on iOS, Android, or the Windows platforms and pressing the button will result in the the button's text updating with the device's orientation.
+Running this application on iOS, Android, or the Windows platforms and pressing the button will result in the button's text updating with the device's orientation.
 
 ![](device-orientation-images/orientation.png "Device Orientation Sample")
 

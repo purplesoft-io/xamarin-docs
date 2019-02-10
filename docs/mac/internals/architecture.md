@@ -4,8 +4,8 @@ description: "This guide explores Xamarin.Mac and its relationship to Objective-
 ms.prod: xamarin
 ms.assetid: 74D1FF57-4F2A-4646-8669-003DE99671D4
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/12/2017
 ---
 
@@ -100,7 +100,7 @@ Xamarin.Mac startup logic will differ depending on whether embedded or system Mo
 
 ## Generator
 
-Xamarin.Mac contains definitions for every Mac API. You can browse through any of these on the [MaciOS github repo](https://github.com/xamarin/xamarin-macios/tree/master/src). These definitions contain interfaces with attributes, as well as any necessary methods and properties. For example, the following code is is used to define an NSBox in the [AppKit namespace](https://github.com/xamarin/xamarin-macios/blob/master/src/appkit.cs#L1465-L1526). Notice that it is an interface with a number of methods and properties:
+Xamarin.Mac contains definitions for every Mac API. You can browse through any of these on the [MaciOS github repo](https://github.com/xamarin/xamarin-macios/tree/master/src). These definitions contain interfaces with attributes, as well as any necessary methods and properties. For example, the following code is used to define an NSBox in the [AppKit namespace](https://github.com/xamarin/xamarin-macios/blob/master/src/appkit.cs#L1465-L1526). Notice that it is an interface with a number of methods and properties:
 
 ```csharp
 [BaseType (typeof (NSView))]
@@ -140,7 +140,7 @@ At a high level, it achieves this by executing the following tasks:
 - Create an app bundle structure.
 - Copy in your managed assemblies.
 - If linking is enabled, run the managed linker to optimize your assemblies by removing unused parts.
-- Create a launcher application, linking in the launcher code talked about along with the registar code if in static mode.
+- Create a launcher application, linking in the launcher code talked about along with the registrar code if in static mode.
 
 This is then run as part of the user build process that compiles user code into an assembly that reference's Xamarin.Mac.dll and runs `mmp` to make it a package
 

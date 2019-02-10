@@ -11,6 +11,8 @@ ms.date: 09/11/2017
 
 # Creating a Xamarin.Forms DataTemplate
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
+
 _Data templates can be created inline, in a ResourceDictionary, or from a custom type or appropriate Xamarin.Forms cell type. This article explores each technique._
 
 A common usage scenario for a [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) is displaying data from a collection of objects in a [`ListView`](xref:Xamarin.Forms.ListView). The appearance of the data for each cell in the [`ListView`](xref:Xamarin.Forms.ListView) can be managed by setting the [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) property to a [`DataTemplate`](xref:Xamarin.Forms.DataTemplate). There are a number of techniques that can be used to accomplish this:
@@ -56,7 +58,7 @@ The [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) property can be se
 </ListView>
 ```
 
-The child of an inline [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) must be of, or derive from, type [`ViewCell`](xref:Xamarin.Forms.ViewCell). Layout inside the `ViewCell` is managed here by a [`Grid`](xref:Xamarin.Forms.Grid). The `Grid` contains three [`Label`](xref:Xamarin.Forms.Label) instances that bind their [`Text`](xref:Xamarin.Forms.Label.Text) properties to the appropriate properties of each `Person` object in the collection.
+The child of an inline [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) must be of, or derive from, type [`Cell`](xref:Xamarin.Forms.Cell). This example uses a [`ViewCell`](xref:Xamarin.Forms.ViewCell), which derives from `Cell`. Layout inside the `ViewCell` is managed here by a [`Grid`](xref:Xamarin.Forms.Grid). The `Grid` contains three [`Label`](xref:Xamarin.Forms.Label) instances that bind their [`Text`](xref:Xamarin.Forms.Label.Text) properties to the appropriate properties of each `Person` object in the collection.
 
 The equivalent C# code is shown in the following code example:
 

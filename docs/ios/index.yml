@@ -5,7 +5,7 @@ metadata:
   description: Xamarin.iOS exposes the complete iOS SDK for .NET developers.
   author: conceptdev
   ms.author: crdun
-  ms.date: 07/27/2018
+  ms.date: 09/28/2018
   ms.topic: landing-page
   ms.technology: xamarin-ios
 abstract:
@@ -14,7 +14,7 @@ abstract:
     items:
     - href: ~/ios/samples/index.yml
       text: iOS Samples
-    - href: https://developer.xamarin.com/releases/ios/
+    - href: https://docs.microsoft.com/xamarin/ios/release-notes/
       text: Release Notes
     - href: https://developer.apple.com/documentation/
       text: Apple's Developer Documentation
@@ -40,6 +40,10 @@ sections:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
       text: Multi-screen Apps
       href: ~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-quickstart.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_mobile-app-developement.svg
+      text: iOS 12
+      href: ~/ios/platform/introduction-to-ios12/index.md
 - title: Guides
   items:
   - type: list
@@ -49,7 +53,7 @@ sections:
     - href: ~/ios/get-started/index.md
       html: Tutorials to get you up and running with Xamarin.iOS. Make sure everything is installed correctly, and build your first iOS apps.
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
         href: ~/ios/get-started/index.md
       title: Getting Started
     - href: ~/ios/app-fundamentals/
@@ -73,7 +77,7 @@ sections:
     - href: ~/essentials/index.md?context=xamarin/ios
       html: Cross-platform APIs for mobile applications.
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_multi-connect.svg
+        src: https://docs.microsoft.com/media/common/i_multi-connect.svg
         href: ~/essentials/index.md?context=xamarin/ios
       title: Xamarin.Essentials
     - href: ~/ios/data-cloud/
@@ -91,7 +95,7 @@ sections:
     - href: ~/ios/internals/
       html: Detailed information on how Xamarin.iOS works.
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_config-tools.svg
+        src: https://docs.microsoft.com/media/common/i_config-tools.svg
         href: ~/ios/internals/
       title: Advanced Concepts & Internals
     - href: ~/ios/watchos/
@@ -114,11 +118,8 @@ sections:
     items:
     - title: API
       href: https://developer.xamarin.com/api/root/ios-unified/
-      html: <p><a href="https://developer.xamarin.com/api/root/ios-unified/">iOS API docs</a></p><p><a href="https://docs.microsoft.com/en-us/dotnet/api/?view=xamarinios-10.8">Base Class Library</a></p>
+      html: <p><a href="https://developer.xamarin.com/api/root/ios-unified/">iOS API docs</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8">Base Class Library</a></p>
     - title: Samples
       href: https://developer.xamarin.com/samples
       html: <p><a href="https://developer.xamarin.com/samples/ios/all/">iOS Samples</a></p><p><a href="https://developer.xamarin.com/samples/ios/all/">watchOS Samples</a></p><p><a href="https://developer.xamarin.com/samples/ios/all/">tvOS Samples</a></p>
-    - title: Workbooks
-      href: https://developer.xamarin.com/workbooks
-      html: <p><a href="https://developer.xamarin.com/workbooks#ios">iOS Workbooks</a></p>
     

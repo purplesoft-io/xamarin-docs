@@ -4,19 +4,11 @@ description: "This document describes how to use Xamarin.iOS to take advantage o
 ms.prod: xamarin
 ms.assetid: F1D90729-F85A-425B-B633-E2FA38FB4A0C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 9/4/2018
 ---
 # Notification management in Xamarin.iOS
-
-![Preview](~/media/shared/preview.png)
-
-> [!WARNING]
-> Xamarin's support for the iOS 12, tvOS 12, and watchOS 5 SDKs distributed
-> with Xcode 10 is currently in preview, which means that that it may
-> contain bugs, is not feature complete, and may change. Use it for
-> experimentation only.
 
 In iOS 12, the operating system can deep link from Notification Center
 and the Settings app to an app's notification management screen. This
@@ -26,7 +18,7 @@ notifications the app sends.
 ## Sample app: RedGreenNotifications
 
 To see an example of how notification management works, take a look at the
-[RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications) 
+[RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications)
 sample app.
 
 This sample app sends two types of notifications – red and green – and
@@ -39,9 +31,9 @@ Code snippets in this guide come from this sample app.
 In the sample app, `ManageNotificationsViewController` defines a user
 interface that allows users to independently enable and disable red
 notifications and green notifications. It is a standard
-[`UIViewController`](https://developer.xamarin.com/api/type/UIKit.UIViewController/)
+[`UIViewController`](xref:UIKit.UIViewController)
 containing a
-[`UISwitch`](https://developer.xamarin.com/api/type/UIKit.UISwitch/) for
+[`UISwitch`](xref:UIKit.UISwitch) for
 each notification type. Toggling the switch for either type of
 notification saves, in user defaults, the user's preference for that
 type of notification:
@@ -59,8 +51,8 @@ partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
 > the toggles for the individual notification types. To do this, the
 > notification management screen:
 >
-> - Calls [`UNUserNotificationCenter.Current.GetNotificationSettingsAsync`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync()/)
-> and examines the [`AuthorizationStatus`](https://developer.xamarin.com/api/property/UserNotifications.UNNotificationSettings.AuthorizationStatus/)
+> - Calls [`UNUserNotificationCenter.Current.GetNotificationSettingsAsync`](xref:UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync)
+> and examines the [`AuthorizationStatus`](xref:UserNotifications.UNNotificationSettings.AuthorizationStatus)
 > property.
 > - Hides the toggles for the individual notification types if notifications
 > have been completely disabled for the app.
@@ -92,7 +84,7 @@ app. To facilitate this, an app must:
 `UNAuthorizationOptions.ProvidesAppNotificationSettings` to the app's
 notification authorization request.
 - Implement the `OpenSettings` method from
-[`IUNUserNotificationCenterDelegate`](https://developer.xamarin.com/api/type/UserNotifications.IUNUserNotificationCenterDelegate/).
+[`IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate).
 
 ### Authorization request
 

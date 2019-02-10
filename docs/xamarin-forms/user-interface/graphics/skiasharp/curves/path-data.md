@@ -4,12 +4,14 @@ description: "This article explains how to define SkiaSharp paths using text str
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/24/2017
 ---
 
 # SVG Path Data in SkiaSharp
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _Define paths using text strings in the Scalable Vector Graphics format_
 
@@ -281,7 +283,7 @@ public class PathDataCatPage : ContentPage
 }
 ```
 
-Here's the program running on all three platforms:
+Here's the program running:
 
 [![](path-data-images/pathdatacat-small.png "Triple screenshot of the Path Data Cat page")](path-data-images/pathdatacat-large.png#lightbox "Triple screenshot of the Path Data Cat page")
 

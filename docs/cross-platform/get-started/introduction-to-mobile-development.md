@@ -92,13 +92,11 @@ applications are built against the Silverlight/Moonlight .NET Profile. In fact,
 the Xamarin Mobile profile is equivalent to the Silverlight 4.0 profile with a
 bunch of BCL classes added back in.
 
-For a full list of available assemblies and classes, see the [Xamarin.iOS Assembly List](~/cross-platform/internals/available-assemblies.md) and the [Xamarin.Android Assembly List](~/cross-platform/internals/available-assemblies.md)
+For a full list of available assemblies and classes, see the [Xamarin.iOS Assembly List](~/cross-platform/internals/available-assemblies.md?context=xamarin/ios) and the [Xamarin.Android Assembly List](~/cross-platform/internals/available-assemblies.md?context=xamarin/android)
 
 In addition to the BCL, these .dlls include wrappers for nearly the entire
 iOS SDK and Android SDK that allows the underlying SDK APIs to be invoked
 directly from C#.
-
-
 
 ### Application Output
 
@@ -106,8 +104,6 @@ When Xamarin applications are compiled, the result is an Application Package,
 either an .app file in iOS, or .apk file in Android. These files are
 indistinguishable from application packages built with the platform's default
 IDEs and are deployable in the exact same way.
-
-
 
 ## Getting Started
 
@@ -119,22 +115,15 @@ The next step is to start building the app using one of these guides:
 
 ![](introduction-to-mobile-development-images/ios.png "Hello, iOS")
 
-
 * [**Hello, Android**](~/android/get-started/hello-android/index.md)
 
 ![](introduction-to-mobile-development-images/android.png "Hello, Android")
 
-
-* [**Introduction to Xamarin.Forms**](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
-
-
-
-
+* [**Get Started with Xamarin.Forms**](~/get-started/index.md)
 
 ## Summary
 
-This document has merely introduced the Xamarin platform. The real fun starts when you get your first app up-and-running. Check out the [Hello, iOS](~/ios/get-started/hello-ios/index.md), [Hello, Android](~/android/get-started/hello-android/index.md), and [Introduction to Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md) guides to begin.
-
+This document has merely introduced the Xamarin platform. The real fun starts when you get your first app up-and-running. Check out the [Hello, iOS](~/ios/get-started/hello-ios/index.md), [Hello, Android](~/android/get-started/hello-android/index.md), and [Get Started with Xamarin.Forms](~/get-started/index.md) guides to begin.
 
 ## Related Links
 

@@ -4,8 +4,8 @@ description: "This walkthrough provides a step-by-step explanation of how to use
 ms.prod: xamarin
 ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/12/2018
 ---
 
@@ -160,7 +160,7 @@ before it can receive notifications from Google Cloud Messaging:
     GCM still uses `c2dm` in many of its permission strings.) 
 
 -   `android.permission.WAKE_LOCK` &ndash; (Optional) Prevents the 
-    device CPU from from going to sleep while listening for a message. 
+    device CPU from going to sleep while listening for a message. 
 
 -   `android.permission.INTERNET` &ndash; Grants internet access so the 
     client app can communicate with GCM. 
@@ -873,7 +873,7 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 In addition, you should notice that a new notification icon has 
 appeared in the notification tray: 
 
-[![Notiication icon appears on device](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
+[![Notification icon appears on device](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
 
 When you open the notification tray to view notifications, you should see our
 remote notification:
@@ -884,7 +884,7 @@ Congratulations, your app has received its first remote notification!
 
 Note that GCM messages will no longer be received if the app is 
 force-stopped. To resume notifications after a force-stop, the app must 
-be manully restarted. For more information about this Android policy, see 
+be manually restarted. For more information about this Android policy, see 
 [Launch controls on stopped applications](https://developer.android.com/about/versions/android-3.1.html#launchcontrols) 
 and this 
 [stack overflow post](http://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267). 

@@ -4,14 +4,16 @@ description: "The Sms class in Xamarin.Essentials enables an application to open
 ms.assetid: 81A757F2-6F2A-458F-B9BE-770ADEBFAB58
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
+ms.date: 11/04/2018
 ---
 
 # Xamarin.Essentials: SMS
 
-![Pre-release NuGet](~/media/shared/pre-release.png)
-
 The **Sms** class enables an application to open the default SMS application with a specified message to send to a recipient.
+
+## Get started
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## Using Sms
 
@@ -30,7 +32,31 @@ public class SmsTest
     {
         try
         {
-            var message = new SmsMessage(messageText, recipient);
+            var message = new SmsMessage(messageText, new []{ recipient });
+            await Sms.ComposeAsync(message);
+        }
+        catch (FeatureNotSupportedException ex)
+        {
+            // Sms is not supported on this device.
+        }
+        catch (Exception ex)
+        {
+            // Other error has occurred.
+        }
+    }
+}
+```
+
+Additionally, you can pass in multiple receipients to a `SmsMessage`:
+
+```csharp
+public class SmsTest
+{
+    public async Task SendSms(string messageText, string[] recipients)
+    {
+        try
+        {
+            var message = new SmsMessage(messageText, recipients);
             await Sms.ComposeAsync(message);
         }
         catch (FeatureNotSupportedException ex)

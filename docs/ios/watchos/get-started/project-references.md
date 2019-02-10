@@ -4,8 +4,8 @@ description: "This document describes the relationship between an iOS app, a wat
 ms.prod: xamarin
 ms.assetid: C366E062-C33D-406A-B3FF-CBE82E5D1E7E
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 09/13/2016
 ---
 
@@ -69,11 +69,11 @@ This screenshot
 	is the **Watch Extension's** Info.plist file, showing the
 	**Watch App's** identifier as well:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 	
 ![](project-references-images/infoplist-extension.png "This screenshot is the Watch Extension's Info.plist file")
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 	
 ![](project-references-images/infoplist-extension-vs.png "This screenshot is the Watch Extension's Info.plist file")
 

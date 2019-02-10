@@ -3,8 +3,8 @@ title: "Using the MonoGame Pipeline Tool"
 description: "The MonoGame Pipeline Tool is used to create and manage MonoGame content projects. The files in content projects are processed by the MonoGame Pipeline tool and outputted as .xnb files for use in CocosSharp and MonoGame applications."
 ms.prod: xamarin
 ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/27/2017
 ---
 
@@ -79,7 +79,7 @@ Let’s look at some of the most important options for the content project.
 
 ### Output folder
 
-This is the folder (relative to the content project itself) where the output **.xnb** files will be saved. To keep things simple, we’ll use the same folder to hold our input and output files. In other words we’ll change the **Output Folder** to be **.\** :
+This is the folder (relative to the content project itself) where the output **.xnb** files will be saved. To keep things simple, we’ll use the same folder to hold our input and output files. In other words we’ll change the **Output Folder** to be **.\\** :
 
 ![](walkthrough-images/image10.png "")
 

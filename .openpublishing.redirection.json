@@ -163,7 +163,122 @@
     {
       "source_path": "docs/android/troubleshooting/questions/install-gps.md",
       "redirect_url": "/xamarin/android/get-started/installation/android-emulator/"
-    }
+    },
+    {
+      "source_path": "docs/android/troubleshooting/questions/enable-axml-intellisense.md",
+      "redirect_url": "/xamarin/android/troubleshooting/questions/"
+    },
+    {
+      "source_path": "docs/xamarin-forms/app-fundamentals/accessibility/setting-accessibility-values.md",
+      "redirect_url": "/xamarin/xamarin-forms/app-fundamentals/accessibility/automation-properties"
+    },
+    {
+      "source_path": "docs/tools/workbooks/samples/index.md",
+      "redirect_url": "/xamarin/tools/workbooks/"
+    },
+    {
+      "source_path": "docs/tools/workbooks/samples/tinyrenderer.md",
+      "redirect_url": "/xamarin/tools/workbooks/"
+    },
+    {
+      "source_path": "docs/essentials/data-transfer.md",
+      "redirect_url": "/xamarin/essentials/share/"
+    },
+    {
+      "source_path": "docs/essentials/power.md",
+      "redirect_url": "/xamarin/essentials/battery/"
+    },
+    {
+      "source_path": "docs/essentials/screen-lock.md",
+      "redirect_url": "/xamarin/essentials/device-display/"
+    },
+    {
+      "source_path": "docs/xamarin-forms/platform/deep-linking.md",
+      "redirect_url": "/xamarin/xamarin-forms/app-fundamentals/deep-linking"
+    },
+    {
+      "source_path": "docs/xamarin-forms/platform/platform-specifics/ios.md",
+      "redirect_url": "/xamarin/xamarin-forms/platform/ios"
+    },
+    {
+      "source_path": "docs/xamarin-forms/platform/platform-specifics/android.md",
+      "redirect_url": "/xamarin/xamarin-forms/platform/android"
+    },
+    {
+      "source_path": "docs/xamarin-forms/platform/platform-specifics/windows.md",
+      "redirect_url": "/xamarin/xamarin-forms/platform/windows"
+    },
+    {
+      "source_path": "docs/xamarin-forms/platform/platform-specifics/creating/index.md",
+      "redirect_url": "/xamarin/xamarin-forms/platform/platform-specifics"
+    },
+    {
+      "source_path": "docs/xamarin-forms/platform/plugins.md",
+      "redirect_url": "/xamarin/essentials"
+    },	
+    {
+      "source_path": "docs/xamarin-forms/platform/gtk.md",
+      "redirect_url": "/xamarin/xamarin-forms/platform/other/gtk"
+    },
+    {
+      "source_path": "docs/xamarin-forms/platform/mac.md",
+      "redirect_url": "/xamarin/xamarin-forms/platform/other/mac"
+    },
+    {
+      "source_path": "docs/xamarin-forms/platform/tizen.md",
+      "redirect_url": "/xamarin/xamarin-forms/platform/other/tizen"
+    },
+    {
+      "source_path": "docs/xamarin-forms/platform/wpf.md",
+      "redirect_url": "/xamarin/xamarin-forms/platform/other/wpf"
+    },
+    {
+      "source_path": "docs/xamarin-forms/platform/android/appcompat.md",
+      "redirect_url": "/xamarin/xamarin-forms/platform/android/appcompat-material-design"
+    },
+    {
+      "source_path": "docs/xamarin-forms/platform/ios/theme.md",
+      "redirect_url": "/xamarin/xamarin-forms/platform/ios/formatting"
+    },
+    {
+      "source_path": "docs/xamarin-forms/get-started/index.md",
+      "redirect_url": "/xamarin/get-started"
+    },	
+    {
+      "source_path": "docs/xamarin-forms/get-started/installation.md",
+      "redirect_url": "/xamarin/get-started/installation"
+    },
+    {
+      "source_path": "docs/xamarin-forms/get-started/first-app/index.md",
+      "redirect_url": "/xamarin/get-started/first-app"
+    },
+    {
+      "source_path": "docs/xamarin-forms/get-started/hello-xamarin-forms/index.md",
+      "redirect_url": "/xamarin/get-started"
+    },	
+    {
+      "source_path": "docs/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md",
+      "redirect_url": "/xamarin/get-started/quickstarts/single-page"
+    },	
+    {
+      "source_path": "docs/xamarin-forms/get-started/hello-xamarin-forms/deepdive.md",
+      "redirect_url": "/xamarin/get-started/quickstarts/deepdive"
+    },
+    {
+      "source_path": "docs/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/index.md",
+      "redirect_url": "/xamarin/get-started"
+    },
+    {
+      "source_path": "docs/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md",
+      "redirect_url": "/xamarin/get-started/quickstarts/multi-page"
+    },	
+    {
+      "source_path": "docs/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/deepdive.md",
+      "redirect_url": "/xamarin/get-started/quickstarts/deepdive"
+    },
+    {
+      "source_path": "docs/xamarin-forms/get-started/introduction-to-xamarin-forms.md",
+      "redirect_url": "/xamarin/get-started/quickstarts/deepdive"
+    }	
   ]
 }
-

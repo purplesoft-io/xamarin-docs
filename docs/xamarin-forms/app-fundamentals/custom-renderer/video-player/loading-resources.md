@@ -11,13 +11,15 @@ ms.date: 02/12/2018
 
 # Loading application resource videos
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+
 The custom renderers for the `VideoPlayer` view are capable of playing video files that have been embedded in the individual platform projects as application resources. However, the current version of `VideoPlayer` cannot access resources embedded in a .NET Standard library.
 
 To load these resources, create an instance of `ResourceVideoSource` by setting the `Path` property to the filename (or the folder and filename) of the resource. Alternatively, you can call the static `VideoSource.FromResource` method to reference the resource. Then, set the `ResourceVideoSource` object to the `Source` property of `VideoPlayer`.
 
 ## Storing the video files
 
-Storing a video file in the platform project is different for the three platforms:
+Storing a video file in the platform project is different for each platform.
 
 ### iOS video resources
 
@@ -59,7 +61,7 @@ namespace FormsVideoLibrary.iOS
             {
                 string path = (Element.Source as ResourceVideoSource).Path;
 
-                if (!String.IsNullOrWhitespace(path))
+                if (!String.IsNullOrWhiteSpace(path))
                 {
                     string directory = Path.GetDirectoryName(path);
                     string filename = Path.GetFileNameWithoutExtension(path);
@@ -166,9 +168,9 @@ The **Play Video Resource** page in the **VideoPlayerDemos** solution uses the `
 </ContentPage>
 ```
 
-If the iOS resource is stored in the **Resources** folder, and if the UWP resource is stored in the root folder of the project, you can use the same filename for the three platforms. If that is the case, then you can set that name directly to the `Source` property of `VideoPlayer`.
+If the iOS resource is stored in the **Resources** folder, and if the UWP resource is stored in the root folder of the project, you can use the same filename for each platform. If that is the case, then you can set that name directly to the `Source` property of `VideoPlayer`.
 
-Here's that page running on the three platforms:
+Here's that page running:
 
 [![Play Video Resource](loading-resources-images/playvideoresource-small.png "Play Video Resource")](loading-resources-images/playvideoresource-large.png#lightbox "Play Video Resource")
 

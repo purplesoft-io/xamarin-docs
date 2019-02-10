@@ -5,12 +5,10 @@ ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
-ms.date: 08/08/2018
+ms.date: 11/04/2018
 ---
 
 # Get Started with Xamarin.Essentials
-
-![Pre-release NuGet](~/media/shared/pre-release.png)
 
 Xamarin.Essentials provides a single cross-platform API that works with any iOS, Android, or UWP application that can be accessed from shared code no matter how the user interface is created.
 
@@ -38,15 +36,9 @@ Xamarin.Essentials is available as a NuGet package that can be added to any exis
 
     In the Solution Explorer panel, right click on the solution name and select **Manage NuGet Packages**. Search for **Xamarin.Essentials** and install the package into **ALL** projects including Android, iOS, UWP, and .NET Standard libraries.
 
-    > [!TIP]
-    > Check the **Include prerelease** box while the [**Xamarin.Essentials** NuGet](https://www.nuget.org/packages/Xamarin.Essentials) is in preview.
-
     # [Visual Studio for Mac](#tab/macos)
 
     In the Solution Explorer panel, right click on the project name and select **Add > Add NuGet Packages...**. Search for **Xamarin.Essentials** and install the package into **ALL** projects including Android, iOS, and .NET Standard libraries.
-
-    > [!TIP]
-    > Check the **Show pre-release packages** box while the [**Xamarin.Essentials** NuGet](https://www.nuget.org/packages/Xamarin.Essentials) is in preview.
 
     -----
 
@@ -61,7 +53,7 @@ Xamarin.Essentials is available as a NuGet package that can be added to any exis
     # [Android](#tab/android)
 
     Xamarin.Essentials supports a minimum Android version of 4.4, corresponding to API level 19, but the target Android version for compiling must be 8.1, corresponding to API level 27. (In Visual Studio, these two versions are set in the Project Properties dialog for the Android project, in the Android Manifest tab. In Visual Studio for Mac, they're set in the Project Options dialog for the Android project, in the Android Application tab.) 
-    
+
     Xamarin.Essentials installs version 27.0.2.1 of the Xamarin.Android.Support libraries that it requires. Any other Xamarin.Android.Support libraries that your application requires should also be updated to version 27.0.2.1 using the NuGet package manager. All Xamarin.Android.Support libraries used by your application should be the same, and should be at least version 27.0.2.1. Refer to the [troubleshooting page](troubleshooting.md) if you have issues adding the Xamarin.Essentials NuGet or updating NuGets in your solution.
 
     In the Android project's `MainLauncher` or any `Activity` that is launched Xamarin.Essentials must be initialized in the `OnCreate` method:
@@ -70,7 +62,7 @@ Xamarin.Essentials is available as a NuGet package that can be added to any exis
     protected override void OnCreate(Bundle savedInstanceState) {
         //...
         base.OnCreate(savedInstanceState);
-        Xamarin.Essentials.Platform.Init(this, savedInstanceState); // add this line to your code
+        Xamarin.Essentials.Platform.Init(this, savedInstanceState); // add this line to your code, it may also be called: bundle
         //...
     ```
 
@@ -103,8 +95,8 @@ Xamarin.Essentials is available as a NuGet package that can be added to any exis
 
 ## Other Resources
 
-We recommend developers new to Xamarin visit [Getting Started with Xamarin Development](~/cross-platform/getting-started/index.md).
+We recommend developers new to Xamarin visit [getting started with Xamarin development](~/cross-platform/getting-started/index.md).
 
-Visit the [Xamarin.Essentials GitHub Repository](http://github.com/xamarin/Essentials) to see the current source code, what is coming next, run samples, and close the repository. Community contributions are welcome!
+Visit the [Xamarin.Essentials GitHub Repository](http://github.com/xamarin/Essentials) to see the current source code, what is coming next, run samples, and clone the repository. Community contributions are welcome!
 
 Browse through the [API documentation](xref:Xamarin.Essentials) for every feature of Xamarin.Essentials.

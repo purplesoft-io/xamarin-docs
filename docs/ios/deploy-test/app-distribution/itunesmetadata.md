@@ -4,8 +4,8 @@ description: "This article covers the iTunesMetadata.plist file used to provide 
 ms.prod: xamarin
 ms.assetid: 70676eba-6a99-4a3a-bccc-84359fe9c2c3
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
 ---
 
@@ -15,13 +15,13 @@ _This article covers the iTunesMetadata.plist file used to provide information t
 
 When an iOS application is created in iTune Connect (either for sale or free release from the iTunes App Store), the developer can specify information such as the application's genre, sub genre, copyright notice, supported iOS devices and required device capabilities. For iOS applications that are delivered either to testers or Enterprise user via ad hoc distribution, this information is missing.
 
-To supply the missing information to an Ad Hoc distribution, an optional `iTunesMetadata.plist` file can be created and included in the applications IPA file. This plist file is a specially formatted XML file (see Apple's [Propert List Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html) for more information) that contains key/value pairs defining information about a given iOS application.
+To supply the missing information to an Ad Hoc distribution, an optional `iTunesMetadata.plist` file can be created and included in the applications IPA file. This plist file is a specially formatted XML file (see Apple's [Property List Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html) for more information) that contains key/value pairs defining information about a given iOS application.
 
 <a name="iTunesMetadata_contents" />
 
 ## The iTunesMetadata.plist Contents
 
-The following is an example of of typical `iTunesMetadata.plist` file used to define the iTunes information for an Ad Hoc distribution:
+The following is an example of typical `iTunesMetadata.plist` file used to define the iTunes information for an Ad Hoc distribution:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -280,7 +280,7 @@ The following keys are included in all `iTunesMetadata.plist` files for iOS appl
 
 ## Creating an iTunesMetadata.plist File
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
  When working with an `iTunesMetadata.plist` file in Visual Studio for Mac, you have two options:
 
@@ -332,7 +332,7 @@ Do the following:
 6. In the Open File Dialog, select the `iTunesMetadata.plist` file that was created above and click the **OK** button.
 7. Leave the **Build Action** of this file set to **None**.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 The Xamarin plugin for Visual Studio only supports a visual editor for `Info.plist` and `Entitlement.plist` files, so you'll need to create your `iTunesMetadata.plist` file in a standard text editor and manually include it in your Xamarin.iOS project.
 

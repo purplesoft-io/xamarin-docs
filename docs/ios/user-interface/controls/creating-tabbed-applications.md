@@ -4,8 +4,8 @@ description: "This document describes iOS tab bar controllers and how to use the
 ms.prod: xamarin
 ms.assetid: 7C772899-2900-F139-D642-F3C4F3F14DDC
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
 ---
 
@@ -100,31 +100,31 @@ using System;
 using UIKit;
 
 namespace TabbedApplication {
-        public class TabController : UITabBarController {
+    public class TabController : UITabBarController {
 
-                UIViewController tab1, tab2, tab3;
+        UIViewController tab1, tab2, tab3;
 
-                public TabController ()
-                {
-						tab1 = new UIViewController();
-                        tab1.Title = "Green";
-                        tab1.View.BackgroundColor = UIColor.Green;
+        public TabController ()
+        {
+            tab1 = new UIViewController();
+            tab1.Title = "Green";
+            tab1.View.BackgroundColor = UIColor.Green;
 
-                        tab2 = new UIViewController();
-                        tab2.Title = "Orange";
-                        tab2.View.BackgroundColor = UIColor.Orange;
+            tab2 = new UIViewController();
+            tab2.Title = "Orange";
+            tab2.View.BackgroundColor = UIColor.Orange;
 
-                        tab3 = new UIViewController();
-                        tab3.Title = "Red";
-                        tab3.View.BackgroundColor = UIColor.Red;
+            tab3 = new UIViewController();
+            tab3.Title = "Red";
+            tab3.View.BackgroundColor = UIColor.Red;
 
-                        var tabs = new UIViewController[] {
-                                tab1, tab2, tab3
-                        };
+            var tabs = new UIViewController[] {
+                tab1, tab2, tab3
+            };
 
-                        ViewControllers = tabs;
-                }
+            ViewControllers = tabs;
         }
+    }
 }
 ```
 
@@ -145,23 +145,23 @@ following code for the `AppDelegate`:
 
 ```csharp
 [Register ("AppDelegate")]
-        public partial class AppDelegate : UIApplicationDelegate
-        {
-                UIWindow window;
-                TabController tabController;
-
-                public override bool FinishedLaunching (UIApplication app, NSDictionary options)
-                {
-                        window = new UIWindow (UIScreen.MainScreen.Bounds);
-
-                        var tabController = new TabController ();
-                        window.RootViewController = tabController;
-
-                        window.MakeKeyAndVisible ();
-            
-                        return true;
-                }
-        }
+public partial class AppDelegate : UIApplicationDelegate
+{
+    UIWindow window;
+    TabController tabController;
+    
+    public override bool FinishedLaunching (UIApplication app, NSDictionary options)
+    {
+        window = new UIWindow (UIScreen.MainScreen.Bounds);
+        
+        tabController = new TabController ();
+        window.RootViewController = tabController;
+        
+        window.MakeKeyAndVisible ();
+        
+        return true;
+    }
+}
 ```
 
 If we run the application now, the `UITabBarController` will load
@@ -303,8 +303,8 @@ There are a few important steps to note when adding a Storyboard to a previously
 
 	```csharp
 	public override UIWindow Window {
-	  get;
-	  set;
+	    get;
+	    set;
 	}
 	```
 
@@ -355,9 +355,9 @@ We now need to tell the View Controller to hide the button when the event fires 
 
 ```csharp
 partial void InitialActionCompleted (UIButton sender)
-    {
-      aButton.Hidden = true;  
-    }
+{
+    aButton.Hidden = true;  
+}
 ```
 
 Save the file, and run the application. We should see screen one appear and the button disappear on Touch Up.
@@ -395,10 +395,9 @@ If we save and run the application now, we'll find that the button reappears whe
 ```csharp
 public override void ViewDidLoad ()
 {
-     if (ParentViewController != null){
-       aButton.Hidden = true;
-     }
-
+    if (ParentViewController != null){
+        aButton.Hidden = true;
+    }
 }
 ```
 

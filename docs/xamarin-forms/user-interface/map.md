@@ -11,6 +11,8 @@ ms.date: 04/27/2016
 
 # Xamarin.Forms Map
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/WorkingWithMaps/)
+
 _Xamarin.Forms uses the native map APIs on each platform._
 
 Xamarin.Forms.Maps uses the native map APIs on each platform. This provides a
@@ -35,7 +37,7 @@ Map functionality can be further enhanced by creating a [map custom renderer](~/
 
 ## Maps Initialization
 
-When adding maps to a Xamarin.Forms application, **Xamarin.Forms.Maps** is a a
+When adding maps to a Xamarin.Forms application, **Xamarin.Forms.Maps** is a
 separate NuGet package that you should add to every project in the solution.
 On Android, this also has a dependency on GooglePlayServices (another NuGet)
 which is downloaded automatically when you add Xamarin.Forms.Maps.
@@ -192,10 +194,10 @@ Valid `MapType` values are:
 
 ### Map Region and MapSpan
 
-As shown in the code snippet above, supplying a `MapSpan` instance to a map constructor sets the initial view (center point and zoom level) of the map when it is loaded. The `MoveToRegion` method on the map class can then be used to changed the position or zoom level of the map. There are two ways to create a new `MapSpan` instance:
+As shown in the code snippet above, supplying a `MapSpan` instance to a map constructor sets the initial view (center point and zoom level) of the map when it is loaded. The `MoveToRegion` method on the map class can then be used to change the position or zoom level of the map. There are two ways to create a new `MapSpan` instance:
 
 -  **MapSpan.FromCenterAndRadius()** - static method to create a span from a  `Position` and specifying a  `Distance` .
--  **new MapSpan ()** - constructor that uses a  `Position` and the degress of latitude and longitude to display.
+-  **new MapSpan ()** - constructor that uses a  `Position` and the degrees of latitude and longitude to display.
 
 
 To change the zoom level of the map without altering the location, create a new `MapSpan` using the current location from the `VisibleRegion.Center` property of the map control. A `Slider` could be used to control map zoom like this (however zooming directly in the map control cannot currently update the value of the slider):
@@ -226,7 +228,7 @@ var pin = new Pin {
 map.Pins.Add(pin);
 ```
 
- `PinType` can be set to one of the following values, which may affect the way the pin in rendered (depending on the platform):
+ `PinType` can be set to one of the following values, which may affect the way the pin is rendered (depending on the platform):
 
 -  Generic
 -  Place

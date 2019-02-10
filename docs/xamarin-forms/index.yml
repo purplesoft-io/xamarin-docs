@@ -14,45 +14,53 @@ abstract:
     items:
     - href: ~/xamarin-forms/samples/
       text: Xamarin.Forms Samples
-    - href: https://developer.xamarin.com/releases/xamarin-forms/
+    - href: https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/
       text: Release Notes
-    - href: https://developers.google.com/
-      text: Googles's Developer Documentation
-    - href: https://developer.apple.com/documentation/
-      text: Apple's Developer Documentation
     - href: /visualstudio/
-      text: Visual Studio 
+      text: Visual Studio
 sections:
 - title: Get Started
   items:
   - type: paragraph
-    text: Learn how to build your first Xamarin.Forms app with Xamarin and C#, targetting Android, iOS, and the Universal Windows Platform.
+    text: Learn how to build your first Xamarin.Forms app with Xamarin and C#, targeting Android, iOS, and the Universal Windows Platform.
   - type: list
     style: icon48
     items:
     - image:
         src: https://docs.microsoft.com/media/common/i_setup.svg
       text: Setup
-      href: ~/xamarin-forms/get-started/installation.md
+      href: ~/get-started/installation.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
+      text: First App
+      href: ~/get-started/first-app/index.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: Quickstart
-      href: ~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md
+      text: App Quickstart
+      href: ~/get-started/quickstarts/single-page.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: Multi-screen Apps
-      href: ~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md
+      text: Multi-page Quickstart
+      href: ~/get-started/quickstarts/multi-page.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
+      text: Local Database Quickstart
+      href: ~/get-started/quickstarts/database.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
+      text: Styling Quickstart
+      href: ~/get-started/quickstarts/styling.md
 - title: Guides
   items:
   - type: list
     style: cards
     className: cardsB
     items:
-    - href: ~/xamarin-forms/get-started/index.md
+    - href: ~/get-started/quickstarts/index.md
       html: Tutorials to get you up and running with Xamarin.Forms. Make sure everything is installed correctly, and build your first Xamarin.Forms apps.
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
-        href: ~/xamarin-forms/get-started/index.md
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
+        href: ~/get-started/quickstarts/index.md
       title: Getting Started
     - href: ~/xamarin-forms/xaml/
       html: Build user interfaces declaratively and share across mobile and desktop platforms.
@@ -81,7 +89,7 @@ sections:
     - href: ~/essentials/index.md?context=xamarin/xamarin-forms
       html: Cross-platform APIs for common tasks like file access, device info, hardware features, and more.
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_multi-connect.svg
+        src: https://docs.microsoft.com/media/common/i_multi-connect.svg
         href: ~/essentials/index.md?context=xamarin/xamarin-forms
       title: Xamarin.Essentials
     - href: ~/xamarin-forms/data-cloud/
@@ -99,7 +107,7 @@ sections:
     - href: ~/xamarin-forms/internals/
       html: Additional information about Xamarin.Forms internals and assistance with features like localization and accessibility.
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_config-tools.svg
+        src: https://docs.microsoft.com/media/common/i_config-tools.svg
         href: ~/xamarin-forms/internals/
       title: Advanced Concepts & Internals
 - title: Reference
@@ -113,6 +121,4 @@ sections:
     - title: Samples
       html: <p><a href="https://developer.xamarin.com/samples/xamarin-forms/all/">Xamarin.Forms Samples</a></p>
     - title: Books
-      html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">Creating Mobile Apps ebook</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">Enterprise Application Patterns ebook</a></p>
-    - title: Workbooks
-      html: <p><a href="https://developer.xamarin.com/workbooks#xamarin-forms">Xamarin.Forms Workbooks</a></p>
+      html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">Creating Mobile Apps ebook</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">Enterprise Application Patterns ebook</a></p><p><a href="~/xamarin-forms/user-interface/graphics/skiasharp/">SkiaSharp Graphics in Xamarin.Forms ebook</a></p>

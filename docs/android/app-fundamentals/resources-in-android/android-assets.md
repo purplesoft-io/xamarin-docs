@@ -3,8 +3,8 @@ title: "Using Android Assets"
 ms.prod: xamarin
 ms.assetid: 70ECDDC9-FA40-03B4-BF04-E7CFFFE4260D
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/13/2018
 ---
 
@@ -29,14 +29,14 @@ Assets go in the `Assets` folder of your project. Add a new text file
 to this folder called `read_asset.txt`. Place some text in it like "I
 came from an asset!".
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 Visual Studio should have set the **Build Action** for this file to
 **AndroidAsset**:
 
 ![Setting the build action to AndroidAsset](android-assets-images/asset-properties-vs.png) 
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac should have set the **Build Action** for this file to
 **AndroidAsset**:

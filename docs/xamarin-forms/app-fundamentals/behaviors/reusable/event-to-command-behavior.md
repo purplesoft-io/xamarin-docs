@@ -1,17 +1,19 @@
 ---
 title: "Reusable EventToCommandBehavior"
-description: "Behaviors can be used to associate commands with controls that were not designed to interact with commands. This article demonstrates using a Xamarin.Forms behavior to invoke a command when an event fires."
+description: "Behaviors can be used to associate commands with controls that were not designed to interact with commands. This article demonstrates creating and consuming a Xamarin.Forms behavior to invoke a command when an event fires."
 ms.prod: xamarin
 ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/06/2016
+ms.date: 11/09/2018
 ---
 
 # Reusable EventToCommandBehavior
 
-_Behaviors can be used to associate commands with controls that were not designed to interact with commands. This article demonstrates using a Xamarin.Forms behavior to invoke a command when an event fires._
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
+
+_Behaviors can be used to associate commands with controls that were not designed to interact with commands. This article demonstrates creating and consuming a Xamarin.Forms behavior to invoke a command when an event fires._
 
 ## Overview
 
@@ -20,12 +22,15 @@ The `EventToCommandBehavior` class is a reusable Xamarin.Forms custom behavior t
 The following behavior properties must be set to use the behavior:
 
 - **EventName** – the name of the event the behavior listens to.
-- **Command** – the **ICommand** to be executed. The behavior expects to find the `ICommand` instance on the [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) of the attached control, which may be inherited from a parent element.
+- **Command** – the `ICommand` to be executed. The behavior expects to find the `ICommand` instance on the [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) of the attached control, which may be inherited from a parent element.
 
 The following optional behavior properties can also be set:
 
 - **CommandParameter** – an `object` that will be passed to the command.
 - **Converter** – an [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) implementation that will change the format of the event argument data as it's passed between *source* and *target* by the binding engine.
+
+> [!NOTE]
+> The `EventToCommandBehavior` is a custom class that can be located in the [EventToCommand Behavior sample](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/), and is not part of Xamarin.Forms.
 
 ## Creating the Behavior
 
@@ -150,10 +155,14 @@ The `EventToCommandBehavior` class can be attached to the [`Behaviors`](xref:Xam
 
 ```xaml
 <ListView ItemsSource="{Binding People}">
-  <ListView.Behaviors>
-    <local:EventToCommandBehavior EventName="ItemSelected" Command="{Binding OutputAgeCommand}"
-                                  Converter="{StaticResource SelectedItemConverter}" />
-  </ListView.Behaviors>
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <TextCell Text="{Binding Name}" />
+        </DataTemplate>
+    </ListView.ItemTemplate>
+    <ListView.Behaviors>
+        <local:EventToCommandBehavior EventName="ItemSelected" Command="{Binding OutputAgeCommand}" Converter="{StaticResource SelectedItemConverter}" />
+    </ListView.Behaviors>
 </ListView>
 <Label Text="{Binding SelectedItemText}" />
 ```
@@ -161,16 +170,23 @@ The `EventToCommandBehavior` class can be attached to the [`Behaviors`](xref:Xam
 The equivalent C# code is shown in the following code example:
 
 ```csharp
-var listView = new ListView ();
-listView.SetBinding (ItemsView<Cell>.ItemsSourceProperty, "People");
-listView.Behaviors.Add (new EventToCommandBehavior {
-  EventName = "ItemSelected",
-  Command = ((HomePageViewModel)BindingContext).OutputAgeCommand,
-  Converter = new SelectedItemEventArgsToSelectedItemConverter ()
+var listView = new ListView();
+listView.SetBinding(ItemsView<Cell>.ItemsSourceProperty, "People");
+listView.ItemTemplate = new DataTemplate(() =>
+{
+    var textCell = new TextCell();
+    textCell.SetBinding(TextCell.TextProperty, "Name");
+    return textCell;
+});
+listView.Behaviors.Add(new EventToCommandBehavior
+{
+    EventName = "ItemSelected",
+    Command = ((HomePageViewModel)BindingContext).OutputAgeCommand,
+    Converter = new SelectedItemEventArgsToSelectedItemConverter()
 });
 
-var selectedItemLabel = new Label ();
-selectedItemLabel.SetBinding (Label.TextProperty, "SelectedItemText");
+var selectedItemLabel = new Label();
+selectedItemLabel.SetBinding(Label.TextProperty, "SelectedItemText");
 ```
 
 The `Command` property of the behavior is data bound to the `OutputAgeCommand` property of the associated ViewModel, while the `Converter` property is set to the `SelectedItemConverter` instance, which returns the [`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem) of the [`ListView`](xref:Xamarin.Forms.ListView) from the [`SelectedItemChangedEventArgs`](xref:Xamarin.Forms.SelectedItemChangedEventArgs).
@@ -185,9 +201,8 @@ The advantage of using this behavior to execute a command when an event fires, i
 
 This article demonstrated using a Xamarin.Forms behavior to invoke a command when an event fires. Behaviors can be used to associate commands with controls that were not designed to interact with commands.
 
-
 ## Related Links
 
 - [EventToCommand Behavior (sample)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
 - [Behavior](xref:Xamarin.Forms.Behavior)
-- [Behavior<T>](xref:Xamarin.Forms.Behavior`1)
+- [Behavior&lt;T&gt;](xref:Xamarin.Forms.Behavior`1)

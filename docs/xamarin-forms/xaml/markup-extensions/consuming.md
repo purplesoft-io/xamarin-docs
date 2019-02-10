@@ -4,27 +4,31 @@ description: "This article explains how to use Xamarin.Forms XAML markup extensi
 ms.prod: xamarin
 ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
-ms.date: 01/05/2018
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/01/2018
 ---
 
 # Consuming XAML Markup Extensions
 
-XAML markup extensions help enhance the power and flexibility of XAML by allowing element attributes to be set from a variety of sources. Several XAML markup extensions are part of the XAML 2009 specification. These appear in XAML files with the customary `x` namespace prefix, and are commonly referred to with this prefix. These are described in the sections below:
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
 
-- [`x:Static`](#static) &ndash; reference static properties, fields, or enumeration members.
-- [`x:Reference`](#reference) &ndash; reference named elements on the page.
-- [`x:Type`](#type) &ndash; set an attribute to a `System.Type` object.
-- [`x:Array`](#array) &ndash; construct an array of objects of a particular type.
-- [`x:Null`](#null) &ndash; set an attribute to a `null` value.
+XAML markup extensions help enhance the power and flexibility of XAML by allowing element attributes to be set from a variety of sources. Several XAML markup extensions are part of the XAML 2009 specification. These appear in XAML files with the customary `x` namespace prefix, and are commonly referred to with this prefix. This article discusses the following markup extensions:
+
+- [`x:Static`](#static) – reference static properties, fields, or enumeration members.
+- [`x:Reference`](#reference) – reference named elements on the page.
+- [`x:Type`](#type) – set an attribute to a `System.Type` object.
+- [`x:Array`](#array) – construct an array of objects of a particular type.
+- [`x:Null`](#null) – set an attribute to a `null` value.
+- [`OnPlatform`](#onplatform) – customize UI appearance on a per-platform basis.
+- [`OnIdiom`](#onidiom) – customize UI appearance based on the idiom of the device the application is running on.
 
 Additional XAML markup extensions have historically been supported by other XAML implementations, and are also supported by Xamarin.Forms. These are described more fully in other articles:
 
 - `StaticResource` &ndash; reference objects from a resource dictionary, as described in the article  [**Resource Dictionaries**](~/xamarin-forms/xaml/resource-dictionaries.md).
 - `DynamicResource` &ndash; respond to changes in objects in a resource dictionary, as described in the article [**Dynamic Styles**](~/xamarin-forms/user-interface/styles/dynamic.md).
 - `Binding` &ndash; establish a link between properties of two objects, as described in the article [**Data Binding**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
-- `TemplateBinding` &ndash; performs data binding from a control template, as discussed in the article [**Binding from a Control Template**](/guides/xamarin-forms/application-fundamentals/templates/control-templates/template-binding/).
+- `TemplateBinding` &ndash; performs data binding from a control template, as discussed in the article [**Binding from a Control Template**](~/xamarin-forms/app-fundamentals/templates/control-templates/template-binding.md).
 
 The [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) layout makes use of the custom markup extension [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression). This markup extension is described in the article [**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
 
@@ -130,7 +134,7 @@ The final example displays the `Device.RuntimePlatform` value. The `Environment.
 </Label>
 ```
 
-Here's the sample running on all three platforms:
+Here's the sample running:
 
 [![x:Static Demo](consuming-images/staticdemo-small.png "x:Static Demo")](consuming-images/staticdemo-large.png#lightbox "x:Static Demo")
 
@@ -174,7 +178,7 @@ The **x:Reference Demo** page shows two uses of `x:Reference` with data bindings
 </ContentPage>
 ```
 
-Both `x:Reference` expressions use the abbreviated version of the `ReferenceExtension` class name and eliminate the `Name=` part of the expression. In the first example, the `x:Reference` markup extension is embedded in the `Binding` markup extension. Notice that the `Source` and `StringFormat` settings are separated by commas. Here's the program running on all three platforms:
+Both `x:Reference` expressions use the abbreviated version of the `ReferenceExtension` class name and eliminate the `Name=` part of the expression. In the first example, the `x:Reference` markup extension is embedded in the `Binding` markup extension. Notice that the `Source` and `StringFormat` settings are separated by commas. Here's the program running:
 
 [![x:Reference Demo](consuming-images/referencedemo-small.png "x:Reference Demo")](consuming-images/referencedemo-large.png#lightbox "x:Reference Demo")
 
@@ -442,16 +446,95 @@ The **x:Null Demo** page illustrates one scenario when `x:Null` might be conveni
 
 Then you discover that for one of the `Label` elements, you want all the property settings in the implicit `Style` except for the `FontFamily`, which you want to be the default value. You could define another `Style` for that purpose but a simpler approach is simply to set the `FontFamily` property of the particular `Label` to `x:Null`, as demonstrated in the center `Label`.
 
-Here's the program running on the three platforms:
+Here's the program running:
 
 [![x:Null Demo](consuming-images/nulldemo-small.png "x:Null Demo")](consuming-images/nulldemo-large.png#lightbox "x:Null Demo")
 
 Notice that four of the `Label` elements have a serif font, but the center `Label` has the  default sans-serif font.
 
+<a name="onplatform" />
+
+## OnPlatform Markup Extension
+
+The `OnPlatform` markup extension allows you to customize UI appearance on a per-platform basis. It provides the same functionality as the [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) and [`On`](xref:Xamarin.Forms.On) classes, but with a more concise representation.
+
+The `OnPlatform` markup extension is supported by the [`OnPlatformExtension`](xref:Xamarin.Forms.Xaml.OnPlatformExtension) class, which defines the following properties:
+
+- `Default` of type `object`, that you set to a default value to be applied to the properties that represent platforms.
+- `Android` of type `object`, that you set to a value to be applied on Android.
+- `GTK` of type `object`, that you set to a value to be applied on GTK platforms.
+- `iOS` of type `object`, that you set to a value to be applied on iOS.
+- `macOS` of type `object`, that you set to a value to be applied on macOS.
+- `Tizen` of type `object`, that you set to a value to be applied on the Tizen platform.
+- `UWP` of type `object`, that you set to a value to be applied on the Universal Windows Platform.
+- `WPF` of type `object`, that you set to a value to be applied on the Windows Presentation Foundation platform.
+- `Converter` of type `IValueConverter`, that you set to an `IValueConverter` implementation.
+- `ConverterParameter` of type `object`, that you set to a value to pass to the `IValueConverter` implementation.
+
+> [!NOTE]
+> The XAML parser allows the [`OnPlatformExtension`](xref:Xamarin.Forms.Xaml.OnPlatformExtension) class to be abbreviated as `OnPlatform`.
+
+The `Default` property is the content property of `OnPlatformExtension`. Therefore, for XAML markup expressions expressed with curly braces, you can eliminate the `Default=` part of the expression provided that it's the first argument.
+
+> [!IMPORTANT]
+> The XAML parser expects that values of the correct type will be provided to properties consuming the `OnPlatform` markup extension. If type conversion is necessary, the `OnPlatform` markup extension will attempt to perform it using the default converters provided by Xamarin.Forms. However, there are some type conversions that can't be performed by the default converters and in these cases the `Converter` property should be set to an `IValueConverter` implementation.
+
+The **OnPlatform Demo** page shows how to use the `OnPlatform` markup extension:
+
+```xaml
+<BoxView Color="{OnPlatform Yellow, iOS=Red, Android=Green, UWP=Blue}"
+         WidthRequest="{OnPlatform 250, iOS=200, Android=300, UWP=400}"  
+         HeightRequest="{OnPlatform 250, iOS=200, Android=300, UWP=400}"
+         HorizontalOptions="Center" />
+```
+
+In this example, all three `OnPlatform` expressions use the abbreviated version of the `OnPlatformExtension` class name. The three `OnPlatform` markup extensions set the [`Color`](xref:Xamarin.Forms.BoxView.Color), [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest), and [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) properties of the [`BoxView`](xref:Xamarin.Forms.BoxView) to different values on iOS, Android, and UWP. The markup extensions also provide default values for these properties on the platforms that aren't specified, while eliminating the `Default=` part of the expression. Notice that the markup extension properties that are set are separated by commas.
+
+Here's the program running:
+
+[![OnPlatform Demo](consuming-images/onplatformdemo-small.png "OnPlatform Demo")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform Demo")
+
+<a name="onidiom" />
+
+## OnIdiom Markup Extension
+
+The `OnIdiom` markup extensions allows you to customize UI appearance based on the idiom of the device the application is running on. It's supported by the [`OnIdiomExtension`](xref:Xamarin.Forms.Xaml.OnIdiomExtension) class, which defines the following properties:
+
+- `Default` of type `object`, that you set to a default value to be applied to the properties that represent device idioms.
+- `Phone` of type `object`, that you set to a value to be applied on phones.
+- `Tablet` of type `object`, that you set to a value to be applied on tablets.
+- `Desktop` of type `object`, that you set to a value to be applied on desktop platforms.
+- `TV` of type `object`, that you set to a value to be applied on TV platforms.
+- `Watch` of type `object`, that you set to a value to be applied on Watch platforms.
+- `Converter` of type `IValueConverter`, that you set to an `IValueConverter` implementation.
+- `ConverterParameter` of type `object`, that you set to a value to pass to the `IValueConverter` implementation.
+
+> [!NOTE]
+> The XAML parser allows the [`OnIdiomExtension`](xref:Xamarin.Forms.Xaml.OnIdiomExtension) class to be abbreviated as `OnIdiom`.
+
+The `Default` property is the content property of `OnIdiomExtension`. Therefore, for XAML markup expressions expressed with curly braces, you can eliminate the `Default=` part of the expression provided that it's the first argument.
+
+> [!IMPORTANT]
+> The XAML parser expects that values of the correct type will be provided to properties consuming the `OnIdiom` markup extension. If type conversion is necessary, the `OnIdiom` markup extension will attempt to perform it using the default converters provided by Xamarin.Forms. However, there are some type conversions that can't be performed by the default converters and in these cases the `Converter` property should be set to an `IValueConverter` implementation.
+
+The **OnIdiom Demo** page shows how to use the `OnIdiom` markup extension:
+
+```xaml
+<BoxView Color="{OnIdiom Yellow, Phone=Red, Tablet=Green, Desktop=Blue}"
+         WidthRequest="{OnIdiom 100, Phone=200, Tablet=300, Desktop=400}"
+         HeightRequest="{OnIdiom 100, Phone=200, Tablet=300, Desktop=400}"
+         HorizontalOptions="Center" />
+```
+
+In this example, all three `OnIdiom` expressions use the abbreviated version of the `OnIdiomExtension` class name. The three `OnIdiom` markup extensions set the [`Color`](xref:Xamarin.Forms.BoxView.Color), [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest), and [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) properties of the [`BoxView`](xref:Xamarin.Forms.BoxView) to different values on the phone, tablet, and desktop idioms. The markup extensions also provide default values for these properties on the idioms that aren't specified, while eliminating the `Default=` part of the expression. Notice that the markup extension properties that are set are separated by commas.
+
+Here's the program running:
+
+[![OnIdiom Demo](consuming-images/onidiomdemo-small.png "OnIdiom Demo")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom Demo")
+
 ## Define Your Own Markup Extensions
 
 If you've encountered a need for a XAML markup extension that isn't available in Xamarin.Forms, you can [create your own](creating.md).
-
 
 ## Related Links
 

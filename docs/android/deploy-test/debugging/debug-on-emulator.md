@@ -4,8 +4,8 @@ description: "This guide explains how to launch and debug apps in Visual Studio 
 ms.prod: xamarin
 ms.assetid: AEA165A4-D81A-411B-91DF-2DED2EED27B5
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/22/2018
 ---
 
@@ -28,7 +28,7 @@ virtual devices, see
 
 ## Using a Pre-Configured Virtual Device
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 Visual Studio includes pre-configured virtual devices that appear in
 the device drop-down menu. For example, in the following Visual Studio
@@ -70,7 +70,7 @@ Before you can configure virtual devices for a new API level, you must
 first install the corresponding system images for that API level (see
 [Setting up the Android SDK for Xamarin.Android](~/android/get-started/installation/android-sdk.md)).
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac includes pre-configured virtual devices that
 appear in the device drop-down menu. For example, in the following
@@ -111,11 +111,11 @@ debug). After you have chosen a virtual device from the device
 drop-down menu, select either **Debug** or **Release** mode, then click
 the Play button to run the application:
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 [![Debug and Release modes, Play button](debug-on-emulator-images/win/17-debug-release-sml.png)](debug-on-emulator-images/win/17-debug-release.png#lightbox)
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 [![Debug and Release modes, Play button](debug-on-emulator-images/mac/16-debug-release-sml.png)](debug-on-emulator-images/mac/16-debug-release.png#lightbox)
 
@@ -132,7 +132,7 @@ below. In this example, the emulator is running a blank app called
 The emulator may be left running: it is not necessary to shut it down
 and wait for it to restart each time the app is launched. The first
 time a Xamarin.Android app is run in the emulator, the Xamarin.Android
-shared runtime for the targetted API level is installed, followed by
+shared runtime for the targeted API level is installed, followed by
 the application. The runtime installation may take a few moments, so
 please be patient. Installation of the runtime takes place only when
 the first Xamarin.Android app is deployed to the emulator &ndash;

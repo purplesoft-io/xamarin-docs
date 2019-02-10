@@ -4,8 +4,8 @@ description: "This document describes how to create a custom control and use it 
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
 ---
 
@@ -20,7 +20,7 @@ This guide assumes a familiarity with the contents covered in the [Getting Start
 ## Walkthrough
 
 > [!IMPORTANT]
-> Starting in Xamarin.Studio 5.5, the way in which custom controls are created is slightly different to earlier versions. To create a custom control, either the `IComponent` interface is required (with the associated implementation methods) or the class can be be annotated with `[DesignTimeVisible(true)]`. The latter method is being used in the following walkthrough example.
+> Starting in Xamarin.Studio 5.5, the way in which custom controls are created is slightly different to earlier versions. To create a custom control, either the `IComponent` interface is required (with the associated implementation methods) or the class can be annotated with `[DesignTimeVisible(true)]`. The latter method is being used in the following walkthrough example.
 
 
 1. Create a new solution from the **iOS > App > Single View Application > C#** template, name it `ScratchTicket`, and continue through the New Project wizard:

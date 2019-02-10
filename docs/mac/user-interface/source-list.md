@@ -4,8 +4,8 @@ description: "This article covers working with source lists in a Xamarin.Mac app
 ms.prod: xamarin
 ms.assetid: 651A3649-5AA8-4133-94D6-4873D99F7FCC
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
 ---
 
@@ -13,7 +13,7 @@ ms.date: 03/14/2017
 
 _This article covers working with source lists in a Xamarin.Mac application. It describes creating and maintaining source lists in Xcode and Interface Builder and interacting with them in C# code._
 
-When working with C# and .NET in a Xamarin.Mac application, you have access to the same Source Lists that a developer working in in *Objective-C* and *Xcode* does. Because Xamarin.Mac integrates directly with Xcode, you can use Xcode's _Interface Builder_ to create and maintain your Source Lists (or optionally create them directly in C# code).
+When working with C# and .NET in a Xamarin.Mac application, you have access to the same Source Lists that a developer working in *Objective-C* and *Xcode* does. Because Xamarin.Mac integrates directly with Xcode, you can use Xcode's _Interface Builder_ to create and maintain your Source Lists (or optionally create them directly in C# code).
 
 A Source List is a special type of Outline View used to show the source of an action, like the side bar in Finder or iTunes.
 

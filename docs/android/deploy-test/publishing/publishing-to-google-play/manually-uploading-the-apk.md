@@ -3,8 +3,8 @@ title: "Manually Uploading the APK"
 ms.prod: xamarin
 ms.assetid: 1309C251-ABF0-4412-B1F5-200DC8321A9D
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/15/2018
 ---
 
@@ -171,7 +171,7 @@ click **set up a merchant account** and follow the instructions.
 ### Manage Countries
 
 The next section, **Manage Countries**, provides control over what
-countries an app may be distibuted to:
+countries an app may be distributed to:
 
 [![Manage countries dialog](manually-uploading-the-apk-images/13-manage-countries-sml.png)](manually-uploading-the-apk-images/13-manage-countries.png#lightbox)
 
@@ -255,7 +255,7 @@ applications:
 -   [uses-library](http://developer.android.com/guide/topics/manifest/uses-library-element.html) 
     &ndash; This element specifies that certain shared libraries must 
     be present on the device, for example Google Maps. This element may 
-    also be specified with the `Android.App.UsesLibaryAttribute`. For 
+    also be specified with the `Android.App.UsesLibraryAttribute`. For 
     example: 
 
     ```csharp

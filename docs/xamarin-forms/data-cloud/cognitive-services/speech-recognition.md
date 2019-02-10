@@ -11,6 +11,8 @@ ms.date: 02/08/2017
 
 # Speech Recognition Using the Microsoft Speech API
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+
 _The Microsoft Speech API is a cloud-based API that provides algorithms to process spoken language. This article explains how to use the Microsoft Speech Recognition REST API to convert audio to text in a Xamarin.Forms application._
 
 ## Overview
@@ -22,7 +24,7 @@ The Microsoft Speech API has two components:
 
 This article focuses on performing speech recognition via the REST API. While the client and service libraries support returning partial results, the REST API can only return a single recognition result, without any partial results.
 
-An API key must be obtained to use the Microsoft Speech API. This can be obtained at [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/).
+An API key must be obtained to use the Microsoft Speech API. This can be obtained from the Azure [portal](https://portal.azure.com/). For more information, see [Create a Cognitive Services account in the Azure portal](/azure/cognitive-services/cognitive-services-apis-create-account).
 
 For more information about the Microsoft Speech API, see [Microsoft Speech API Documentation](/azure/cognitive-services/speech/home/).
 
@@ -97,7 +99,7 @@ The speech recognition process can be configured by specifying HTTP query parame
 string GenerateRequestUri(string speechEndpoint)
 {
     // To build a request URL, you should follow:
-    // https://docs.microsoft.com/en-us/azure/cognitive-services/speech/getstarted/getstartedrest
+    // https://docs.microsoft.com/azure/cognitive-services/speech/getstarted/getstartedrest
     string requestUri = speechEndpoint;
     requestUri += @"dictation/cognitiveservices/v1?";
     requestUri += @"language=en-us";

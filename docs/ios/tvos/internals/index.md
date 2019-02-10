@@ -4,8 +4,8 @@ description: "Documents describing the internal workings of tvOS on Xamarin, whi
 ms.prod: xamarin
 ms.assetid: 8C076FED-9C03-44DE-9723-0E20272DD16B
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/07/2016
 ---
 
@@ -41,7 +41,7 @@ Explains how the linker works to ensure the smallest possible application packag
 
 ###  [Localization and Internationalization](~/ios/app-fundamentals/localization/index.md)
 
-This guide covers the the addition of encodings to a Xamarin.iOS application to support internationalization.
+This guide covers the addition of encodings to a Xamarin.iOS application to support internationalization.
 
 ###  [mtouch](~/ios/deploy-test/mtouch.md)
 

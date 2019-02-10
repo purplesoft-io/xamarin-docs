@@ -4,12 +4,14 @@ description: "Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 20. As
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/18/2018
 ---
 
 # Summary of Chapter 20. Async and file I/O
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20)
 
 > [!NOTE] 
 > Notes on this page indicate areas where Xamarin.Forms has diverged from the material presented in the book.
@@ -18,7 +20,7 @@ ms.date: 07/18/2018
 
 Users expect graphical user interfaces to be responsive. This means that a program must process user-input events quickly. If that is not possible, then processing must be relegated to secondary threads of execution.
 
-Several sample programs in this book have used the [`WebRequest`](xref:System.Net.WebRequest) class. In this class the [`BeginGetReponse`](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)) method starts a worker thread, which calls a callback function when it is complete. However, that callback function runs in the worker thread, so the program must call [`Device.BeginInvokeOnMainThread`](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) method to access the user interface.
+Several sample programs in this book have used the [`WebRequest`](xref:System.Net.WebRequest) class. In this class the [`BeginGetResponse`](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)) method starts a worker thread, which calls a callback function when it is complete. However, that callback function runs in the worker thread, so the program must call [`Device.BeginInvokeOnMainThread`](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) method to access the user interface.
 
 > [!NOTE]
 > Xamarin.Forms programs should use [`HttpClient`](xref:System.Net.Http.HttpClient) rather than [`WebRequest`](xref:System.Net.WebRequest) for accessing files over the internet. `HttpClient` supports asynchronous operations.

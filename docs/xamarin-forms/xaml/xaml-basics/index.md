@@ -4,12 +4,14 @@ description: "This guide explains how to get started with cross-platform XAML fo
 ms.prod: xamarin
 ms.assetid: 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 10/25/2017
 ---
 
 # Xamarin.Forms XAML Basics
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
 XAML—the eXtensible Application Markup Language—allows developers to define user interfaces in Xamarin.Forms applications using markup rather than code. XAML is never required in a Xamarin.Forms program, but it is often more succinct and more visually coherent than equivalent code, and potentially toolable. XAML is particularly well suited for use with the popular MVVM (Model-View-ViewModel) application architecture: XAML defines the View that is linked to ViewModel code through XAML-based data bindings.
 
@@ -94,17 +96,12 @@ These features are *not* XML extensions. XAML is entirely legal XML. But these X
 
 ## Requirements
 
-This article assumes a working familiarity with Xamarin.Forms. Reading [An Introduction to Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md) is highly recommended.
-
-This article also assumes some familiarity with XML, including understanding the use of XML namespace declarations, and the terms *element*, *tag*, and *attribute*.
+This article assumes a working familiarity with Xamarin.Forms. This article also assumes some familiarity with XML, including understanding the use of XML namespace declarations, and the terms *element*, *tag*, and *attribute*.
 
 When you're familiar with Xamarin.Forms and XML, start reading [Part 1. Getting Started with XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md).
-
-
 
 ## Related Links
 
 - [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
-- [An Introduction to Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Creating Mobile Apps book](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
 - [Xamarin.Forms Samples](https://developer.xamarin.com/samples/xamarin-forms/all/)

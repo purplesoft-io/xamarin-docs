@@ -3,8 +3,8 @@ title: "An Introduction to UrhoSharp"
 description: "This document describes the basic structure of an UrhoSharp application and links to various guides and sample applications that demonstrate how to use UrhoSharp."
 ms.prod: xamarin
 ms.assetid: 18041443-5093-4AF7-8B20-03E00478EF35
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
 ---
 
@@ -249,7 +249,3 @@ This documentation contains original content from Xamarin Inc, but
 draws extensively from the open source documentation for the Urho3D
 project and contains screenshots from the Cocos2D project.
 
-### Related Links
-
-- [Planet Earth Workbook](https://developer.xamarin.com/workbooks/graphics/urhosharp/planetearth/planetearth.workbook)
-- [Exploring Coordinates Workbook](https://developer.xamarin.com/workbooks/graphics/urhosharp/coordinates/ExploringUrhoCoordinates.workbook)

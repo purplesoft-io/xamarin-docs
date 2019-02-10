@@ -4,12 +4,14 @@ description: "Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 16. Da
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/18/2018
 ---
 
 # Summary of Chapter 16. Data binding
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
 
 > [!NOTE] 
 > Notes on this page indicate areas where Xamarin.Forms has diverged from the material presented in the book.

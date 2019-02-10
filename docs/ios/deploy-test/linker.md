@@ -4,8 +4,8 @@ description: "This document describes the Xamarin.iOS linker, which is used to e
 ms.prod: xamarin
 ms.assetid: 3A4B2178-F264-0E93-16D1-8C63C940B2F9
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/24/2017
 ---
 
@@ -32,7 +32,7 @@ methods that are called through reflection, or dynamically instantiated. Several
 
 ## Linker Behavior
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 The linking process can be customized via the linker behavior
 dropdown in **Project Options**. To access
@@ -41,7 +41,7 @@ below:
 
 [![](linker-images/image1.png "Linker Options")](linker-images/image1.png#lightbox)
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 The linking process can be customized via the linker behavior dropdown in the **Project Properties** in Visual Studio.
 
@@ -67,9 +67,9 @@ performance reasons this is the default setting when your IDE targets
 for the iOS simulator. For devices builds this should only be used as
 a workaround whenever the linker contains a bug that prevents your
 application to run. If your application only works with *-nolink*,
-please submit a [bug report](http://bugzilla.xamarin.com).
+please submit a [bug report](https://github.com/xamarin/xamarin-macios/issues/new).
 
-This correspond to the *-nolink* option when using the command-line
+This corresponds to the *-nolink* option when using the command-line
 tool mtouch.
 
 <a name="Link_SDK_assemblies_only" />
@@ -217,7 +217,7 @@ is linker friendly or not.
 If you have a library in your project, or you are a developer of
 reusable libraries and you want the linker to treat your assembly as
 linkable, all you have to do is add the assembly-level attribute
-[`LinkerSafe`](https://developer.xamarin.com/api/type/Foundation.LinkerSafeAttribute/),
+[`LinkerSafe`](xref:Foundation.LinkerSafeAttribute),
 like this:
 
 ```csharp

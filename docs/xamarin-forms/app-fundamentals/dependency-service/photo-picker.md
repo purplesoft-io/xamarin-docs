@@ -11,6 +11,8 @@ ms.date: 03/06/2017
 
 # Picking a Photo from the Picture Library
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)
+
 This article walks through the creation of an application that allows the user to pick a photo from the phone's picture library. Because Xamarin.Forms does not include this functionality, it is necessary to use [`DependencyService`](xref:Xamarin.Forms.DependencyService) to access native APIs on each platform.  This article will cover the following steps for using `DependencyService` for this task:
 
 - **[Creating the Interface](#Creating_the_Interface)** &ndash; understand how the interface is created in shared code.
@@ -43,7 +45,7 @@ This interface is implemented in all the platforms using platform-specific code.
 
 ## iOS Implementation
 
-The iOS implementation of the `IPicturePicker` interface uses the [`UIImagePickerController`](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/) as described in the [**Choose a Photo from the Gallery**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery) recipe and [sample code](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery).
+The iOS implementation of the `IPicturePicker` interface uses the [`UIImagePickerController`](xref:UIKit.UIImagePickerController) as described in the [**Choose a Photo from the Gallery**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery) recipe and [sample code](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery).
 
 The iOS implementation is contained in the [`PicturePickerImplementation`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs) class in the iOS project of the sample code. To make this class visible to the `DependencyService` manager, the class must be identified with an [`assembly`] attribute of type `Dependency`, and the class must be public and explicitly implement the `IPicturePicker` interface:
 
@@ -109,11 +111,14 @@ namespace DependencyServiceSample.iOS
                 NSData data = image.AsJPEG(1);
                 Stream stream = data.AsStream();
 
+                UnregisterEventHandlers();
+
                 // Set the Stream as the completion of the Task
                 taskCompletionSource.SetResult(stream);
             }
             else
             {
+                UnregisterEventHandlers();
                 taskCompletionSource.SetResult(null);
             }
             imagePicker.DismissModalViewController(true);
@@ -121,8 +126,15 @@ namespace DependencyServiceSample.iOS
 
         void OnImagePickerCancelled(object sender, EventArgs args)
         {
+            UnregisterEventHandlers();
             taskCompletionSource.SetResult(null);
             imagePicker.DismissModalViewController(true);
+        }
+
+        void UnregisterEventHandlers()
+        {
+            imagePicker.FinishedPickingMedia -= OnImagePickerFinishedPickingMedia;
+            imagePicker.Canceled -= OnImagePickerCancelled;
         }
     }
 }
@@ -271,7 +283,7 @@ Button pickPictureButton = new Button
 stack.Children.Add(pickPictureButton);
 ```
 
-The `Clicked` handler uses the `DependencyService` class to call `GetImageStreamAsync`. This results in a call in the platform project. If the method returns a `Stream` object, then the handler creates an `Image` element for that picture with a `TabGestureRecognizer`, and replaces the `StackLayout` on the page with that `Image`:
+The `Clicked` handler uses the `DependencyService` class to call `GetImageStreamAsync`. This results in a call in the platform project. If the method returns a `Stream` object, then the handler creates an `Image` element for that picture with a `TapGestureRecognizer`, and replaces the `StackLayout` on the page with that `Image`:
 
 ```csharp
 pickPictureButton.Clicked += async (sender, e) =>

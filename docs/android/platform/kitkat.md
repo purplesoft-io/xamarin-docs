@@ -4,8 +4,8 @@ description: "Android 4.4 (KitKat) comes loaded with a cornucopia of features fo
 ms.prod: xamarin
 ms.assetid: D3FDEA1C-F076-406F-BCC3-2A55D2C6ADEE
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/01/2018
 ---
 
@@ -301,7 +301,7 @@ XML is as follows:
 ```
 
 The example above uses `merge` to make the view code shorter and
-simplify the view heirarchy. You can read more about `merge` layouts
+simplify the view hierarchy. You can read more about `merge` layouts
 [here](http://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-by.html).
 
 A Scene is created by calling
@@ -387,7 +387,7 @@ TransitionManager.Go (scene1, transition);
 ### Translucent UI
 
 KitKat gives you more control over theming your app with optional
-transclucent status and navigation bars. You can change the
+translucent status and navigation bars. You can change the
 translucency of system UI elements in the same XML file you use to
 define your Android theme. KitKat introduces the following properties:
 
@@ -444,7 +444,7 @@ experience will continue as normal.
 
 This change requires two actions on the developer side: first, apps
 that require content from providers need to be updated to a new way of
-reqesting content. Second, applications that write data to a
+requesting content. Second, applications that write data to a
 `ContentProvider` need to be modified to use the new framework. Both
 scenarios depend on the new
 [`DocumentsProvider`](https://developer.xamarin.com/api/type/Android.Provider.DocumentsProvider/)
@@ -484,7 +484,7 @@ StartActivityForResult (intent, save_request_code);
 Calling `StartActivityForResult` launches the SAF UI, which the user
 can then browse to choose an image:
 
-[![Example screenshot of an app using the Storage Access Framework for browing to an image](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
+[![Example screenshot of an app using the Storage Access Framework for browsing to an image](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
 
 After the user has chosen an image, `OnActivityResult` returns the
 `Android.Net.Uri` of the chosen file. The code sample below displays
@@ -583,7 +583,7 @@ a web view with `WebView.CreatePrintDocumentAdapter`. Printing web
 content is a coordinated effort between a
 [`WebViewClient`](https://developer.xamarin.com/api/type/Android.Webkit.WebViewClient/) that
 waits for the HTML content to load and lets the Activity know to make
-the print option available in the options menu, and the Actvity, which
+the print option available in the options menu, and the Activity, which
 waits for the user to select the Print option and calls `Print`on the
 `PrintManager`. This section covers the basic setup required to print
 on-screen HTML content.
@@ -599,10 +599,10 @@ The print option will typically appear in the Activity's
 The options menu lets users perform actions on an Activity. It is in
 the top right corner of the screen, and looks like this:
 
-[![Example screenshot of Print menu item dispalyed in the top right corner of the screen](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
+[![Example screenshot of Print menu item displayed in the top right corner of the screen](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
 
 
-Additonal menu items can be defined in the *menu*directory under
+Additional menu items can be defined in the *menu*directory under
 *Resources*. The code below defines a sample menu item called
 [Print](https://developer.xamarin.com/api/type/Android.Print.PrintManager/):
 
@@ -699,7 +699,7 @@ that generates the print document from the content, and
 [`PrintAttributes`](https://developer.xamarin.com/api/type/Android.Print.PrintAttributes/)
 (`null` in the example above). You can specify `PrintAttributes` to
 help lay out content on the printed page, although the default
-attributes should handle most scenarions.
+attributes should handle most scenarios.
 
 Calling `Print` loads the print UI, which lists options for the print
 job. The UI gives users the option of printing or saving the HTML
@@ -713,7 +713,7 @@ content to a PDF, as illustrated by the screenshots below:
 
 ## Hardware
 
-KitKat adds several APIs to accomodate new device features. The most
+KitKat adds several APIs to accommodate new device features. The most
 notable of these are Host-Based Card Emulation and the new
 `SensorManager`.
 
@@ -753,7 +753,7 @@ the HCE code as a `Service`. An HCE Service implements the
 
 
 An HCE Service also needs to be registered with the application's
-manifest, and decorated with the proper permissons, intent filter, and
+manifest, and decorated with the proper permissions, intent filter, and
 metadata. The following code is an example of a `HostApduService`
 registered with the Android Manifest using the `Service` attribute (for
 more information on attributes, refer to the Xamarin
@@ -763,7 +763,7 @@ guide):
 ```csharp
 [Service(Exported=true, Permission="android.permissions.BIND_NFC_SERVICE"),
 	IntentFilter(new[] {"android.nfc.cardemulation.HOST_APDU_SERVICE"}),
-	MetaData("andorid.nfc.cardemulation.host.apdu_service",
+	MetaData("android.nfc.cardemulation.host.apdu_service",
 	Resource="@xml/hceservice")]
 
 class HceService : HostApduService
@@ -839,7 +839,7 @@ The screenshot below depicts the step counter in action:
 
 You can create a `SensorManager` by calling
 `GetSystemService(SensorService)` and casting the result as a
-`SensorManager`. To use the step counter, call `GetDeafultSensor` on
+`SensorManager`. To use the step counter, call `GetDefaultSensor` on
 the `SensorManager`. You can register the sensor and listen to changes
 in step count with the help of the
 [`ISensorEventListener`](https://developer.xamarin.com/api/type/Android.Hardware.ISensorEventListener/)
@@ -972,7 +972,7 @@ In addition to the changes described above, KitKat allows you to:
 
 -  *Read Dynamically Changing Text* - Denote parts of UI that update
    dynamically with new text as "live regions" with the new
-   [ `accesibilityLiveRegion`](http://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
+   [ `accessibilityLiveRegion`](http://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
    attribute so the new text will be read automatically in
    accessibility mode.
 
@@ -1001,7 +1001,7 @@ In addition to the changes described above, KitKat allows you to:
    [`RemoteController`](https://developer.xamarin.com/api/type/Android.Media.RemoteController/)
    APIs.
 
-For more information on the above API changes, please refer to the the
+For more information on the above API changes, please refer to the
 Google [Android 4.4 APIs](http://developer.android.com/about/versions/android-4.4.html)
 overview.
 

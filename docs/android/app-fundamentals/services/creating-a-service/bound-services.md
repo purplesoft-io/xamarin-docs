@@ -4,8 +4,8 @@ description: "Bound services are Android services that provide a client-server i
 ms.prod: xamarin
 ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 05/04/2018
 ---
 
@@ -19,7 +19,7 @@ Services that provide a client-server interface for clients to directly interact
 
 * **A service binder** &ndash; A service binder is a class that implements the [`Android.OS.IBinder`](https://developer.xamarin.com/api/type/Android.OS.IBinder) interface. Most applications will not implement this interface directly, instead they will extend the [`Android.OS.Binder`](https://developer.xamarin.com/api/type/Android.OS.Binder) class. This is the most common approach and is suitable for when the service and the client exist in the same process.
 * **Using a Messenger** &ndash; This technique is suitable for when the service might exist in a separate process. Instead, service requests are marshalled between the client and service via an [`Android.OS.Messenger`](https://developer.xamarin.com/api/type/Android.OS.Messenger). An [`Android.OS.Handler`](https://developer.xamarin.com/api/type/Android.OS.Handler) is created in the service which will handle the `Messenger` requests. This will be covered in another guide.
-* **Using AIDL** &ndash; This strikes terror into the heart of most Android developers, and will not be covered in this guide.
+* **Using Android Interface Definition Language (AIDL)** &ndash; [AIDL](https://developer.android.com/guide/components/aidl) is an advanced technique that will not be covered in this guide.
 
 Once a client has been bound to a service, communication between the two is occurs via `Android.OS.IBinder` object.  This object is responsible for the interface that will allow the client to interact with the service. It is not necessary for each Xamarin.Android application to implement this interface from scratch, the Android SDK provides the [`Android.OS.Binder`](https://developer.xamarin.com/api/type/Android.OS.Binder) class which takes care of most of the code required with marshalling the object between the client and the service.
 
@@ -46,7 +46,7 @@ Each of these steps will be discussed in the following sections in more detail.
 
 ### Extend the `Service` Class
 
-To create a service using Xamarin.Android, it is necessary to subclass `Service` and to adorn the the class with the [`ServiceAttribute`](https://developer.xamarin.com/api/type/Android.App.ServiceAttribute). The attribute is used by the Xamarin.Android build tools to properly register the service in the app's **AndroidManifest.xml** file
+To create a service using Xamarin.Android, it is necessary to subclass `Service` and to adorn the class with the [`ServiceAttribute`](https://developer.xamarin.com/api/type/Android.App.ServiceAttribute). The attribute is used by the Xamarin.Android build tools to properly register the service in the app's **AndroidManifest.xml** file
 Much like an activity, a bound service has it's own lifecycle and callback methods associated with the significant events in it's lifecycle. The following list is an example of some of the more common callback methods that a service will implement:
 
 * `OnCreate` &ndash; This method is invoked by Android as it is instantiating the service. It is used to initialize any variables or objects that are required by the service during it's lifetime. This method is optional.
@@ -231,7 +231,7 @@ To use a bound service, a client (such as an Activity) must instantiate an objec
 * **An `Intent`** &ndash; The Intent should explicitly identify which service to connect to.
 * **An `IServiceConnection` Object** &ndash; This object is an intermediary that provides callback methods to notify the client when the bound service is started  and stopped.
 * **[`Android.Content.Bind`](https://developer.xamarin.com/api/type/Android.Content.Bind/)
- enum** &ndash; This parameter is a set of flags are are used by the system to when bind the object. The most commonly used value is [`Bind.AutoCreate`](https://developer.xamarin.com/api/field/Android.Content.Bind.AutoCreate/), which will automatically start the service if it isn't already running.
+ enum** &ndash; This parameter is a set of flags are used by the system to when bind the object. The most commonly used value is [`Bind.AutoCreate`](https://developer.xamarin.com/api/field/Android.Content.Bind.AutoCreate/), which will automatically start the service if it isn't already running.
 
 The following Code snippet is an example of how to start a bound service in an Activity using an explicit intent:
 

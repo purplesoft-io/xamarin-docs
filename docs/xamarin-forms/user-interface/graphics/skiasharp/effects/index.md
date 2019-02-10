@@ -4,12 +4,14 @@ description: "Learn how to alter the normal display of graphics with gradients, 
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: B3E06572-8E2A-49FA-90D1-444C394CD516
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 08/22/2018
 ---
 
 # SkiaSharp effects
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 The SkiaSharp [`SKPaint`](xref:SkiaSharp.SKPaint) class defines six properties that can be classified under the general term of _effects_. These are properties that alter the normal display of graphics in some way. The SkiaSharp effects fall into six categories:
 

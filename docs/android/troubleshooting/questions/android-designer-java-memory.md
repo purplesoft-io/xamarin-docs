@@ -4,8 +4,8 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 62FAF21C-8090-4AF3-9D88-05A4CFCAFFDC
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/02/2018
 ---
 
@@ -31,12 +31,12 @@ The following property names correspond to the indicated java
 - **AndroidDesignerJavaRendererPermSize** -XX:MaxPermSize
 
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1.  Open your solution in Visual Studio.
 
 2.  Select each Android project one-by-one in the Solution Explorer and
-    click [Show All Files](https://msdn.microsoft.com/en-us/library/4afxey9h.aspx)
+    click [Show All Files](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90))
     twice on each project. You can skip projects that do not contain
     any `.axml` layout files. This step will ensure that each project
     directory contains a `.csproj.user` file.
@@ -71,7 +71,7 @@ The following property names correspond to the indicated java
 
 8.  Restart Visual Studio and reopen your solution.
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1.  Open your solution in Visual Studio for Mac to ensure the solution
     directory contains a `.userprefs` file.

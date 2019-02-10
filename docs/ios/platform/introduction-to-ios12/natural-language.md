@@ -4,19 +4,11 @@ description: "This document describes the Natural Language Framework. Introduced
 ms.prod: xamarin
 ms.assetid: 126C8764-F873-4EB9-98A3-D82AB5689111
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 08/20/2018
 ---
 # Using the Natural Language framework with Xamarin.iOS
-
-![Preview](~/media/shared/preview.png)
-
-> [!WARNING]
-> Xamarin's support for the iOS 12, tvOS 12, and watchOS 5 SDKs distributed
-> with Xcode 10 is currently in preview, which means that that it may
-> contain bugs, is not feature complete, and may change. Use it for
-> experimentation only.
 
 Introduced in iOS 12, the Natural Language framework enables on-device
 natural language processing. It supports language recognition,
@@ -27,7 +19,7 @@ people, places, and organizations.
 The Natural Language framework can also use custom Core ML models to
 classify and tag text in specialized contexts.
 
-The [NSLinguisticTagger](https://developer.xamarin.com/api/type/Foundation.NSLinguisticTagger/)
+The [NSLinguisticTagger](xref:Foundation.NSLinguisticTagger)
 class is still available. However, the Natural Language framework is the
 preferred mechanism to use for Natural Language processing.
 
@@ -79,7 +71,7 @@ partial void HandleDetermineLanguageButtonTap(UIButton sender)
 
 ### Language probabilities
 
-Tap the **Language probabilities** button to fetch a list of language 
+Tap the **Language probabilities** button to fetch a list of language
 hypotheses for the user input.
 
 The `HandleLanguageProbabilitiesButtonTap` method of the
@@ -182,7 +174,7 @@ token is associated with a word or sentence in the original text.
 `ShowTokens` splits the user's input into tokens by calling the
 [`GetTokens`](https://developer.xamarin.com/api/member/NaturalLanguage.NLTokenizer.GetTokens/)
 method of an `NLTokenizer`. This method returns an array of
-[`NSValue`](https://developer.xamarin.com/api/type/Foundation.NSValue/)
+[`NSValue`](xref:Foundation.NSValue)
 objects, each wrapping an `NSRange` value corresponding to a token in
 the original text.
 
@@ -309,6 +301,6 @@ enum API documentation.
 
 ## Related links
 
-- [Sample app – XamarinNL](https://developer.xamarin.com/samples/monotouch/iOS12/XamarinNL) 
+- [Sample app – XamarinNL](https://developer.xamarin.com/samples/monotouch/iOS12/XamarinNL)
 - [Introducing Natural Language Framework](https://developer.apple.com/videos/play/wwdc2018/713/)
 - [Natural Language (Apple)](https://developer.apple.com/documentation/naturallanguage?language=objc)

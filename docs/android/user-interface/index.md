@@ -4,8 +4,8 @@ description: "Creating User Interfaces for Xamarin.Android Apps"
 ms.prod: xamarin
 ms.assetid: F67B7C33-BC53-2BB6-CDA7-16E4AB4A9EFB
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
 ---
 
@@ -40,7 +40,7 @@ phone number.
 
 ## [Splash Screen](~/android/user-interface/splash-screen.md)
 
-An Android app takes some time to to start up, especially when the app
+An Android app takes some time to start up, especially when the app
 is first launched on a device. A splash screen may display start up
 progress to the user. This guide explains how to create a splash
 screen for your app.

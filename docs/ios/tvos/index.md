@@ -5,8 +5,8 @@ ms.prod: xamarin
 ms.assetid: 14345503-1742-41F5-B2EF-EE31AB7C3516
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 02/02/2018
 ---
 
@@ -63,7 +63,7 @@ Additionally, Apple provides the following sample apps that can be transcoded to
 
 ## Known Issues and Troubleshooting
 
-If you encounter any problems building tvOS with Xamarin, check the [release notes](http://releases.xamarin.com/), [Xamarin.iOS Forums](https://forums.xamarin.com/categories/ios), [Xamarin Bugzilla Tracker](https://bugzilla.xamarin.com/query.cgi?product=iOS), and [GitHub](https://github.com/xamarin/xamarin-macios/issues) for existing issues.
+If you encounter any problems building tvOS with Xamarin, check the [release notes](https://docs.microsoft.com/xamarin/ios/release-notes/), [Xamarin.iOS Forums](https://forums.xamarin.com/categories/ios), [Xamarin Bugzilla Tracker](https://bugzilla.xamarin.com/query.cgi?product=iOS), and [GitHub](https://github.com/xamarin/xamarin-macios/issues) for existing issues.
 
 Report new issues and suggestions [on GitHub](https://github.com/xamarin/xamarin-macios/issues).
 

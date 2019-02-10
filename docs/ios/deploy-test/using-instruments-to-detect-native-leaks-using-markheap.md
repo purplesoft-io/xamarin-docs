@@ -4,14 +4,14 @@ description: "This document describes how to use Apple's Instruments app to prof
 ms.prod: xamarin
 ms.assetid: 70A8CAC8-20C2-655B-37C3-ACF9EA7874D8
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
 ---
 
 # Profiling Xamarin.iOS Applications with Instruments
 
-Xcode **Instruments** is a tool that can be used to to profile Xamarin.iOS apps on a device or
+Xcode **Instruments** is a tool that can be used to profile Xamarin.iOS apps on a device or
 in the simulator. Mono uses its Just-in-Time model to compile code and
 Instruments doesn’t interpret this kind of data well, so it can be difficult
 to work with output from simulator-based applications that use Instruments.

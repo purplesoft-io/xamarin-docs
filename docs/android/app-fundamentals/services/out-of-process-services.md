@@ -4,8 +4,8 @@ description: "Generally, all components in an Android application will run in th
 ms.prod: xamarin
 ms.assetid: 27A2E972-A690-480B-B31D-5EF1F74F673C
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
 ---
 
@@ -32,7 +32,7 @@ In many ways, binding to a service running in another process is the same as [bi
 * **Implement and Instantiate an `IServiceConnection` object** &ndash; The `IServiceConnection` object acts as an intermediary between the client and the service.  It is responsible for monitoring the connection between client and server.
 * **Invoke the `BindService` method** &ndash; Calling `BindService` will dispatch the intent and the service connection created in the previous steps to Android, which will take care of starting the service and establishing communication between client and service.
 
-The need to cross process boundaries does introduce extra complexity: the communication is one-way (client to server) and the client can't directly invoke methods on the service class. Recall that when a service is running the same process as the client, Android provides an `IBinder` object which may allow for  two-way communication. This is not the case with service running in its own process. A client communicates with a remote service with the the help of the `Android.OS.Messenger` class.
+The need to cross process boundaries does introduce extra complexity: the communication is one-way (client to server) and the client can't directly invoke methods on the service class. Recall that when a service is running the same process as the client, Android provides an `IBinder` object which may allow for  two-way communication. This is not the case with service running in its own process. A client communicates with a remote service with the help of the `Android.OS.Messenger` class.
 
 When a client requests to bind with the remote service, Android will invoke the `Service.OnBind` lifecycle method, which will return the internal `IBinder` object that is encapsulated by the `Messenger`. The `Messenger` is a thin wrapper over a special `IBinder` implementation that is provided by the Android SDK. The `Messenger` takes care of the communication between the two different processes. The developer is unconcerned with the details of serializing a message, marshalling the message across the process boundary, and then deserializing it on the client. This work is handled by the `Messenger` object. This diagram shows the client-side Android components that are involved when a client initiates binding to an out-of-process service:
 
@@ -51,7 +51,7 @@ One-way communication occurs when a client creates a `Message` object and dispat
 This guide will discuss the details of implementing an out-of-process service. It will discuss how to implement a service that is meant to run in its own process and how a client may communicate with that service using the `Messenger` framework. It will also briefly discuss two-way communication: the client sending a message to a service and the service sending a message back to the client. Because services can be shared between different applications, this guide will also discuss one technique for limiting client access to the service by using Android permissions.
 
 > [!IMPORTANT]
-> [Bugzilla 51940 - Services with isolated processes and custom Application class fail to resolve overloads properly](https://bugzilla.xamarin.com/show_bug.cgi?id=51940) reports that a Xamarin.Android service will not start up properly when the `IsolatedProcess` is set to `true`. This guide is provided for a reference. A Xamarin.Android application should still be able to communicate with an out-of-process service that is written in Java.
+> [Bugzilla 51940/GitHub 1950 - Services with isolated processes and custom Application class fail to resolve overloads properly](https://github.com/xamarin/xamarin-android/issues/1950) reports that a Xamarin.Android service will not start up properly when the `IsolatedProcess` is set to `true`. This guide is provided for a reference. A Xamarin.Android application should still be able to communicate with an out-of-process service that is written in Java.
 
 ## Requirements
 
@@ -71,7 +71,7 @@ A service that is meant to run in its own process is, fundamentally, still a bou
 
 1. `Exported` &ndash; This property must be set to `true` to allow other applications to interact with the service. The default value of this property is `false`.
 2. `Process` &ndash; This property must be set. It is used to specify the name of the process that the service will run in.
-3. `IsolatedProcess` &ndash; This property will enable extra security, telling Android to run the service in an isolated sandbox with minimal permission to iteract with the rest of the system. See [Bugzilla 51940 - Services with isolated processes and custom Application class fail to resolve overloads properly](https://bugzilla.xamarin.com/show_bug.cgi?id=51940).
+3. `IsolatedProcess` &ndash; This property will enable extra security, telling Android to run the service in an isolated sandbox with minimal permission to interact with the rest of the system. See [Bugzilla 51940 - Services with isolated processes and custom Application class fail to resolve overloads properly](https://bugzilla.xamarin.com/show_bug.cgi?id=51940).
 4. `Permission` &ndash; It is possible to control client access to the service by specifying a permission that clients must request (and be granted).
 
 To run a service its own process, the `Process` property on the `ServiceAttribute` must be set to the name of the service. To interact with outside applications, the `Exported` property should be set to `true`. If `Exported` is `false`, then only clients in the same APK (i.e. the same application) and running in the same process will be able to interact with the service.
@@ -144,7 +144,7 @@ Once the `ServiceAttribute` has been set, the service needs to implement a `Hand
 
 ### Implementing a Handler
 
-To process client requests, the service must implement a `Handler` and override the `HandleMessage` methodThis is the method takes a `Message` instance which which encapsulates the method call from the client and translates that call into some action or task that the service will perform. The `Message` object exposes a property called `What` which is an integer value, the meaning of which is shared between the client and the service and relates to some task that the service is to perform for the client.
+To process client requests, the service must implement a `Handler` and override the `HandleMessage` methodThis is the method takes a `Message` instance which encapsulates the method call from the client and translates that call into some action or task that the service will perform. The `Message` object exposes a property called `What` which is an integer value, the meaning of which is shared between the client and the service and relates to some task that the service is to perform for the client.
 
 The following code snippet from the sample application shows one example of `HandleMessage`. In this example, there are two actions that a client can request of the service:
 
@@ -168,7 +168,7 @@ public class TimestampRequestHandler : Android.OS.Handler
                 break;
 
             case Constants.GET_UTC_TIMESTAMP:
-                // Call methods on the service to retrive a timestamp message.
+                // Call methods on the service to retrieve a timestamp message.
                 break;
             default:
                 Log.Warn(TAG, $"Unknown messageType, ignoring the value {messageType}.");
@@ -183,7 +183,7 @@ It is also possible to package parameters for the service in the `Message`. This
 
 ### Instantiating the Messenger
 
-As previously discussed, deserializing the `Message` object and invoking `Handler.HandleMessage` is the responsibilty of the `Messenger` object. The `Messenger` class also provides an `IBinder` object that the client will use to send messages to the service.  
+As previously discussed, deserializing the `Message` object and invoking `Handler.HandleMessage` is the responsibility of the `Messenger` object. The `Messenger` class also provides an `IBinder` object that the client will use to send messages to the service.  
 
 When the service starts, it will instantiate the `Messenger` and inject the `Handler`. A good place to perform this initialization is on the `OnCreate` method of the service. This code snippet is one example of a service that initializes its own `Handler` and `Messenger`:
 
@@ -311,7 +311,7 @@ catch (RemoteException ex)
 
 There are several different forms of the `Message.Obtain` method. The previous example uses the [`Message.Obtain(Handler h, Int32 what)`](https://developer.xamarin.com/api/member/Android.OS.Message.Obtain/p/Android.OS.Handler/System.Int32/). Because this is an asynchronous request to an out-of-process service; there will be no response from the service, so the `Handler` is set to `null`. The second parameter, `Int32 what`, will be stored in the `.What` property of the `Message` object. The `.What` property is used by code in the service process to invoke methods on the service.
 
-The `Message` class also exposes two additional properties that may be of use to the recipent: `Arg1` and `Arg2`. These two properties are integer values that may have some special agreed upon values that have meaning between the client and the service. For example, `Arg1` may hold a customer ID and `Arg2` may hold a purchase order number for that customer. The [`Method.Obtain(Handler h, Int32 what, Int32 arg1, Int32 arg2)`](https://developer.xamarin.com/api/member/Android.OS.Message.Obtain/p/Android.OS.Handler/System.Int32/System.Int32/System.Int32/) can be used to set the two properties when the `Message` is created. Another way to populate these two values is to  set the `.Arg` and `.Arg2` properties directly on the `Message` object after it has been created.
+The `Message` class also exposes two additional properties that may be of use to the recipient: `Arg1` and `Arg2`. These two properties are integer values that may have some special agreed upon values that have meaning between the client and the service. For example, `Arg1` may hold a customer ID and `Arg2` may hold a purchase order number for that customer. The [`Method.Obtain(Handler h, Int32 what, Int32 arg1, Int32 arg2)`](https://developer.xamarin.com/api/member/Android.OS.Message.Obtain/p/Android.OS.Handler/System.Int32/System.Int32/System.Int32/) can be used to set the two properties when the `Message` is created. Another way to populate these two values is to  set the `.Arg` and `.Arg2` properties directly on the `Message` object after it has been created.
 
 ### Passing Additional Values to the Service
 

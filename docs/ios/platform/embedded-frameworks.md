@@ -4,8 +4,8 @@ description: "This document describes how to share code with embedded frameworks
 ms.prod: xamarin
 ms.assetid: F8C61020-4106-46F1-AECB-B56C909F42CB
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/05/2018
 ---
 
@@ -33,13 +33,13 @@ There are two ways to consume frameworks in Xamarin.iOS:
 
 - Add Native References from the context menu
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 Right-click on Project and Browse to Add Native References
 
 ![](embedded-frameworks-images/xam-native-refs.png "Select Add native references in Visual Studio for Mac")
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 Right-click on Project and Browse to Add Native References
 

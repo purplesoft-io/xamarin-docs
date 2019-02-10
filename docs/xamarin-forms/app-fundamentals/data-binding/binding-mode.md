@@ -4,12 +4,14 @@ description: "This article explains how to control the flow of information betwe
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/01/2018
 ---
 
 # Xamarin.Forms Binding Mode
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 In the [previous article](basic-bindings.md), the **Alternative Code Binding** and **Alternative XAML Binding** pages featured a `Label` with its `Scale` property bound to the `Value` property of a `Slider`. Because the `Slider` initial value is 0, this caused the `Scale` property of the `Label` to be set to 0 rather than 1, and the `Label` disappeared.
 
@@ -307,6 +309,9 @@ You can set the binding mode to `OneWayToSource` in the **Alternative XAML Bindi
 ```
 
 Now the `Slider` is initialized to 1 (the default value of `Scale`) but manipulating the `Slider` doesn't affect the `Scale` property, so this is not very useful.
+
+> [!NOTE]
+> The [`VisualElement`](xref:Xamarin.Forms.VisualElement) class also defines [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) and [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) properties, which can scale the `VisualElement` differently in the horizontal and vertical directions.
 
 A very useful application of overriding the default binding mode with `TwoWay` involves the `SelectedItem` property of `ListView`. The default binding mode is `OneWayToSource`. When a data binding is set on the `SelectedItem` property to reference a source property in a ViewModel, then that source property is set from the `ListView` selection. However, in some circumstances, you might also want the `ListView` to be initialized from the ViewModel.
 

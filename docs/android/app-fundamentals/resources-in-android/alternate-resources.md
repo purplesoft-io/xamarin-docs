@@ -3,8 +3,8 @@ title: "Alternate Resources"
 ms.prod: xamarin
 ms.assetid: AE5A864E-192D-475E-C731-99249C2E7D9E
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/13/2018
 ---
 
@@ -31,11 +31,11 @@ by a dash. For example, the screenshot below shows a simple project
 that has alternate resources for various configurations such as locale,
 screen density, screen size, and orientation:
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ![Alternate resources](alternate-resources-images/alternate-resources-vs.png)
  
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ![Alternate resources](alternate-resources-images/alternate-resources-xs.png)
  
@@ -90,7 +90,7 @@ The possible qualifiers are listed below for reference:
   This value may change as the user rotates the device. Covered in more
   detail in
   [Creating Resources for Varying Screens](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md). 
-  Available in in API level 13 (Android 3.2) and above. Example: the
+  Available in API level 13 (Android 3.2) and above. Example: the
   qualifier w720dp is used to target devices that have a width of least
   720dp.
 
@@ -98,7 +98,7 @@ The possible qualifiers are listed below for reference:
   format h*N*dp, where *N* is the height in dp. This value may change as
   the user rotates the device. Covered in more detail in 
   [Creating Resources for Varying Screens](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md). 
-  Available in in API
+  Available in API
   level 13 (Android 3.2) and above. For example, the qualifier h720dp
   is used to target devices that have a height of least 720dp
 

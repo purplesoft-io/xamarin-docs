@@ -11,11 +11,13 @@ ms.date: 02/12/2018
 
 # Accessing the device's video library
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+
 Most modern mobile devices and desktop computers have the ability to record videos using the device's camera. The videos that a user creates are then stored as files on the device. These files can be retrieved from the image library and played by the `VideoPlayer` class just like any other video.
 
 ## The photo picker dependency service
 
-Each of the three platforms includes a facility that allows the user to select a photo or video from the device's image library. The first step in playing a video from the device's image library is building a dependency service that invokes the image picker on each platform. The dependency service described below is very similar to one defined in the [**Picking a Photo from the Picture Library**](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md) article, except that the video picker returns a filename rather than a `Stream` object.
+Each of the platforms includes a facility that allows the user to select a photo or video from the device's image library. The first step in playing a video from the device's image library is building a dependency service that invokes the image picker on each platform. The dependency service described below is very similar to one defined in the [**Picking a Photo from the Picture Library**](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md) article, except that the video picker returns a filename rather than a `Stream` object.
 
 The .NET Standard library project defines an interface named `IVideoPicker` for the dependency service:
 
@@ -29,11 +31,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-Each of the three platforms contains a class named `VideoPicker` that implements this interface.
+Each of the platforms contains a class named `VideoPicker` that implements this interface.
 
 ### The iOS video picker
 
-The iOS `VideoPicker` uses the iOS [`UIImagePickerController`](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/) to access the image library, specifying that it should be restricted to videos (referred to as "movies") in the iOS `MediaType` property. Notice that `VideoPicker` explicitly implements the `IVideoPicker` interface. Notice also the `Dependency` attribute that identifies this class as a dependency service. These are the two requirements that allow Xamarin.Forms to find the dependency service in the platform project:
+The iOS `VideoPicker` uses the iOS [`UIImagePickerController`](xref:UIKit.UIImagePickerController) to access the image library, specifying that it should be restricted to videos (referred to as "movies") in the iOS `MediaType` property. Notice that `VideoPicker` explicitly implements the `IVideoPicker` interface. Notice also the `Dependency` attribute that identifies this class as a dependency service. These are the two requirements that allow Xamarin.Forms to find the dependency service in the platform project:
 
 ```csharp
 using System;
@@ -377,7 +379,7 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-For all three platforms, the video begins playing almost immediately after the video source is set because the file is on the device and doesn't need to be downloaded.
+For each platform, the video begins playing almost immediately after the video source is set because the file is on the device and doesn't need to be downloaded.
 
 
 

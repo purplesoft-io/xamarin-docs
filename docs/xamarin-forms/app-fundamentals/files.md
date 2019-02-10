@@ -11,11 +11,13 @@ ms.date: 06/21/2018
 
 # File Handling in Xamarin.Forms
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
+
 _File handling with Xamarin.Forms can be achieved using code in a .NET Standard library, or by using embedded resources._
 
 ## Overview
 
-Xamarin.Forms code runs on multiple platforms - each of which has its own filesystem. Previously, this meant that that reading and writing files was most easily performed using the native file APIs on each platform. Alternatively, embedded resources are a simpler solution to distribute data files with an app. However, with .NET Standard 2.0 it's possible to share file access code in .NET Standard libraries.
+Xamarin.Forms code runs on multiple platforms - each of which has its own filesystem. Previously, this meant that reading and writing files was most easily performed using the native file APIs on each platform. Alternatively, embedded resources are a simpler solution to distribute data files with an app. However, with .NET Standard 2.0 it's possible to share file access code in .NET Standard libraries.
 
 For information on handling image files, refer to the [Working with Images](~/xamarin-forms/user-interface/images.md) page.
 
@@ -59,11 +61,11 @@ These operations are demonstrated in the sample app, which includes a page that 
 
 To embed a file into a **.NET Standard** assembly, create or add a file and ensure that **Build Action: EmbeddedResource**.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 [![Configuring embedded resource build action](files-images/vs-embeddedresource-sml.png "Setting EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png#lightbox "Setting EmbeddedResource BuildAction")
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 [![Text file embedded in PCL, configuring embedded resource build action](files-images/xs-embeddedresource-sml.png "Setting EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "Setting EmbeddedResource BuildAction")
 
@@ -102,7 +104,7 @@ listView.ItemsSource = monkeys;
 
 <a name="Embedding_in_Shared_Projects" />
 
-### Embedding in Shared Projects
+## Embedding in Shared Projects
 
 Shared Projects can also contain files as embedded resources, however because the contents of a Shared Project are compiled into the referencing projects, the prefix used for embedded file resource IDs can change. This means the resource ID for each embedded file may be different for each platform.
 
@@ -162,4 +164,4 @@ This article has shown some simple file operations for saving and loading text o
 - [FilesSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
 - [Xamarin.Forms Samples](https://github.com/xamarin/xamarin-forms-samples)
 - [Working with the File System in Xamarin.iOS](~/ios/app-fundamentals/file-system.md)
-- [Files Workbook](https://developer.xamarin.com/workbooks/xamarin-forms/application-fundamentals/files/files.workbook)
+

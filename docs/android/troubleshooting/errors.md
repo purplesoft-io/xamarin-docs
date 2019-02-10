@@ -4,8 +4,8 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7EBE4C01-8EFC-4B7E-97BA-D879994F59AB
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/13/2018
 ---
 
@@ -35,7 +35,7 @@ This document provides some information on the various error codes from Xamarin.
 
 |Error Code|Description|
 |--- |--- |
-|XA0000|Unexpected error - Please fill a [bug report](http://bugzilla.xamarin.com).|
+|XA0000|Unexpected error - Please fill a [bug report](https://github.com/xamarin/xamarin-android/issues/new).|
 |XA0001|'-devname was provided without any device-specific action.|
 |XA0002|Could not parse the environment variable '{0}'.|
 |XA0003|Application name '{0}.exe' conflicts with an SDK or product assembly (.dll) name.|

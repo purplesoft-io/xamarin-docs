@@ -4,8 +4,8 @@ description: "This document describes security and privacy features of iOS and d
 ms.prod: xamarin
 ms.assetid: 718C8721-C359-4650-878A-D68E159A3F53
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
 ---
 
@@ -22,7 +22,7 @@ Apple has made several enhancements to both security and privacy in iOS 10 (and 
 The following general changes have been made to Security and Privacy in iOS 10:
 
 - The Common Data Security Architecture (CDSA) API has been deprecated and should be replaced with the SecKey API to generate asymmetric keys.
-- The new `NSAllowsArbitraryLoadsInWebContent` key can be add to the an app's **Info.plist** file and will allow web pages to load correctly while Apple Transport Security (ATS) protection is still enabled for the rest of the app. For more information, please see our [App Transport Security](~/ios/app-fundamentals/ats.md) documentation.
+- The new `NSAllowsArbitraryLoadsInWebContent` key can be added to the an app's **Info.plist** file and will allow web pages to load correctly while Apple Transport Security (ATS) protection is still enabled for the rest of the app. For more information, please see our [App Transport Security](~/ios/app-fundamentals/ats.md) documentation.
 - Because the new Clipboard in iOS 10 and macOS Sierra allows the user to copy and paste between devices, the API has been expanded to allow a clipboard to be limited to a specific device and be timestamped to be cleared automatically at a given point. Additionally, named pasteboards are no longer persisted and should be replaced with the shared pasteboard containers.
 - For all SSL/TLS connections, the RC4 symmetric cipher is now disabled by default. Additionally, the Secure Transport API no longer supports SSLv3 and it is recommended that the developer stop using SHA-1 and 3DES cryptography as soon as possible.
 
@@ -67,7 +67,7 @@ Take the following example of accessing HomeKit on iOS 10 (and greater), the dev
 
 ![An example NSHomeKitUsageDescription alert](security-privacy-images/info01.png "An example NSHomeKitUsageDescription alert")
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 Xamarin.iOS for Visual Studio currently doesn't support editing the **Info.plist** privacy keys from within the default iOS manifest editor. Instead you will need to use the generic PList editor, so do the following:
 
@@ -85,7 +85,7 @@ Xamarin.iOS for Visual Studio currently doesn't support editing the **Info.plist
 	![Enter a description](security-privacy-images/InfoPListSetValue.png "Enter a description")
 7. Save the changes to the file.
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 To set any of the Privacy keys, do the following:
 

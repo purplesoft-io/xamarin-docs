@@ -4,8 +4,8 @@ description: "This document describes how to install and use watchOS with Xamari
 ms.prod: xamarin
 ms.assetid: 69F21F15-198D-4B42-A703-21D35CAB0CCA
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 12/05/2017
 ---
 
@@ -36,17 +36,17 @@ A watch app consists of three projects:
 The [Watch Kit Catalog sample](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
 	solution looks like this in Xamarin.Studio:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ![](installation-images/catalog-solution.png "The solution in Visual Studio")
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ![](installation-images/catalog-solution-vs.png "The solution in Visual Studio")
 
 -----
 
-Download and run the [WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/) sample to get started.
+Download and run the [WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/) sample to get started.
 	Screens from the sample can be found on the [Controls](~/ios/watchos/user-interface/index.md)
 	page.
 
@@ -94,11 +94,11 @@ Double-click on the watch app's **Interface.storyboard** to edit
 	and UI controls onto the storyboard from the **Toolbox** and
 	configure them using the **Properties** pad:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 [![](installation-images/iosdesigner-sml.png "The storyboard in the Designer")](installation-images/iosdesigner.png#lightbox)
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 [![](installation-images/iosdesigner-sml-vs.png "The storyboard in the Designer")](installation-images/iosdesigner-vs.png#lightbox)
 
@@ -108,11 +108,11 @@ You should give each new interface controller a **Class**
 	by selecting it and then entering the name in the **Properties**
 	pad (this will create the required C# codebehind files automatically):
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ![](installation-images/iosdesigner-classname.png "Give each new interface controller a Class")
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ![](installation-images/iosdesigner-classname-vs.png "Give each new interface controller a Class")
 
@@ -124,13 +124,13 @@ Create segues by **Ctrl + dragging** from a button, table
 
 ### Using Xcode on the Mac
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 You can continue to use Xcode to build your user interface
 	by right-clicking on the Interface.storyboard file
 	and selecting **Open With > Xcode Interface Builder**:
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 Visual Studio users can also use Xcode to build their user interface
 	by switching over to use the Mac Build Host directly.
@@ -209,7 +209,7 @@ The following error will appear in the **Application Output** if you try to
 launch to a simulator that does not have a paired watch:
 
 ```csharp
-error MT0000: Unexpected error - Please file a bug report at http://bugzilla.xamarin.com
+error MT0000: Unexpected error - Please file a bug report at https://github.com/xamarin/xamarin-macios/issues/new
 error HE0020: Could not find a paired Watch device for the iOS device 'iPhone 6'.
 ```
 

@@ -4,12 +4,14 @@ description: "This article explains how to use SkiaSharp to draw curves and use 
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/24/2017
 ---
 
 # SkiaSharp Curves and Paths
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _Learn how to use SkiaSharp to draw curves and use path features_
 

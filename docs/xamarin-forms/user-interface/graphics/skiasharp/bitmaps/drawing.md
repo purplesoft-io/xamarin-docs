@@ -4,12 +4,14 @@ description: "Learn how to create SkiaSharp bitmaps and then draw on these bitma
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
 ---
 
 # Creating and drawing on SkiaSharp bitmaps
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 You've seen how an application can load bitmaps from the Web, from application resources, and from the user's photo library. It's also possible to create new bitmaps within your application. The simplest approach involves one of the constructors of [`SKBitmap`](xref:SkiaSharp.SKBitmap.%23ctor(System.Int32,System.Int32,System.Boolean)):
 
@@ -122,7 +124,7 @@ The documentation of the `Clear` methods of `SKCanvas` describes them with the s
 
 - The [`Clear`](xref:SkiaSharp.SKCanvas.Clear) method with no parameters replaces the pixels with the [`SKColors.Empty`](xref:SkiaSharp.SKColors.Empty) color, which is a color in which all the components (red, green, blue, and alpha) are set to zero. This color is sometimes referred to as "transparent black."
 
-Calling `Clear` with no arguments on a new bitmap intializes the entire bitmap to be entirely transparent. Anything subsequently drawn on the bitmap will usually be opaque or partially opaque.
+Calling `Clear` with no arguments on a new bitmap initializes the entire bitmap to be entirely transparent. Anything subsequently drawn on the bitmap will usually be opaque or partially opaque.
 
 Here's something to try: In the **Hello Bitmap** page, replace the `Clear` method applied to the `bitmapCanvas` with this one:
 
@@ -164,7 +166,7 @@ The two formats where each pixel is 32 pixels (4 bytes) are often called _full-c
 
 These days, programmers almost always use full-color bitmaps and don't bother with other formats. The exception is the `RgbaF16` format, which allows greater color resolution than even the full-color formats. However, this format is used for specialized purposes, such as medical imaging, and doesn't make much sense when used with standard full-color displays.
 
-This series of articles will restrict itself to the `SKBitmap` color formats used by default when no `SKColorType` member is specfied. This default format is based on the underlying platform. For the platforms supported by Xamarin.Forms, the default color type is:
+This series of articles will restrict itself to the `SKBitmap` color formats used by default when no `SKColorType` member is specified. This default format is based on the underlying platform. For the platforms supported by Xamarin.Forms, the default color type is:
 
 - `Rgba8888` for iOS and Android
 - `Bgra8888` for the UWP
@@ -489,7 +491,7 @@ The rotated bitmap is just large enough to include the entire original bitmap, b
 
 Another operation commonly performed on bitmaps is called _flipping_. Conceptually, the bitmap is rotated in three dimensions around a vertical axis or horizontal axis through the center of the bitmap. Vertical flipping creates a mirror image.
 
-The **Bitmap Flipper** page in the **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** application demonstates these processes. The XAML file contains an `SKCanvasView` and two buttons for flipping vertically and horizontally:
+The **Bitmap Flipper** page in the **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** application demonstrates these processes. The XAML file contains an `SKCanvasView` and two buttons for flipping vertically and horizontally:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

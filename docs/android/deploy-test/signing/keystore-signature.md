@@ -3,8 +3,8 @@ title: "Finding your Keystore's Signature"
 ms.prod: xamarin
 ms.assetid: 1b511fec-e6f6-453e-89c8-810aafb02b77
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
 ---
 
@@ -21,7 +21,7 @@ file. This file is generated when Xamarin.Android is first
 installed.The steps below detail the process for finding the MD5 or
 SHA1 signature of the default Xamarin.Android **debug.keystore** file.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 Locate the Xamarin **debug.keystore** file that is used to sign the
 app. By default, the keystore that is used to sign debug versions of
@@ -64,7 +64,7 @@ Certificate fingerprints:
 ```
 
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 Locate the Xamarin **debug.keystore** file that is used to sign the
 app. By default, the keystore that is used to sign debug versions of
@@ -128,22 +128,22 @@ The process for release builds that are signed with a custom
 by Xamarin.Android. Replace your own values for the keystore password,
 and alias name from when the release keystore file was created.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 When the Visual Studio **Distribute**
 wizard is used to sign a Xamarin.Android app, the resulting keystore resides in the following location:
 
-**C:\\Users\\*USERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\alias\\alias.keystore**
+**C:\\Users\\*USERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\*alias*\\*alias*.keystore**
 
 For example, if you followed the steps in [Create a New Certificate](~/android/deploy-test/signing/index.md#newcertvs) to create a new signing key, the resulting example keystore resides in the following location:
 
-**C:\\Users\\*USERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\chimp\\chimp.keystore**
+**C:\\Users\\*USERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\\chimp.keystore**
 
 For more information about signing a Xamarin.Android app, see
 [Signing the Android Application Package](~/android/deploy-test/signing/index.md).
 
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 When the Visual Studio for Mac **Sign and Distribute...**
 wizard to sign your app, the resulting keystore resides in the following location:

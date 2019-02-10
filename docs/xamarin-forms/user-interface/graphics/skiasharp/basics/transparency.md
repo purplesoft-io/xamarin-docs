@@ -4,12 +4,14 @@ description: "Use transparency to combine multiple objects in a single scene."
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: B62F9487-C30E-4C63-BAB1-4C091FF50378
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 08/23/2018
 ---
 
 # SkiaSharp transparency
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 As you've seen, the [`SKPaint`](xref:SkiaSharp.SKPaint) class includes a [`Color`](xref:SkiaSharp.SKPaint.Color) property of type [`SKColor`](xref:SkiaSharp.SKColor). `SKColor` includes an alpha channel, so anything that you color with an `SKColor` value can be partially transparent. 
 

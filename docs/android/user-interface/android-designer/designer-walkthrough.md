@@ -4,8 +4,8 @@ description: "This article is a walkthrough of the Xamarin.Android Designer. It 
 ms.prod: xamarin
 ms.assetid: 70FF2F9A-71BD-317E-C881-A44D82DF1BD8
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/25/2018
 ---
 
@@ -40,7 +40,7 @@ by using the Designer's **Properties** pane. Finally, you'll see how
 the design looks when the app runs on a device or emulator.
 
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ### Creating a new project
 
@@ -363,7 +363,7 @@ app appears when running on a device:
 
 
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ### Creating a new project
 

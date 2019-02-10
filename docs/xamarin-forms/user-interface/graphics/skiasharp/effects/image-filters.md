@@ -4,12 +4,14 @@ description: "Learn how to use the image filter to create blurs and drop shadows
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 08/27/2018
 ---
 
 # SkiaSharp image filters
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 Image filters are effects that operate on all the color bits of pixels that make up an image. They are more versatile than mask filters, which only operate on the alpha channel as described in the article [**SkiaSharp mask filters**](mask-filters.md). To use an image filter, set the [`ImageFilter`](xref:SkiaSharp.SKPaint.ImageFilter) property of `SKPaint` to an object of type [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) that you've created by calling one of the class's static methods.
 
@@ -24,8 +26,8 @@ This article also demonstrates using an image filter to create a drop shadow, an
 The blur effect created by the [`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*) static method has a significant advantage over the blur methods in the [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) class: The image filter can blur an entire bitmap. The method has the following syntax:
 
 ```csharp
-public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY, 
-                                                  SKImageFilter input = null, 
+public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
+                                                  SKImageFilter input = null,
                                                   SKImageFilter.CropRect cropRect = null);
 ```
 
@@ -39,7 +41,7 @@ The **Image Blur Experiment** page in the [**SkiaSharpFormsDemos**](https://deve
              xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              x:Class="SkiaSharpFormsDemos.Effects.ImageBlurExperimentPage"
              Title="Image Blur Experiment">
-    
+
     <StackLayout>
         <skia:SKCanvasView x:Name="canvasView"
                            VerticalOptions="FillAndExpand"
@@ -54,7 +56,7 @@ The **Image Blur Experiment** page in the [**SkiaSharpFormsDemos**](https://deve
                               Path=Value,
                               StringFormat='Sigma X = {0:F1}'}"
                HorizontalTextAlignment="Center" />
-        
+
         <Slider x:Name="sigmaYSlider"
                 Maximum="10"
                 Margin="10, 0"
@@ -140,11 +142,11 @@ To keep the blur consistent among different display sizes and resolutions, set `
 The [`SKImageFilter.CreateDropShadow`](xref:SkiaSharp.SKImageFilter.CreateDropShadow*) static method creates an `SKImageFilter` object for a drop shadow:
 
 ```csharp
-public static SKImageFilter CreateDropShadow (float dx, float dy, 
-                                              float sigmaX, float sigmaY, 
-                                              SKColor color, 
-                                              SKDropShadowImageFilterShadowMode shadowMode, 
-                                              SKImageFilter input = null, 
+public static SKImageFilter CreateDropShadow (float dx, float dy,
+                                              float sigmaX, float sigmaY,
+                                              SKColor color,
+                                              SKDropShadowImageFilterShadowMode shadowMode,
+                                              SKImageFilter input = null,
                                               SKImageFilter.CropRect cropRect = null);
 ```
 
@@ -154,7 +156,7 @@ The `dx` and `dy` parameters indicate the horizontal and vertical offsets of the
 
 The `sigmaX` and `sigmaY` parameters are blurring factors for the drop shadow.
 
-The `color` parameter is the color of the drop shadow. This `SKColor` value can include transparency. One possibility is the color value `SKColors.Black.WithAlpha(0x80)` to darken any color background. 
+The `color` parameter is the color of the drop shadow. This `SKColor` value can include transparency. One possibility is the color value `SKColors.Black.WithAlpha(0x80)` to darken any color background.
 
 The final two parameters are optional.
 
@@ -260,7 +262,7 @@ public partial class DropShadowExperimentPage : ContentPage
                                     sigmaX,
                                     sigmaY,
                                     SKColors.Red,
-                                    SKDropShadowImageFilterShadowMode.DrawShadowAndForeground); 
+                                    SKDropShadowImageFilterShadowMode.DrawShadowAndForeground);
 
             SKRect textBounds = new SKRect();
             paint.MeasureText(TEXT, ref textBounds);
@@ -275,7 +277,7 @@ public partial class DropShadowExperimentPage : ContentPage
 }
 ```
 
-Here's the program running on all three platforms:
+Here's the program running:
 
 [![Drop Shadow Experiment](image-filters-images/DropShadowExperiment.png "Drop Shadow Experiment")](image-filters-images/DropShadowExperiment-Large.png#lightbox)
 
@@ -294,22 +296,22 @@ The `SKImageFilter` class defines six methods that have similar names and parame
 
 These methods create image filters that mimic the effect of different kinds of light on three-dimensional surfaces. The resultant image filter illuminates two-dimensional objects as if they existed in 3D space, which can cause these objects to appear elevated or recessed, or with specular highlighting.
 
-The `Distant` light methods assume that the light comes from a far distance. For the purpose of illuminating objects, the light is assumed to point in one consistent direction in 3D space, much like the Sun on a small area of the Earth. The `Point` light methods mimic a light bulb positioned in 3D space that emits light in all directions. The `Spot` light has both a position and a direction, much like a flashlight. 
+The `Distant` light methods assume that the light comes from a far distance. For the purpose of illuminating objects, the light is assumed to point in one consistent direction in 3D space, much like the Sun on a small area of the Earth. The `Point` light methods mimic a light bulb positioned in 3D space that emits light in all directions. The `Spot` light has both a position and a direction, much like a flashlight.
 
-Locations and directions in 3D space are both specified with values of the [`SKPoint3`](xref:SkiaSharp.SKPoint3) structure, which is similar to `SKPoint` but with three properties named `X`, `Y`, and `Z`. 
+Locations and directions in 3D space are both specified with values of the [`SKPoint3`](xref:SkiaSharp.SKPoint3) structure, which is similar to `SKPoint` but with three properties named `X`, `Y`, and `Z`.
 
 The number and complexity of the parameters to these methods make experimentation with them difficult. To get you started, the **Distant Light Experiment** page lets you experiment with parameters to the `CreateDistantLightDiffuse` method:
 
 ```csharp
-public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction, 
-                                                     SKColor lightColor, 
-                                                     float surfaceScale, 
-                                                     float kd, 
-                                                     SKImageFilter input = null, 
+public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
+                                                     SKColor lightColor,
+                                                     float surfaceScale,
+                                                     float kd,
+                                                     SKImageFilter input = null,
                                                      SKImageFilter.CropRect cropRect = null);
 ```
 
-The page doesn't use the last two optional parameters. 
+The page doesn't use the last two optional parameters.
 
 Three `Slider` views in the XAML file let you select the `Z` coordinate of the `SKPoint3` value, the `surfaceScale` parameter, and the `kd` parameter, which is defined in the API documentation as the "diffuse lighting constant":
 
@@ -326,7 +328,7 @@ Three `Slider` views in the XAML file let you select the `Z` coordinate of the `
                            PaintSurface="OnCanvasViewPaintSurface"
                            VerticalOptions="FillAndExpand" />
 
-        <Slider x:Name="zSlider" 
+        <Slider x:Name="zSlider"
                 Minimum="-10"
                 Maximum="10"
                 Margin="10, 0"
@@ -337,7 +339,7 @@ Three `Slider` views in the XAML file let you select the `Z` coordinate of the `
                               StringFormat='Z = {0:F0}'}"
                HorizontalTextAlignment="Center" />
 
-        <Slider x:Name="surfaceScaleSlider" 
+        <Slider x:Name="surfaceScaleSlider"
                 Minimum="-1"
                 Maximum="1"
                 Margin="10, 0"
@@ -348,7 +350,7 @@ Three `Slider` views in the XAML file let you select the `Z` coordinate of the `
                               StringFormat='Surface Scale = {0:F1}'}"
                HorizontalTextAlignment="Center" />
 
-        <Slider x:Name="lightConstantSlider" 
+        <Slider x:Name="lightConstantSlider"
                 Minimum="-1"
                 Maximum="1"
                 Margin="10, 0"

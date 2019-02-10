@@ -4,8 +4,8 @@ description: "This document describes how to read near field communication tags 
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 09/25/2017
 ---
 
@@ -27,7 +27,7 @@ There are some restrictions to be aware of:
 - CoreNFC can only be tested on real devices (not on the simulator).
 
 This page describes the configuration required to use CoreNFC
-and shows how to use the API using the ["TFCTagReader" sample code](https://developer.xamarin.com/samples/monotouch/ios11/NFCTagReader/).
+and shows how to use the API using the ["NFCTagReader" sample code](https://developer.xamarin.com/samples/monotouch/ios11/NFCTagReader/).
 
 ## Configuration
 

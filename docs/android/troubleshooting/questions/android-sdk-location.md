@@ -4,14 +4,14 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 6A9DE6E9-3E27-4DD2-87D2-34E95E5D401C
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 11/16/2017
 ---
 
 # Where can I set my Android SDK locations?
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 In Visual Studio, navigate to **Tools > Options > Xamarin > Android
 Settings** to view and set the Android SDK location:
@@ -45,7 +45,7 @@ For example, if your Android SDK location is at
 path in the **Android SDK Location** box, paste in this path, and click
 **OK**.
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 In Visual Studio for Mac, navigate to **Preferences > Projects > SDK
 Locations > Android**. In the **Android** page, click the **Locations**

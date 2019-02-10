@@ -11,7 +11,9 @@ ms.date: 12/09/2015
 
 # Device Orientation
 
-It is important to consider how your application will be used and how landscape orientation can be incorporated to improve the user experience. Individual layouts can be designed to accomodate multiple orientations and best use the available space. At the application level, rotation can be disabled or enabled.
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
+
+It is important to consider how your application will be used and how landscape orientation can be incorporated to improve the user experience. Individual layouts can be designed to accommodate multiple orientations and best use the available space. At the application level, rotation can be disabled or enabled.
 
 <a name="Controlling_Orientation" />
 
@@ -23,7 +25,7 @@ When using Xamarin.Forms, the supported method of controlling device orientation
 
 On iOS, device orientation is configured for applications using the **Info.plist** file. This file will include orientation settings for iPhone & iPod, as well as settings for iPad if the app includes it as a target. The following are instructions specific to your IDE. Use the IDE options at the top of this document to select which instructions you'd like to see:
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 In Visual Studio, open the iOS project and open **Info.plist**. The file will open into a configuration panel, starting with the iPhone Deployment Info tab:
 
@@ -33,7 +35,7 @@ To configure iPad orientation, select the **iPad Deployment Info** tab at the to
 
 ![Supported Device Orientations in Visual Studio](device-orientation-images/orientation-vs-ipad.png)
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 In Visual Studio for Mac, open the iOS project and open **Info.plist**. Under the **Application** tab, sections will be available to set orientation:
 
@@ -91,7 +93,7 @@ Xamarin.Forms does not offer any native events for notifying your app of orienta
 > [!NOTE]
 > There is an existing, free NuGet package for receiving notifications of orientation changes in shared code. See the [GitHub repo](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) for more information.
 
-Alternatively, it's possible to override the [`OnSizeAllocated`](xref:Xamarin.Forms.Page.OnSizeAllocated*) method on a `Page`, inserting any layout change logic there. The `OnSizeAllocated` method is called whenever a `Page` is allocated a new size, which happens whenver the device is rotated. Note that the base implementation of `OnSizeAllocated` performs important layout functions, so it is important to call the base implementation in the override:
+Alternatively, it's possible to override the [`OnSizeAllocated`](xref:Xamarin.Forms.Page.OnSizeAllocated*) method on a `Page`, inserting any layout change logic there. The `OnSizeAllocated` method is called whenever a `Page` is allocated a new size, which happens whenever the device is rotated. Note that the base implementation of `OnSizeAllocated` performs important layout functions, so it is important to call the base implementation in the override:
 
 ```csharp
 protected override void OnSizeAllocated(double width, double height)

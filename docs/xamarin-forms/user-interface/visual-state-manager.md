@@ -5,12 +5,14 @@ ms.prod: xamarin
 ms.assetid: 17296F14-640D-484B-A24C-A4E9B7013E4F
 ms.technology: xamarin-forms
 ms.custom: xamu-video
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/07/2018
 ---
 
 # The Xamarin.Forms Visual State Manager
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)
 
 _Use the Visual State Manager to make changes to XAML elements based on visual states set from code._
 

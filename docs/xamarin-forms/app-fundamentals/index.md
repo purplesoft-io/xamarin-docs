@@ -6,7 +6,7 @@ ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/28/2017
+ms.date: 01/08/2018
 ---
 
 # Xamarin.Forms Application Fundamentals
@@ -22,6 +22,10 @@ The `Application` class is the starting point for Xamarin.Forms – every app ne
 ## [App Lifecycle](app-lifecycle.md)
 
 The `Application` class `OnStart`, `OnSleep`, and `OnResume` methods, as well as modal navigation events, let you handle application lifecycle events with custom code.
+
+## [Application Indexing and Deep Linking](deep-linking.md)
+
+Application indexing allows applications that would otherwise be forgotten after a few uses to stay relevant by appearing in search results. Deep linking allows applications to respond to a search result that contains application data, typically by navigating to a page referenced from a deep link.
 
 ## [Behaviors](behaviors/index.md)
 
@@ -67,6 +71,10 @@ Xamarin.Forms `MessagingCenter` enables view models and other components to comm
 
 Xamarin.Forms provides a number of different page navigation experiences, depending upon the `Page` type being used.
 
+## [Shell](shell.md)
+
+Xamarin.Forms Shell is a container for applications, that provides fundamental UI features that most applications require, leaving you to focus on the application's core workload.
+
 ## [Templates](templates/index.md)
 
 Control templates provide the ability to easily theme and re-theme application pages at runtime, while data templates provide the ability to define the presentation of data on supported controls.
@@ -74,8 +82,3 @@ Control templates provide the ability to easily theme and re-theme application p
 ## [Triggers](triggers.md)
 
 Update controls by responding to property changes and events in XAML.
-
-
-## Related Links
-
-- [Introduction To Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)

@@ -4,18 +4,13 @@ description: "This document links to various guides that describe features intro
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/25/2018
 ---
 # iOS platform features
 
 ## [Introduction to iOS 12](~/ios/platform/introduction-to-ios12/index.md)
-
-> [!WARNING]
-> Xamarin's iOS 12 support is currently in preview, which means
-> that it may contain bugs, is not feature-complete, and may change.
-> Use it for experimentation only.
 
 This document describes iOS 12 features available for use when building
 Xamarin.iOS applications.

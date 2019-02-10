@@ -4,8 +4,8 @@ description: "This article covers working with images and icons in a Xamarin.Mac
 ms.prod: xamarin
 ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/15/2017
 ---
 
@@ -77,7 +77,7 @@ The following should be taken into consideration when using PDF vector images in
 - This is not full vector support as the PDF will be rasterized to a bitmap at compile time and the bitmaps shipped in the final application.
 - You cannot adjust the size of the image once it has been set in the Asset Catalog. If you attempt to resize the image (either in code or by using Auto Layout and Size Classes) the image will be distorted just like any other bitmap.
 
-When using an **Image Set** in Xcode's Interface Builder, you can simply select the set's name from the dropdown list in the **Attribute Inspector**:**
+When using an **Image Set** in Xcode's Interface Builder, you can simply select the set's name from the dropdown list in the **Attribute Inspector**:
 
 ![Selecting an image set in Xcode's Interface Builder](image-images/imageset06.png "Selecting an image set in Xcode's Interface Builder")
 
@@ -214,22 +214,23 @@ MyIcon.Image = NSImage.ImageNamed ("MessageIcon");
 Add the following public function to your View Controller:
 
 ```csharp
-public NSImage ImageTintedWithColor (NSImage image, NSColor tint)
-{
-	var tintedImage = image.Copy () as NSImage;
-	var frame = new CGRect (0, 0, image.Size.Width, image.Size.Height);
+public NSImage ImageTintedWithColor(NSImage sourceImage, NSColor tintColor)
+	=> NSImage.ImageWithSize(sourceImage.Size, false, rect => {
+		// Draw the original source image
+		sourceImage.DrawInRect(rect, CGRect.Empty, NSCompositingOperation.SourceOver, 1f);
 
-	// Apply tint
-	tintedImage.LockFocus ();
-	tint.Set ();
-	NSGraphics.RectFill (frame, NSCompositingOperation.SourceAtop);
-	tintedImage.UnlockFocus ();
-	tintedImage.Template = false;
+		// Apply tint
+		tintColor.Set();
+		NSGraphics.RectFill(rect, NSCompositingOperation.SourceAtop);
 
-	// Return tinted image
-	return tintedImage;
-}
+		return true;
+	});
 ```
+
+> [!IMPORTANT]
+> Particularly with the advent of Dark Mode in macOS Mojave, it is important to avoid the `LockFocus` API when reating custom-rendered `NSImage` objects. Such images become static and will not be automatically updated to account for appearance or display density changes.
+>
+> By employing the handler-based mechanism above, re-rendering for dynamic conditions will happen automatically when the `NSImage` is hosted, for example, in an `NSImageView`.
 
 Finally, to tint a Template Image, call this function against the image to colorize:
 

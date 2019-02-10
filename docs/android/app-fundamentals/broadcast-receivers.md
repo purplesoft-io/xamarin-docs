@@ -4,8 +4,8 @@ description: "This section discusses how to use a Broadcast Receiver."
 ms.prod: xamarin
 ms.assetid: B2727160-12F2-43EE-84B5-0B15C8FCF4BD
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 04/20/2018
 ---
 
@@ -15,7 +15,7 @@ _This section discusses how to use a Broadcast Receiver._
 
 ## Broadcast Receiver Overview
 
-A _broadcast receiver_ is an Android component that allows an application to respond to messages (an Android [`Intent`](https://developer.xamarin.com/api/type/Android.Content.Intent/)) that are broadcast by the Android operating system or by an application. Broadcasts follow a _publish-subscribe_ model &ndash; an event causes a broadcast to be published and received by those components that are interested in the event. 
+A _broadcast receiver_ is an Android component that allows an application to respond to messages (an Android [`Intent`](https://developer.xamarin.com/api/type/Android.Content.Intent/)) that are broadcast by the Android operating system or by an application. Broadcasts follow a _publish-subscribe_ model &ndash; an event causes a broadcast to be published and received by those components that are interested in the event.
 
 Android identifies two types of broadcasts:
 
@@ -92,7 +92,7 @@ public class MySampleBroadcastReceiver : BroadcastReceiver
 }
 ```
 
-Apps that target Android 8.0 (API level 26) or higher may not statically register for an implicit broadcast. Apps may still statically register for an explicit broadcast. There is a small list of of implicit broadcasts that are exempt from this restriction. These exceptions are described in the [Implicit Broadcast Exceptions](https://developer.android.com/guide/components/broadcast-exceptions.html) guide in the Android documentation. Apps that are interested in implicit broadcasts must do so dynamically using the `RegisterReceiver` method. This is described next.
+Apps that target Android 8.0 (API level 26) or higher may not statically register for an implicit broadcast. Apps may still statically register for an explicit broadcast. There is a small list of implicit broadcasts that are exempt from this restriction. These exceptions are described in the [Implicit Broadcast Exceptions](https://developer.android.com/guide/components/broadcast-exceptions.html) guide in the Android documentation. Apps that are interested in implicit broadcasts must do so dynamically using the `RegisterReceiver` method. This is described next.
 
 ### Context-Registering a Broadcast Receiver
 
@@ -134,9 +134,8 @@ In the previous example, when the Activity comes into the foreground, it will re
 
 A broadcast may be published to all apps installed on the device creating an Intent object and dispatching it with the `SendBroadcast` or the `SendOrderedBroadcast` method.  
 
-1. **Context.SendBroadcast
-   methods** &ndash; There are several implementations of this method.
-   These methods will broadcast the intent to the entire system. Broadcast receivers thatwill receive the intent in an indeterminate order. This
+1. **Context.SendBroadcast methods** &ndash; There are several implementations of this method.
+   These methods will broadcast the intent to the entire system. Broadcast receivers that will receive the intent in an indeterminate order. This
    provides a great deal of flexibility but means that it is possible for other applications to register and receive the intent. This can pose
    a potential security risk. Applications may need to implement
    addition security to prevent unauthorized access. One possible solution is to use the `LocalBroadcastManager` which will only dispatch messages within the private space of the app. This
@@ -146,21 +145,21 @@ A broadcast may be published to all apps installed on the device creating an Int
    ```csharp
    Intent message = new Intent("com.xamarin.example.TEST");
    // If desired, pass some values to the broadcast receiver.
-   intent.PutExtra("key", "value");
-   SendBroadcast(intent);
+   message.PutExtra("key", "value");
+   SendBroadcast(message);
    ```
 
     This snippet is another example of sending a broadcast by using the
     `Intent.SetAction` method to identify the action:
 
-    ```csharp 
+    ```csharp
     Intent intent = new Intent();
     intent.SetAction("com.xamarin.example.TEST");
     intent.PutExtra("key", "value");
     SendBroadcast(intent);
     ```
 
-2. **Context.SendOrderedBroadcast** &ndash; This is method is very similar to `Context.SendBroadcast`, with the difference being that the intent will be published one at time to receivers, in the order that the recievers were registered.
+2. **Context.SendOrderedBroadcast** &ndash; This is method is very similar to `Context.SendBroadcast`, with the difference being that the intent will be published one at time to receivers, in the order that the receivers were registered.
 
 ### LocalBroadcastManager
 
@@ -175,18 +174,18 @@ Other apps on the device cannot receive the messages that are published with the
 ```csharp
 Intent message = new Intent("com.xamarin.example.TEST");
 // If desired, pass some values to the broadcast receiver.
-intent.PutExtra("key", "value");
+message.PutExtra("key", "value");
 Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(message);
 ```
 
 ## Related Links
 
-- [BroadcastReceiver](https://developer.xamarin.com/api/type/Android.Content.BroadcastReceiver/)
-- [Context.RegisterReceiver](https://developer.xamarin.com/api/member/Android.Content.Context.RegisterReceiver/p/Android.Content.BroadcastReceiver/Android.Content.IntentFilter/System.String/Android.OS.Handler/)
-- [Context.SendBroadcast](https://developer.xamarin.com/api/member/Android.Content.Context.SendBroadcast/p/Android.Content.Intent/)
-- [Context.UnregisterReceiver](https://developer.xamarin.com/api/member/Android.Content.Context.UnregisterReceiver/p/Android.Content.BroadcastReceiver/)
-- [Intent](https://developer.xamarin.com/api/type/Android.Content.Intent/)
-- [IntentFilter](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)
-- [LocalBroadcastManager](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))
-- [Local Notifications in Android](~/android/app-fundamentals/notifications/local-notifications.md)
-- [Android Support Library v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)
+- [BroadcastReceiver API](https://developer.xamarin.com/api/type/Android.Content.BroadcastReceiver/)
+- [Context.RegisterReceiver API](https://developer.xamarin.com/api/member/Android.Content.Context.RegisterReceiver/p/Android.Content.BroadcastReceiver/Android.Content.IntentFilter/System.String/Android.OS.Handler/)
+- [Context.SendBroadcast API](https://developer.xamarin.com/api/member/Android.Content.Context.SendBroadcast/p/Android.Content.Intent/)
+- [Context.UnregisterReceiver API](https://developer.xamarin.com/api/member/Android.Content.Context.UnregisterReceiver/p/Android.Content.BroadcastReceiver/)
+- [Intent API](https://developer.xamarin.com/api/type/Android.Content.Intent/)
+- [IntentFilter API](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)
+- [LocalBroadcastManager (Android docs)](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))
+- [Local Notifications in Android](~/android/app-fundamentals/notifications/local-notifications.md) guide
+- [Android Support Library v4 (NuGet)](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)

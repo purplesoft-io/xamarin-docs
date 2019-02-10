@@ -4,8 +4,8 @@ description: "Xamarin.Android permits writing Android apps within C# instead of 
 ms.prod: xamarin
 ms.assetid: A417DEE9-7B7B-4E35-A79C-284739E3838E
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/09/2018
 ---
 
@@ -597,7 +597,7 @@ following actions:
     Wrapper was constructed in Java code, and the class binding is
     being constructed to contain the created Android Callable Wrapper
     instance. For example, when Android creates a
-    `mono.samples.helloworld.HelloAndroid` instance, the the Android
+    `mono.samples.helloworld.HelloAndroid` instance, the Android
     Callable Wrapper will be created first , and the Java
     `HelloAndroid` constructor will create an instance of the
     corresponding `Mono.Samples.HelloWorld.HelloAndroid` type, with the

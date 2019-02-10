@@ -3,8 +3,8 @@ title: "UrhoSharp - 3D/2D Engine"
 description: "UrhoSharp is a cross-platform high-level 3D and 2D engine that can be used to create animated 3D and 2D scenes for your applications using geometries, materials, lights and cameras."
 ms.prod: xamarin
 ms.assetid: E6C5B86C-3756-49DF-843B-0B3D981E1C01
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
 ---
 # UrhoSharp - 3D/2D Engine
@@ -54,9 +54,6 @@ use UrhoSharp.
 - **FormsSample** showcases how to use UrhoSharp in Xamarin.Forms applications.
 
 All the samples run on Android, iOS, Mac and Windows.
-There are also a number of UrhoSharp [Workbooks](https://developer.xamarin.com/workbooks/) including
-[Planet Earth](https://developer.xamarin.com/workbooks/graphics/urhosharp/planetearth/planetearth.workbook) and
-[Exploring Coordinates](https://developer.xamarin.com/workbooks/graphics/urhosharp/coordinates/ExploringUrhoCoordinates.workbook).
 
 ## Copyright
 
@@ -68,7 +65,3 @@ project and contains screenshots from the Cocos2D project.
 
 The UrhoSharp license is available at the [http://download.xamarin.com/content/licenses/URHO.LICENSE](http://download.xamarin.com/content/licenses/URHO.LICENSE)
 
-## Related Links
-
-- [Planet Earth Workbook](https://developer.xamarin.com/workbooks/graphics/urhosharp/planetearth/planetearth.workbook)
-- [Exploring Coordinates Workbook](https://developer.xamarin.com/workbooks/graphics/urhosharp/coordinates/ExploringUrhoCoordinates.workbook)

@@ -6,10 +6,12 @@ ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/10/2018
+ms.date: 10/24/2018
 ---
 
 # Xamarin.Forms WebView
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithWebview/)
 
 [`WebView`](xref:Xamarin.Forms.WebView) is a view for displaying web and HTML content in your app. Unlike `OpenUri`, which takes the user to the web browser on the device, `WebView` displays the HTML content inside your app.
 
@@ -32,7 +34,8 @@ ms.date: 07/10/2018
 To display a website from the internet, set the `WebView`'s [`Source`](xref:Xamarin.Forms.WebViewSource) property to a string URL:
 
 ```csharp
-var browser = new WebView {
+var browser = new WebView
+{
   Source = "http://xamarin.com"
 };
 ```
@@ -65,6 +68,8 @@ The following demonstrates how to enable a specific domain (in this case xamarin
             </dict>
         </dict>
     </dict>
+    ...
+</key>
 ```
 
 It is best practice to only enable some domains to bypass ATS, allowing you to use trusted sites while benefitting from the additional security on untrusted domains. The following demonstrates the less secure method of disabling ATS for the app:
@@ -75,6 +80,8 @@ It is best practice to only enable some domains to bypass ATS, allowing you to u
         <key>NSAllowsArbitraryLoads </key>
         <true/>
     </dict>
+    ...
+</key>
 ```
 
 See [App Transport Security](~/ios/app-fundamentals/ats.md) for more information about this new feature in iOS 9.
@@ -159,11 +166,11 @@ Implementations of the interface for each platform must then be provided.
 
 On iOS, the web content should be located in the project's root directory or **Resources** directory with build action *BundleResource*, as demonstrated below:
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ![](webview-images/ios-vs.png "Local Files on iOS")
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ![](webview-images/ios-xs.png "Local Files on iOS")
 
@@ -173,9 +180,12 @@ The `BaseUrl` should be set to the path of the main bundle:
 
 ```csharp
 [assembly: Dependency (typeof (BaseUrl_iOS))]
-namespace WorkingWithWebview.iOS{
-  public class BaseUrl_iOS : IBaseUrl {
-    public string Get() {
+namespace WorkingWithWebview.iOS
+{
+  public class BaseUrl_iOS : IBaseUrl
+  {
+    public string Get()
+    {
       return NSBundle.MainBundle.BundlePath;
     }
   }
@@ -186,11 +196,11 @@ namespace WorkingWithWebview.iOS{
 
 On Android, place HTML, CSS, and images in the Assets folder with build action *AndroidAsset* as demonstrated below:
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ![](webview-images/android-vs.png "Local Files on Android")
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ![](webview-images/android-xs.png "Local Files on Android")
 
@@ -200,9 +210,12 @@ On Android, the `BaseUrl` should be set to `"file:///android_asset/"`:
 
 ```csharp
 [assembly: Dependency (typeof(BaseUrl_Android))]
-namespace WorkingWithWebview.Android {
-  public class BaseUrl_Android : IBaseUrl {
-    public string Get() {
+namespace WorkingWithWebview.Android
+{
+  public class BaseUrl_Android : IBaseUrl
+  {
+    public string Get()
+    {
       return "file:///android_asset/";
     }
   }
@@ -213,7 +226,8 @@ On Android, files in the **Assets** folder can also be accessed through the curr
 
 ```csharp
 var assetManager = MainActivity.Instance.Assets;
-using (var streamReader = new StreamReader (assetManager.Open ("local.html"))) {
+using (var streamReader = new StreamReader (assetManager.Open ("local.html")))
+{
   var html = streamReader.ReadToEnd ();
 }
 ```
@@ -256,50 +270,49 @@ Use the built-in navigation methods and properties to enable this scenario.
 Start by creating the page for the browser view:
 
 ```xaml
-<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-x:Class="WebViewDemo.InAppDemo"
-Title="In App Browser">
-    <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Orientation="Horizontal" Padding="10,10">
-                <Button Text="Back" HorizontalOptions="StartAndExpand" Clicked="backClicked" />
-                <Button Text="Forward" HorizontalOptions="End" Clicked="forwardClicked" />
-            </StackLayout>
-            <WebView x:Name="Browser" WidthRequest="1000" HeightRequest="1000" />
-        </StackLayout>
-    </ContentPage.Content>
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WebViewSample.InAppBrowserXaml"
+             Title="Browser">
+	<StackLayout Margin="20">
+		<StackLayout Orientation="Horizontal">
+			<Button Text="Back" HorizontalOptions="StartAndExpand" Clicked="OnBackButtonClicked" />
+			<Button Text="Forward" HorizontalOptions="EndAndExpand" Clicked="OnForwardButtonClicked" />
+		</StackLayout>
+		<!-- WebView needs to be given height and width request within layouts to render. -->
+		<WebView x:Name="webView" WidthRequest="1000" HeightRequest="1000" />
+	</StackLayout>
 </ContentPage>
 ```
 
-In our code-behind:
+In the code-behind:
 
 ```csharp
-public partial class InAppDemo : ContentPage
+public partial class InAppBrowserXaml : ContentPage
 {
-  //sets the URL for the browser in the page at creation
-    public InAppDemo (string URL)
+    public InAppBrowserXaml(string URL)
     {
-        InitializeComponent ();
-        Browser.Source = URL;
+        InitializeComponent();
+        webView.Source = URL;
     }
 
-
-    private void backClicked(object sender, EventArgs e)
+    async void OnBackButtonClicked(object sender, EventArgs e)
     {
-    // Check to see if there is anywhere to go back to
-        if (Browser.CanGoBack) {
-            Browser.GoBack ();
-        } else { // If not, leave the view
-            Navigation.PopAsync ();
+        if (webView.CanGoBack)
+        {
+            webView.GoBack();
+        }
+        else
+        {
+            await Navigation.PopAsync();
         }
     }
 
-    private void forwardClicked(object sender, EventArgs e)
+    void OnForwardButtonClicked(object sender, EventArgs e)
     {
-        if (Browser.CanGoForward) {
-            Browser.GoForward ();
+        if (webView.CanGoForward)
+        {
+            webView.GoForward();
         }
     }
 }
@@ -311,45 +324,38 @@ That's it!
 
 ## Events
 
-WebView raises two events to help you respond to changes in state:
+WebView raises the following events to help you respond to changes in state:
 
-- **Navigating** &ndash; event raised when the WebView begins loading a new page.
-- **Navigated** &ndash; event raised when the page is loaded and navigation has stopped.
+- **Navigating** – event raised when the WebView begins loading a new page.
+- **Navigated** – event raised when the page is loaded and navigation has stopped.
+- **ReloadRequested** – event raised when a request is made to reload the current content.
 
-If you anticipate using webpages that take a long time to load, consider using those events to implement a status indicator. For example the XAML looks like this:
+If you anticipate using webpages that take a long time to load, consider using the `Navigating` and `Navigated` events to implement a status indicator. For example the XAML looks like this:
 
 ```xaml
-<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-x:Class="WebViewDemo.LoadingDemo" Title="Loading Demo">
-  <ContentPage.Content>
-    <StackLayout>
-      <Label x:Name="LoadingLabel"
-        Text="Loading..."
-        HorizontalOptions="Center"
-        IsVisible="false" />
-      <WebView x:Name="Browser"
-      HeightRequest="1000"
-      WidthRequest="1000"
-      Navigating="webOnNavigating"
-      Navigated="webOnEndNavigating" />
-    </StackLayout>
-  </ContentPage.Content>
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WebViewSample.LoadingLabelXaml"
+             Title="Loading Demo">
+	<StackLayout>
+		<!--Loading label should not render by default.-->
+		<Label x:Name="labelLoading" Text="Loading..." IsVisible="false" />
+		<WebView HeightRequest="1000" WidthRequest="1000" Source="http://www.xamarin.com" Navigated="webviewNavigated" Navigating="webviewNavigating" />
+	</StackLayout>
 </ContentPage>
 ```
 
 The two event handlers:
 
 ```csharp
-void webOnNavigating (object sender, WebNavigatingEventArgs e)
+void webviewNavigating(object sender, WebNavigatingEventArgs e)
 {
-    LoadingLabel.IsVisible = true;
+    labelLoading.IsVisible = true;
 }
 
-void webOnEndNavigating (object sender, WebNavigatedEventArgs e)
+void webviewNavigated(object sender, WebNavigatedEventArgs e)
 {
-    LoadingLabel.IsVisible = false;
+    labelLoading.IsVisible = false;
 }
 ```
 
@@ -361,11 +367,28 @@ Finished Loading:
 
 ![](webview-images/loading-end.png "WebView Navigated Event Example")
 
+## Reloading content
+
+[`WebView`](xref:Xamarin.Forms.WebView) has a `Reload` method that can be used to reload the current content:
+
+```csharp
+var webView = new WebView();
+...
+webView.Reload();
+```
+
+When the `Reload` method is invoked the `ReloadRequested` event is fired, indicating that a request has been made to reload the current content.
+
 ## Performance
 
-Recent advances have seen each of the popular web browsers adopt technologies like hardware accelerated rendering and JavaScript compilation. Unfortunately, due to security restrictions, most of those advancements were not available in the the iOS-equaivalent of `WebView`, `UIWebView`. Xamarin.Forms `WebView` uses `UIWebView`. If that's a problem, you'll need to write a custom renderer that uses `WKWebView`, which supports faster browsing. Note that `WKWebView` is only supported on iOS 8 and newer.
+The popular web browsers now adopt technologies like hardware accelerated rendering and JavaScript compilation. On iOS, by default, the Xamarin.Forms `WebView` is implemented by the `UIWebView` class, and many of these technologies are unavailable in this implementation. However, an application can opt-in to using the iOS `WkWebView` class to implement the Xamarin.Forms `WebView`, which supports faster browsing. This can be achieved by adding the following code to the **AssemblyInfo.cs** file in the iOS platform project for the application:
 
-WebView on Android by default is about as fast as the built-in browser.
+```csharp
+// Opt-in to using WkWebView instead of UIWebView.
+[assembly: ExportRenderer(typeof(WebView), typeof(Xamarin.Forms.Platform.iOS.WkWebViewRenderer))]
+```
+
+`WebView` on Android by default is about as fast as the built-in browser.
 
 The [UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) uses the Microsoft Edge rendering engine. Desktop and tablet devices should see the same performance as using the Edge browser itself.
 
@@ -437,7 +460,7 @@ Grid *without* WidthRequest & HeightRequest. Grid is one of the few layouts that
 
 ## Invoking JavaScript
 
-The [`WebView`](xref:Xamarin.Forms.WebView) includes the ability to invoke a JavaScript function from C#, and return any result to the calling C# code. This is accomplished with the [`WebView.EvaluateJavaScriptAsync`](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*) method, which is shown in the following example from the [WebView](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView) sample:
+[`WebView`](xref:Xamarin.Forms.WebView) includes the ability to invoke a JavaScript function from C#, and return any result to the calling C# code. This is accomplished with the [`WebView.EvaluateJavaScriptAsync`](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*) method, which is shown in the following example from the [WebView](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView) sample:
 
 ```csharp
 var numberEntry = new Entry { Text = "5" };

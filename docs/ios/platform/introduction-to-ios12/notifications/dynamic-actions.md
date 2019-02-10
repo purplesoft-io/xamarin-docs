@@ -4,19 +4,11 @@ description: "With iOS 12, a notification content extension can add, remove, and
 ms.prod: xamarin
 ms.assetid: 6B34AD78-5117-42D0-B6E7-C8B4B453EAFF
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 9/4/2018
 ---
 # Dynamic notification action buttons in Xamarin.iOS
-
-![Preview](~/media/shared/preview.png)
-
-> [!WARNING]
-> Xamarin's support for the iOS 12, tvOS 12, and watchOS 5 SDKs distributed
-> with Xcode 10 is currently in preview, which means that that it may
-> contain bugs, is not feature complete, and may change. Use it for
-> experimentation only.
 
 In iOS 12, notifications can dynamically add, remove, and update their
 associated action buttons. Such customization makes it possible to provide
@@ -46,13 +38,13 @@ Create and register notification categories while an application launches.
 For example, in the [sample app](#sample-app-redgreennotifications), the
 `FinishedLaunching` method of `AppDelegate` does the following:
 
-- Defines one category for red notifications and another for green 
+- Defines one category for red notifications and another for green
 notifications
 - Registers these categories by calling the
-[`SetNotificationCategories`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.SetNotificationCategories/)
+[`SetNotificationCategories`](xref:UserNotifications.UNUserNotificationCenter.SetNotificationCategories*)
 method of `UNUserNotificationCenter`
-- Attaches a single 
-[`UNNotificationAction`](https://developer.xamarin.com/api/type/UserNotifications.UNNotificationAction/)
+- Attaches a single
+[`UNNotificationAction`](xref:UserNotifications.UNNotificationAction)
 to each category
 
 The following sample code shows how this works:
@@ -90,14 +82,14 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 ```
 
 Based on this code, any notification whose
-[`Content.CategoryIdentifier`](https://developer.xamarin.com/api/property/UserNotifications.UNNotificationContent.CategoryIdentifier/)
+[`Content.CategoryIdentifier`](xref:UserNotifications.UNNotificationContent.CategoryIdentifier)
 is "red-category" or "green-category" will, by default, show a
 **Rotate 20°** action button.
 
 ## In-app handling of notification action buttons
 
 `UNUserNotificationCenter` has a `Delegate` property of type
-[`IUNUserNotificationCenterDelegate`](https://developer.xamarin.com/api/type/UserNotifications.UNUserNotificationCenterDelegate_Extensions/).
+[`IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate).
 
 In the sample app, `AppDelegate` sets itself as the user notification
 center's delegate in `FinishedLaunching`:
@@ -115,7 +107,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 ```
 
 Then, `AppDelegate` implements
-[`DidReceiveNotificationResponse`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse/) 
+[`DidReceiveNotificationResponse`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse*)
 to handle action button taps:
 
 ```csharp
@@ -151,7 +143,7 @@ defines the custom interface for a notification.
 
 This view controller can use the `GetNotificationActions` and
 `SetNotificationActions` methods on its
-[`ExtensionContext`](https://developer.xamarin.com/api/property/UIKit.UIViewController.ExtensionContext/)
+[`ExtensionContext`](xref:UIKit.UIViewController.ExtensionContext)
 property to access and modify the notification's action buttons.
 
 In the sample app, the notification content extension's view controller
@@ -160,7 +152,7 @@ already-existing action button.
 
 > [!NOTE]
 > A notification content extension can respond to an action button tap in
-> its view controller's [`DidReceiveNotificationResponse`](https://developer.xamarin.com/api/member/UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse/) 
+> its view controller's [`DidReceiveNotificationResponse`](https://developer.xamarin.com/api/member/UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse/)
 > method, declared as part of
 > [IUNNotificationContentExtension](https://developer.xamarin.com/api/type/UserNotificationsUI.IUNNotificationContentExtension/).
 >
@@ -207,7 +199,7 @@ public void DidReceiveNotificationResponse(UNNotificationResponse response, Acti
         if (rotationButtonTaps % 9 == 0)
         {
             ExtensionContext.SetNotificationActions(new UNNotificationAction[] { rotationAction });
-        } 
+        }
         else if (rotationButtonTaps % 9 == 1)
         {
             var resetRotationAction = UNNotificationAction.FromIdentifier("reset-rotation-action", "Reset rotation", UNNotificationActionOptions.None);

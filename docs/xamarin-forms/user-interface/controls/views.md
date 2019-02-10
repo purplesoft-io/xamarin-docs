@@ -6,10 +6,12 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/12/2016
+ms.date: 13/11/2018
 ---
 
 # Xamarin.Forms Views
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/FormsGallery/)
 
 _Xamarin.Forms views are the building blocks of cross-platform mobile user interfaces._
 
@@ -68,6 +70,13 @@ Views are user-interface objects such as labels, buttons, and sliders that are c
 | [`Button`](xref:Xamarin.Forms.Button) is a rectangular object that displays text, and which fires a [`Clicked`](xref:Xamarin.Forms.Button.Clicked) event when it's been pressed.<br /><br />[API Documentation](xref:Xamarin.Forms.Button) / [Guide](~/xamarin-forms/user-interface/button.md) / [Sample](https://developer.xamarin.com/samples/UserInterface/ButtonDemos/) | [![Button Example](views-images/Button.png "Button Example")](views-images/Button-Large.png#lightbox "Button Example")<br /> [C# code for this page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ButtonDemoPage.cs) / [XAML page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml) with [code-behind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml.cs) |
 |     |     |
 
+### ImageButton
+
+|     |     |
+| --- | --- |
+| `ImageButton` is a rectangular object that displays an image, and which fires a `Clicked` event when it's been pressed.<br /><br /> [Guide](~/xamarin-forms/user-interface/imagebutton.md) / [Sample](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/) | [![ImageButton Example](views-images/ImageButton.png "ImageButton Example")](views-images/ImageButton-Large.png#lightbox "ImageButton Example")<br /> [C# code for this page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageButtonDemoPage.cs) / [XAML page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml) with [code-behind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml.cs) |
+|     |     |
+
 ### SearchBar
 
 |     |     |
@@ -88,7 +97,7 @@ Views are user-interface objects such as labels, buttons, and sliders that are c
 
 |     |     |
 | --- | --- |
-| [`Stepper`](xref:Xamarin.Forms.Stepper) allows the user to select a `double` value from a range of incremental values specified with the [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum), [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum), and [`Increment`](xref:Xamarin.Forms.Stepper.Increment) properties.<br /><br />[API Documentation](xref:Xamarin.Forms.Stepper) | [![Stepper Example](views-images/Stepper.png "Stepper Example")](views-images/Stepper-Large.png#lightbox "Stepper Example")<br />[C# code for this page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [XAML page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
+| [`Stepper`](xref:Xamarin.Forms.Stepper) allows the user to select a `double` value from a range of incremental values specified with the [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum), [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum), and [`Increment`](xref:Xamarin.Forms.Stepper.Increment) properties.<br /><br />[API Documentation](xref:Xamarin.Forms.Stepper)  / [Guide](~/xamarin-forms/user-interface/stepper.md) / [Sample](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos) | [![Stepper Example](views-images/Stepper.png "Stepper Example")](views-images/Stepper-Large.png#lightbox "Stepper Example")<br />[C# code for this page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [XAML page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
 |     |     |
 
 ### Switch
@@ -109,7 +118,7 @@ Views are user-interface objects such as labels, buttons, and sliders that are c
 
 |     |     |
 | --- | --- |
-| [`TimePicker`](xref:Xamarin.Forms.TimePicker) allows the user to select a time with the platform time picker. The [`Time`](xref:Xamarin.Forms.TimePicker.Time) property is the selected time. An application can monitor changes in the `Time` property by installing a handler for the [`PropertyChanged`](xref:Xamarin.Forms.BindableObject.PropertyChanged) event.<br /><br />[API Documentation](xref:Xamarin.Forms.TimePicker) | [![TimePicker Example](views-images/TimePicker.png "TimePicker Example")](views-images/TimePicker-Large.png#lightbox "TimePicker Example")<br />[C# code for this page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TimePickerDemoPage.cs) / [XAML page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TimePickerDemoPage.xaml) |
+| [`TimePicker`](xref:Xamarin.Forms.TimePicker) allows the user to select a time with the platform time picker. The [`Time`](xref:Xamarin.Forms.TimePicker.Time) property is the selected time. An application can monitor changes in the `Time` property by installing a handler for the [`PropertyChanged`](xref:Xamarin.Forms.BindableObject.PropertyChanged) event.<br /><br />[API Documentation](xref:Xamarin.Forms.TimePicker) / [Guide](~/xamarin-forms/user-interface/timepicker.md) / [Sample](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TimePicker) | [![TimePicker Example](views-images/TimePicker.png "TimePicker Example")](views-images/TimePicker-Large.png#lightbox "TimePicker Example")<br />[C# code for this page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TimePickerDemoPage.cs) / [XAML page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TimePickerDemoPage.xaml) |
 |     |     |
 
 ## Views for editing text
@@ -183,7 +192,6 @@ These two classes derive from the [`InputView`](xref:Xamarin.Forms.InputView) cl
 
 ## Related Links
 
-- [Introduction To Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Xamarin.Forms FormsGallery sample](https://developer.xamarin.com/samples/FormsGallery/)
 - [Xamarin.Forms Samples](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API Documentation](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

@@ -4,12 +4,14 @@ description: "The article explains how to use Xamarin.Forms XAML markup extensio
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 01/05/2018
 ---
 
 # XAML Markup Extensions
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
 
 XAML markup extensions help extend the power and flexibility of XAML by allowing element attributes to be set from sources other than literal text strings.
 

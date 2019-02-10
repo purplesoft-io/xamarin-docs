@@ -5,8 +5,8 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
 ---
 
@@ -32,7 +32,7 @@ This page contains additional information and workarounds for features
 
 <a name="deploy" />
 
-- Earlier releases of Visual Studio for Mac incorrectly show one of the the
+- Earlier releases of Visual Studio for Mac incorrectly show one of the
 	**AppleCompanionSettings** icons as being 88x88 pixels; which results in a
 	**Missing Icon Error** if you attempt to submit to the App Store.
 	This icon should be 87x87 pixels (29 units for **@3x** Retina screens). You

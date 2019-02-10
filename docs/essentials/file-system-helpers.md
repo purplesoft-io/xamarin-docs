@@ -4,14 +4,16 @@ description: "The FileSystem class in Xamarin.Essentials contains a series of he
 ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
+ms.date: 11/04/2018
 ---
 
 # Xamarin.Essentials: File System Helpers
 
-![Pre-release NuGet](~/media/shared/pre-release.png)
-
 The **FileSystem** class contains a series of helpers to find the application's cache and data directories and open files inside of the app package.
+
+## Get started
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## Using File System Helpers
 
@@ -63,8 +65,8 @@ Add any file into the **Resources** folder in the iOS project and mark the Build
 
 # [UWP](#tab/uwp)
 
-- **CacheDirectory** – Returns the [LocalCacheFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder) directory..
-- **AppDataDirectory** – Returns the [LocalFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) directory that is backed up to the cloud.
+- **CacheDirectory** – Returns the [LocalCacheFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder) directory..
+- **AppDataDirectory** – Returns the [LocalFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) directory that is backed up to the cloud.
 
 Add any file into the root in the UWP project and mark the Build Action as **Content** to use it with `OpenAppPackageFileAsync`.
 

@@ -3,8 +3,8 @@ title: "Updating Xamarin.Mac Unified applications to 64-bit"
 description: "This guide describes how to update your Xamarin.Mac applications to target 64-bit. It also provides examples of the kinds of errors that may be encountered when making this change."
 ms.prod: xamarin
 ms.assetid: C3810A74-539C-4FFB-B47F-68CA5F7BCDAD
-author: bradumbaugh
-ms.author: brumbaug
+author: conceptdev
+ms.author: crdun
 ms.date: 02/22/2018
 ---
 
@@ -21,7 +21,7 @@ compatible and will not require any changes.
 
 ## Targeting 64-bit
 
-1. Open the **Project Options** window for your your Xamarin.Mac app:
+1. Open the **Project Options** window for your Xamarin.Mac app:
 
    ![The contextual menu for the project](mac-64-bit-images/1-contextual_menu-vsmac.png "The contextual menu for the project")
 
@@ -45,7 +45,7 @@ frameworks — have not been updated to 64-bit.
 > uncover various programming errors. In particular it may change the size and
 > alignment of data structures, which would affect p/invoke signatures and
 > native code linked in your project. Consider reviewing any build warnings
-> given and test your application throughly afterwards to catch potential
+> given and test your application thoroughly afterwards to catch potential
 > issues.
 
 #### Example error resulting from a dynamically-linked third-party dependency that does not target 64-bit:

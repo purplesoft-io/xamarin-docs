@@ -3,8 +3,8 @@ title: "Manually Signing the APK"
 ms.prod: xamarin
 ms.assetid: 08549E1C-7F04-4D20-9E7A-794B9D09FD12
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
 ---
 
@@ -68,7 +68,7 @@ The only solution to the problem caused by a lost keystore would be to
 create a new keystore, re-sign the APK with the new key, and then
 submit a new application. Then the old application would have to be
 removed from Google Play. Likewise, if this new keystore is compromised
-or publically distributed, then it is possible for unofficial or
+or publicly distributed, then it is possible for unofficial or
 malicious versions of an application to be distributed.
 
 

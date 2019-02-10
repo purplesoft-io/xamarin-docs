@@ -4,12 +4,14 @@ description: "Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 23. Tr
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 11/07/2017
 ---
 
 # Summary of Chapter 23. Triggers and behaviors
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23)
 
 Triggers and behaviors are similar, in that they are both intended to be used in XAML files to simplify element interactions beyond the use of data bindings, and to extend the functionality of XAML elements. Both triggers and behaviors are almost always used with visual user-interface objects.
 
@@ -152,7 +154,7 @@ The [**ToggleLabel**](https://github.com/xamarin/xamarin-forms-book-samples/tree
 
 The [**FormattedTextToggle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/FormattedTextToggle) sample extends this concept by switching between two `FormattedString` objects.
 
-The [`ToggleBase`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBase.cs) class in the **Xamarin.FormsBook.Toolkit** library derives from `ContentView`, defines an `IsToggled` property, and incorporates a `ToggleBehavior` for the toggle logic. This makes it easier to define the toggle button in XAML, as demonstrated by the [**TranditionalCheckBox**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalCheckBox) sample.
+The [`ToggleBase`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBase.cs) class in the **Xamarin.FormsBook.Toolkit** library derives from `ContentView`, defines an `IsToggled` property, and incorporates a `ToggleBehavior` for the toggle logic. This makes it easier to define the toggle button in XAML, as demonstrated by the [**TraditionalCheckBox**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalCheckBox) sample.
 
 The [**SwitchCloneDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/SwitchCloneDemo) includes a [`SwitchClone`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter23/SwitchCloneDemo/SwitchCloneDemo/SwitchCloneDemo/SwitchClone.cs) class that derives from `ToggleBase` and uses a [`TranslateAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TranslateAction.cs) class to construct a toggle button that resembles the Xamarin.Forms `Switch`.
 

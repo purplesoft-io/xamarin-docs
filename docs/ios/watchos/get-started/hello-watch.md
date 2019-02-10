@@ -4,8 +4,8 @@ description: "This document provides a walkthrough of building a simple watchOS 
 ms.prod: xamarin
 ms.assetid: AD1DA488-51AB-420A-A0B7-3AE69A964A40
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 12/14/2016
 ---
 
@@ -24,17 +24,17 @@ Confirm that your Bundle Identifiers follow the \*.watchkitextension \*.watchkit
 
 You should be able to run your Watch App now, but because the storyboard file within your Watch App is blank, you wouldn’t be able to tell.
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ![](hello-watch-images/projectstructure.png "The Solution Explorer")
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ![](hello-watch-images/vs-projectstructure.png "The Solution Explorer")
 
 -----
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 	
 Double-click on the Interface.storyboard in your Watch App to
   start the Xamarin iOS Designer (if you are on a Mac you can
@@ -48,7 +48,7 @@ Double-click on the Interface.storyboard in your Watch App to
 
 	![](hello-watch-images/interfacecontrollerattributes.png "Set the Identifier and Title of the Interface Controller to interfaceController and Hi Watch")
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 Double-click on the Interface.storyboard in your Watch App
   to edit with the Xamarin iOS Designer in Visual Studio:
@@ -69,11 +69,11 @@ Create your UI:
 1. Drag and drop a **Button** and a **Label** onto the scene, and
 1. Set the text and attributes of the controls as shown:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ![](hello-watch-images/draganddrop.png "Set the text and attributes of the controls as shown")
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ![](hello-watch-images/vs-draganddrop.png "Set the text and attributes of the controls as shown")
 

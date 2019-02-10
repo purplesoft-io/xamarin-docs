@@ -4,8 +4,8 @@ description: "This document provides an introduction to storyboards in Xamarin.i
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
 ---
 
@@ -128,11 +128,11 @@ NSObject sender)
 {
     base.PrepareForSegue (segue, sender);
 
-    var callHistoryContoller = segue.DestinationViewController 
+    var callHistoryController = segue.DestinationViewController 
                                   as CallHistoryController;
 
-    if (callHistoryContoller != null) {
-        callHistoryContoller.PhoneNumbers = PhoneNumbers;
+    if (callHistoryController != null) {
+        callHistoryController.PhoneNumbers = PhoneNumbers;
     }
 }
 ```
@@ -142,15 +142,15 @@ an instance of the 'receiving' view controller and set this as the segue's desti
 line of code below:
 
 ```csharp
-var callHistoryContoller = segue.DestinationViewController as CallHistoryController;
+var callHistoryController = segue.DestinationViewController as CallHistoryController;
 ```
 
 The method now has the ability to set properties on the `DestinationViewController`. In this example we have taken advantage 
 of this by passing a list called `PhoneNumbers` to the `CallHistoryController` and assigning it to an object of the same name:
 
 ```csharp
-if (callHistoryContoller != null) {
-        callHistoryContoller.PhoneNumbers = PhoneNumbers;
+if (callHistoryController != null) {
+        callHistoryController.PhoneNumbers = PhoneNumbers;
     }
 ```
 
@@ -160,7 +160,7 @@ Once the transition has finished, the user will see the `CallHistoryController` 
 
 On occasion you may need to add a Storyboard to a previously non-storyboard file. Once Doing this in Visual Studio for Mac can be streamlined by following the steps below:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1. Create a new Storyboard file by browsing to **File > New File > iOS > Storyboard**, as illustrated below: 
     
@@ -179,7 +179,7 @@ On occasion you may need to add a Storyboard to a previously non-storyboard file
             set;
             }
             
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1. Create a new Storyboard file by right-clicking on the project to **Add > New File > iOS > Empty Storyboard**, as illustrated below: 
     
@@ -285,7 +285,7 @@ public MainViewController (IntPtr handle) : base (handle)
 ```
 
 
-When creating a Storyboard using the Designer, the IDE will automatically add the [[Register]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) attribute at the top of the `designer.cs` class, and pass in a string identifier, which is identical to the Storyboard ID specified in the previous step. This will link the C# to the relevant scene in the Storyboard.
+When creating a Storyboard using the Designer, the IDE will automatically add the [[Register]](xref:Foundation.RegisterAttribute) attribute at the top of the `designer.cs` class, and pass in a string identifier, which is identical to the Storyboard ID specified in the previous step. This will link the C# to the relevant scene in the Storyboard.
 
 At some point you might want to add an existing class which was **not** created in the designer. In this case, you would Register this class as normal:
 
@@ -404,7 +404,7 @@ Refer to the Storyboards.Conditional solution in the [Manual Storyboards sample]
 
 ## Using Storyboard References
 
-A Storyboard Reference allows you to take a large, complex Storyboard design and break it into smaller Storyboards that get referenced from the original, thus removing removing complexity and making the resulting individual Storyboards easier to design and maintain.
+A Storyboard Reference allows you to take a large, complex Storyboard design and break it into smaller Storyboards that get referenced from the original, thus removing complexity and making the resulting individual Storyboards easier to design and maintain.
 
 Additionally, a Storyboard Reference can provide an _anchor_ to another scene within the same Storyboard or a specific scene on a different one.
 

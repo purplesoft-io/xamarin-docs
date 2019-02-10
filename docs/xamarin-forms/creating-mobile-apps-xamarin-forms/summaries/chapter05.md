@@ -4,14 +4,16 @@ description: "Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 5. Dea
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
 ---
 
 # Summary of Chapter 5. Dealing with sizes
 
-> [!NOTE] 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)
+
+> [!NOTE]
 > Notes on this page indicate areas where Xamarin.Forms has diverged from the material presented in the book.
 
 Several sizes in Xamarin.Forms have been encountered so far:

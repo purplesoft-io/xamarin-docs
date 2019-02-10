@@ -6,10 +6,12 @@ ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/01/2017
+ms.date: 12/14/2018
 ---
 
 # Invoking Events from Effects
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)
 
 _An effect can define and invoke an event, signaling changes in the underlying native view. This article shows how to implement low-level multi-touch finger tracking, and how to generate events that signal touch activity._
 
@@ -37,7 +39,7 @@ The `Pointer` API in the Universal Windows Platform is intended to unify mouse, 
 
 In addition, the UWP defines two more events named `PointerEntered` and `PointerExited`. These indicate when a mouse or finger moves from one element to another. For example, consider two adjacent elements named A and B. Both elements have installed handlers for the pointer events. When a finger presses on A, the `PointerPressed` event is invoked. As the finger moves, A invokes `PointerMoved` events. If the finger moves from A to B, A invokes a `PointerExited` event and B invokes a `PointerEntered` event. If the finger is then released, B invokes a `PointerReleased` event.
 
-The iOS and Android platforms are different from the UWP: The view that first gets the call to `TouchesBegan` or `OnTouchEvent` when a finger touches the view continues to get all the touch activity even if if the finger moves to different views. The UWP can behave similarly if the application captures the pointer: In the `PointerEntered` event handler, the element calls `CapturePointer` and then gets all touch activity from that finger.
+The iOS and Android platforms are different from the UWP: The view that first gets the call to `TouchesBegan` or `OnTouchEvent` when a finger touches the view continues to get all the touch activity even if the finger moves to different views. The UWP can behave similarly if the application captures the pointer: In the `PointerEntered` event handler, the element calls `CapturePointer` and then gets all touch activity from that finger.
 
 The UWP approach proves to be very useful for some types of applications, for example, a music keyboard. Each key can handle the touch events for that key and detect when a finger has slid from one key to another using the `PointerEntered` and `PointerExited` events.
 
@@ -329,7 +331,7 @@ void CheckForBoundaryHop(int id, Point pointerLocation)
 }
 ```
 
-If there's been a change in the `idToEffectionDictionary`, the method potentially calls `FireEvent` for `Exited` and `Entered` to transfer from one view to another. However, the finger might have been moved to an area occupied by a view without an attached `TouchEffect`, or from that area to a view with the effect attached.
+If there's been a change in the `idToEffectDictionary`, the method potentially calls `FireEvent` for `Exited` and `Entered` to transfer from one view to another. However, the finger might have been moved to an area occupied by a view without an attached `TouchEffect`, or from that area to a view with the effect attached.
 
 Notice the `try` and `catch` block when the view is accessed. In a page that is navigated to that then navigates back to the home page, the `OnDetached` method is not called and items remain in the `viewDictionary` but Android considers them disposed.
 
@@ -346,6 +348,9 @@ static Dictionary<long, TouchRecognizer> idToTouchDictionary =
 ```
 
 Much of the structure of this `TouchRecognizer` class is similar to the Android `TouchEffect` class.
+
+> [!IMPORTANT]
+> Many of the views in `UIKit` do not have touch enabled by default. Touch can be enabled by adding `view.UserInteractionEnabled = true;` to the `OnAttached` override in the `TouchEffect` class in the iOS project. This should occur after the `UIView` is obtained that corresponds to the element the effect is attached to.
 
 ## Putting the Touch Effect to Work
 

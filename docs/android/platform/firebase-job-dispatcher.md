@@ -4,8 +4,8 @@ description: "This guide discusses how to schedule background work using the Fir
 ms.prod: xamarin
 ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 06/05/2018
 ---
 
@@ -39,9 +39,9 @@ The Firebase Job Dispatcher is a library from Google that provides a fluent API 
 * A `Firebase.JobDispatcher.RetryStrategy` contains information about what should be done when a job fails to execute properly. The retry strategy specifies how long to wait before trying to run the job again. 
 * A `Firebase.JobDispatcher.Constraint` is an optional value that describes a condition that must be met before the job can run, such as the device is on an unmetered network or charging.
 * The `Firebase.JobDispatcher.Job` is an API that unifies the previous APIs in to a unit-of-work that can be scheduled by the `JobDispatcher`. The `Job.Builder` class is used to instantiate a `Job`.
-* A `Firebasee.JobDispatcher.JobDispatcher` uses the previous three APIs to schedule the work with the operating system and to provide a way to cancel jobs, if necessary.
+* A `Firebase.JobDispatcher.JobDispatcher` uses the previous three APIs to schedule the work with the operating system and to provide a way to cancel jobs, if necessary.
 
-To schedule work with the Firebase Job Dispatcher, a Xamarin.Android application must encapsulate the code in a type that extends the `JobService` class. `JobService` has three lifecycle methods that that can be called during the lifetime of the job:
+To schedule work with the Firebase Job Dispatcher, a Xamarin.Android application must encapsulate the code in a type that extends the `JobService` class. `JobService` has three lifecycle methods that can be called during the lifetime of the job:
 
 * **`bool OnStartJob(IJobParameters parameters)`** &ndash; This method is where the work will occur and should always be implemented. It runs on the main thread. This method will return `true` if there is work remaining, or `false` if the work is done. 
 * **`bool OnStopJob(IJobParameters parameters)`** &ndash; This is called when the job is stopped for some reason. It should return `true` if the job should be rescheduled for later.
@@ -172,7 +172,7 @@ Each of these topics will be discussed more in the following sections.
 
 <a name="Passing_Parameters_to_a_Job" />
 
-#### Passing jarameters to a job
+#### Passing parameters to a job
 
 Parameters are passed to a job by creating a `Bundle` that is passed along with the `Job.Builder.SetExtras` method:
 
@@ -247,7 +247,7 @@ The two types of retry policies are identified by these int values:
 It is possible to define a custom `RetryStrategy` with the `FirebaseJobDispatcher.NewRetryStrategy` method. It takes three parameters:
 
 1. `int policy` &ndash; The _policy_ is one of the previous `RetryStrategy` values, `RetryStrategy.RetryPolicyLinear`, or `RetryStrategy.RetryPolicyExponential`.
-2. `int intialBackoffSeconds` &ndash; The _initial backoff_ is a delay, in seconds, that is required before trying to run the job again. The default value for this is 30 seconds. 
+2. `int initialBackoffSeconds` &ndash; The _initial backoff_ is a delay, in seconds, that is required before trying to run the job again. The default value for this is 30 seconds. 
 3. `int maximumBackoffSeconds` &ndash; The _maximum backoff_ value declares the maximum number of seconds to delay before trying to run the job again. The default value is 3600 seconds. 
 
 ```csharp

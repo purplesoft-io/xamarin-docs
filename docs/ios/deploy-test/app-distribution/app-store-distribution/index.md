@@ -4,8 +4,8 @@ description: "This document describes how to distribute a Xamarin.iOS applicatio
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 08/23/2017
 ---
 
@@ -14,10 +14,10 @@ ms.date: 08/23/2017
 Once a Xamarin.iOS app has been developed, the next step in the software development lifecycle is to distribute the app to users using the iTunes App Store. This is the most common way of distributing applications. By publishing an application in Apple’s App Store, it can be made available to consumers worldwide.
 
 > [!IMPORTANT]
-> Apple [has indicated](https://developer.apple.com/news/?id=05072018a) that
-> starting in July 2018, all apps and updates submitted to the App Store
-> must have been built with the iOS 11 SDK and 
-> [support the iPhone X display](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
+> Apple [has indicated](https://developer.apple.com/ios/submit/) that
+> starting in March 2019, all apps and updates submitted to the App Store
+> must have been built with the iOS 12.1 SDK or later, included in Xcode 10.1 or later.
+> Apps should also support the iPhone XS and 12.9" iPad Pro screen sizes.
 
 Distributing an application – just as with developing an application – requires that applications be provisioned using the appropriate *provisioning profile*. Provisioning profiles are files that contain code signing information, as well as the identity of the application and the intended distribution mechanism. They also contain information about what devices the app can be deployed to for the non-App Store distribution.
 
@@ -122,11 +122,11 @@ Once you have the required components needed for creating a Distribution Profile
 7. Click the **Generate** button to create the new profile and finalize the process.
 
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
  You may have to quit Visual Studio for Mac and have Xcode refresh its list of available Signing Identities and Provisioning Profiles (by following the instructions in the [Requesting Signing Identities](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download) section) before a new Distribution Profile is available in Visual Studio for Mac.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
  You may have to quit Visual Studio and have Xcode (on the Build Host's Mac) refresh it's list of available Signing Identities and Provisioning Profiles (by following the instructions in the [Requesting Signing Identities](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download) section) before a new Distribution Profile is available in Visual Studio.
 
@@ -138,7 +138,7 @@ Once you have the required components needed for creating a Distribution Profile
 
 When you are ready to do a final build of a Xamarin.iOS application for sale in the iTunes App Store, select the Distribution Profile that was created above.
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
  In Visual Studio for Mac, do the following:
 
@@ -154,7 +154,7 @@ When you are ready to do a final build of a Xamarin.iOS application for sale in 
 	![](images/releasexs03.png "Select the Signing Identity and Distribution Profiles")
 5. Click the **OK** button to save the changes.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
  In Visual Studio, do the following:
 

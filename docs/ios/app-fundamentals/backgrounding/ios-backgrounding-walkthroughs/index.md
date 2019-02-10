@@ -4,8 +4,9 @@ description: "This document links to walkthroughs that demonstrate how to use lo
 ms.prod: xamarin
 ms.assetid: D4937080-7865-48C0-8FE5-310E90229BC3
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
+ms.date: 03/18/2017
 ---
 
 # iOS Backgrounding Walkthroughs

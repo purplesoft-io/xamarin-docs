@@ -4,8 +4,8 @@ description: "How to use the debug log to debug Xamarin.Android applications."
 ms.prod: xamarin
 ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/22/2018
 ---
 
@@ -36,7 +36,7 @@ disconnected from Visual Studio).
 
 ## Accessing the Debug Log from Visual Studio
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 To open the **Device Log** tool, click **Device Log (logcat)** icon on the
 toolbar:
@@ -77,14 +77,14 @@ menu to choose the Android device to monitor:
 
 After the device is selected, the **Device Log** tool automatically adds
 log entries from a running app &ndash; these log entries are shown in
-the the table of log entries. Switching between devices stops and
+the table of log entries. Switching between devices stops and
 starts device logging. Note that an Android project must be loaded
 before any devices will appear in the device selector. If the device
 does not appear in the device selector, verify that it is available in
 the Visual Studio device drop-down menu next to the **Start** button.
 
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 To open the **Device Log**, click **View > Pads > Device Log**:
 
@@ -123,7 +123,7 @@ menu to choose the Android device to monitor:
 
 After the device is selected, the **Device Log** tool automatically adds
 log entries from a running app &ndash; these log entries are shown in
-the the table of log entries. Switching between devices stops and
+the table of log entries. Switching between devices stops and
 starts device logging. Note that an Android project must be loaded
 before any devices will appear in the device selector. If the device
 does not appear in the device selector, verify that it is available in
@@ -134,7 +134,7 @@ the Visual Studio device drop-down menu next to the **Start** button.
 
 ## Accessing from the Command Line
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 Another option is to view the debug log via the command line. Open a
 command prompt window and navigate to the Android SDK platform-tools
@@ -148,7 +148,7 @@ log can be viewed by entering the following command:
 $ adb logcat
 ```
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 Another option is to view the debug log via the command line. Open a 
 Terminal window and navigate to the Android SDK platform-tools folder 

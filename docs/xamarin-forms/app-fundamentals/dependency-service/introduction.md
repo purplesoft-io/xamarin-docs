@@ -11,6 +11,8 @@ ms.date: 09/15/2018
 
 # Introduction to DependencyService
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
+
 ## Overview
 
 [`DependencyService`](xref:Xamarin.Forms.DependencyService) allows apps to call into platform-specific functionality from shared code. This functionality enables Xamarin.Forms apps to do anything that a native app can do.
@@ -37,7 +39,7 @@ The structure of the application is explained by the following diagram:
 
 ### Interface
 
-The interface you design will define how you interact with platform-specific functionality. Be careful if you are developing a component to be shared as a component or Nuget package. API design can make or break a package. The example below specifies a simple interface for speaking text that allows for flexibility in specifying the words to be spoken but leaves the implementation to be customized for each platform:
+The interface you design will define how you interact with platform-specific functionality. Be careful if you are developing a component to be shared as a component or NuGet package. API design can make or break a package. The example below specifies a simple interface for speaking text that allows for flexibility in specifying the words to be spoken but leaves the implementation to be customized for each platform:
 
 ```csharp
 public interface ITextToSpeech {

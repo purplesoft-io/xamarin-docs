@@ -3,8 +3,8 @@ title: "Xamarin.Android API Design Principles"
 ms.prod: xamarin
 ms.assetid: 3E52D815-D95D-5510-0D8F-77DAC7E62EDE
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
 ---
 
@@ -548,9 +548,9 @@ By doing this, we are able to offer IntelliSense selection of the
 potential values.
 
 The above example becomes:
-[Activity.RequestWindowFeature (WindowFeatures featureId)](https://developer.xamarin.com/api/member/Android.App.Activity.RequestWindowFeature/p/Android.Views.WindowFeatures/)).
+[Activity.RequestWindowFeature(WindowFeatures featureId)](https://developer.xamarin.com/api/member/Android.App.Activity.RequestWindowFeature/p/Android.Views.WindowFeatures/).
 
 Note that this is a very manual process to figure out which constants
 belong together, and which APIs consume these constants. Please file
-bugs for any constants use in the API that would be better expressed as
+bugs for any constants used in the API that would be better expressed as
 an enumeration.

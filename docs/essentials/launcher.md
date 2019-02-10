@@ -4,14 +4,16 @@ description: "The Launcher class in Xamarin.Essentials enables an application to
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 07/25/2018
+ms.date: 11/04/2018
 ---
 
 # Xamarin.Essentials: Launcher
 
-![Pre-release NuGet](~/media/shared/pre-release.png)
-
 The **Launcher** class enables an application to open a URI by the system. This is often used when deep linking into another application's custom URI schemes. If you are looking to open the browser to a website then you should refer to the **[Browser](open-browser.md)** API.
+
+## Get started
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## Using Launcher
 
@@ -34,6 +36,26 @@ public class LauncherTest
     }
 }
 ```
+
+## Platform Differences
+
+# [Android](#tab/android)
+
+The Task returned from `CanOpenAsync` completes immediately.
+
+# [iOS](#tab/ios)
+
+If the destination application on this device has never been opened by `OpenAsync` from your application before, iOS will prompt the user once to allow your app to open it.
+
+The Task returned from `CanOpenAsync` completes immediately.
+
+More information about the iOS implementation is available [here](https://developer.xamarin.com/api/member/UIKit.UIApplication.CanOpenUrl/p/Foundation.NSUrl/)
+
+# [UWP](#tab/uwp)
+
+No platform differences.
+
+-----
 
 ## API
 

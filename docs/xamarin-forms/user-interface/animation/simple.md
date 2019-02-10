@@ -11,6 +11,8 @@ ms.date: 10/27/2017
 
 # Simple Animations in Xamarin.Forms
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/basic/)
+
 _The ViewExtensions class provides extension methods that can be used to construct simple animations. This article demonstrates creating and canceling animations using the ViewExtensions class._
 
 
@@ -84,6 +86,9 @@ This code animates the [`Image`](xref:Xamarin.Forms.Image) instance by scaling u
 The following screenshots show the scaling in progress on each platform:
 
 ![](simple-images/scaleto.png "Scaling Animation")
+
+> [!NOTE]
+> The [`VisualElement`](xref:Xamarin.Forms.VisualElement) class also defines [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) and [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) properties, which can scale the `VisualElement` differently in the horizontal and vertical directions. These properties can be animated with the [`Animation`](xref:Xamarin.Forms.Animation) class. For more information, see [Custom Animations in Xamarin.Forms](custom.md).
 
 ### Relative Scaling
 

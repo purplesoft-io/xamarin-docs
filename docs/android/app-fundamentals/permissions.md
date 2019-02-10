@@ -3,8 +3,8 @@ title: "Permissions In Xamarin.Android"
 ms.prod: xamarin
 ms.assetid: 3C440714-43E3-4D31-946F-CA59DAB303E8
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 03/09/2018
 ---
 
@@ -73,7 +73,7 @@ Permissions are added to the  **AndroidManifest.xml** with the `uses-permission`
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 It is possible to declare the permissions using the tool support built into Visual Studio:
 
@@ -89,7 +89,7 @@ It is possible to declare the permissions using the tool support built into Visu
 
     [![Example CAMERA permissions selected](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 It is possible to declare the permissions using the tool support built into Visual Studio for Mac:
 
@@ -134,7 +134,7 @@ else
 
 It is a best practice to inform the user as to why a permission is necessary for an application so that an informed decision can be made to grant the permission. An example of this would be an app that takes photos and geo-tags them. It is clear to the user that the camera permission is necessary, but it might not be clear why the app also needs the location of the device. The rationale should display a message to help the user understand why the location permission is desirable and that the camera permission is required.
 
-The `ActivityCompat.ShouldShowRequestPermissionRational` method is used to determine if the rationale should be shown to the user. This method will return `true` if the rationale for a given permission should be displayed. This screenshot shows an example of a Snackbar displayed by an application that explains why the app needs to know the location of the device:
+The `ActivityCompat.ShouldShowRequestPermissionRationale` method is used to determine if the rationale should be shown to the user. This method will return `true` if the rationale for a given permission should be displayed. This screenshot shows an example of a Snackbar displayed by an application that explains why the app needs to know the location of the device:
 
 ![Rationale for location](permissions-images/07-rationale-snackbar.png) 
 
@@ -189,7 +189,7 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
         if ((grantResults.Length == 1) && (grantResults[0] == Permission.Granted)) {
             // Location permission has been granted, okay to retrieve the location of the device.
             Log.Info(TAG, "Location permission has now been granted.");
-            Snackbar.Make(layout, Resource.String.permision_available_camera, Snackbar.LengthShort).Show();            
+            Snackbar.Make(layout, Resource.String.permission_available_camera, Snackbar.LengthShort).Show();            
         } 
         else 
         {

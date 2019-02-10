@@ -4,14 +4,16 @@ description: "The Browser class in Xamarin.Essentials enables an application to 
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
+ms.date: 11/04/2018
 ---
 
 # Xamarin.Essentials: Browser
 
-![Pre-release NuGet](~/media/shared/pre-release.png)
-
 The **Browser** class enables an application to open a web link in the optimized system preferred browser or the external browser.
+
+## Get started
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## Using Browser
 
@@ -27,12 +29,14 @@ The Browser functionality works by calling the `OpenAsync` method with the `Uri`
 
 public class BrowserTest
 {
-    public async Task OpenBrowser(Uri uri)
+    public async Task<bool> OpenBrowser(Uri uri)
     {
-        await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+        return await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
     }
 }
 ```
+
+This method returns after the browser was _launched_ and not necessarily _closed_ by the user.  The `bool` result indicates whether the launching was successful or not.
 
 ## Platform Implementation Specifics
 
@@ -52,7 +56,7 @@ An `Intent` will be used to request the Uri be opened through the systems normal
 
 ## System Preferred
 
-[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) is used to to load the Uri and keep navigation awareness.
+[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) is used to load the Uri and keep navigation awareness.
 
 ## External
 

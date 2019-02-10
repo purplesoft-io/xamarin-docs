@@ -3,8 +3,8 @@ title: "Garbage Collection"
 ms.prod: xamarin
 ms.assetid: 298139E2-194F-4A58-BC2D-1D22231066C4
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/15/2018
 ---
 
@@ -240,7 +240,7 @@ collect the data for benchmarking:
 
 To specify which `GC_BRIDGE` option an application should us, pass 
 `bridge-implementation=old`, `bridge-implementation=new` or 
-`bridge-implementation=tarjan` to the `MONO_GC_PARAMS` enviroment 
+`bridge-implementation=tarjan` to the `MONO_GC_PARAMS` environment 
 variable, for example: 
 
 ```shell
@@ -422,7 +422,7 @@ If an initial dispose pass causes `childViews` to have an invalid
 `Handle`, the `for` loop access will throw an `ArgumentException`. By 
 adding an explicit `Handle` null check before the first `childViews` 
 access, the following `Dispose` method prevents the exception from 
-occuring: 
+occurring: 
 
 ```csharp
 class MyClass : Java.Lang.Object, ISomeInterface 
@@ -536,7 +536,7 @@ do have a significant fixed cost, so you don't want to trigger them too
 often, and should have a pause time of a few milliseconds. 
 
 If your application has a "duty cycle" in which the same thing is done 
-over and over, it may be advisable to manually peform a minor 
+over and over, it may be advisable to manually perform a minor 
 collection once the duty cycle has ended. Example duty cycles include: 
 
 -  The rendering cycle of a single game frame.

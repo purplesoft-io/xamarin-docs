@@ -4,8 +4,8 @@ description: "This document describes how to work with text and search fields in
 ms.prod: xamarin
 ms.assetid: 9EE63CA6-2F31-4EE0-AAE5-82E18CFAC06C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
 ---
 
@@ -91,7 +91,7 @@ The easiest way to work with Text Fields in a Xamarin.tvOS app is to add them to
 
 Do the following:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1. In the **Solution Pad**, double-click the `Main.storyboard` file to open it for editing.
 1. Drag one or more **Text Fields** int the design surface onto a View: 
@@ -108,7 +108,7 @@ Do the following:
 	[![](text-fields-and-search-images/text05.png "Spell Checking, Capitalization and the default Keyboard Type")](text-fields-and-search-images/text05.png#lightbox) 
 1. Save the changes to your Storyboard.
 	
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 	
 1. In the **Solution Explorer**, double-click the `Main.storyboard` file to open it for editing.
 1. Drag one or more **Text Fields** int the design surface onto a View: 
@@ -143,7 +143,7 @@ The easiest way to work with Search Fields in a Xamarin.tvOS app is to add them 
 
 Do the following:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 	
 1. In the **Solution Pad**, double-click the `Main.storyboard` file to open it for editing.
 1. Drag a new Collection View Controller to the Storyboard to present the results of the user's search: 
@@ -161,7 +161,7 @@ Do the following:
 	[![](text-fields-and-search-images/search05.png "Layout the design of the Cell Prototype")](text-fields-and-search-images/search05.png#lightbox)
 1. Save the changes to your Storyboard.
 	
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 	
 1. In the **Solution Explorer**, double-click the `Main.storyboard` file to open it for editing.
 1. Drag a new Collection View Controller to the Storyboard to present the results of the user's search: 
@@ -185,13 +185,13 @@ Do the following:
 
 ### Provide a Data Model
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 Next, you will need to provide a class to act as the Data Model for the results that the user will be searching for. In the **Solution Explorer**, right-click the Project Name and select **Add** > **New File...** > **General** > **Empty Class** and provide a **Name**: 
 
 [![](text-fields-and-search-images/search06.png "Select Empty Class and provide a Name")](text-fields-and-search-images/search06.png#lightbox)
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 Next, you will need to provide a class to act as the Data Model for the results that the user will be searching for. In the **Solution Explorer**, right-click the Project Name and select **Add** > **New Item...** > **Apple** > **Misc** > **Class** and provide a **Name**: 
 

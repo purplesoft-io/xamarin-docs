@@ -4,8 +4,8 @@ description: "Visual Studio includes an Android SDK Manager that you use to down
 ms.prod: xamarin
 ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 08/09/2018
 ---
 
@@ -29,7 +29,7 @@ development with .NET** workload) helps you download the latest Android
 components that you need for developing your Xamarin.Android app. It
 replaces Google's standalone SDK Manager, which has been deprecated.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ## Requirements
 
@@ -58,8 +58,7 @@ several JDK alternatives to choose from:
     if you are developing specifically for API level 23 or earlier.
 
 -   If you are using Visual Studio 15.8 Preview 5 or later, you can try
-    using the Microsoft distribution of the
-    [Microsoft distribution of the OpenJDK](openjdk.md) (currently in preview) 
+    using [Microsoft's Mobile OpenJDK Distribution](openjdk.md) (currently in preview) 
     rather than JDK 8.
 
 > [!IMPORTANT]
@@ -199,7 +198,7 @@ click **Microsoft (Recommended)**. This restores the list of packages
 and tools to the default selection.
 
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ## Requirements
 
@@ -220,8 +219,7 @@ several JDK alternatives to choose from:
     if you are developing specifically for API level 23 or earlier.
 
 -   If you are using Visual Studio for Mac 7.7 or later, you can try
-    using the Microsoft distribution of the
-    [Microsoft distribution of the OpenJDK](openjdk.md) (currently in preview) 
+    using [Microsoft's Mobile OpenJDK Distribution](openjdk.md) (currently in preview) 
     rather than JDK 8.
 
 > [!IMPORTANT]

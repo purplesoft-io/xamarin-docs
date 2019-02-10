@@ -4,19 +4,11 @@ description: "With iOS 12, it is possible to create interactive user interfaces 
 ms.prod: xamarin
 ms.assetid: E3562E1B-E0EF-4C99-9F51-59DE22AFDE46
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 9/4/2018
 ---
 # Interactive notification user interfaces in Xamarin.iOS
-
-![Preview](~/media/shared/preview.png)
-
-> [!WARNING]
-> Xamarin's support for the iOS 12, tvOS 12, and watchOS 5 SDKs distributed
-> with Xcode 10 is currently in preview, which means that that it may
-> contain bugs, is not feature complete, and may change. Use it for
-> experimentation only.
 
 [Notification content extensions](~/ios/platform/user-notifications/advanced-user-notifications.md),
 introduced in iOS 10, make it possible to create custom user interfaces
@@ -67,7 +59,7 @@ configuration:
 
 Note the following features:
 
-- The `UNNotificationExtensionCategory` array specifies the type of 
+- The `UNNotificationExtensionCategory` array specifies the type of
 notification categories the content extension handles.
 - In order to support interactive content, the notification content
 extension sets the `UNNotificationExtensionUserInteractionEnabled`
@@ -84,7 +76,7 @@ view controller. In the sample app, the view controller is of type
 and a slider. The storyboard associates these controls with handlers defined
 in **NotificationViewController.cs**:
 
-- The **Launch App** button handler calls the 
+- The **Launch App** button handler calls the
 `PerformNotificationDefaultAction` action method on `ExtensionContext`,
 which launches the app:
 
@@ -109,7 +101,7 @@ which launches the app:
             // ...
     ```
 
-- The **Dismiss Notification** button handler calls 
+- The **Dismiss Notification** button handler calls
 `DismissNotificationContentExtension` on `ExtensionContext`, which closes
 the notification:
 
@@ -131,7 +123,7 @@ removes it from Notification Center:
     }
     ```
 
-- The method that handles value changes on the slider updates the alpha of 
+- The method that handles value changes on the slider updates the alpha of
 the image displayed in the notification's interface:
 
     ```csharp

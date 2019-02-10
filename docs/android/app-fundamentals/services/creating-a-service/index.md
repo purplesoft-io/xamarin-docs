@@ -3,8 +3,8 @@ title: "Creating a Service"
 ms.prod: xamarin
 ms.assetid: A78A55E7-FB5C-4C42-8E3E-939B5E98F9EB
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 05/03/2018
 ---
 
@@ -116,7 +116,7 @@ How the Intent is dispatched depends on the type of service and will be discusse
 
 ### Creating an Intent Filter for Implicit Intents
 
-To associate a service with a implicit Intent, an Android app must provide some meta-data to identify the capabilities of the service. This meta-data is provided by  _intent filters_. Intent filters contain some information, such as an action or a type of data, that must be present in an Intent to start a service. In Xamarin.Android, the intent filter is registered in **AndroidManifest.xml** by decorating a service with the [`IntentFilterAttribute`](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/). For example, the following code adds an intent filter with an associated action of `com.xamarin.DemoService`:
+To associate a service with an implicit Intent, an Android app must provide some meta-data to identify the capabilities of the service. This meta-data is provided by  _intent filters_. Intent filters contain some information, such as an action or a type of data, that must be present in an Intent to start a service. In Xamarin.Android, the intent filter is registered in **AndroidManifest.xml** by decorating a service with the [`IntentFilterAttribute`](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/). For example, the following code adds an intent filter with an associated action of `com.xamarin.DemoService`:
 
 ```csharp
 [Service]
@@ -136,7 +136,7 @@ This results in an entry being included in the **AndroidManifest.xml** file &nda
 </service>
 ```
 
-With the basics of a Xamarin.Android service out of the way, let's examine the the different subtypes of services in more detail.
+With the basics of a Xamarin.Android service out of the way, let's examine the different subtypes of services in more detail.
 
 
 ## Related Links

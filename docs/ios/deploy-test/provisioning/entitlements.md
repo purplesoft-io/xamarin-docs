@@ -4,8 +4,8 @@ description: "Entitlements are special app capabilities and security permissions
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 08/13/2018
 ---
 # Working with entitlements in Xamarin.iOS
@@ -31,7 +31,7 @@ However, some additional provisioning is required to ensure that the app is code
 
 In addition to selecting and configuring the required application services when defining the App ID, the entitlements must also be configured in the Xamarin.iOS project by editing the **Info.plist** and **Entitlements.plist** files.
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 To configure the entitlements in Visual Studio for Mac, do the following:
 
@@ -48,7 +48,7 @@ To configure the entitlements in Visual Studio for Mac, do the following:
 5. Select and configure any entitlements required for the Xamarin.iOS application so that they match the setup that was defined when the App ID was created.
 6. Save the changes to the **Entitlements.plist** file.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 To configure the entitlements in Visual Studio, do the following:
 

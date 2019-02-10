@@ -4,12 +4,14 @@ description: "Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 24. Pa
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 11/07/2017
 ---
 
 # Summary of Chapter 24. Page navigation
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
 
 Many applications consist of multiple pages among which the user navigates. The application always has a *main* page or *home* page, and from there the user navigates to other pages, which are maintained in a stack for navigating back. Additional navigation options are covered in [**Chapter 25. Page Varieties**](chapter25.md).
 

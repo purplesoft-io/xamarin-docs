@@ -4,12 +4,14 @@ description: "Learn how to display SkiaSharp bitmaps in pixel sizes and expanded
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 8E074F8D-4715-4146-8CC0-FD7A8290EDE9
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
 ---
 
 # Displaying SkiaSharp bitmaps
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 The subject of SkiaSharp bitmaps was introduced in the article **[Bitmap Basics in SkiaSharp](../basics/bitmaps.md)**. That article showed three ways to load bitmaps and three ways to display bitmaps. This article reviews the techniques to load bitmaps and goes deeper into the use of the `DrawBitmap` methods of `SKCanvas`.
 

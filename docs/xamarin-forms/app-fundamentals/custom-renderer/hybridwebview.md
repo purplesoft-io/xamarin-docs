@@ -6,10 +6,12 @@ ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2017
+ms.date: 10/19/2018
 ---
 
 # Implementing a HybridWebView
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/hybridwebview/)
 
 _Xamarin.Forms custom user interface controls should derive from the View class, which is used to place layouts and controls on the screen. This article demonstrates how to create a custom renderer for a HybridWebView custom control, which demonstrates how to enhance the platform-specific web controls to allow C# code to be invoked from JavaScript._
 
@@ -294,19 +296,19 @@ namespace CustomRenderer.iOS
 }
 ```
 
-The `HybridWebViewRenderer` class loads the web page specified in the `HybridWebView.Uri` property into a native [`WKWebView`](https://developer.xamarin.com/api/type/WebKit.WKWebView/) control, and the `invokeCSharpAction` JavaScript function is injected into the web page. Once the user enters their name and clicks the HTML `button` element, the `invokeCSharpAction` JavaScript function is executed, with the `DidReceiveScriptMessage` method being called after a message is received from the web page. In turn, this method invokes the `HybridWebView.InvokeAction` method, which will invoke the registered action to display the pop-up.
+The `HybridWebViewRenderer` class loads the web page specified in the `HybridWebView.Uri` property into a native [`WKWebView`](xref:WebKit.WKWebView) control, and the `invokeCSharpAction` JavaScript function is injected into the web page. Once the user enters their name and clicks the HTML `button` element, the `invokeCSharpAction` JavaScript function is executed, with the `DidReceiveScriptMessage` method being called after a message is received from the web page. In turn, this method invokes the `HybridWebView.InvokeAction` method, which will invoke the registered action to display the pop-up.
 
 This functionality is achieved as follows:
 
 - Provided that the `Control` property is `null`, the following operations are carried out:
-  - A [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/) instance is created, which allows posting messages and injecting user scripts into a web page.
-  - A [`WKUserScript`](https://developer.xamarin.com/api/type/WebKit.WKUserScript/) instance is created to inject the `invokeCSharpAction` JavaScript function into the web page after the web page is loaded.
-  - The [`WKUserContentController.AddScript`](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddUserScript/p/WebKit.WKUserScript/) method adds the [`WKUserScript`](https://developer.xamarin.com/api/type/WebKit.WKUserScript/) instance to the content controller.
-  - The [`WKUserContentController.AddScriptMessageHandler`](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddScriptMessageHandler/p/WebKit.IWKScriptMessageHandler/System.String/) method adds a script message handler named `invokeAction` to the [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/) instance, which will cause the JavaScript function `window.webkit.messageHandlers.invokeAction.postMessage(data)` to be defined in all frames in all web views that will use the `WKUserContentController` instance.
-  - A [`WKWebViewConfiguration`](https://developer.xamarin.com/api/type/WebKit.WKWebViewConfiguration/) instance is created, with the [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/)  instance being set as the content controller.
-  - A [`WKWebView`](https://developer.xamarin.com/api/type/WebKit.WKWebView/) control is instantiated, and the `SetNativeControl` method is called to assign a reference to the `WKWebView` control to the `Control` property.
+  - A [`WKUserContentController`](xref:WebKit.WKUserContentController) instance is created, which allows posting messages and injecting user scripts into a web page.
+  - A [`WKUserScript`](xref:WebKit.WKUserScript) instance is created to inject the `invokeCSharpAction` JavaScript function into the web page after the web page is loaded.
+  - The [`WKUserContentController.AddUserScript`](xref:WebKit.WKUserContentController.AddUserScript(WebKit.WKUserScript)) method adds the [`WKUserScript`](xref:WebKit.WKUserScript) instance to the content controller.
+  - The [`WKUserContentController.AddScriptMessageHandler`](xref:WebKit.WKUserContentController.AddScriptMessageHandler(WebKit.IWKScriptMessageHandler,System.String)) method adds a script message handler named `invokeAction` to the [`WKUserContentController`](xref:WebKit.WKUserContentController) instance, which will cause the JavaScript function `window.webkit.messageHandlers.invokeAction.postMessage(data)` to be defined in all frames in all web views that will use the `WKUserContentController` instance.
+  - A [`WKWebViewConfiguration`](xref:WebKit.WKWebViewConfiguration) instance is created, with the [`WKUserContentController`](xref:WebKit.WKUserContentController)  instance being set as the content controller.
+  - A [`WKWebView`](xref:WebKit.WKWebView) control is instantiated, and the `SetNativeControl` method is called to assign a reference to the `WKWebView` control to the `Control` property.
 - Provided that the custom renderer is attached to a new Xamarin.Forms element:
-  - The [`WKWebView.LoadRequest`](https://developer.xamarin.com/api/member/WebKit.WKWebView.LoadRequest/p/Foundation.NSUrlRequest/) method loads the HTML file that's specified by the `HybridWebView.Uri` property. The code specifies that the file is stored in the `Content` folder of the project. Once the web page is displayed, the `invokeCSharpAction` JavaScript function will be injected into the web page.
+  - The [`WKWebView.LoadRequest`](xref:WebKit.WKWebView.LoadRequest(Foundation.NSUrlRequest)) method loads the HTML file that's specified by the `HybridWebView.Uri` property. The code specifies that the file is stored in the `Content` folder of the project. Once the web page is displayed, the `invokeCSharpAction` JavaScript function will be injected into the web page.
 - When the element the renderer is attached to changes:
   - Resources are released.
 
@@ -323,7 +325,7 @@ namespace CustomRenderer.Droid
 {
     public class HybridWebViewRenderer : ViewRenderer<HybridWebView, Android.Webkit.WebView>
     {
-        const string JavaScriptFunction = "function invokeCSharpAction(data){jsBridge.invokeAction(data);}";
+        const string JavascriptFunction = "function invokeCSharpAction(data){jsBridge.invokeAction(data);}";
         Context _context;
 
         public HybridWebViewRenderer(Context context) : base(context)
@@ -339,6 +341,7 @@ namespace CustomRenderer.Droid
             {
                 var webView = new Android.Webkit.WebView(_context);
                 webView.Settings.JavaScriptEnabled = true;
+                webView.SetWebViewClient(new JavascriptWebViewClient($"javascript: {JavascriptFunction}"));
                 SetNativeControl(webView);
             }
             if (e.OldElement != null)
@@ -350,31 +353,42 @@ namespace CustomRenderer.Droid
             if (e.NewElement != null)
             {
                 Control.AddJavascriptInterface(new JSBridge(this), "jsBridge");
-                Control.LoadUrl(string.Format("file:///android_asset/Content/{0}", Element.Uri));
-                InjectJS(JavaScriptFunction);
-            }
-        }
-
-        void InjectJS(string script)
-        {
-            if (Control != null)
-            {
-                Control.LoadUrl(string.Format("javascript: {0}", script));
+                Control.LoadUrl($"file:///android_asset/Content/{Element.Uri}");
             }
         }
     }
 }
 ```
 
-The `HybridWebViewRenderer` class loads the web page specified in the `HybridWebView.Uri` property into a native [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) control, and the `invokeCSharpAction` JavaScript function is injected into the web page, after the web page has loaded, with the `InjectJS` method. Once the user enters their name and clicks the HTML `button` element, the `invokeCSharpAction` JavaScript function is executed. This functionality is achieved as follows:
+The `HybridWebViewRenderer` class loads the web page specified in the `HybridWebView.Uri` property into a native [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) control, and the `invokeCSharpAction` JavaScript function is injected into the web page, after the web page has finished loading, with the `OnPageFinished` override in the `JavascriptWebViewClient` class:
+
+```csharp
+public class JavascriptWebViewClient : WebViewClient
+{
+    string _javascript;
+
+    public JavascriptWebViewClient(string javascript)
+    {
+        _javascript = javascript;
+    }
+
+    public override void OnPageFinished(WebView view, string url)
+    {
+        base.OnPageFinished(view, url);
+        view.EvaluateJavascript(_javascript, null);
+    }
+}
+```
+
+Once the user enters their name and clicks the HTML `button` element, the `invokeCSharpAction` JavaScript function is executed. This functionality is achieved as follows:
 
 - Provided that the `Control` property is `null`, the following operations are carried out:
-  - A native [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) instance is created, and JavaScript is enabled in the control.
+  - A native [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) instance is created, JavaScript is enabled in the control, and a `JavascriptWebViewClient` instance is set as the implementation of `WebViewClient`.
   - The `SetNativeControl` method is called to assign a reference to the native [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) control to the `Control` property.
 - Provided that the custom renderer is attached to a new Xamarin.Forms element:
   - The [`WebView.AddJavascriptInterface`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.AddJavascriptInterface/p/Java.Lang.Object/System.String/) method injects a new `JSBridge` instance into the main frame of the WebView's JavaScript context, naming it `jsBridge`. This allows methods in the `JSBridge` class to be accessed from JavaScript.
   - The [`WebView.LoadUrl`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.LoadUrl/p/System.String/) method loads the HTML file that's specified by the `HybridWebView.Uri` property. The code specifies that the file is stored in the `Content` folder of the project.
-  - The `InjectJS` method is invoked to inject the `invokeCSharpAction` JavaScript function into the web page.
+  - In the `JavascriptWebViewClient` class, the `invokeCSharpAction` JavaScript function is injected into the web page once the page has finished loading.
 - When the element the renderer is attached to changes:
   - Resources are released.
 
@@ -396,7 +410,8 @@ public class JSBridge : Java.Lang.Object
   {
     HybridWebViewRenderer hybridRenderer;
 
-    if (hybridWebViewRenderer != null && hybridWebViewRenderer.TryGetTarget (out hybridRenderer)) {
+    if (hybridWebViewRenderer != null && hybridWebViewRenderer.TryGetTarget (out hybridRenderer))
+    {
       hybridRenderer.Element.InvokeAction (data);
     }
   }
@@ -409,9 +424,6 @@ The class must derive from `Java.Lang.Object`, and methods that are exposed to J
 > Projects that use the `[Export]` attribute must include a reference to `Mono.Android.Export`, or a compiler error will result.
 
 Note that the `JSBridge` class maintains a `WeakReference` to the `HybridWebViewRenderer` class. This is to avoid creating a circular reference between the two classes. For more information see [Weak References](https://msdn.microsoft.com/library/ms404247(v=vs.110).aspx) on MSDN.
-
-> [!IMPORTANT]
-> On Android Oreo ensure that the Android manifest sets the **Target Android version** to **Automatic**. Otherwise, running this code will result in the error message "invokeCSharpAction is not defined".
 
 ### Creating the Custom Renderer on UWP
 

@@ -4,12 +4,14 @@ description: "This guide explains the basics of SkiaSharp graphics concepts and 
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 25141E3E-D22E-44B1-A647-7E6FA0C9737B
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
 ---
 
 # SkiaSharp Drawing Basics
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _Learn the basics of SkiaSharp graphics concepts and coordinates_
 

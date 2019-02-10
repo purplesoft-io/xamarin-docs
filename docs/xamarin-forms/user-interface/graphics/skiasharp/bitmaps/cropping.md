@@ -4,12 +4,14 @@ description: "Learn how to use SkiaSharp to design a user interface for interact
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
 ---
 
 # Cropping SkiaSharp bitmaps
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 The [**Creating and Drawing SkiaSharp Bitmaps**](drawing.md) article described how an `SKBitmap` object can be passed to an `SKCanvas` constructor. Any drawing method called on that canvas causes graphics to be rendered on the bitmap. These drawing methods include `DrawBitmap`, which means that this technique allows transferring part or all of one bitmap to another bitmap, perhaps with transforms applied.
 

@@ -4,16 +4,16 @@ description: "This document describes the Geolocation class in Xamarin.Essential
 ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
+ms.date: 11/04/2018
 ---
 
 # Xamarin.Essentials: Geolocation
 
-![Pre-release NuGet](~/media/shared/pre-release.png)
-
 The **Geolocation** class provides APIs to retrieve the device's current geolocation coordinates.
 
-## Getting Started
+## Get started
+
+[!include[](~/essentials/includes/get-started.md)]
 
 To access the **Geolocation** functionality, the following platform-specific setup is required:
 
@@ -72,7 +72,7 @@ Add a reference to Xamarin.Essentials in your class:
 using Xamarin.Essentials;
 ```
 
-The Geoloation API will also prompt the user for permissions when necessary.
+The Geolocation API will also prompt the user for permissions when necessary.
 
 You can get the last known [location](xref:Xamarin.Essentials.Location) of the device by calling the `GetLastKnownLocationAsync` method. This is often faster then doing a full query, but can be less accurate.
 
@@ -90,6 +90,10 @@ catch (FeatureNotSupportedException fnsEx)
 {
     // Handle not supported on device exception
 }
+catch (FeatureNotEnabledException fneEx)
+{
+    // Handle not enabled on device exception
+}
 catch (PermissionException pEx)
 {
     // Handle permission exception
@@ -100,7 +104,7 @@ catch (Exception ex)
 }
 ```
 
-The altitude isn't always available. If it is not available, the `Altitude` property might be `null` or the value might be zero. If the altitude is available, the value is in meters above above sea level. 
+The altitude isn't always available. If it is not available, the `Altitude` property might be `null` or the value might be zero. If the altitude is available, the value is in meters above sea level. 
 
 To query the current device's [location](xref:Xamarin.Essentials.Location) coordinates, the `GetLocationAsync` can be used. It is best to pass in a full `GeolocationRequest` and `CancellationToken` since it may take some time to get the device's location.
 
@@ -118,6 +122,10 @@ try
 catch (FeatureNotSupportedException fnsEx)
 {
     // Handle not supported on device exception
+}
+catch (FeatureNotEnabledException fneEx)
+{
+    // Handle not enabled on device exception
 }
 catch (PermissionException pEx)
 {
@@ -149,7 +157,7 @@ The following table outlines accuracy per platform:
 | iOS | 1000 |
 | UWP | 300 - 3000 |
 
-### Medium (default)
+### Medium (Default)
 
 | Platform | Distance (in meters) |
 | --- | --- |
@@ -187,7 +195,7 @@ Location sanFrancisco = new Location(37.783333, -122.416667);
 double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Miles);
 ```
 
-The `Location` constructor has latitude and longitude arguments in that order. Positive latitude values are north of the equator, and positive longitude values are east of the Prime Meridian. Use the final argument to `CalculateDistance` to specify miles or kilometers. The `Location` class also defines `KilometersToMiles` and `MilesToKilometers` methods for converting between the two units.
+The `Location` constructor has latitude and longitude arguments in that order. Positive latitude values are north of the equator, and positive longitude values are east of the Prime Meridian. Use the final argument to `CalculateDistance` to specify miles or kilometers. The `UnitConverters` class also defines `KilometersToMiles` and `MilesToKilometers` methods for converting between the two units.
 
 ## API
 

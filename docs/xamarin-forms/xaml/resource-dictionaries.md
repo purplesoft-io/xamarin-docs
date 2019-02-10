@@ -4,12 +4,14 @@ description: "XAML resources are objects that can be shared and re-used througho
 ms.prod: xamarin
 ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/21/2018
 ---
 
 # Resource Dictionaries
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/xaml/resourcedictionaries/)
 
 _XAML resources are definitions of objects that can be shared and re-used throughout a Xamarin.Forms application._
 

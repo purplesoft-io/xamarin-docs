@@ -4,8 +4,8 @@ ms.prod: xamarin
 ms.topic: tutorial
 ms.assetid: 444A894D-5197-4726-934F-79BA80A71CB0
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/26/2018
 ---
 
@@ -33,11 +33,11 @@ When Main Activity is created on an Android device, Android will decide which la
 
 Create an alternate layout that targets **Landscape** orientation by following the steps described in the [Alternate Layouts](/xamarin/android/user-interface/android-designer/alternative-layout-views) guide. This should add a new layout resource file to the project, **Resources/layout/activity_main.axml**:
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 [![Alternate layout in Solution Explorer](./walkthrough-landscape-images/02-alternate-layout.w157-sml.png)](./walkthrough-landscape-images/02-alternate-layout.w157.png#lightbox)
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 [![Alternate layout in Solution Pad](./walkthrough-landscape-images/02-alternate-layout.m743-sml.png)](./walkthrough-landscape-images/02-alternate-layout.m743.png#lightbox)
 

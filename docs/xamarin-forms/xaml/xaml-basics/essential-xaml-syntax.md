@@ -4,12 +4,14 @@ description: "This article explains the essential XAML syntax features of proper
 ms.prod: xamarin
 ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 10/25/2017
 ---
 
 # Part 2. Essential XAML Syntax
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
 _XAML is mostly designed for instantiating and initializing objects. But often, properties must be set to complex objects that cannot easily be represented as XML strings, and sometimes properties defined by one class must be set on a child class. These two needs require the essential XAML syntax features of property elements and attached properties._
 
@@ -246,7 +248,7 @@ Here’s the complete GridDemoPage.xaml file:
 
 The `Grid.Row` and `Grid.Column` settings of 0 are not required but are generally included for purposes of clarity.
 
-Here’s what it looks like on all three platforms:
+Here’s what it looks like:
 
 [![](essential-xaml-syntax-images/griddemo.png "Grid Layout")](essential-xaml-syntax-images/griddemo-large.png#lightbox "Grid Layout")
 

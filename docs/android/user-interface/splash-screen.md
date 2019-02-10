@@ -1,22 +1,22 @@
 ---
 title: "Splash Screen"
-description: "An Android app takes some time to to start up, especially when the app is first launched on a device. A splash screen may display start up progress to the user or to indicate branding."
+description: "An Android app takes some time to start up, especially when the app is first launched on a device. A splash screen may display start up progress to the user or to indicate branding."
 ms.prod: xamarin
 ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 09/06/2018
 ---
 
 # Splash Screen
 
-_An Android app takes some time to to start up, especially when the app is first launched on a device. A splash screen may display start up progress to the user or to indicate branding._
+_An Android app takes some time to start up, especially when the app is first launched on a device. A splash screen may display start up progress to the user or to indicate branding._
 
 
 ## Overview
 
-An Android app takes some time to to start up, especially during the
+An Android app takes some time to start up, especially during the
 first time the app is run on a device (sometimes this is referred to as
 a _cold start_). The splash screen may display start up progress to the
 user, or it may display branding information to identify and promote
@@ -88,10 +88,7 @@ snippet is an example of a `drawable` resource using a `layer-list`:
 </layer-list>
 ```
 
-This `layer-list` will center the splash screen image **splash.png** on
-a background specified by the `@color/splash_background` resource.
-Place this file in the **Resources/drawable** folder (for example,
-**Resources/drawable/splash_screen.xml**).
+This `layer-list` will center the splash image **splash.png** on the background specified by the `@color/splash_background` resource. Place this XML file in the **Resources/drawable** folder (for example, **Resources/drawable/splash_screen.xml**).
 
 After the splash screen drawable has been created, the next step is to
 create a theme for the splash screen.

@@ -4,8 +4,8 @@ description: "This document describes how to debug exceptions that originate in 
 ms.prod: xamarin
 ms.assetid: B0C0CE31-2737-4969-8EA5-D39D3333E9C2
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 10/19/2016
 ---
 
@@ -154,7 +154,7 @@ Thread 0 Crashed:: Dispatch queue: com.apple.main-thread
 
 ```
 
-This guide will help you track down bugs of this nature if they crop up, correctly report them so they can be fixed, and work around them in your your code until then.
+This guide will help you track down bugs of this nature if they crop up, correctly report them so they can be fixed, and work around them in your code until then.
 
 ### Locating
 

@@ -4,8 +4,8 @@ title: "XAML Live Previewing"
 description: "This document discusses how to use the Xamarin Live Player to live preview XAML pages, make changes to the XAML, and see the changes appear instantly on device."
 ms.prod: xamarin
 ms.assetid: 86E9A179-21F8-4F3A-A9CE-36F0FC5DB4A8
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 08/08/2018
 ---
 
@@ -65,7 +65,7 @@ Before you can use the Xamarin Live Player with your Android device, you'll need
 
 ## Deploying to Android Emulator
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1. Open the XAML page that you want to live preview in the Visual Studio 2017 editor:
 
@@ -79,7 +79,7 @@ Before you can use the Xamarin Live Player with your Android device, you'll need
 
     ![](live-view-images/vs-image3.png)
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1. Open the XAML page that you want to live preview in the Visual Studio for Mac editor:
 

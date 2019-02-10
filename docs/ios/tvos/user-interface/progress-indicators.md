@@ -4,8 +4,8 @@ description: "This document describes how to work with progress indicators in a 
 ms.prod: xamarin
 ms.assetid: 582B6D0C-1F16-4299-A9A6-5651E76009FE
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/25/2018
 ---
 
@@ -63,7 +63,7 @@ Apple has the following suggestions for working with progress bars:
 The easiest way to work with a progress indicator in a Xamarin.tvOS app is
 to add it to the app's UI using the iOS Designer.
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 	
 1. In the **Solution Pad**, double-click the **Main.storyboard** file and
    open it for editing.
@@ -103,7 +103,7 @@ to add it to the app's UI using the iOS Designer.
 
 6. Save your changes.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 	
 1. In the **Solution Explorer**, double-click the **Main.storyboard** file 
    and open it for editing.

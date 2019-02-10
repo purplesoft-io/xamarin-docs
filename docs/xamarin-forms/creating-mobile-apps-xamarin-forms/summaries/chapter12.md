@@ -4,16 +4,18 @@ description: "Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 12. St
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
 ---
 
 # Summary of Chapter 12. Styles
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12)
+
 In Xamarin.Forms, styles allow multiple views to share a collection of property settings. This reduces markup and enables maintaining consistent visual themes.
 
-Styles are almost always defined and consumed in markup. An object of type [`Style`](xref:Xamarin.Forms.Style) is instantiated in a resource dictionary and then set to the [`Style`](xref:Xamarin.Forms.VisualElement.Style) property of a visual element using a `StaticResource` or `DyanamicResource` markup extension.
+Styles are almost always defined and consumed in markup. An object of type [`Style`](xref:Xamarin.Forms.Style) is instantiated in a resource dictionary and then set to the [`Style`](xref:Xamarin.Forms.VisualElement.Style) property of a visual element using a `StaticResource` or `DynamicResource` markup extension.
 
 ## The basic Style
 
@@ -35,7 +37,7 @@ Event handlers cannot be set in a `Style`. The `GestureRecognizers` property can
 
 ## Styles in code
 
-Although it's not common, you can instantiate and intialize `Style` objects in code. This is demonstrated by the [**BasicStyleCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyleCode) sample.
+Although it's not common, you can instantiate and initialize `Style` objects in code. This is demonstrated by the [**BasicStyleCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyleCode) sample.
 
 ## Style inheritance
 

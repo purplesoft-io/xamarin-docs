@@ -11,6 +11,8 @@ ms.date: 04/11/2017
 
 # Adding Data to a Picker's Items Collection
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
+
 _The Picker view is a control for selecting a text item from a list of data. This article explains how to populate a Picker with data by adding it to the Items collection, and how to respond to item selection by the user._
 
 ## Populating a Picker with Data
@@ -51,7 +53,7 @@ In addition to adding data using the `Items.Add` method, data can also be insert
 A [`Picker`](xref:Xamarin.Forms.Picker) supports selection of one item at a time. When a user selects an item, the [`SelectedIndexChanged`](xref:Xamarin.Forms.Picker.SelectedIndexChanged) event fires, and the [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) property is updated to an integer representing the index of the selected item in the list. The `SelectedIndex` property is a zero-based number indicating the item that the user selected. If no item is selected, which is the case when the `Picker` is first created and initialized, `SelectedIndex` will be -1.
 
 > [!NOTE]
-> Item selection behavior in a [`Picker`](xref:Xamarin.Forms.Picker) can be customized on iOS with a platform-specific. For more information, see [Controlling Picker Item Selection](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#picker_update_mode).
+> Item selection behavior in a [`Picker`](xref:Xamarin.Forms.Picker) can be customized on iOS with a platform-specific. For more information, see [Controlling Picker Item Selection](~/xamarin-forms/platform/ios/picker-selection.md).
 
 The following code example shows the `OnPickerSelectedIndexChanged` event handler method, which is executed when the [`SelectedIndexChanged`](xref:Xamarin.Forms.Picker.SelectedIndexChanged) event fires:
 

@@ -3,8 +3,8 @@ title: "Fingerprint Authentication Guidance"
 ms.prod: xamarin
 ms.assetid: B40332CC-8123-4150-B47E-996214388842
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
 ---
 
@@ -36,4 +36,4 @@ If you haven't already done so, you should look at the [sample application](http
 
 - [Fingerprint Guide Sample App](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide)
 - [Fingerprint Dialog Sample](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog/)
-- [Fingerprint Icon](https://developer.android.comhttps://developer.xamarin.com/samples/FingerprintDialog/res/drawable-hdpi/ic_fp_40px.html)
+- [Fingerprint Icon](https://raw.githubusercontent.com/xamarin/monodroid-samples/master/FingerprintGuide/FingerprintSampleApp/Resources/drawable-hdpi/ic_fp_40px.png)

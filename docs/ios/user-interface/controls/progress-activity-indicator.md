@@ -4,8 +4,8 @@ description: "This document discusses how to use progress and activity indicator
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/11/2017
 ---
 
@@ -27,7 +27,7 @@ Apple has the following suggestions for working with Activity Indicators:
 
 ### Implementing an Activity Indicator
 
-An Activity Indicator is implemented through the [`UIActivityIndictorView`](https://developer.xamarin.com/api/type/UIKit.UIActivityIndicatorView/) class to indicate that a `UIActivity` is taking place.
+An Activity Indicator is implemented through the [`UIActivityIndictorView`](xref:UIKit.UIActivityIndicatorView) class to indicate that a `UIActivity` is taking place.
 
 ### Activity Indicators and Storyboards
 
@@ -63,7 +63,7 @@ Apple has the following suggestions for working with Progress Bars:
 
 ### Implementing an Progress Bar
 
-A Progress Bar is created by instantiating a [`UIProgressView`](https://developer.xamarin.com/api/type/UIKit.UIProgressView/)
+A Progress Bar is created by instantiating a [`UIProgressView`](xref:UIKit.UIProgressView)
 
 ### Progress Bars and Storyboards
 

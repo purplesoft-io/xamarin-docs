@@ -4,12 +4,14 @@ description: "Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 19. Co
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/18/2018
 ---
 
 # Summary of Chapter 19. Collection views
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)
 
 > [!NOTE] 
 > Notes on this page indicate areas where Xamarin.Forms has diverged from the material presented in the book.
@@ -55,7 +57,7 @@ The [**ListViewList**](https://github.com/xamarin/xamarin-forms-book-samples/tre
 
 ### The row separator
 
-On iOS and Android displays, a thin line separates the rows. You can control this with the [`SeparatorVisibiliy`](xref:Xamarin.Forms.ListView.SeparatorVisibility) and [`SeparatorColor`](xref:Xamarin.Forms.ListView.SeparatorColor) properties. `SeparatorVisibility` property is of type [`SeparatorVisbility`](xref:Xamarin.Forms.SeparatorVisibility), an enumeration with two members:
+On iOS and Android displays, a thin line separates the rows. You can control this with the [`SeparatorVisibility`](xref:Xamarin.Forms.ListView.SeparatorVisibility) and [`SeparatorColor`](xref:Xamarin.Forms.ListView.SeparatorColor) properties. `SeparatorVisibility` property is of type [`SeparatorVisibility`](xref:Xamarin.Forms.SeparatorVisibility), an enumeration with two members:
 
 - [`Default`](xref:Xamarin.Forms.SeparatorVisibility.Default), the default setting
 - [`None`](xref:Xamarin.Forms.SeparatorVisibility.None)

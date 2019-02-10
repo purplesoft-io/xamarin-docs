@@ -4,12 +4,14 @@ description: "Use the non-separable blend modes to alter hue, saturation, or lum
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 97FA2730-87C0-4914-8C9F-C64A02CF9EEF
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 08/23/2018
 ---
 
 # The non-separable blend modes
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 As you saw in the article [**SkiaSharp separable blend modes**](separable.md), the separable blend modes perform operations on the red, green, and blue channels separately. The non-separable blend modes do not. By operating upon the Hue, Saturation, and Luminosity levels of color, the non-separable blend modes can alter colors in interesting ways:
 

@@ -4,8 +4,8 @@ description: "This topic describes Designer features that make it easier for dev
 ms.prod: xamarin
 ms.assetid: AC55E1B2-C239-4019-B0C3-A16F6CF0D6E0
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/25/2018
 ---
 
@@ -27,7 +27,7 @@ for you to create Material-Design-compliant layouts. If you are not
 familiar with Material Design, see the
 [Material Design introduction](https://material.io/design/introduction).
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 In this guide, we'll have a look at the following Designer features:
 
@@ -227,7 +227,7 @@ see [Material Theme](~/android/user-interface/material-theme.md).
 
 
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 In this guide, we'll a have a look at the following Designer features:
 

@@ -3,8 +3,8 @@ title: "Configuration"
 ms.prod: xamarin
 ms.assetid: 44526226-4E4E-4FFF-9A16-CA7B1E01BB8F
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 10/11/2016
 ---
 
@@ -57,7 +57,7 @@ lock (locker){
 }
 ```
 
-All database access (reads, writes, updates, etc) should be wrapped with the same lock. Care must be taken to avoid a deadlock situation by ensuring that the work inside the lock clause is kept simple and does not call out to other methods that may also take a lock!
+All database access (reads, writes, updates, etc.) should be wrapped with the same lock. Care must be taken to avoid a deadlock situation by ensuring that the work inside the lock clause is kept simple and does not call out to other methods that may also take a lock!
 
 
 ## Related Links

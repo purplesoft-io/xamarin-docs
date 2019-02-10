@@ -4,8 +4,8 @@ description: "This article covers working with table views in a Xamarin.Mac appl
 ms.prod: xamarin
 ms.assetid: 3B55B858-4769-4331-966A-7F53B3B7C720
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
 ---
 
@@ -13,7 +13,7 @@ ms.date: 03/14/2017
 
 _This article covers working with table views in a Xamarin.Mac application. It describes creating table views in Xcode and Interface Builder and interacting with them in code._
 
-When working with C# and .NET in a Xamarin.Mac application, you have access to the same Table Views that a developer working in in *Objective-C* and *Xcode* does. Because Xamarin.Mac integrates directly with Xcode, you can use Xcode's _Interface Builder_ to create and maintain your Table Views (or optionally create them directly in C# code).
+When working with C# and .NET in a Xamarin.Mac application, you have access to the same Table Views that a developer working in *Objective-C* and *Xcode* does. Because Xamarin.Mac integrates directly with Xcode, you can use Xcode's _Interface Builder_ to create and maintain your Table Views (or optionally create them directly in C# code).
 
 A Table View displays data in a tabular format containing one or more columns of information in multiple rows. Based on the type of Table View being created, the user can sort by column, reorganize columns, add columns, remove columns or edit the data contained within the table.
 
@@ -181,7 +181,7 @@ namespace MacTables
 {
 	public class Product
 	{
-		#region Computed Propoperties
+		#region Computed Properties
 		public string Title { get; set;} = "";
 		public string Description { get; set;} = "";
 		#endregion
@@ -757,7 +757,7 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 			// Wireup events
 			button.Activated += (sender, e) => {
 				// Get button and product
-				var btw = sender as NSButton;
+				var btn = sender as NSButton;
 				var product = DataSource.Products [(int)btn.Tag];
 
 				// Configure alert
@@ -798,8 +798,8 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 		break;
 	case "Action":
 		foreach (NSView subview in view.Subviews) {
-			var btw = subview as NSButton;
-			if (btw != null) {
+			var btn = subview as NSButton;
+			if (btn != null) {
 				btn.Tag = row;
 			}
 		}
@@ -832,7 +832,7 @@ The Button's `Tag` property is used to hold the number of the Row that is curren
 // Wireup events
 button.Activated += (sender, e) => {
 	// Get button and product
-	var btw = sender as NSButton;
+	var btn = sender as NSButton;
 	var product = DataSource.Products [(int)btn.Tag];
 
 	// Configure alert
@@ -878,8 +878,8 @@ case "Details":
 	break;
 case "Action":
 	foreach (NSView subview in view.Subviews) {
-		var btw = subview as NSButton;
-		if (btw != null) {
+		var btn = subview as NSButton;
+		if (btn != null) {
 			btn.Tag = row;
 		}
 	}

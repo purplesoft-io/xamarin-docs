@@ -4,8 +4,8 @@ description: "This document links to guides that describe the various iOS user i
 ms.prod: xamarin
 ms.assetid: C00EA232-ADCC-42AD-BF86-B526414A21C6
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
 ---
 
@@ -57,7 +57,7 @@ iOS provides two main ways to  indicate progress in your app: Activity Indicator
 
 The UISearchBar is used to search through a list of values. 
 
-## [Sliders, Steppers, and Segmented Controls](slider-switch-segmented-controls.md)
+## [Sliders, Switches, and Segmented Controls](slider-switch-segmented-controls.md)
 
 The slider control allows for simple selection of a numeric value within a range. iOS uses the `UISwitch` as a boolean input that may be represented by a radio-button on other platforms. A Segmented Control is an organized way to allow users to interact with a small number of options.
 

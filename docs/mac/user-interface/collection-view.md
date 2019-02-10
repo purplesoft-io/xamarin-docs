@@ -4,8 +4,8 @@ description: "This article describes working with collection views in a Xamarin.
 ms.prod: xamarin
 ms.assetid: 6EE32256-5948-4AE4-8133-6D0B3F4173E8
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/24/2017
 ---
 
@@ -13,7 +13,7 @@ ms.date: 05/24/2017
 
 _This article describes working with collection views in a Xamarin.Mac app. It covers creating and maintaining collection views in Xcode and Interface Builder and working with them programmatically._
 
-When working with C# and .NET in a Xamarin.Mac app, the developer has access to the same AppKit Collection View controls that a developer working in in *Objective-C* and *Xcode* does. Because Xamarin.Mac integrates directly with Xcode, the developer uses Xcode's _Interface Builder_ to create and maintain Collection Views.
+When working with C# and .NET in a Xamarin.Mac app, the developer has access to the same AppKit Collection View controls that a developer working in *Objective-C* and *Xcode* does. Because Xamarin.Mac integrates directly with Xcode, the developer uses Xcode's _Interface Builder_ to create and maintain Collection Views.
 
 A `NSCollectionView` displays a grid of subviews organized using a `NSCollectionViewLayout`. Each subview in the grid is represented by a `NSCollectionViewItem` which manages the loading of the view’s content from a `.xib` file.
 
@@ -370,7 +370,7 @@ public override bool Selected
 
 A Collection View Data Source (`NSCollectionViewDataSource`) provides all of the data for a Collection View and creates and populates a Collection View Cell (using the `.xib` prototype) as required for each item in the collection.
 
-Add a new class the the project, call it `CollectionViewDataSource` and make it look like the following:
+Add a new class the project, call it `CollectionViewDataSource` and make it look like the following:
 
 ```csharp
 using System;

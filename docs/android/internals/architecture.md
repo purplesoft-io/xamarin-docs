@@ -3,8 +3,8 @@ title: "Architecture"
 ms.prod: xamarin
 ms.assetid: 7DC22A08-808A-DC0C-B331-2794DD1F9229
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
 ---
 
@@ -56,10 +56,10 @@ and layout as normal Android packages, with the following additions:
     in Release builds the *.apk* is *mmap()* ed into the process and
     the assemblies are loaded from memory. This permits faster app
     startup, as assemblies do not need to be extracted prior to
-    execution. - *Note:* Assembly location information such as
+    execution.  
+-   *Note:* Assembly location information such as
     [Assembly.Location](xref:System.Reflection.Assembly.Location)
-    and
-    [Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
+    and [Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
     *cannot be relied upon* in Release builds. They do not exist as
     distinct filesystem entries, and they have no usable location.
 

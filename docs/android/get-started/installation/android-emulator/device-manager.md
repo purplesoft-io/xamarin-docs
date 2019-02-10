@@ -5,9 +5,10 @@ zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 09/06/2018
+author: conceptdev
+ms.author: crdun
+ms.custom: video
+ms.date: 01/22/2019
 ---
 
 # Managing Virtual Devices with the Android Device Manager
@@ -429,7 +430,7 @@ screen:
    installed virtual devices while displaying a **Creating** progress
    indicator during device creation:
 
-   [![Creation progress indictator](device-manager-images/mac/19-creating-the-device-m76-sml.png)](device-manager-images/mac/19-creating-the-device-m76.png#lightbox)
+   [![Creation progress indicator](device-manager-images/mac/19-creating-the-device-m76-sml.png)](device-manager-images/mac/19-creating-the-device-m76.png#lightbox)
 
 10. When the creation process is complete, the new device is shown in
     the list of installed virtual devices with a **Start** button,
@@ -520,7 +521,7 @@ The following sections explain how to diagnose and work around problems
 that may occur when using the Android Device Manager to configure
 virtual devices.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ### Android SDK in Non-Standard Location
 
@@ -600,7 +601,7 @@ After these changes are made, the AVD will restart in a state that
 allows Wi-Fi to work again.
 
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ### Wrong Version of Android SDK Tools
 
@@ -643,7 +644,7 @@ allows Wi-Fi to work again.
 
 ### Generating a Bug Report
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 If you find a problem with the Android Device Manager that
 cannot be resolved using the above troubleshooting tips, please file a
@@ -653,7 +654,7 @@ Report**:
 [![Location of menu item for filing a bug report](device-manager-images/win/34-bug-report-sml.png)](device-manager-images/win/34-bug-report.png#lightbox)
 
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 If you find a problem with the Android Device Manager that
 cannot be resolved using the above troubleshooting tips, please file a
@@ -666,7 +667,7 @@ bug report by clicking **Help > Report a Problem**:
 ## Summary
 
 This guide introduced the Android Device Manager available in Visual
-Studio Tools for Xamarin and and Visual Studio for Mac. It explained
+Studio Tools for Xamarin and Visual Studio for Mac. It explained
 essential features such as starting and stopping the Android emulator,
 selecting an Android virtual device (AVD) to run, creating new virtual
 devices, and how to edit a virtual device. It explained how to
@@ -681,3 +682,9 @@ provided troubleshooting tips for common problems.
 - [SDK Tools Release Notes (Google)](https://developer.android.com/studio/releases/sdk-tools)
 - [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
+
+## Related Video
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/How-to-Create-and-Manage-Your-Own-Android-Emulators/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

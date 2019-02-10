@@ -2,8 +2,8 @@
 title: ".NET Embedding on Android"
 ms.prod: xamarin
 ms.assetid: EB2F967A-6D95-4448-994B-6D5C7BFAC2C7
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 06/15/2018
 ---
 
@@ -15,7 +15,7 @@ existing native Android project. To do this, you can use the
 tool to turn your .NET library into a native library that can be
 incorporated into a native Java-based Android app.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ## Xamarin.Android Requirements
 
@@ -58,7 +58,7 @@ following steps:
 5.  Use the generated AAR file in a Java project in Android Studio.
 
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ## Xamarin.Android Requirements
 

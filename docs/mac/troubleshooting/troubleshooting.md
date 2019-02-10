@@ -5,8 +5,8 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5CBC6822-BCD7-4DAD-8468-6511250D41C4
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
 ---
 
@@ -105,10 +105,6 @@ For existing Xamarin.Mac projects, you will need to manually create the **Entitl
 Enter `Entitlements` for the name and click the **New** button. If your project previously included an Entitlements file, you will be prompted to add it to the project instead of creating a new file:
 
 [![Verifying the overwrite of a file](troubleshooting-images/entitlements04.png "Verifying the overwrite of a file")](troubleshooting-images/entitlements04-large.png#lightbox)
-
-## Contacting support (business or enterprise licenses)
-
-If you have a business or enterprise license, you are eligible to request help directly from Xamarin engineers via support tickets. See [xamarin.com/support](http://xamarin.com/support) for details.
 
 ## Community support on the forums
 

@@ -4,19 +4,11 @@ description: "This document describes how to use Siri Shortcuts in iOS 12. It di
 ms.prod: xamarin
 ms.assetid: 86424F79-3A7D-436E-927D-9A3267DA333B
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 08/08/2018
 ---
 # Siri Shortcuts in Xamarin.iOS
-
-![Preview](~/media/shared/preview.png)
-
-> [!WARNING]
-> Xamarin's support for the iOS 12, tvOS 12, and watchOS 5 SDKs distributed
-> with Xcode 10 is currently in preview, which means that that it may
-> contain bugs, is not feature complete, and may change. Use it for
-> experimentation only.
 
 In [iOS 10](~/ios/platform/sirikit/index.md), Apple introduced SiriKit,
 making it possible to build messaging, VoIP calling, payments, workouts,
@@ -43,7 +35,7 @@ restaurant, view their order history, and define phrases to use when
 ordering soup by interacting with Siri.
 
 > [!TIP]
-> Before testing Soup Chef on an iOS 12 simulator or device, enable the 
+> Before testing Soup Chef on an iOS 12 simulator or device, enable the
 > following two settings, which are useful when debugging shortcuts:
 >
 > - In the **Settings** app, enable **Developer > Display Recent Shortcuts**.
@@ -54,17 +46,17 @@ ordering soup by interacting with Siri.
 
 To use the sample app:
 
-- Install and run the Soup Chef sample app on an iOS 12 simulator or 
+- Install and run the Soup Chef sample app on an iOS 12 simulator or
 [device](#testing-on-device).
 - Click the **+** button in the upper-right to create a new order.
 - Select a type of soup, specify a quantity and options, and tap **Place Order**.
-- On the **Order History** screen, tap the newly-created order to view its 
+- On the **Order History** screen, tap the newly-created order to view its
 details.
 - At the bottom of order details screen, tap **Add to Siri**.
 - Record a voice phrase to associate with the order and tap **Done**.
-- Minimize Soup Chef, invoke Siri, and place the order again by using the 
+- Minimize Soup Chef, invoke Siri, and place the order again by using the
 voice phrase you just recorded.
-- After Siri completes the order, re-open Soup Chef and notice that the new 
+- After Siri completes the order, re-open Soup Chef and notice that the new
 order is listed on the **Order History** screen.
 
 The sample app demonstrates how to:
@@ -97,14 +89,14 @@ The **Info.plist** file also contains the following:
 ```
 
 This `NSUserActivityTypes` key/value pair indicates that Soup Chef knows
-how to handle an `OrderSoupIntent`, and an [`NSUserActivity`](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/)
-having an [`ActivityType`](https://developer.xamarin.com/api/property/Foundation.NSUserActivity.ActivityType/)
+how to handle an `OrderSoupIntent`, and an [`NSUserActivity`](xref:Foundation.NSUserActivity)
+having an [`ActivityType`](xref:Foundation.NSUserActivity.ActivityType)
 of "com.xamarin.SoupChef.viewMenu".
 
 Activities and custom intents passed to the app itself, as opposed to its
 extensions, are handled in the `AppDelegate`
-(a [`UIApplicationDelegate`](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/))
-by the [`ContinueUserActivity`](https://developer.xamarin.com/api/member/UIKit.UIApplicationDelegate.ContinueUserActivity/)
+(a [`UIApplicationDelegate`](xref:UIKit.UIApplicationDelegate)
+by the [`ContinueUserActivity`](xref:UIKit.UIApplicationDelegate.ContinueUserActivity*)
 method.
 
 ### Entitlements.plist
@@ -124,7 +116,7 @@ following:
 This configuration indicates that the app uses the
 "group.com.xamarin.SoupChef" app group. The **SoupChefIntents** app
 extension uses this same app group, which allows the two projects to share
-[`NSUserDefaults`](https://developer.xamarin.com/api/type/Foundation.NSUserDefaults/)
+[`NSUserDefaults`](xref:Foundation.NSUserDefaults)
 data.
 
 The `com.apple.developer.siri` key indicates that the app interacts with
@@ -143,7 +135,7 @@ screen you'd like the shortcut to open.
 ### Setting up an NSUserActivity
 
 On the menu screen, `SoupMenuViewController` creates an `NSUserActivity`
-and assigns it to the view controller's [`UserActivity`](https://developer.xamarin.com/api/property/UIKit.UIResponder.UserActivity/)
+and assigns it to the view controller's [`UserActivity`](xref:UIKit.UIResponder.UserActivity)
 property:
 
 ```csharp
@@ -159,7 +151,7 @@ this donation, Siri gains information about when and where this activity is
 relevant to the user and learns to better suggest it in the future.
 
 `NSUserActivityHelper` is a utility class included in the **SoupChef**
-solution, in the **SoupKit** class library. It creates an `NSUserActivity` 
+solution, in the **SoupKit** class library. It creates an `NSUserActivity`
 and sets various properties related to Siri and search:
 
 ```csharp
@@ -195,11 +187,11 @@ Note the following in particular:
 
 - Setting `EligibleForPrediction` to `true` indicates that Siri can
 predict this activity and surface it as a shortcut.
-- The [`ContentAttributeSet`](https://developer.xamarin.com/api/property/Foundation.NSUserActivity.ContentAttributeSet/)
+- The [`ContentAttributeSet`](xref:Foundation.NSUserActivity.ContentAttributeSet)
 array is a standard [`CSSearchableItemAttributeSet`](https://developer.xamarin.com/api/type/CoreSpotlight.CSSearchableItemAttributeSet/)
 used to include an `NSUserActivity` in iOS search results.
-- [`SuggestedInvocationPhrase`](https://developer.xamarin.com/api/property/Foundation.NSUserActivity.SuggestedInvocationPhrase/)
-is a phrase that Siri will suggest to the user as a potential choice when 
+- [`SuggestedInvocationPhrase`](xref:Foundation.NSUserActivity.SuggestedInvocationPhrase)
+is a phrase that Siri will suggest to the user as a potential choice when
 assigning a phrase to a shortcut.
 
 ### Handling an NSUserActivity shortcut
@@ -273,7 +265,7 @@ Notice the following:
 categories that can be used for custom intents; select the one that most
 closely matches the task your custom intent will enable. Since this is a
 soup ordering app, **OrderSoupIntent** uses **Order**.
-- The **Confirmation** checkbox indicates whether or not Siri must request 
+- The **Confirmation** checkbox indicates whether or not Siri must request
 confirmation before executing the task. For the **Order Soup**
 intent in Soup Chef, this option is enabled since the user is making
 a purchase.
@@ -299,12 +291,12 @@ In the **OrderSoup** intent's response definition, note the following:
 
 - A response's **Properties** can be used to customize the message
 communicated back to the user. The **OrderSoup** intent response has
-**soup** and **waitTime** properties. 
+**soup** and **waitTime** properties.
 - The **Response Templates** specify the various success and failure
 messages that can be used to indicate status after an intent's task has
 completed.
 - The **Success** checkbox should be selected for responses that indicate
- success. 
+ success.
  - The **OrderSoupIntent** success response uses the **soup** and
  **waitTime** properties to provide a friendly and useful message
  describing when the soup order will be ready.
@@ -318,12 +310,12 @@ programmatically with the custom intent and its responses.
 To view this generated code:
 
 - Open **AppDelegate.m**.
-- Add an import to the custom intent's header file: 
+- Add an import to the custom intent's header file:
 `#import "OrderSoupIntent.h"`
 - In any method in the class, add a reference to `OrderSoupIntent`.
 - Right-click on `OrderSoupIntent` and choose **Jump to Definition**.
 - Right-click in the newly-opened file, **OrderSoupIntent.h**, and select
-**Show in Finder**. 
+**Show in Finder**.
 - This will open a **Finder** window that contains a .h and .m file
 containing the generated code.
 
@@ -333,14 +325,14 @@ This generated code includes:
 - `OrderSoupIntentHandling` – A protocol that defines the methods that will
 be used to confirm that the intent should be executed and the method that
 actually executes it.
-- `OrderSoupIntentResponseCode` – An enum that defines various response 
+- `OrderSoupIntentResponseCode` – An enum that defines various response
 statuses.
 - `OrderSoupIntentResponse` – a class that represents the response to an
 intent's execution.
 
 ### Creating a binding to the custom intent
 
-To use the code generated by Xcode in a Xamarin.iOS app, create a C# 
+To use the code generated by Xcode in a Xamarin.iOS app, create a C#
 binding for it.
 
 #### Creating a static library and C# binding definitions
@@ -351,14 +343,14 @@ take a look in the **OrderSoupIntentStaticLib** folder, and open the
 
 This **Cocoa Touch Static Library** project contains the
 **OrderSoupIntent.h** and **OrderSoupIntent.m** files generated by
-Xcode. 
+Xcode.
 
 #### Configuring the static library project build settings
 
 In the Xcode **Project Navigator**, select the top-level project,
-**OrderSoupIntentStaticLib**, and navigate to **Build Phases > Compile Sources**. 
-Notice that **OrderSoupIntent.m** (which imports **OrderSoupIntent.h**) is 
-listed here. In **Link Binary With Libraries**, notice that 
+**OrderSoupIntentStaticLib**, and navigate to **Build Phases > Compile Sources**.
+Notice that **OrderSoupIntent.m** (which imports **OrderSoupIntent.h**) is
+listed here. In **Link Binary With Libraries**, notice that
 **Intents.framework** and **Foundation.framework** are included.
 With these settings in place, the framework will build correctly.
 
@@ -367,16 +359,16 @@ With these settings in place, the framework will build correctly.
 To build the static library and generate C# bindings definitions for it,
 follow these steps:
 
-- [Install Objective Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/get-started?context=xamarin/mac#installing-objective-sharpie), 
+- [Install Objective Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/get-started?context=xamarin/mac#installing-objective-sharpie),
 the tool used to generate bindings definitions from the .h and .m files
 created by Xcode.
 
 - Configure your system to use Xcode 10 Command Line Tools:
 
-    > [!WARNING] 
+    > [!WARNING]
     > Updating the selected Command Line Tools impacts all installed
     > versions of Xcode on your system. When you are done using the Soup
-    > Chef sample app, be sure to revert this setting to its original 
+    > Chef sample app, be sure to revert this setting to its original
     > configuration.
 
     - In Xcode, choose **Xcode > Preferences > Locations** and set
@@ -387,7 +379,7 @@ created by Xcode.
 
 - Type `make`, which builds:
 
-    - The static library, **libOrderSoupIntentStaticLib.a** 
+    - The static library, **libOrderSoupIntentStaticLib.a**
     - In the **bo** output directory, C# bindings definitions:
         - **ApiDefinitions.cs**
         - **StructsAndEnums.cs**
@@ -398,7 +390,7 @@ However, manually running through the above process will ensure that it
 builds as expected.
 
 For more information about creating a static library and using Objective
-Sharpie to create C# bindings definitions, take a look at the 
+Sharpie to create C# bindings definitions, take a look at the
 [Binding an iOS Objective-C library](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough?tabs=vsmac#creating-a-static-library)
 walkthrough.
 
@@ -417,10 +409,10 @@ Notice in particular that this project includes:
 
 - **ApiDefinitions.cs** – A file generated above by Objective Sharpie and
 added to this project. This file's **Build Action** is set to
-**ObjcBindingApiDefinition**. 
-- **StructsAndEnums.cs** – Another file genrated above by Objective
+**ObjcBindingApiDefinition**.
+- **StructsAndEnums.cs** – Another file generated above by Objective
 Sharpie and added to this project. This file's **Build Action** is set to
-**ObjcBindingCoreSource**. 
+**ObjcBindingCoreSource**.
 - A **Native Reference** to **libOrderSoupIntentStaticLib.a**, the static
 library built above.
 
@@ -431,7 +423,7 @@ library built above.
 > this project.
 
 For more information about creating a C# bindings library, take a look at the
-[Binding an iOS Objective-C Library](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough?tabs=vsmac#create-a-xamarinios-binding-project) 
+[Binding an iOS Objective-C Library](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough?tabs=vsmac#create-a-xamarinios-binding-project)
 walkthrough.
 
 Notice that the **SoupChef** project contains a reference to
@@ -488,7 +480,7 @@ is donated to Siri.
 
 The call to the `order.Intent` getter fetches an `OrderSoupIntent` that
 represents the order by setting its `Quantity`, `Soup`, `Options`, and
-image, and and an invocation phrase to use as a suggestion when the user
+image, and an invocation phrase to use as a suggestion when the user
 records a phrase for Siri to associate with the intent:
 
 ```csharp
@@ -607,7 +599,7 @@ The **Info.plist** file also contains the following:
 In the above **Info.plist**:
 
 - `IntentsRestrictedWhileLocked` lists intents that should only be handled
-when the device is unlocked. 
+when the device is unlocked.
 - `IntentsSupported` lists the intents handled by this extension.
 - `NSExtensionPointIdentifier` specifies the type of app extension (see
 [Apple's documentation](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15) for more information).
@@ -649,7 +641,7 @@ method of the `IntentHandler` class (defined in **Info.plist** as the
 [Register("IntentHandler")]
 public class IntentHandler : INExtension
 {
-    public override NSObject GetHandler(INIntent intent) 
+    public override NSObject GetHandler(INIntent intent)
     {
         if (intent is OrderSoupIntent)
         {
@@ -666,14 +658,14 @@ public class IntentHandler : INExtension
 implements two important methods:
 
 - `ConfirmOrderSoup` – Confirms whether or not the task associated with
-the intent should actually be executed 
-- `HandleOrderSoup` – Places the soup order and responds to the user by 
+the intent should actually be executed
+- `HandleOrderSoup` – Places the soup order and responds to the user by
 calling the passed-in completion handler
 
 #### Handling an OrderSoupIntent that opens the app
 
 An app must properly handle intents that do not run in the background.
-These are handled in the same way as `NSUserActivity` shortcuts, in the 
+These are handled in the same way as `NSUserActivity` shortcuts, in the
 `ContinueUserActivity` method of `AppDelegate`:
 
 ```csharp
@@ -681,7 +673,7 @@ public override bool ContinueUserActivity(UIApplication application, NSUserActiv
 {
     var intent = userActivity.GetInteraction()?.Intent as OrderSoupIntent;
     if (!(intent is null))
-    { 
+    {
         HandleIntent(intent);
         return true;
     }
@@ -724,10 +716,10 @@ The **Info.plist** file also contains the following:
 
 In the above **Info.plist**:
 
-- `IntentsSupported` indicates that the `OrderSoupIntent` is handled by 
+- `IntentsSupported` indicates that the `OrderSoupIntent` is handled by
 this Intents UI extension.
 - `NSExtensionPointIdentifier` specifies the type of app extension (see
-[Apple's documentation](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15) 
+[Apple's documentation](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15)
 for more information).
 - `NSExtensionMainStoryboard` specifies the storyboard that defines the
 primary interface of this extension
@@ -760,12 +752,12 @@ In this storyboard, there is a single view controller, of type
 `IntentViewController` implements the
 [`IINUIHostedViewControlling`](https://developer.xamarin.com/api/type/IntentsUI.IINUIHostedViewControlling/)
 interface, used to provide a custom interface when working with Siri
-Intents. The 
+Intents. The
 [`ConfigureView`](https://developer.xamarin.com/api/member/IntentsUI.INUIHostedViewControlling_Extensions.ConfigureView/)
-method is called to customize the interface, displaying the confirmation or 
+method is called to customize the interface, displaying the confirmation or
 the invoice, depending on whether the interaction is being confirmed
 ([`INIntentHandlingStatus.Ready`](https://developer.xamarin.com/api/type/Intents.INIntentHandlingStatus/))
-or has been executed successfully 
+or has been executed successfully
 ([`INIntentHandlingStatus.Success`](https://developer.xamarin.com/api/type/Intents.INIntentHandlingStatus/)):
 
 ```csharp
@@ -806,7 +798,7 @@ used to record and assign voice shortcuts is provided by iOS and requires
 little custom code.
 
 In `OrderDetailViewController`, when a user taps the table's **Add to Siri**
-row, the [`RowSelected`](https://developer.xamarin.com/api/member/UIKit.UITableViewSource.RowSelected/)
+row, the [`RowSelected`](xref:UIKit.UITableViewSource.RowSelected*)
 method presents a screen to either add or edit a voice shortcut:
 
 ```csharp
@@ -842,7 +834,7 @@ Based on whether or not an existing voice shortcut exists for the
 currently-displayed order, `RowSelected` presents a view controller of
 type [`INUIEditVoiceShortcutViewController`](https://developer.xamarin.com/api/type/IntentsUI.INUIEditVoiceShortcutViewController/)
 or [`INUIAddVoiceShortcutViewController`](https://developer.xamarin.com/api/type/IntentsUI.INUIAddVoiceShortcutViewController/).
-In each case, `OrderDetailViewController` sets itself as the view 
+In each case, `OrderDetailViewController` sets itself as the view
 controller's `Delegate`, which is why it also implements
 [`IINUIAddVoiceShortcutViewControllerDelegate`](https://developer.xamarin.com/api/type/IntentsUI.IINUIAddVoiceShortcutViewControllerDelegate/)
 and [`IINUIEditVoiceShortcutViewControllerDelegate`](https://developer.xamarin.com/api/type/IntentsUI.IINUIEditVoiceShortcutViewControllerDelegate/).
@@ -860,7 +852,7 @@ In the **Certificates, IDs & Profiles** section of the
 - Create an app group to share data between the Soup Chef app and its
 extensions. For example: **group.com.yourcompanyname.SoupChef**
 
-- Create three App IDs: one for the app itself, one for the Intents 
+- Create three App IDs: one for the app itself, one for the Intents
 extension, and one for the Intents UI extension. For example:
 
     - App: **com.yourcompanyname.SoupChef**
@@ -907,24 +899,24 @@ IDs defined above:
     created above (in the example above, it was **group.com.yourcompanyname.SoupChef**).
 
 - Finally, open **NSUserDefaultsHelper.cs**. Set the `AppGroup` variable
-to the value of your new app group (for example, set it to 
+to the value of your new app group (for example, set it to
 `group.com.yourcompanyname.SoupChef`).
 
 ### Configuring the build settings
 
 In Visual Studio for Mac or Visual Studio 2017:
 
-- Open the options/properties for the **SoupChef** project. On the 
+- Open the options/properties for the **SoupChef** project. On the
 **iOS Bundle Signing** tab, set **Signing Identity** to automatic and
 **Provisioning Profile** to the new app-specific provisioning profile you
 created above.
 
-- Open the options/properties for the **SoupChefIntents** project. On the 
+- Open the options/properties for the **SoupChefIntents** project. On the
 **iOS Bundle Signing** tab, set **Signing Identity** to automatic and
-**Provisioning Profile** to the new Intents extension-specific provisioning 
+**Provisioning Profile** to the new Intents extension-specific provisioning
 profile you created above.
 
-- Open the options/properties for the **SoupChefIntentsUI** project. On the 
+- Open the options/properties for the **SoupChefIntentsUI** project. On the
 **iOS Bundle Signing** tab, set **Signing Identity** to automatic and
 **Provisioning Profile** to the new Intents UI extension-specific provisioning
 profile you created above.
@@ -933,7 +925,7 @@ With these changes in place, the app will run on an iOS device.
 
 ### Automatic provisioning
 
-Note that you can use [automatic provisioning](https://docs.microsoft.com/en-us/xamarin/ios/get-started/installation/device-provisioning/automatic-provisioning)
+Note that you can use [automatic provisioning](https://docs.microsoft.com/xamarin/ios/get-started/installation/device-provisioning/automatic-provisioning)
 to accomplish many of these provisioning tasks directly in the IDE.
 However, automatic provisioning does not set up app groups. You will need
 to manually configure the **Entitlements.plist** files with the name of

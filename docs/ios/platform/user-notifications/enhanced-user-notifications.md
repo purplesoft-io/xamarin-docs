@@ -4,8 +4,8 @@ description: "This article describes the User Notifications framework introduced
 ms.prod: xamarin
 ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/02/2017
 ---
 
@@ -53,7 +53,7 @@ Some examples of Local Notifications include:
 - Reminder Alerts
 - Location Aware Triggers
 
-For more information, please see Apple's [Local and Remote Notification Programming Guide](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) documentation.
+For more information, please see Apple's [Local and Remote Notification Programming Guide](https://developer.apple.com/documentation/usernotifications) documentation.
 
 ### About Remote Notifications
 
@@ -75,7 +75,7 @@ There are two types of Remote Notifications available to a iOS app:
 - **User Facing** - These are displayed to the user on the device.
 - **Silent Updates** - These provide a mechanism to update the contents of an iOS app in the background. When a Silent Update is received, the app can reach out to the remove servers pull down the latest content.
 
-For more information, please see Apple's [Local and Remote Notification Programming Guide](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) documentation.
+For more information, please see Apple's [Local and Remote Notification Programming Guide](https://developer.apple.com/documentation/usernotifications) documentation.
 
 ### About The Existing Notifications API
 
@@ -156,7 +156,7 @@ New to iOS 10, the developer must inform the OS what environment Push Notificati
 
 To provide the required entitlement, do the following:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1. Double-click the `Entitlements.plist` file in the **Solution Pad** to open it for editing.
 2. Switch to the **Source** view: 
@@ -168,7 +168,7 @@ To provide the required entitlement, do the following:
 	[![](enhanced-user-notifications-images/setup02.png "The aps-environment Property")](enhanced-user-notifications-images/setup02.png#lightbox)
 5. Save the changes to the file.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1. Double-click the `Entitlements.plist` file in the **Solution Explorer** to open it for editing.
 3. Click the **+** button to add a new key.
@@ -197,7 +197,7 @@ The token that gets sent to the developer's server side app will need to be incl
 
 The token acts as the key that ties together the notification and the app used to open or respond to the notification.
 
-For more information, please see Apple's [Local and Remote Notification Programming Guide](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) documentation.
+For more information, please see Apple's [Local and Remote Notification Programming Guide](https://developer.apple.com/documentation/usernotifications) documentation.
 
 ## Notification Delivery
 
@@ -531,7 +531,7 @@ Some potential uses of Service Extensions include:
 
 To implement a Service Extension in a Xamarin.iOS app, do the following:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1. Open the app's solution in Visual Studio for Mac.
 2. Right-click on the Solution Name in the **Solution Pad** and select **Add** > **Add New Project**.
@@ -545,7 +545,7 @@ To implement a Service Extension in a Xamarin.iOS app, do the following:
 
 	[![](enhanced-user-notifications-images/extension04.png "Adjust the Project Name and/or Solution Name")](enhanced-user-notifications-images/extension04.png#lightbox) 
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1. Open the app's solution in Visual Studio.
 2. Right-click on the Solution Name in the **Solution Explorer** and select **Add > New Project...**.
@@ -670,4 +670,4 @@ This article has covered all of the ways that Users Notification have been enhan
 - [iOS 10 Samples](https://developer.xamarin.com/samples/ios/iOS10/)
 - [UserNotifications Framework Reference](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
-- [Local and Remote Notification Programming Guide](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
+- [Local and Remote Notification Programming Guide](https://developer.apple.com/documentation/usernotifications)

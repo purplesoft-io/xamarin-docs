@@ -4,8 +4,8 @@ description: "This document describes minor changes and enhancements made to exi
 ms.prod: xamarin
 ms.assetid: F771640A-F92E-4954-82D5-2D720434971E
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
 ---
 
@@ -80,7 +80,7 @@ The following enhancements have been made to the Foundation framework for tvOS 1
 
  - Use the new [NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval) class to make date and time interval calculations such as durations, for comparing intervals and testing for interval intersections.
  - Several new properties have been added to the [NSLocal](https://developer.apple.com/reference/foundation/nslocale) class to acquire local information and the available display formats.
- - Use the new [NSMeasuerment](https://developer.apple.com/reference/foundation/nsmeasurement) class to convert between different Units of Measure (UOM) or perform calculations on values in different UOMs.
+ - Use the new [NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement) class to convert between different Units of Measure (UOM) or perform calculations on values in different UOMs.
  - Use the new [NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter) class to format localized measurements for displaying to the end user.
  - Use the new [NSUnit](https://developer.apple.com/reference/foundation/nsunit) and [NSDimension](https://developer.apple.com/reference/foundation/nsdimension) classes for representing specific UOMs.
 
@@ -177,7 +177,7 @@ The following enhancements have been made to the UIKit framework in tvOS 10:
  - The new `UIGraphicsRender` class provides an object-oriented method of creating bitmaps or PDFs from UIKit rendering or Core Graphics and replaces the deprecated `UIGraphicsBeginImageContext` method.
  - The `UIUserInterfaceStyle` class was added to determine which user interface theme (dark or light) is currently active.
  - New fully interactive, object-based, interruptible animation support has been added and van be linked to gestures. Pleas see Apple's [UIViewAnimating Protocol Reference](https://developer.apple.com/reference/uikit/uiviewanimating), [UIViewPropertyAnimator Class Reference](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), [UITimingCurveProvider Protocol Reference](https://developer.apple.com/reference/uikit/uitimingcurveprovider), [UICubicTimingParameters Class Reference](https://developer.apple.com/reference/uikit/uicubictimingparameters) and [UISpringTimingParameter Class Reference](https://developer.apple.com/reference/uikit/uispringtimingparameters) for more information.
- - The new `UIPreviewInteraction` and `UIPreviewInteractionDelegate` allow the app app to provide a custom interface for peek and pop operations.
+ - The new `UIPreviewInteraction` and `UIPreviewInteractionDelegate` allow the app to provide a custom interface for peek and pop operations.
  - The new `UIAccessibilityCustomRotor` class allows the app to provide custom, context-specific functionality to assistive technologies such as Voice Over.
  - Use the `UIAccessibilityIsAssistiveTouchRunning` and `UIAccessibilityAssistiveTouchStatusDidChangeNotification` symbols to determine if AssistiveTouch is enabled.
  - Use the `UIAccessibilityHearingDevicePairedEar` and `UIAccessibilityHearingDevicePairedEarDidChangeNotification` symbols to get the status of any paired MFi hearing aids.

@@ -4,8 +4,8 @@ description: "This document describes various framework changes introduced with 
 ms.prod: xamarin
 ms.assetid: FE93796E-F699-4B14-B37D-D39F9D48E81E
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
 ---
 
@@ -33,7 +33,7 @@ For more information, please see Apple's [Core Data Framework Reference](https:/
 
 The following enhancements have be made to the Core Motion framework for watch OS 3:
 
-- The new Device Motion event uses the accelerometer and gyroscope to provide motion and orientation updates. the app app can register for this updated (at rates of up to 100Hz).
+- The new Device Motion event uses the accelerometer and gyroscope to provide motion and orientation updates. The app can register for this update (at rates of up to 100Hz).
 - The new Pedometer event enables fast, real-time notifications when the user pauses and resumes running. Use the [CMPedometer](https://developer.apple.com/reference/coremotion/cmpedometer) to register for foreground or background pedometer events.
 
 
@@ -43,7 +43,7 @@ The following enhancements have be made to the Foundation framework for watch OS
 
 - Use the new [NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval) class to make date and time interval calculations such as durations, for comparing intervals and testing for interval intersections.
 - Several new properties have been added to the [NSLocal](https://developer.apple.com/reference/foundation/nslocale) class to acquire local information and the available display formats.
-- Use the new [NSMeasuerment](https://developer.apple.com/reference/foundation/nsmeasurement) class to convert between different Units of Measure (UOM) or perform calculations on values in different UOMs.
+- Use the new [NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement) class to convert between different Units of Measure (UOM) or perform calculations on values in different UOMs.
 - Use the new [NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter) class to format localized measurements for displaying to the end user.
 - Use the new [NSUnit](https://developer.apple.com/reference/foundation/nsunit) and [NSDimension](https://developer.apple.com/reference/foundation/nsdimension) classes for representing specific UOMs.
 

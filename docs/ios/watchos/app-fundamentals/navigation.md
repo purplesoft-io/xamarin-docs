@@ -4,8 +4,8 @@ description: "This document describes how to work with navigation in a watchOS a
 ms.prod: xamarin
 ms.assetid: 71A64C10-75C8-4159-A547-6A704F3B5C2E
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
 ---
 
@@ -145,5 +145,5 @@ PresentController (controllerNames, contexts);
 
 ## Related Links
 
-- [WatchKitCatalog (sample)](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/)
-- [WatchTables (sample)](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchTables/)
+- [WatchKitCatalog (sample)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [WatchTables (sample)](https://developer.xamarin.com//samples/monotouch/watchOS/WatchTables/)

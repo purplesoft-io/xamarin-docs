@@ -4,19 +4,11 @@ description: "With iOS 12, it is possible to group notifications in Notification
 ms.prod: xamarin
 ms.assetid: C6FA7C25-061B-4FD7-8E55-88597D512F3C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 9/4/2018
 ---
 # Grouped notifications in Xamarin.iOS
-
-![Preview](~/media/shared/preview.png)
-
-> [!WARNING]
-> Xamarin's support for the iOS 12, tvOS 12, and watchOS 5 SDKs distributed
-> with Xcode 10 is currently in preview, which means that that it may
-> contain bugs, is not feature complete, and may change. Use it for
-> experimentation only.
 
 By default, iOS 12 places all of an app's notifications in a group. The
 lock screen and Notification Center display this group as a stack with
@@ -34,7 +26,7 @@ sample app.
 
 This sample app simulates conversations with various friends, sending a
 notification for each message and grouping them by thread. It also
-demonstrates how unthreaded notifications land in an application-level 
+demonstrates how unthreaded notifications land in an application-level
 group.
 
 Code snippets in this guide come from this sample app.
@@ -43,8 +35,8 @@ Code snippets in this guide come from this sample app.
 
 Before an app can send local notifications, it must request
 permission to do so. In the sample app's
-[`AppDelegate`](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/),
-the [`FinishedLaunching`](https://developer.xamarin.com/api/member/UIKit.UIApplicationDelegate.FinishedLaunching/p/UIKit.UIApplication/Foundation.NSDictionary/)
+[`AppDelegate`](xref:UIKit.UIApplicationDelegate),
+the [`FinishedLaunching`](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary))
 method requests this permission:
 
 ```csharp
@@ -61,11 +53,11 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-The [`Delegate`](https://developer.xamarin.com/api/property/UserNotifications.UNUserNotificationCenter.Delegate/)
-(set above) for a [`UNUserNotificationCenter`](https://developer.xamarin.com/api/type/UserNotifications.UNUserNotificationCenter/)
+The [`Delegate`](xref:UserNotifications.UNUserNotificationCenter.Delegate)
+(set above) for a [`UNUserNotificationCenter`](xref:UserNotifications.UNUserNotificationCenter)
 decides whether or not a foreground app should display an incoming
 notification by calling the completion handler passed to
-[`WillPresentNotification`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification/p/UserNotifications.IUNUserNotificationCenterDelegate/UserNotifications.UNUserNotificationCenter/UserNotifications.UNNotification/System.Action%7BUserNotifications.UNNotificationPresentationOptions%7D/):
+[`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions})):
 
 ```csharp
 [Export("userNotificationCenter:willPresentotification:withCompletionHandler:")]
@@ -75,8 +67,8 @@ public void WillPresentNotification(UNUserNotificationCenter center, UNNotificat
 }
 ```
 
-The [`UNNotificationPresentationOptions.Alert`](https://developer.xamarin.com/api/type/UserNotifications.UNNotificationPresentationOptions/)
-parameter indicates that the app should show the alert but not play a sound 
+The [`UNNotificationPresentationOptions.Alert`](xref:UserNotifications.UNNotificationPresentationOptions)
+parameter indicates that the app should show the alert but not play a sound
 or update a badge.
 
 ## Threaded notifications
@@ -107,9 +99,9 @@ To send a threaded notification, the sample app:
 
 - Checks whether the app has authorization to send a notification.
 - Creates a
-[`UNMutableNotificationContent`](https://developer.xamarin.com/api/type/UserNotifications.UNMutableNotificationContent/)
+[`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
 object for the notification's content and sets its
-[`ThreadIdentifier`](https://developer.xamarin.com/api/property/UserNotifications.UNMutableNotificationContent.ThreadIdentifier/)
+[`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
 to the thread identifier created above.
 - Creates a request and schedules the notification:
 

@@ -5,12 +5,14 @@ ms.prod: xamarin
 ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
 ms.technology: xamarin-forms
 ms.custom: xamu-video
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/07/2018
 ---
 
 # The Xamarin.Forms FlexLayout
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)
 
 _Use FlexLayout for stacking or wrapping a collection of child views._
 
@@ -26,7 +28,7 @@ The Xamarin.Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) is new in Xamari
 
 ## Common usage scenarios
 
-The **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** sample program contains several pages that demonstate some common uses of `FlexLayout` and allows you to experiment with its properties.
+The **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** sample program contains several pages that demonstrate some common uses of `FlexLayout` and allows you to experiment with its properties.
 
 ### Using FlexLayout for a simple stack
 
@@ -182,7 +184,7 @@ public partial class PhotoWrappingPage : ContentPage
 }
 ```
 
-Here's the program running on the three platforms, progressively scrolled from top to bottom:
+Here's the program running, progressively scrolled from top to bottom:
 
 [![The Photo Wrapping Page](flex-layout-images/PhotoWrapping.png "The Photo Wrapping Page")](flex-layout-images/PhotoWrapping-Large.png#lightbox)
 
@@ -237,7 +239,7 @@ The **Holy Grail Layout** page of the **[FlexLayoutDemos](https://developer.xama
 </ContentPage>
 ```
 
-Here it is running on the three platforms:
+Here it is running:
 
 [![The Holy Grail Layout Page](flex-layout-images/HolyGrailLayout.png "The Holy Grail Layout Page")](flex-layout-images/HolyGrailLayout-Large.png#lightbox)
 
@@ -379,8 +381,8 @@ Within each of the three `FlexLayout` views, a blank `Label` precedes the `Butto
 
 ## The bindable properties in detail
 
-Now that you've seen some common applications of `FlexLayout`, the properties of `FlexLayout` can be explored in more detail. 
-`FlexLayout` defines six bindable properties that you set on the `FlexLayout` itself, either in code or XAML, to control orientatin and alignment. (One of these properties, [`Position`](xref:Xamarin.Forms.FlexLayout.Position), is not covered in this article.)
+Now that you've seen some common applications of `FlexLayout`, the properties of `FlexLayout` can be explored in more detail.
+`FlexLayout` defines six bindable properties that you set on the `FlexLayout` itself, either in code or XAML, to control orientation and alignment. (One of these properties, [`Position`](xref:Xamarin.Forms.FlexLayout.Position), is not covered in this article.)
 
 You can experiment with the five remaining bindable properties using the **Experiment** page of the **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** sample. This page allows you to add or remove children from a `FlexLayout` and to set combinations of the five bindable properties. All the children of the `FlexLayout` are `Label` views of various colors and sizes, with the `Text` property set to a number corresponding to its position in the `Children` collection.
 
@@ -481,7 +483,7 @@ Like `AlignItems`, the `AlignContent` property also aligns children on the cross
 
 [![The Experiment Page: Align Content](flex-layout-images/ExperimentAlignContent.png "The Experiment Page - Align Content")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
 
-In the iOS screnshot, both rows are at the top; in the Android screenshot they're in the center; and in the UWP screenshot they're at the bottom. The rows can also be spaced in various ways:
+In the iOS screenshot, both rows are at the top; in the Android screenshot they're in the center; and in the UWP screenshot they're at the bottom. The rows can also be spaced in various ways:
 
 [![The Experiment Page:  Align Content 2](flex-layout-images/ExperimentAlignContent2.png "The Experiment Page - Align Content 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
 
@@ -527,7 +529,7 @@ The `Order` property allows you to change the order that the children of the `Fl
 
 ### The Basis Property
 
-The [`Basis`](xref:Xamarin.Forms.FlexLayout.BasisProperty) attached bindable property indicates the amount of space that is allocated to a child of the `FlexLayout` on the main axis. The size specfied by the `Basis` property is the size along the main axis of the parent `FlexLayout`. Therefore, `Basis` indicates the width of a child when the children are arranged in rows, or the height when the children are arranged in columns.
+The [`Basis`](xref:Xamarin.Forms.FlexLayout.BasisProperty) attached bindable property indicates the amount of space that is allocated to a child of the `FlexLayout` on the main axis. The size specified by the `Basis` property is the size along the main axis of the parent `FlexLayout`. Therefore, `Basis` indicates the width of a child when the children are arranged in rows, or the height when the children are arranged in columns.
 
 The `Basis` property is of type [`FlexBasis`](xref:Xamarin.Forms.FlexBasis), a structure. The size can be specified in either device-independent units or as a percentage of the size of the `FlexLayout`. The default value of the `Basis` property is the static property `FlexBasis.Auto`, which means that the child's requested width or height is used.
 
@@ -579,7 +581,7 @@ The iOS screenshot at the left shows the two `Label` elements being given height
 
 The [`Grow`](xref:Xamarin.Forms.FlexLayout.GrowProperty) attached bindable property is of type `int`. The default value is 0, and the value must be greater than or equal to 0.
 
-The `Grow` property plays a role when when the `Wrap` property is set to `NoWrap` and the row of children has a total width less than the width of the `FlexLayout`, or the column of children has a shorter height than the `FlexLayout`. The `Grow` property indicates how to apportion the leftover space among the children.
+The `Grow` property plays a role when the `Wrap` property is set to `NoWrap` and the row of children has a total width less than the width of the `FlexLayout`, or the column of children has a shorter height than the `FlexLayout`. The `Grow` property indicates how to apportion the leftover space among the children.
 
 In the **Grow Experiment** page, five `Label` elements of alternating colors are arranged in a column, and two `Slider` elements allow you to adjust the `Grow` property of the second and fourth `Label`. The iOS screenshot at the far left shows the default `Grow` properties of 0:
 
@@ -601,9 +603,9 @@ The **Shrink Experiment** page creates a `FlexLayout` with a single row of five 
 
 [![The Shrink Experiment Page](flex-layout-images/ShrinkExperiment.png "The Shrink Experiment Page")](flex-layout-images/ShrinkExperiment-Large.png#lightbox)
 
-In the Android screenshot, the `Shrink` value for the second `Label` is set to to 0, and that `Label` is displayed in its full width. Also, the fourth `Label` is given a `Shrink` value greater than one, and it has shrunk. The UWP screenshot shows both `Label` elements being given a `Shrink` value of 0 to allow them to be displayed in their full size, if that is possible.
+In the Android screenshot, the `Shrink` value for the second `Label` is set to 0, and that `Label` is displayed in its full width. Also, the fourth `Label` is given a `Shrink` value greater than one, and it has shrunk. The UWP screenshot shows both `Label` elements being given a `Shrink` value of 0 to allow them to be displayed in their full size, if that is possible.
 
-You can set both the `Grow` and `Shrink` values to accomodate situations where the aggregate child sizes might sometimes be less than or sometimes greater than the size of the `FlexLayout`.
+You can set both the `Grow` and `Shrink` values to accommodate situations where the aggregate child sizes might sometimes be less than or sometimes greater than the size of the `FlexLayout`.
 
 ## CSS styling with FlexLayout
 
@@ -730,7 +732,7 @@ button {
 
 Several `FlexLayout` attached bindable properties are referenced here. In the `label.empty` selector, you'll see the `flex-grow` attribute, which styles an empty `Label` to provide some blank space above the `Button`. The `image` selector contains an `order` attribute and an `align-self` attribute, both of which correspond to `FlexLayout` attached bindable properties.
 
-You've seen that you can set properties directly on the `FlexLayout` and you can set attached bindable properties on the children of a `FlexLayout`. Or, you can set these properties indirectly using traditional XAML-based styles or CSS styles. What's important is to know and understand these properties. These properties are what makes the `FlexLayout` truly flexible. 
+You've seen that you can set properties directly on the `FlexLayout` and you can set attached bindable properties on the children of a `FlexLayout`. Or, you can set these properties indirectly using traditional XAML-based styles or CSS styles. What's important is to know and understand these properties. These properties are what makes the `FlexLayout` truly flexible.
 
 ## FlexLayout with Xamarin.University
 

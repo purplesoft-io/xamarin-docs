@@ -4,12 +4,14 @@ description: "Use the Porter-Duff blend modes to compose scenes based on source 
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 57F172F8-BA03-43EC-A215-ED6B78696BB5
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 08/23/2018
 ---
 
 # Porter-Duff blend modes
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 The Porter-Duff blend modes are named after Thomas Porter and Tom Duff, who developed an algebra of compositing while working for Lucasfilm. Their paper [_Compositing Digital Images_](https://graphics.pixar.com/library/Compositing/paper.pdf) was published in the July 1984 issue of _Computer Graphics_, pages 253 to 259. These blend modes are essential for compositing, which is assembling various images into a composite scene:
 

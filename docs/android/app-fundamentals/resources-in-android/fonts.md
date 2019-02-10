@@ -3,8 +3,8 @@ title: "Fonts"
 ms.prod: xamarin
 ms.assetid: 3F543FC5-FDED-47F8-8D2C-481FCC98BFDA
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 09/0/2018
 ---
 # Fonts
@@ -67,7 +67,7 @@ When there are many similar font files (for example, the same font with differen
 
 A font family is a set of fonts that have different weights and styles. For example, there might be separate font files for bold or italic fonts. The font family is defined by `font` elements in an XML file that is kept in the  **Resources/font** directory. Each font family should have it's own XML file.
 
-To create a a font family, first add all the fonts to the **Resources/font** folder. Then create a new XML file in the font folder for the font family. The name of the XML file has no affinity or relationship to the fonts being referenced; the resource file can be any legal Android resource file name. This XML file will have a root `font-family` element that contains one or more `font` elements. Each `font` element declares the attributes of a font.
+To create a font family, first add all the fonts to the **Resources/font** folder. Then create a new XML file in the font folder for the font family. The name of the XML file has no affinity or relationship to the fonts being referenced; the resource file can be any legal Android resource file name. This XML file will have a root `font-family` element that contains one or more `font` elements. Each `font` element declares the attributes of a font.
 
 The following XML is an example of a font family for the _Sources Sans Pro_ font that defines many different font weights. This is saved as file in the **Resources/font** folder named **sourcesanspro.xml**:
 
@@ -138,7 +138,7 @@ textView1.Typeface = typeface;
 textView1.Text = "Changed the font";
 ```
 
-The `GetFont` method will automatically load the the first font within a font family.  To load a font that matches a specific style, use the `Typeface.Create` method. This method will try to load a font that matches the specified style. As an example, this snippet will try to load a bold `Typeface` object from a font family that is defined in **Resources/fonts**:
+The `GetFont` method will automatically load the first font within a font family.  To load a font that matches a specific style, use the `Typeface.Create` method. This method will try to load a font that matches the specified style. As an example, this snippet will try to load a bold `Typeface` object from a font family that is defined in **Resources/fonts**:
 
 ```csharp
 var typeface = Typeface.Create("<FONT FAMILY NAME>", Android.Graphics.TypefaceStyle.Bold);

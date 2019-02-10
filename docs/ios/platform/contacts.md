@@ -4,8 +4,8 @@ description: "This article covers working with the new Contacts and Contacts UI 
 ms.prod: xamarin
 ms.assetid: 7b6fb66a-5e19-4a5a-9ed2-f6b02af099af
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/20/2017
 ---
 
@@ -344,7 +344,7 @@ PresentViewController(picker,true,null);
 
 ### The Contact View Controller
 
-The The Contact View Controller (`CNContactViewController`) class provides a controller to present a standard Contact View to the end user. The Contact view can display new New, Unknown or Existing contacts and the type must be specified before the view is displayed by calling the correct static constructor (`FromNewContact`, `FromUnknownContact`, `FromContact`). For Example:
+The Contact View Controller (`CNContactViewController`) class provides a controller to present a standard Contact View to the end user. The Contact view can display new New, Unknown or Existing contacts and the type must be specified before the view is displayed by calling the correct static constructor (`FromNewContact`, `FromUnknownContact`, `FromContact`). For Example:
 
 ```csharp
 // Create a new contact view

@@ -5,8 +5,8 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 4b3ac51d-18dd-4034-87b4-4365194e4ece
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 09/07/2018
 ---
 
@@ -28,7 +28,7 @@ To update to the Microsoft Mobile OpenJDK, see
 [Microsoft Mobile OpenJDK Preview](~/android/get-started/installation/openjdk.md). 
 To update to JDK 8, follow these steps:
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1.  Download JDK 8 (1.8) from the [Oracle website](http://www.oracle.com/technetwork/java/javase/downloads/index.html):
 
@@ -52,7 +52,7 @@ To update to JDK 8, follow these steps:
 
 Be sure to restart Visual Studio after updating the location.
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1.  Download JDK 8 (1.8) from the [Oracle website](http://www.oracle.com/technetwork/java/javase/downloads/index.html):
 

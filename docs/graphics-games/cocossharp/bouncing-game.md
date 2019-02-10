@@ -3,8 +3,8 @@ title: "BouncingGame details"
 description: "This document provides a walkthrough for the creation of BouncingGame, a simple bouncing ball game built with CocosSharp."
 ms.prod: xamarin
 ms.assetid: AC9FD56F-6E4A-40DA-8168-45A761D869FD
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2018
 ---
 
@@ -99,7 +99,7 @@ We'll add the files directly to the root **Content** folder for both iOS and And
 
 ![The Add File to Folder dialog](bouncing-game-images/image2.png "The Add File to Folder dialog")
 
-Next, we'll add the file to the Android project. Right-click or Control-click on the Content folder (which is in the **Assets** folder on Android projects) and select select **Add** > **Add Files...**. This time, navigate to the iOS project's **Content** folder. When asked about how to add the file, select the **Add a link** option:
+Next, we'll add the file to the Android project. Right-click or Control-click on the Content folder (which is in the **Assets** folder on Android projects) and select **Add** > **Add Files...**. This time, navigate to the iOS project's **Content** folder. When asked about how to add the file, select the **Add a link** option:
 
 ![The Add File to Folder dialog](bouncing-game-images/addalink.png "The Add file to Folder dialog")
 
@@ -125,7 +125,7 @@ The constructor for creating the Sprite does not include the ".png" extension wh
 
 #### Content in platform-specific projects
 
-Unlike most of the code files which can be in a a PCL, content files must be added to each platform-specific project. CocosSharp requires this for two reasons:
+Unlike most of the code files which can be in a PCL, content files must be added to each platform-specific project. CocosSharp requires this for two reasons:
 
 1. Each platform has different **Build actions**. Content added to iOS projects should use the **BundleResource** build action. Content added to Android projects should use the **AndroidAsset** build action.
 2. Some platforms require platform-specific file formats. For example, font .xnb files differ between iOS and Android, as we'll see later in this walkthrough.

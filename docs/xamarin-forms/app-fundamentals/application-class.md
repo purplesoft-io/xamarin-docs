@@ -77,7 +77,7 @@ The `Application` subclass has a static `Properties` dictionary which can be use
 
 The `Properties` dictionary uses a `string` key and stores an `object` value.
 
-For example, you could set a persistant `"id"` property anywhere in your code
+For example, you could set a persistent `"id"` property anywhere in your code
 (when an item is selected, in a page's `OnDisappearing` method, or in the `OnSleep` method)
 like this:
 
@@ -224,7 +224,7 @@ The main page in the UWP project should inherit from `WindowsPage`:
 </forms:WindowsPage>
 ```
 
-The C# codebehind's construction must call `LoadApplication` to create an
+The C# code behind construction must call `LoadApplication` to create an
 instance of your Xamarin.Forms `App`. Note that it is good practice to
 explicitly use the application namespace to qualify the `App` because UWP applications
 also have their own `App` class unrelated to Xamarin.Forms.

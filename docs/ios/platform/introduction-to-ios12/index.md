@@ -4,27 +4,16 @@ description: "This document provides a high-level description of some iOS 12 API
 ms.prod: xamarin
 ms.assetid: 99EA7090-315D-493C-87D3-26AB73D9E1A9
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/08/2018
 ---
 # Introduction to iOS 12
 
-![Preview](~/media/shared/preview.png)
-
-> [!WARNING]
-> Xamarin's support for the iOS 12, tvOS 12, and watchOS 5 SDKs distributed
-> with Xcode 10 is currently in preview, which means that that it may
-> contain bugs, is not feature complete, and may change. Use it for
-> experimentation only.
-
 This document provides a high-level description of some iOS 12 APIs for
 which Xamarin's preview release provides C# bindings.
 
-To get started building iOS 12 apps with Xamarin, take a look at:
-
-- The [getting started guide](get-started.md)
-- The Xamarin preview [release blog post](https://releases.xamarin.com/preview-release-xcode-10-beta-6/)
+To get started building iOS 12 apps with Xamarin, see the [getting started guide](get-started.md)
 
 ## [ARKit 2](arkit2.md)
 
@@ -86,9 +75,9 @@ iOS 12 makes it easier for users and developers to work with passwords:
 automatically generate, store, and use strong passwords in iOS
 applications when signing up for and logging into an application.
 - Security Code AutoFill makes it possible to use SMS-based authentication
-codes without manual cutting and pasting or memorization. 
+codes without manual cutting and pasting or memorization.
 - The `ASWebAuthenticationSession` class streamlines the process of working
-with federated authentication services. 
+with federated authentication services.
 - Autofill Credential Provider extensions make it possible for third-party
 password applications to supply username and passwords to login fields.
 
@@ -122,11 +111,9 @@ With iOS 12, Apple has deprecated:
 
 - OpenGL ES, [encouraging developers](https://developer.apple.com/ios/whats-new/)
 to adopt Metal.
-- [`UIWebView`](https://developer.xamarin.com/api/type/UIKit.UIWebView/),
+- [`UIWebView`](xref:UIKit.UIWebView),
 [in favor of `WKWebView`](https://developer.apple.com/documentation/webkit/wkwebview?language=objc).
 
 ## Related links
 
 - [Get Ready for iOS 12 (Apple)](https://developer.apple.com/ios/)
-- [iOS 12 Preview (Apple)](https://www.apple.com/ios/ios-12-preview/)
-- Xamarin preview [release blog post](https://releases.xamarin.com/preview-release-xcode-10-beta-6/)

@@ -11,6 +11,8 @@ ms.date: 01/12/2016
 
 # Xamarin.Forms Cells
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
+
 _Xamarin.Forms cells can be added to ListViews and TableViews._
 
 A *cell* is a specialized element used for items in a table and describes how each item in a list should be rendered. The [`Cell`](xref:Xamarin.Forms.Cell) class derives from [`Element`](xref:Xamarin.Forms.Element), from which [`VisualElement`](xref:Xamarin.Forms.Element) also derives. A cell is not itself a visual element; it is instead a template for creating a visual element.
@@ -41,7 +43,7 @@ Xamarin.Forms supports the following cell types:
 
 |     |     |
 | --- | --- |
-| The [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) contains text set with the [`Text`'](xref:Xamarin.Forms.SwitchCell.Text) property and and on/off switch initially set with the Boolean [`On`](xref:Xamarin.Forms.SwitchCell.On) property. Handle the [`OnChanged`](xref:Xamarin.Forms.SwitchCell.OnChanged) event to be notified when the `On` property changes.<br /><br />[API Documentation](xref:Xamarin.Forms.SwitchCell) / [Guide](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![SwitchCell Example](cells-images/SwitchCell.png "SwitchCell Example")](cells-images/SwitchCell-Large.png#lightbox "SwitchCell Example")<br />[C# code for this page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
+| The [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) contains text set with the [`Text`'](xref:Xamarin.Forms.SwitchCell.Text) property and on/off switch initially set with the Boolean [`On`](xref:Xamarin.Forms.SwitchCell.On) property. Handle the [`OnChanged`](xref:Xamarin.Forms.SwitchCell.OnChanged) event to be notified when the `On` property changes.<br /><br />[API Documentation](xref:Xamarin.Forms.SwitchCell) / [Guide](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![SwitchCell Example](cells-images/SwitchCell.png "SwitchCell Example")](cells-images/SwitchCell-Large.png#lightbox "SwitchCell Example")<br />[C# code for this page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
 |     |     |
 
 ### EntryCell
@@ -54,7 +56,6 @@ Xamarin.Forms supports the following cell types:
 
 ## Related Links
 
-- [Introduction To Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Xamarin.Forms FormsGallery sample](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 - [Xamarin.Forms Samples](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API Documentation](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

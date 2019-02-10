@@ -4,8 +4,8 @@ description: "There are many techniques for increasing the performance of applic
 ms.prod: xamarin
 ms.assetid: dc2e27f2-7f71-4d57-9cf9-165528276613
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
 ---
 
@@ -232,7 +232,7 @@ To save on memory usage, it is a good idea to dispose of large image
 resources that are no longer needed. However, it is important to ensure
 that images are disposed of correctly. Instead of using an explicit
 `.Dispose()` invocation, you can take advantage of
-[using](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-statement)
+[using](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using-statement)
 statements to ensure correct use of `IDisposable` objects. 
 
 For example, the

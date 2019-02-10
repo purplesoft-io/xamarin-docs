@@ -13,7 +13,7 @@ abstract:
     items:
     - href: https://visualstudio.com/
       text: Visual Studio
-    - href: https://developer.xamarin.com/releases/#mac
+    - href: https://docs.microsoft.com/xamarin/mac/release-notes/
       text: Release Notes
 sections:
 - title: Tools
@@ -22,11 +22,11 @@ sections:
     style: cards
     className: cardsC
     items:
-    - href: ~/tools/ios-simulator/index.md.md
+    - href: ~/tools/ios-simulator/index.md
       html: Interact with the iOS Simulator using Visual Studio on Windows.
       image:
         src: ~/media/index/xamarin-tools-windows-simulator.svg?branch=master
-        href: ~/tools/ios-simulator.md
+        href: ~/tools/ios-simulator/index.md
       title: iOS Simulator for Windows
     - href: ~/tools/inspector/index.md
       html: Understand and debug your user interface.
@@ -35,7 +35,7 @@ sections:
         href: ~/tools/inspector/index.md
       title: Xamarin Inspector
     - href: ~/tools/profiler/index.md
-      html: Identify and fix performance issues. 
+      html: Identify and fix performance issues.
       image:
         src: ~/media/index/xamarin-tools-profiler.svg?branch=master
         href: ~/tools/profiler/index.md
@@ -43,7 +43,7 @@ sections:
     - href: ~/tools/workbooks/index.md
       html: Learn C# and the Xamarin platform interactively.
       image:
-        src: https://docs.microsoft.com/en-us/media/illustrations/dynamics-resource-library.svg
+        src: https://docs.microsoft.com/media/illustrations/dynamics-resource-library.svg
         href: ~/tools/workbooks/index.md
       title: Xamarin Workbooks
     - href: ~/tools/dotnet-embedding/index.md
@@ -60,7 +60,7 @@ sections:
     items:
     - title: Xamarin.Forms
       href: ~/xamarin-forms/index.md
-      html: <p><a href="~/xamarin-forms/get-started/index.md">Get Started</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">App Fundamentals</a><br /><a href="~/xamarin-forms/user-interface/index.md">User Interface</a><br /><a href="~/xamarin-forms/platform/index.md">Platform Features</a><br /><a href="~/xamarin-forms/deploy-test/index.md">Deployment & Testing</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">Data & Cloud Services</a><br /><a href="~/xamarin-forms/internals/index.md">Advanced Concepts & Internals</a></p>
+      html: <p><a href="~/get-started/quickstarts/index.md">Get Started</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">App Fundamentals</a><br /><a href="~/xamarin-forms/user-interface/index.md">User Interface</a><br /><a href="~/xamarin-forms/platform/index.md">Platform Features</a><br /><a href="~/xamarin-forms/deploy-test/index.md">Deployment & Testing</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">Data & Cloud Services</a><br /><a href="~/xamarin-forms/internals/index.md">Advanced Concepts & Internals</a></p>
     - title: Android
       href: ~/android/index.md
       html: <p><a href="~/android/get-started/index.md">Get Started</a><br /><a href="~/android/app-fundamentals/index.md">App Fundamentals</a><br /><a href="~/android/user-interface/index.md">User Interface</a><br /><a href="~/android/platform/index.md">Platform Features</a><br /><a href="~/android/deploy-test/index.md">Deployment & Testing</a><br /><a href="~/android/data-cloud/index.md">Data & Cloud Services</a><br /><a href="~/android/internals/index.md">Advanced Concepts & Internals</a></p>

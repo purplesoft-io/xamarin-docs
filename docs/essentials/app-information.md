@@ -4,14 +4,17 @@ description: "This document describes the AppInfo class in Xamarin.Essentials, w
 ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
+ms.date: 01/29/2019
+ms.custom: video
 ---
 
 # Xamarin.Essentials: App Information
 
-![Pre-release NuGet](~/media/shared/pre-release.png)
-
 The **AppInfo** class provides information about your application.
+
+## Get started
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## Using AppInfo
 
@@ -45,12 +48,50 @@ The **AppInfo** class can also display a page of settings maintained by the oper
 
 ```csharp
 // Display settings page
-AppInfo.OpenSettings();
+AppInfo.ShowSettingsUI();
 ```
 
 This settings page allows the user to change application permissions and perform other platform-specific tasks.
+
+## Platform Implementation Specifics
+
+# [Android](#tab/android)
+
+App information is taken from the `AndroidManifest.xml` for the following fields:
+
+- **Build** – `android:versionCode` in `manifest` node
+- **Name** - `android:label` in the `application` node
+- **PackageName**: `package` in the `manifest` node
+- **VersionString** – `android:versionName` in the `application` node
+
+# [iOS](#tab/ios)
+
+App information is taken from the `Info.plist` for the following fields:
+
+- **Build** – `CFBundleVersion`
+- **Name** - `CFBundleDisplayName` if set, else `CFBundleName`
+- **PackageName**: `CFBundleIdentifier`
+- **VersionString** – `CFBundleShortVersionString`
+
+# [UWP](#tab/uwp)
+
+App information is taken from the `Package.appxmanifest` for the following fields:
+
+- **Build** – Uses the `Build` from the `Version` on the `Identity` node
+- **Name** - `DisplayName` on the `Properties` node
+- **PackageName**: `Name` on the `Identity` node
+- **VersionString** – `Version` on the `Identity` node
+
+
+--------------
 
 ## API
 
 - [AppInfo source code](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/AppInfo)
 - [AppInfo API documentation](xref:Xamarin.Essentials.AppInfo)
+
+## Related Video
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/App-Information-Essential-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

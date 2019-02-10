@@ -5,8 +5,8 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9F76162B-D622-45DA-996B-2FBF8017E208
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/06/2018
 ---
 
@@ -23,9 +23,9 @@ E.g. parameters, environment, missing tools.
 
 <a name="MT0000" />
 
-### MT0000: Unexpected error - Please fill a bug report at http://bugzilla.xamarin.com
+### MT0000: Unexpected error - Please fill a bug report at https://github.com/xamarin/xamarin-macios/issues/new
 
-An unexpected error condition occurred. Please [file a bug report](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) with as much information as possible, including:
+An unexpected error condition occurred. Please [file a bug report](https://github.com/xamarin/xamarin-macios/issues/new) with as much information as possible, including:
 
 * Full build logs, with maximum verbosity (e.g. `-v -v -v -v` in the **Additional mtouch arguments**);
 * A minimal test case that reproduce the error; and

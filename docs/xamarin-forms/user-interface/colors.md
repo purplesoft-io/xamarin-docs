@@ -11,6 +11,8 @@ ms.date: 08/15/2017
 
 # Colors in Xamarin.Forms
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/WorkingWithColors)
+
 _Xamarin.Forms provides a flexible cross-platform Color class._
 
 This article introduces the various ways the `Color` class can be used in Xamarin.Forms.
@@ -48,7 +50,7 @@ These colors are shown on each platform below. Notice the final color - `Accent`
 
 Use the `Default` to set (or re-set) a color value back to the platform default (understanding that this represents a different underlying color on each platform for each property).
 
-Developers can use this value to set a `Color` property but should **not** query this instance for it's component RGB values (they're all set to -1).
+Developers can use this value to set a `Color` property but should **not** query this instance for its component RGB values (they're all set to -1).
 
 ## Color.Transparent
 

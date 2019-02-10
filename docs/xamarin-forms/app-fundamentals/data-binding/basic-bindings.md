@@ -6,10 +6,13 @@ ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/05/2018
+ms.date: 01/22/2019
+ms.custom: video
 ---
 
 # Xamarin.Forms Basic Bindings
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 A Xamarin.Forms data binding links a pair of properties between two objects, at least one of which is usually a user-interface object. These two objects are called the *target* and the *source*:
 
@@ -89,7 +92,7 @@ However, including the class name is a good reminder of the target object.
 
 As you manipulate the `Slider`, the `Label` rotates accordingly:
 
-[![Basice Code Binding](basic-bindings-images/basiccodebinding-small.png "Basic Code Binding")](basic-bindings-images/basiccodebinding-large.png#lightbox "Basic Code Binding")
+[![Basic Code Binding](basic-bindings-images/basiccodebinding-small.png "Basic Code Binding")](basic-bindings-images/basiccodebinding-large.png#lightbox "Basic Code Binding")
 
 The **Basic Xaml Binding** page is identical to **Basic Code Binding** except that it defines the entire data binding in XAML:
 
@@ -192,6 +195,9 @@ The iOS screen on the left shows how the screen looks when the page first appear
 The problem is that the `Slider` has an initial value of 0. This causes the `Scale` property of the `Label` to be also set to 0, overriding its default value of 1. This results in the `Label` being initially invisible. As the Android and Universal Windows Platform (UWP) screenshots demonstrate, you can manipulate the `Slider` to make the `Label` appear again, but its initial disappearance is disconcerting.
 
 You'll discover in the [next article](binding-mode.md) how to avoid this problem by initializing the `Slider` from the default value of the `Scale` property.
+
+> [!NOTE]
+> The [`VisualElement`](xref:Xamarin.Forms.VisualElement) class also defines [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) and [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) properties, which can scale the `VisualElement` differently in the horizontal and vertical directions.
 
 The **Alternative XAML Binding** page shows the equivalent binding entirely in XAML:
 
@@ -323,3 +329,9 @@ In the [next article](binding-mode.md), you'll see how the *binding mode* can ch
 
 - [Data Binding Demos (sample)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 - [Data binding chapter from Xamarin.Forms book](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+
+## Related Video
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/XamarinForms-101-Data-Binding/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

@@ -4,9 +4,10 @@ description: "This document describes how to wirelessly deploy a Xamarin.iOS app
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 02/09/2018
+author: lobrien
+ms.author: laobri
+ms.custom: video
+ms.date: 01/22/2019
 ---
 
 # Wireless Deployment for Xamarin.iOS and tvOS Apps
@@ -21,14 +22,14 @@ Wireless deployment is available as a feature in both Visual Studio for Mac and 
 
 To use wireless deployment, you must have the following:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 - macOS 10.12.4
 - The latest version of Visual Studio for Mac
 - Xcode 9.0 or later
 - A device with iOS 11.0 or tvOS 11.0 and later
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 - The latest version of Visual Studio
 - A device with iOS 11.0 or tvOS 11.0 and later
@@ -101,3 +102,9 @@ Wireless debugging is automatically enabled after wireless deployment, so you ca
 ## Related Links
 
 - [Pair a wireless device with Xcode](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad)
+
+## Related Video
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Debug-to-iOS-Devices-Over-Wi-Fi/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

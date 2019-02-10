@@ -4,12 +4,14 @@ description: "This article explores the differences between SkiaSharp coordinate
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 02/09/2017
 ---
 
 # Pixels and Device-Independent Units
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _Explore the differences between SkiaSharp coordinates and Xamarin.Forms coordinates_
 
@@ -93,7 +95,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 The method begins the first line of text with an X coordinate of 20 (for a little margin at the left) and a Y coordinate of `fontSpacing`, which is a little more than what's necessary to display the full height of the first line of text at the top of the display surface. After each call to `DrawText`, the Y coordinate is increased by one or two increments of `fontSpacing`.
 
-Here's the program running on all three platforms:
+Here's the program running:
 
 [![](pixels-images/surfacesize-small.png "Triple screenshot of the Surface Size  page")](pixels-images/surfacesize-large.png#lightbox "Triple screenshot of the Surface Size  page")
 
@@ -136,7 +138,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Here it is running on the three platforms:
+Here it is running:
 
 [![](pixels-images/ellipsefill-small.png "Triple screenshot of the Surface Size  page")](pixels-images/ellipsefill-large.png#lightbox "Triple screenshot of the Surface Size  page")
 

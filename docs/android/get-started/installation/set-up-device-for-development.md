@@ -4,8 +4,8 @@ description: "This article will discuss how to setup an Android device and conne
 ms.prod: xamarin
 ms.assetid: 9116A3AA-EA00-56AF-AE70-BAEEC045EF11
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/22/2018
 ---
 
@@ -75,7 +75,7 @@ stay awake mode.
 
 ## Install USB Drivers
 
-This step is not necessary for OS X. Just connect the device to the the
+This step is not necessary for OS X. Just connect the device to the
 Mac with a USB cable.
 
 It may be necessary to install some extra drivers before a Windows
@@ -188,7 +188,7 @@ ways to do so:
 By default, the
 [Android Debug Bridge](http://developer.android.com/tools/help/adb.html) (*ADB*)
 is configured to communicate with an Android device via USB. It is
-possible to to reconfigure it to use TCP/IP instead of USB. To
+possible to reconfigure it to use TCP/IP instead of USB. To
 do this, both the device and the computer must be on the same WiFi
 network. To setup your environment to debug over WiF issue these steps
 from the command line:

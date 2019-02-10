@@ -4,8 +4,8 @@ description: "This article covers the new CallKit API that Apple released in iOS
 ms.prod: xamarin
 ms.assetid: 738A142D-FFD2-4738-B3ED-57C273179848
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/15/2017
 ---
 # CallKit in Xamarin.iOS
@@ -417,14 +417,14 @@ namespace MonkeyCall
 			// Define handle types
 			var handleTypes = new [] { (NSNumber)(int)CXHandleType.PhoneNumber };
 
-			// Get Image Mask
-			var maskImage = UIImage.FromFile ("telephone_receiver.png");
+			// Get Image Template
+			var templateImage = UIImage.FromFile ("telephone_receiver.png");
 
 			// Setup the initial configurations
 			Configuration = new CXProviderConfiguration ("MonkeyCall") {
 				MaximumCallsPerCallGroup = 1,
 				SupportedHandleTypes = new NSSet<NSNumber> (handleTypes),
-				IconMaskImageData = maskImage.AsPNG(),
+				IconTemplateImageData = templateImage.AsPNG(),
 				RingtoneSound = "musicloop01.wav"
 			};
 
@@ -453,14 +453,14 @@ namespace MonkeyCall
 			activeCall.StartingConnectionChanged += (call) => {
 				if (call.isConnecting) {
 					// Inform system that the call is starting
-					Provider.ReportConnectingOutgoingCall (call.UUID, call.StartedConnectingOn.ToNsDate());
+					Provider.ReportConnectingOutgoingCall (call.UUID, call.StartedConnectingOn.ToNSDate());
 				}
 			};
 
 			activeCall.ConnectedChanged += (call) => {
 				if (call.isConnected) {
 					// Inform system that the call has connected
-					provider.ReportConnectedOutgoingCall (call.UUID, call.ConnectedOn.ToNsDate ());
+					provider.ReportConnectedOutgoingCall (call.UUID, call.ConnectedOn.ToNSDate ());
 				}
 			};
 
@@ -600,11 +600,11 @@ When an instance of this delegate is created, it's passed the `ActiveCallManager
 var handleTypes = new [] { (NSNumber)(int)CXHandleType.PhoneNumber };
 ```
 
-And it gets the mask that will be applied to the app's icon when a call is in progress:
+And it gets the template image that will be applied to the app's icon when a call is in progress:
 
 ```csharp
-// Get Image Mask
-var maskImage = UIImage.FromFile ("telephone_receiver.png");
+// Get Image Template
+var templateImage = UIImage.FromFile ("telephone_receiver.png");
 ```
 
 These values get bundled into a `CXProviderConfiguration` that will be used to configure the `CXProvider`:
@@ -614,7 +614,7 @@ These values get bundled into a `CXProviderConfiguration` that will be used to c
 Configuration = new CXProviderConfiguration ("MonkeyCall") {
 	MaximumCallsPerCallGroup = 1,
 	SupportedHandleTypes = new NSSet<NSNumber> (handleTypes),
-	IconMaskImageData = maskImage.AsPNG(),
+	IconTemplateImageData = templateImage.AsPNG(),
 	RingtoneSound = "musicloop01.wav"
 };
 ```
@@ -953,14 +953,14 @@ public override void PerformStartCallAction (CXProvider provider, CXStartCallAct
 	activeCall.StartingConnectionChanged += (call) => {
 		if (call.IsConnecting) {
 			// Inform system that the call is starting
-			Provider.ReportConnectingOutgoingCall (call.UUID, call.StartedConnectingOn.ToNsDate());
+			Provider.ReportConnectingOutgoingCall (call.UUID, call.StartedConnectingOn.ToNSDate());
 		}
 	};
 
 	activeCall.ConnectedChanged += (call) => {
 		if (call.IsConnected) {
 			// Inform system that the call has connected
-			Provider.ReportConnectedOutgoingCall (call.UUID, call.ConnectedOn.ToNsDate ());
+			Provider.ReportConnectedOutgoingCall (call.UUID, call.ConnectedOn.ToNSDate ());
 		}
 	};
 
@@ -1038,7 +1038,7 @@ An app can make the following types of customizations:
 
 - Display a localized name.
 - Enable video call support.
-- Customize the buttons on the In-Call UI by presenting its own masked image icon. User interaction with custom buttons is sent directly to the app to be processed. 
+- Customize the buttons on the In-Call UI by presenting its own template image icon. User interaction with custom buttons is sent directly to the app to be processed. 
 
 ### Action errors
 
@@ -1124,7 +1124,7 @@ When working with CallKit, _Call Directory Extensions_ provide a way to add bloc
 
 To implement a Call Directory Extension in a Xamarin.iOS app, do the following:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1. Open the app's solution in Visual Studio for Mac.
 2. Right-click on the Solution Name in the **Solution Explorer** and select **Add** > **Add New Project**.
@@ -1138,7 +1138,7 @@ To implement a Call Directory Extension in a Xamarin.iOS app, do the following:
 
 	[![](callkit-images/calldir03.png "Creating the project")](callkit-images/calldir03.png#lightbox) 
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1. Open the app's solution in Visual Studio.
 2. Right-click on the Solution Name in the **Solution Explorer** and select **Add** > **Add New Project**.

@@ -4,8 +4,8 @@ description: "This document provides an overview of watchOS, describing the appl
 ms.prod: xamarin
 ms.assetid: 99c316d6-6707-40f6-bec9-801d05888759
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 09/13/2016
 ---
 
@@ -175,7 +175,7 @@ Check out the documentation from Apple:
 ## Related Links
 
 - [watchOS 3 Catalog (sample)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [watchOS 1 Catalog (sample)](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/)
+- [watchOS 1 Catalog (sample)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
 - [Setup and Install](~/ios/watchos/get-started/installation.md)
 - [First Watch App video](http://blog.xamarin.com/your-first-watch-kit-app/)
 - [Apple's Developing for Watch Kit guide](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html)

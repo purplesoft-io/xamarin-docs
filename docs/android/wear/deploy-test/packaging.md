@@ -3,8 +3,8 @@ title: "Packaging Wear Apps"
 ms.prod: xamarin
 ms.assetid: E32DD855-78DD-46F8-B234-4EAC0756BDA2
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/02/2018
 ---
 
@@ -20,7 +20,7 @@ packaged as a resource in your Handheld app when you create a project
 reference from the Handheld project to the Wear project. You can use 
 the following steps to create this association: 
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1. If your Wear app is not already part of your Handheld solution,
    right-click the solution node and select **Add > Add Existing
@@ -39,7 +39,7 @@ the following steps to create this association:
    the package name of the Handheld project (the package name can be
    changed under **Properties > Android Manifest**).
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1. If your Wear app is not already part of your Handheld solution,
    right-click the solution node and select **Add > Add Existing

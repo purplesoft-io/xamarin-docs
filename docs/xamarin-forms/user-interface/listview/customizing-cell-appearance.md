@@ -11,12 +11,9 @@ ms.date: 12/07/2016
 
 # Customizing ListView Cell Appearance
 
-ListView presents scrollable lists, which can be customized through the use of `ViewCell`s. `ViewCells` can be used for displaying text and images, indicating a true/false state and receiving user input.
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
 
-There are two approaches to getting the look you want from ListView cells:
-
-- **[Customizing built-in cells](#Built_in_Cells)** &ndash; easier implementation and better performance at the expense of customizability.
-- **[Creating custom cells](#customcells)** &ndash; more control over the end result, but have the potential for performance issues if not implemented correctly.
+[`ListView`](xref:Xamarin.Forms.ListView) presents scrollable lists, which can be customized through the use of `ViewCell`s. `ViewCells` can be used for displaying text and images, indicating a true/false state and receiving user input.
 
 <a name="Built_in_Cells" />
 
@@ -113,6 +110,7 @@ The XAML above is doing a lot. Let's break it down:
 - The custom cell is nested inside a `DataTemplate`, which is inside `ListView.ItemTemplate`. This is the same process as using any other cell.
 - `ViewCell` is the type of the custom cell. The child of the `DataTemplate` element must be of or derive from type `ViewCell`.
 - Notice that inside the `ViewCell`, layout is managed by a `StackLayout`. This layout allows us to customize the background color. Note that any property of `StackLayout` that is bindable can be bound inside a custom cell, although that is not shown here.
+- Inside the `ViewCell`, layout can be managed by any Xamarin.Forms layout. 
 
 ### C&num;
 

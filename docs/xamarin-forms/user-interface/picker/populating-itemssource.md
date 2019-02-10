@@ -11,6 +11,8 @@ ms.date: 04/11/2017
 
 # Setting a Picker's ItemsSource Property
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/MonkeyAppPicker/)
+
 _The Picker view is a control for selecting a text item from a list of data. This article explains how to populate a Picker with data by setting the ItemsSource property, and how to respond to item selection by the user._
 
 Xamarin.Forms 2.3.4 has enhanced the [`Picker`](xref:Xamarin.Forms.Picker) view by adding the ability to populate it with data by setting its [`ItemsSource`](xref:Xamarin.Forms.Picker.ItemsSource) property, and to retrieve the selected item from the [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) property. In addition, the color of the text for the selected item can be changed by setting the [`TextColor`](xref:Xamarin.Forms.Picker.TextColor) property to a [`Color`](xref:Xamarin.Forms.Color).
@@ -59,7 +61,7 @@ picker.ItemsSource = monkeyList;
 A [`Picker`](xref:Xamarin.Forms.Picker) supports selection of one item at a time. When a user selects an item, the [`SelectedIndexChanged`](xref:Xamarin.Forms.Picker.SelectedIndexChanged) event fires, the [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) property is updated to an integer representing the index of the selected item in the list, and the [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) property is updated to the `object` representing the selected item. The [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) property is a zero-based number indicating the item the user selected. If no item is selected, which is the case when the [`Picker`](xref:Xamarin.Forms.Picker) is first created and initialized, `SelectedIndex` will be -1.
 
 > [!NOTE]
-> Item selection behavior in a [`Picker`](xref:Xamarin.Forms.Picker) can be customized on iOS with a platform-specific. For more information, see [Controlling Picker Item Selection](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#picker_update_mode).
+> Item selection behavior in a [`Picker`](xref:Xamarin.Forms.Picker) can be customized on iOS with a platform-specific. For more information, see [Controlling Picker Item Selection](~/xamarin-forms/platform/ios/picker-selection.md).
 
 The following code example shows how to retrieve the [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) property value from the [`Picker`](xref:Xamarin.Forms.Picker) in XAML:
 
@@ -171,10 +173,9 @@ The [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) property data binds
 
 The [`Picker`](xref:Xamarin.Forms.Picker) view is a control for selecting a text item from a list of data. This article explained how to populate a `Picker` with data by setting the [`ItemsSource`](xref:Xamarin.Forms.Picker.ItemsSource) property, and how to respond to item selection by the user. This approach, which was introduced in Xamarin.Forms 2.3.4, is the recommended approach for interacting with a `Picker`.
 
-
 ## Related Links
 
 - [Picker Demo (sample)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
 - [Monkey App (sample)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/MonkeyAppPicker/)
 - [Bindable Picker (sample)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindablePicker/)
-- [Picker](xref:Xamarin.Forms.Picker)
+- [Picker API](xref:Xamarin.Forms.Picker)

@@ -4,8 +4,8 @@ description: "This guide discusses how to schedule background work using the And
 ms.prod: xamarin
 ms.assetid: 673BB8C3-C5CC-43EC-BA8F-758F15D986C9
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2018
 ---
 
@@ -37,7 +37,7 @@ The Android Job Scheduler is a framework built in to the Android operating syste
 * An `Android.App.Job.JobService` is an abstract class that must be extended with the logic that will run the job on the main thread of the application. This means that the `JobService` is responsible for how the work is to be performed asynchronously.
 * An `Android.App.Job.JobInfo` object holds the criteria to guide Android when the job should run.
 
-To schedule work with the Android Job Scheduler, a Xamarin.Android application must encapsulate the code in a class that extends the `JobService` class. `JobService` has three lifecycle methods that that can be called during the lifetime of the job:
+To schedule work with the Android Job Scheduler, a Xamarin.Android application must encapsulate the code in a class that extends the `JobService` class. `JobService` has three lifecycle methods that can be called during the lifetime of the job:
 
 * **bool OnStartJob(JobParameters parameters)** &ndash; This method is called by the `JobScheduler` to perform work, and runs on the main thread of the application. It is the responsibility of the `JobService` to asynchronously perform the work and  `true` if there is work remaining, or `false` if the work is done.
     
@@ -125,10 +125,10 @@ public static class JobSchedulerHelpers
     }
 }
 
-// Sample usage - creates a JobBuilder for a DownloadJob andsets the Job ID to 1.
+// Sample usage - creates a JobBuilder for a DownloadJob and sets the Job ID to 1.
 var jobBuilder = this.CreateJobBuilderUsingJobId<DownloadJob>(1);
 
-var jobInfo = jobBuilder.Build();  // creats a JobInfo object.
+var jobInfo = jobBuilder.Build();  // creates a JobInfo object.
 ```
 
 A powerful feature of the Android Job Scheduler is the ability to control when a job runs or under what conditions a job may run. The following table describes some of the methods on `JobInfo.Builder` that allow an app to influence when a job can run:  
@@ -181,7 +181,7 @@ public override bool OnStartJob(JobParameters jobParameters)
 
 To schedule a job, a Xamarin.Android application will get a reference to the `JobScheduler` system service and call the `JobScheduler.Schedule` method with the `JobInfo` object that was created in the previous step. `JobScheduler.Schedule` will immediately return with one of two integer values:
 
-* **JobScheduler.ResultSuccess** &ndash; The job has been succesfully scheduled. 
+* **JobScheduler.ResultSuccess** &ndash; The job has been successfully scheduled. 
 * **JobScheduler.ResultFailure** &ndash; The job could not be scheduled. This is typically caused by conflicting `JobInfo` parameters.
 
 This code is an example of scheduling a job and notifying the user of the results of the scheduling attempt:
@@ -206,7 +206,7 @@ It is possible to cancel all the jobs that have been scheduled, or just a single
 
 ```csharp
 // Cancel all jobs
-jobSchduler.CancelAll(); 
+jobScheduler.CancelAll(); 
 
 // to cancel a job with jobID = 1
 jobScheduler.Cancel(1)

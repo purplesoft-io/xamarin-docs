@@ -11,6 +11,8 @@ ms.date: 01/05/2018
 
 # Xamarin.Forms Binding Path
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+
 In all the previous data-binding examples, the [`Path`](xref:Xamarin.Forms.Binding.Path) property of the `Binding` class (or the [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) property of the `Binding` markup extension) has been set to a single property. It's actually possible to set `Path` to a *sub-property* (a property of a property), or to a member of a collection.
 
 For example, suppose your page contains a `TimePicker`:
@@ -79,7 +81,7 @@ That example and several others are shown in the **Path Variations** page:
 
         <Label Text="{Binding Source={x:Reference page},
                               Path=Content.Children[1].Text.Length,
-                              StringFormat='The first Label has {0} characters'}" />
+                              StringFormat='The second Label has {0} characters'}" />
     </StackLayout>
 </ContentPage>
 ```
@@ -129,7 +131,7 @@ Finally, the last example is similar to the second, except that it references on
 
 That child is a `Label`, which has a `Text` property of type `String`, which has a `Length` property. The first `Label` reports the `TimeSpan` set in the `TimePicker`, so when that text changes, the final `Label` changes as well.
 
-Here's the program running on all three platforms:
+Here's the program running:
 
 [![Path Variations](binding-path-images/pathvariations-small.png "Path Variations")](binding-path-images/pathvariations-large.png#lightbox "Path Variations")
 

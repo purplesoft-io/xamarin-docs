@@ -2,32 +2,69 @@
 title: "Xamarin.Essentials: Secure Storage"
 description: "This document describes the SecureStorage class in Xamarin.Essentials, which helps securely store simple key/value pairs. It discusses how to use the class, platform implementation specifics, and limitations."
 ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
-author: redth
-ms.author: jodick
-ms.date: 05/04/2018
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 11/04/2018
 ---
 
 # Xamarin.Essentials: Secure Storage
 
-![Pre-release NuGet](~/media/shared/pre-release.png)
-
 The **SecureStorage** class helps securely store simple key/value pairs.
 
-## Getting Started
+## Get started
+
+[!include[](~/essentials/includes/get-started.md)]
 
 To access the **SecureStorage** functionality, the following platform-specific setup is required:
 
 # [Android](#tab/android)
 
-No additional setup required.
+> [!TIP]
+> [Auto Backup for Apps](https://developer.android.com/guide/topics/data/autobackup) is a feature of Android 6.0 (API level 23) and later that backs up user's app data (shared preferences, files in the app's internal storage, and other specific files). Data is restored when an app is re-installed or installed on a new device. This can impact `SecureStorage` which utilizes share preferences that are backed up and can not be decrypted when the restore occurs. Xamarin.Essentials automatically handles this case by removing the key so it can be reset, but you can take an additional step by disabling Auto Backup.
+
+### Enable or disable backup
+You can choose to disable Auto Backup for your entire application by setting the `android:allowBackup` setting to false in the `AndroidManifest.xml` file. This approach is only recommended if you plan on restoring data in another way.
+
+```xml
+<manifest ... >
+    ...
+    <application android:allowBackup="false" ... >
+        ...
+    </application>
+</manifest>
+```
+
+### Selective Backup
+Auto Backup can be configured to disable specific content from backing up. You can create a custom rule set to exclude `SecureStore` items from being backed up.
+
+1. Set the `android:fullBackupContent` attribute in your **AndroidManifest.xml**:
+
+    ```xml
+    <application ...
+        android:fullBackupContent="@xml/auto_backup_rules">
+    </application>
+    ```
+
+2. Create a new XML file named **auto_backup_rules.xml** in the **Resources/xml** directory. Then set the following content that includes all shared preferences except for `SecureStorage`:
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <full-backup-content>
+        <include domain="sharedpref" path="."/>
+        <exclude domain="sharedpref" path="${applicationId}.xamarinessentials.xml"/>
+    </full-backup-content>
+    ```
 
 # [iOS](#tab/ios)
 
-When developing on the iOS simulator, enable the **Keychain** entitlement and add a keychain access group for the application's bundle identifier.
+When developing on the **iOS simulator**, enable the **Keychain** entitlement and add a keychain access group for the application's bundle identifier. 
 
 Open the **Entitlements.plist** in the iOS project and find the **Keychain** entitlement and enable it. This will automatically add the application's identifier as a group.
 
 In the project properties, under **iOS Bundle Signing** set the **Custom Entitlements** to **Entitlements.plist**.
+
+> [!TIP]
+> When deploying to an iOS device this entitlement is not required and should be removed.
 
 # [UWP](#tab/uwp)
 

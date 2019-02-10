@@ -4,8 +4,8 @@ description: "This document describes how to work with watchOS notifications in 
 ms.prod: xamarin
 ms.assetid: 0BC1306E-0713-4592-996E-7530CCF281E7
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
 ---
 
@@ -127,7 +127,7 @@ You *must* provide a test JSON payload when
 	testing notification mode in the iOS Simulator. Set the path in the
 	**Custom Execution Arguments** window in Visual Studio for Mac.
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac will display additional options when a
 	watch extension is set as the **Startup project**.
@@ -142,7 +142,7 @@ This opens the **Execution Arguments** window which contains a **WatchKit**
 	
 [![](notifications-images/runwith-execargs-sml.png "Select Notification Payload Default")](notifications-images/runwith-execargs.png#lightbox)
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 To set the test notification payload in Visual Studio
  	right-click on the watch extension to edit
@@ -175,7 +175,7 @@ It is also possible to use the
 
 ### Example Notification Payload
 
-In the [Watch Kit Catalog](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/) sample
+In the [Watch Kit Catalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/) sample
 	there is an example payload JSON file **NotificationPayload.json**
 	(listed below).
 
@@ -203,5 +203,5 @@ In the [Watch Kit Catalog](https://developer.xamarin.com/samples/monotouch/Watch
 ## Related Links
 
 - [WatchNotifications (local notifications) (sample)](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/)
-- [WatchKitCatalog (sample)](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/)
+- [WatchKitCatalog (sample)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
 - [Apple's Watch Kit Notifications docs](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)

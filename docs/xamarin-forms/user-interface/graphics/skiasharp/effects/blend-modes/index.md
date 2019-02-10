@@ -4,12 +4,14 @@ description: "Use blend modes to define what happens when graphical objects are 
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: CE1B222E-A2D0-4016-A532-EC1E59EE3D6B
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 08/23/2018
 ---
 
 # SkiaSharp blend modes
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 These articles focus on the [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) property of [`SKPaint`](xref:SkiaSharp.SKPaint). The `BlendMode` property is of type [`SKBlendMode`](xref:SkiaSharp.SKBlendMode), an enumeration with 29 members.
 

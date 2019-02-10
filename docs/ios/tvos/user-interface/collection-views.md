@@ -4,8 +4,8 @@ description: "This document describes how to work with collection views in a tvO
 ms.prod: xamarin
 ms.assetid: 5125C4C7-2DDF-4C19-A362-17BB2B079178
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
 ---
 
@@ -90,7 +90,7 @@ The easiest way to work with a Collection View in your Xamarin.tvOS app, is to a
 
 Let's do the following:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 	
 1. Start a new **Single View tvOS App** in Visual Studio for Mac.
@@ -130,7 +130,7 @@ Let's do the following:
 1. Save your changes.
 	
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 	
 1. Start a new **Single View tvOS App** in Visual Studio.

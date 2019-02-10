@@ -11,6 +11,8 @@ ms.date: 09/06/2016
 
 # Localization
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/UsingResxLocalization/)
+
 _Xamarin.Forms apps can be localized using .NET resources files._
 
 ## Overview
@@ -75,11 +77,11 @@ Select the **AppResources.resx** file and show the
 shows the **Custom Tool: ResXFileCodeGenerator**.
 
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 [![](text-images/vs-resx-internal-sml.png "Properties Window for AppResources.Resx")](text-images/vs-resx-internal.png#lightbox)
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 [![](text-images/xs-resx-internal-sml.png "Properties Pad for AppResources.Resx")](text-images/xs-resx-internal.png#lightbox)
 
@@ -90,11 +92,11 @@ change the configuration to **Custom Tool: PublicResXFileCodeGenerator**,
 as shown in the screenshot below:
 
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 [![](text-images/vs-resx-public-sml.png "Properties Window for AppResources.Resx")](text-images/vs-resx-public.png#lightbox)
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 [![](text-images/xs-resx-internal-sml.png "Properties Pad for AppResources.Resx")](text-images/xs-resx-internal.png#lightbox)
 
@@ -235,7 +237,7 @@ The user interface on iOS, Android, and the Universal Windows Platform (UWP) ren
 #### Testing a Specific Language
 
 It can be tricky to switch the simulator or a device to different languages,
-particulary during development when you want to test different cultures quickly.
+particularly during development when you want to test different cultures quickly.
 
 You can force a specific language to be loaded by setting the `Culture` as shown
 in this code snippet:
@@ -474,7 +476,7 @@ public class Localize : UsingResxLocalization.ILocalize
 > [!NOTE]
 > The `try/catch` blocks in the `GetCurrentCultureInfo` method
 > mimic the fallback behavior typically used with locale specifiers – if the
-> exact match is not found, look for a close match based just on the langauge (first
+> exact match is not found, look for a close match based just on the language (first
 > block of characters in the locale).
 >
 > In the case of Xamarin.Forms, some locales are valid in iOS but do not correspond
@@ -616,7 +618,7 @@ namespace UsingResxLocalization.Android
 > [!NOTE]
 > The `try/catch` blocks in the `GetCurrentCultureInfo` method
 > mimic the fallback behavior typically used with locale specifiers – if the
-> exact match is not found, look for a close match based just on the langauge (first
+> exact match is not found, look for a close match based just on the language (first
 > block of characters in the locale).
 >
 > In the case of Xamarin.Forms, some locales are valid in Android but do not correspond

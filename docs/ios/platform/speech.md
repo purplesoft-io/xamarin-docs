@@ -4,8 +4,8 @@ description: "This article presents the new Speech API and shows how to implemen
 ms.prod: xamarin
 ms.assetid: 64FED50A-6A28-4833-BEAE-63CEC9A09010
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
 ---
 
@@ -94,7 +94,7 @@ These steps will be covered in detail below.
 
 To provide the required `NSSpeechRecognitionUsageDescription` key in the `Info.plist` file, do the following:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1. Double-click the `Info.plist` file to open it for editing.
 2. Switch to the **Source** view: 
@@ -108,7 +108,7 @@ To provide the required `NSSpeechRecognitionUsageDescription` key in the `Info.p
 	[![](speech-images/speech04.png "Adding NSMicrophoneUsageDescription")](speech-images/speech04.png#lightbox)
 4. Save the changes to the file.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1. Double-click the `Info.plist` file to open it for editing.
 3. Click on **Add New Entry**, enter `NSSpeechRecognitionUsageDescription` for the **Property**, `String` for the **Type** and a **Usage Description** as the **Value**. For example: 

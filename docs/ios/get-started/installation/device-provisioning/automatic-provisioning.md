@@ -6,7 +6,8 @@ ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 05/22/2018
+ms.custom: video
+ms.date: 01/22/2019
 ---
 
 # Automatic Provisioning for Xamarin.iOS
@@ -15,12 +16,12 @@ _Once Xamarin.iOS has been successfully installed, the next step in iOS developm
 
 ## Requirements
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 - Visual Studio for Mac 7.3 or greater
 - Xcode 9 or greater
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 - Visual Studio 2017 Version 15.7 (or greater)
 
@@ -48,13 +49,13 @@ Before you start the automatic signing process, you should ensure that you have 
 
 To automatically sign your app for deployment on an iOS device, do the following:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1. Open an iOS project in Visual Studio for Mac.
 
 2. Open the **Info.plist** file.
 
-3. In the **Signing** section, select select **Automatic Provisioning**:
+3. In the **Signing** section, select **Automatic Provisioning**:
 
     ![Team selector dropdown](automatic-provisioning-images/image2.png)
 
@@ -66,7 +67,7 @@ To automatically sign your app for deployment on an iOS device, do the following
 
     If the automatic signing fails the **Automatic signing pad** will display the reason for the error.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1. Pair Visual Studio 2017 to a Mac as described in the [Pair to Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) guide.
 
@@ -136,3 +137,9 @@ attempt to create an explicit (instead of a wildcard) App ID.
 - [App Distribution](~/ios/deploy-test/app-distribution/index.md)
 - [Troubleshooting](~/ios/deploy-test/troubleshooting.md)
 - [Apple - App Distribution Guide](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
+
+## Related Video
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-Simplified-iOS-Provisioning-in-Visual-Studio-with-fastlane/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

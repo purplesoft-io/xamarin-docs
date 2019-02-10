@@ -4,8 +4,8 @@ description: "This topic explains how layouts can be versioned by using resource
 ms.prod: xamarin
 ms.assetid: 5EBF51FC-9048-F0CF-624A-D8782A91C1FD
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/25/2018
 ---
 
@@ -16,7 +16,7 @@ qualifiers. For example, creating a version of a layout that is only
 used when the device is in landscape mode and a layout version that is
 only for portrait mode._
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ## Creating alternative layouts
 
@@ -194,7 +194,7 @@ were applied in the **large-land** layout.
 
 
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ## Creating alternative layouts
 

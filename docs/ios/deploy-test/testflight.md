@@ -4,8 +4,8 @@ description: "TestFlight is now owned by Apple, and is the primary way to beta t
 ms.prod: xamarin
 ms.assetid: BA880768-2BC8-41E4-B57E-A56F8EED4690
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
 ---
 
@@ -45,7 +45,7 @@ You can confirm that your distribution profile contains the beta entitlement whe
 
 The following workflow describes the steps needed to start using TestFlight for Beta testing of your app:
 
-1. For new apps, create an [iTunes Connect record](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md) .
+1. For new apps, create an [iTunes Connect record](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md).
 2. [Archive and Publish](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) your application to iTunes Connect.
 3. Manage Beta Testing:
 	- Add Metadata.
@@ -93,7 +93,7 @@ Once the iTunes Connect record has been created, you will be able to upload new 
 
 First, build your [final distributable](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) in the IDE, then [submit your app to Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) through either the Application Loader, or the archive function in Xcode.
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 ###  Create an Archive
 
@@ -121,7 +121,7 @@ First, build your [final distributable](~/ios/deploy-test/app-distribution/app-s
 
  Refer to the [Submitting your App to Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) section for more information on these steps.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 ###  Building your final distributable
  As the Xamarin plugin for Visual Studio does not support archiving Xamarin.iOS apps for publishing to the App Store, there are two options for publishing an iOS application from Visual Studio. These are:

@@ -6,14 +6,14 @@ ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/17/2016
+ms.date: 01/30/2019
 ---
 
 # Styling Xamarin.Forms Apps using XAML Styles
 
 ## [Introduction](introduction.md)
 
-Xamarin.Forms applications often contain multiple controls that have an identical appearance. Setting the appearance of each individual control can be repetitive and error prone. Instead, styles can be created that customize control appearance by grouping and settings properties available on the control type.
+Xamarin.Forms applications often contain multiple controls that have an identical appearance. Setting the appearance of each individual control can be repetitive and error prone. Instead, styles can be created that customize control appearance by grouping and setting properties available on the control type.
 
 ## [Explicit Styles](explicit.md)
 
@@ -38,3 +38,7 @@ Styles do not respond to property changes, and remain unchanged for the duration
 ## [Device Styles](device.md)
 
 Xamarin.Forms includes six *dynamic* styles, known as *device* styles, in the [`Devices.Styles`](xref:Xamarin.Forms.Device.Styles) class. All six styles can be applied to [`Label`](xref:Xamarin.Forms.Label) instances only.
+
+## [Style Classes](style-class.md)
+
+Xamarin.Forms style classes enable multiple styles to be applied to a control, without resorting to style inheritance.

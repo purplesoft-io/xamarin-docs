@@ -4,8 +4,8 @@ description: "This guide introduces and explains how to use the ActionBar APIs t
 ms.prod: xamarin
 ms.assetid: B7E60AAF-BDA5-4305-9000-675F0438734D
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
 ---
 
@@ -28,7 +28,7 @@ ActionBar tabs to Xamarin.Android applications targeting Android 2.1 to
 Android 2.3. 
 
 Note that `Toolbar` is a newer and more generalized action bar component
-that you should use instead of of `ActionBar` (`Toolbar` was designed to
+that you should use instead of `ActionBar` (`Toolbar` was designed to
 replace `ActionBar`). For more information, see
 [Toolbar](~/android/user-interface/controls/tool-bar/index.md). 
 

@@ -3,8 +3,8 @@ title: "Introduction to Game Development with Xamarin"
 description: "This document provides a high-level overview of game development with Xamarin, describing both how games are made and a sampling of technologies available for use with Xamarin.iOS and Xamarin.Android."
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
 ---
 
@@ -132,7 +132,7 @@ You can download it and get more information at the [AngryNinjas Github page](ht
 
 ## MonoGame
 
-MonoGame is an open-source, cross platform version of Microsoft’s XNA API. MonoGame can be used to make games for iOS, Android, Mac OS X, Linux, Windows, Windows RT, and Windows Phone.
+MonoGame is an open-source, cross platform version of Microsoft’s XNA API. MonoGame can be used to make games for iOS, Android, Mac OS X, Linux, Windows, Windows RT, PS4, PSVita, Xbox One, and Switch.
 
 Unlike CocosSharp, MonoGame is technically not a game engine, but rather a game development API. This means that working with MonoGame requires directly managing game objects, manually drawing objects, and implementing common objects such as cameras and *scene graphs* (the parent child hierarchy between game objects). To help understand the distinction, consider that CocosSharp is built on top of MonoGame. MonoGame generalizes some of the platform-specific technology, such as graphics, rendering, and audio, while CocosSharp provides code for organizing and implementing game logic.
 

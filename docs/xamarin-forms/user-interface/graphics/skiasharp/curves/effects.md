@@ -4,12 +4,14 @@ description: "This article explains the various SkiaSharp path effects that allo
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/29/2017
 ---
 
 # Path Effects in SkiaSharp
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _Discover the various path effects that allow paths to be used for stroking and filling_
 
@@ -918,7 +920,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-You can use this effect with either stroking or filling based on the `Style` property of the `SKPaint` object. Here it is on all three platforms:
+You can use this effect with either stroking or filling based on the `Style` property of the `SKPaint` object. Here it is running:
 
 [![](effects-images/anotherroundedheptagon-small.png "Triple screenshot of the Another Rounded Heptagon page")](effects-images/anotherroundedheptagon-large.png#lightbox "Triple screenshot of the Another Rounded Heptagon page")
 
@@ -1063,7 +1065,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Here it is running in landscape mode on all three platforms:
+Here it is running in landscape mode:
 
 [![](effects-images/jittertext-small.png "Triple screenshot of the Jitter Text page")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
 

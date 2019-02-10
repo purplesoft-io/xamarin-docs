@@ -4,12 +4,14 @@ description: "Discover the various techniques for accessing and modifying the pi
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/11/2018
 ---
 
 # Accessing SkiaSharp bitmap pixel bits
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 As you saw in the article [**Saving SkiaSharp bitmaps to files**](saving.md), bitmaps are generally stored in files in a compressed format, such as JPEG or PNG. In constrast, a SkiaSharp bitmap stored in memory is not compressed. It is stored as a sequential series of pixels. This uncompressed format facilitates the transfer of bitmaps to a display surface.
 
@@ -30,7 +32,7 @@ SkiaSharp provides several techniques for accessing a bitmap's pixel bits. Which
 
 You can think of the first two techniques as "high level" and the second two as "low level." There are some other methods and properties that you can use, but these are the most valuable.
 
-To allow you to see the performance differences between these techniques, the [**SkiaSharpFormsDemos**](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) application contains a page named **Gradient Bitmap** that creates a bitmap with pixels that combine red and blue shades to create a gradient. The program creates eight different copies of this bitmap, all using different techniques for setting the bitmap pixels. Each of these eight bitmaps is created in a separate method that also sets a brief text description of the technique and calculates the time required to set all the pixels. Each method loops through the pixel-setting logic 100 times to get a better estimate of the performance. 
+To allow you to see the performance differences between these techniques, the [**SkiaSharpFormsDemos**](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) application contains a page named **Gradient Bitmap** that creates a bitmap with pixels that combine red and blue shades to create a gradient. The program creates eight different copies of this bitmap, all using different techniques for setting the bitmap pixels. Each of these eight bitmaps is created in a separate method that also sets a brief text description of the technique and calculates the time required to set all the pixels. Each method loops through the pixel-setting logic 100 times to get a better estimate of the performance.
 
 ### The SetPixel method
 
@@ -50,7 +52,7 @@ Here's the method in **Gradient Bitmap** that sets the contents of a bitmap usin
 public class GradientBitmapPage : ContentPage
 {
     const int REPS = 100;
-        
+
     Stopwatch stopwatch = new Stopwatch();
     ···
     SKBitmap FillBitmapSetPixel(out string description, out int milliseconds)
@@ -102,7 +104,7 @@ SKBitmap FillBitmapPixelsProp(out string description, out int milliseconds)
 
     stopwatch.Restart();
 
-    SKColor[] pixels = new SKColor[256 * 256]; 
+    SKColor[] pixels = new SKColor[256 * 256];
 
     for (int rep = 0; rep < REPS; rep++)
         for (int row = 0; row < 256; row++)
@@ -130,7 +132,7 @@ Potentially the most powerful technique to access the bitmap pixels is [`GetPixe
 IntPtr pixelsAddr = bitmap.GetPixels();
 ```
 
-The .NET [`IntPtr`](xref:System.IntPtr) type represents a pointer. It is called `IntPtr` because it is the length of an integer on the native processor of the machine on which the program is run, generally either 32 bits or 64 bits in length. The `IntPtr` that `GetPixels` returns is the address of the actual block of memory that the bitmap object is using to store its pixels. 
+The .NET [`IntPtr`](xref:System.IntPtr) type represents a pointer. It is called `IntPtr` because it is the length of an integer on the native processor of the machine on which the program is run, generally either 32 bits or 64 bits in length. The `IntPtr` that `GetPixels` returns is the address of the actual block of memory that the bitmap object is using to store its pixels.
 
 You can convert the `IntPtr` into a C# pointer type using the [`ToPointer`](xref:System.IntPtr.ToPointer) method. The C# pointer syntax is the same as C and C++:
 
@@ -140,7 +142,7 @@ byte* ptr = (byte*)pixelsAddr.ToPointer();
 
 The `ptr` variable is of type _byte pointer_. This `ptr` variable allows you to access the individual bytes of memory that are used to store the bitmap's pixels. You use code like this to read a byte from this memory or write a byte to the memory:
 
-```sharp
+```csharp
 byte pixelComponent = *ptr;
 
 *ptr = pixelComponent;
@@ -308,7 +310,7 @@ SKBitmap FillBitmapByteBuffer(out string description, out int milliseconds)
                 buffer[row, col, 2] = (byte)row;   // blue
                 buffer[row, col, 3] = 0xFF;        // alpha
             }
-    
+
     unsafe
     {
         fixed (byte* ptr = buffer)
@@ -454,7 +456,7 @@ public class GradientBitmapPage : ContentPage
 
     void Display(SKCanvas canvas, int index, SKRect rect)
     {
-        string text = String.Format("{0}: {1:F1} msec", descriptions[index], 
+        string text = String.Format("{0}: {1:F1} msec", descriptions[index],
                                     (double)elapsedTimes[index] / REPS);
 
         SKRect bounds = new SKRect();
@@ -492,7 +494,7 @@ Here is a table that consolidates the execution times in milliseconds:
 
 As expected, calling `SetPixel` 65,536 times is the least effeicient way to set a bitmap's pixels. Filling an `SKColor` array and setting the `Pixels` property is much better, and even compares favorably with some of the `GetPixels` and `SetPixels` techniques. Working with `uint` pixel values is generally faster than setting separate `byte` components, and converting the `SKColor` value to an unsigned integer adds some overhead to the process.
 
-It's also interesting to compare the various gradients: The top rows of all three platforms are the same, and show the gradient as it was intended. This means that the `SetPixel` method and the `Pixels` property correctly create pixels from colors regardless of the underlying pixel format.
+It's also interesting to compare the various gradients: The top rows of each platform are the same, and show the gradient as it was intended. This means that the `SetPixel` method and the `Pixels` property correctly create pixels from colors regardless of the underlying pixel format.
 
 The next two rows of the iOS and Android screenshots are also the same, which confirms that the little `MakePixel` method is correctly defined for the default `Rgba8888` pixel format for these platforms.
 
@@ -506,13 +508,13 @@ BB GG RR AA
 
 This is the `Bgra8888` ordering rather than the `Rgba8888` ordering. The `Brga8888` format is the default for the Universal Windows platform, which is why the gradients on the last row of that screenshot are the same as the first row. But the middle two rows are incorrect because the code creating those bitmaps assumed an `Rgba8888` ordering.
 
-If you want to use the same code for accessing pixel bits on all three platforms, you can explicitly create an `SKBitmap` using either the `Rgba8888` or `Bgra8888` format. If you want to cast `SKColor` values to bitmap pixels, use `Bgra8888`.
+If you want to use the same code for accessing pixel bits on each platform, you can explicitly create an `SKBitmap` using either the `Rgba8888` or `Bgra8888` format. If you want to cast `SKColor` values to bitmap pixels, use `Bgra8888`.
 
 ## Random access of pixels
 
-The `FillBitmapBytePtr` and `FillBitmapUintPtr` methods in the **Gradient Bitmap** page benefited from `for` loops designed to fill the bitmap sequentially, from top row to bottom row, and in each row from left to right. The pixel could be set with the same statement that incremented the pointer. 
+The `FillBitmapBytePtr` and `FillBitmapUintPtr` methods in the **Gradient Bitmap** page benefited from `for` loops designed to fill the bitmap sequentially, from top row to bottom row, and in each row from left to right. The pixel could be set with the same statement that incremented the pointer.
 
-Sometimes it's necessary to access the pixels randomly rather than sequentially. If you're using the `GetPixels` approach, you'll need to calculate pointers based on the row and column. This is demonstrated in the **Rainbow Sine** page, which creates a bitmap showing a rainbow in the form of one cycle of a sine curve. 
+Sometimes it's necessary to access the pixels randomly rather than sequentially. If you're using the `GetPixels` approach, you'll need to calculate pointers based on the row and column. This is demonstrated in the **Rainbow Sine** page, which creates a bitmap showing a rainbow in the form of one cycle of a sine curve.
 
 The colors of the rainbow are easiest to create using the HSL (hue, saturation, luminosity) color model. The `SKColor.FromHsl` method creates an `SKColor` value using hue values that range from 0 to 360 (like the angles of a circle but going from red, through green and blue, and back to red), and saturation and luminosity values ranging from 0 to 100. For the colors of a rainbow, the saturation should be set to a maximum of 100, and the luminosity to a midpoint of 50.
 
@@ -612,7 +614,7 @@ Very many image-processing tasks involve modifying pixels as they are transferre
 
 For each pixel color, the first `Slider` adds a value from 0 to 360 to the hue, but then uses the modulo operator to keep the result between 0 and 360, effectively shifting the colors along the spectrum (as the UWP screenshot demonstrates). The second `Slider` lets you select a multiplicative factor between 0.5 and 2 to apply to the saturation, and the third `Slider` does the same for the luminosity, as demonstrated in the Android screenshot.
 
-The program maintains two bitmaps, the original source bitmap named `srcBitmap` and the adjusted destination bitmap named `dstBitmap`. Each time a `Slider` is moved, the program calculates all new pixels in `dstBitmap`. Of course, users will experiment by moving the `Slider` views very quickly, so you want the best performance you can manage. This involves the `GetPixels` method for both the source and destination bitmaps. 
+The program maintains two bitmaps, the original source bitmap named `srcBitmap` and the adjusted destination bitmap named `dstBitmap`. Each time a `Slider` is moved, the program calculates all new pixels in `dstBitmap`. Of course, users will experiment by moving the `Slider` views very quickly, so you want the best performance you can manage. This involves the `GetPixels` method for both the source and destination bitmaps.
 
 The **Color Adjustment** page doesn't control the color format of the source and destination bitmaps. Instead, it contains slightly different logic for `SKColorType.Rgba8888` and `SKColorType.Bgra8888` formats. The source and destination can be different formats, and the program will still work.
 
@@ -759,7 +761,7 @@ public class PosterizePage : ContentPage
 
             for (int i = 0; i < pixelCount; i++)
             {
-                *ptr++ &= 0xE0E0E0FF; 
+                *ptr++ &= 0xE0E0E0FF;
             }
         }
 

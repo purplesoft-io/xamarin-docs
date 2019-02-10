@@ -4,8 +4,8 @@ description: "This document links to various guides that describe concepts found
 ms.prod: xamarin
 ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/21/2017
 ---
 # Xamarin.iOS application fundamentals
@@ -53,7 +53,7 @@ code.
 
 ## [Localization](~/ios/app-fundamentals/localization/index.md)
 
-This guide covers the the addition of encodings to a Xamarin.iOS application to
+This guide covers the addition of encodings to a Xamarin.iOS application to
 support internationalization.
 
 ## [Working with property lists](~/ios/app-fundamentals/index.md)
@@ -67,7 +67,7 @@ Apple has made several enhancements to both security and privacy in iOS 10 (and 
 ## [Threading](~/ios/app-fundamentals/threading.md)
 
 This article discusses threading in a Xamarin.iOS application, and talks a bit
-about the the .NET thread pool, responsive applications, and garbage
+about the .NET thread pool, responsive applications, and garbage
 collection.
 
 ## [Touch](~/ios/app-fundamentals/touch/index.md)

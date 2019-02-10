@@ -11,11 +11,13 @@ ms.date: 04/27/2016
 
 # Native Views in C#
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeEmbedding/)
+
 _Native views from iOS, Android, and UWP can be directly referenced from Xamarin.Forms pages created using C#. This article demonstrates how to add native views to a Xamarin.Forms layout created using C#, and how to override the layout of custom views to correct their measurement API usage._
 
 ## Overview
 
-Any Xamarin.Forms control that allows `Content` to to be set, or that has a `Children` collection, can add platform-specific views. For example, an iOS `UILabel` can be directly added to the [`ContentView.Content`](xref:Xamarin.Forms.ContentView.Content) property, or to the [`StackLayout.Children`](xref:Xamarin.Forms.Layout`1.Children) collection. However, note that this functionality requires the use of `#if` defines in Xamarin.Forms Shared Project solutions, and isn't available from Xamarin.Forms .NET Standard library solutions.
+Any Xamarin.Forms control that allows `Content` to be set, or that has a `Children` collection, can add platform-specific views. For example, an iOS `UILabel` can be directly added to the [`ContentView.Content`](xref:Xamarin.Forms.ContentView.Content) property, or to the [`StackLayout.Children`](xref:Xamarin.Forms.Layout`1.Children) collection. However, note that this functionality requires the use of `#if` defines in Xamarin.Forms Shared Project solutions, and isn't available from Xamarin.Forms .NET Standard library solutions.
 
 The following screenshots demonstrate platform-specific views having been added to a Xamarin.Forms [`StackLayout`](xref:Xamarin.Forms.StackLayout):
 

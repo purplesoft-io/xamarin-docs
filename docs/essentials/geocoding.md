@@ -4,16 +4,16 @@ description: "The Geocoding class in Xamarin.Essentials provides APIs to both ge
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
+ms.date: 11/04/2018
 ---
 
 # Xamarin.Essentials: Geocoding
 
-![Pre-release NuGet](~/media/shared/pre-release.png)
-
 The **Geocoding** class provides APIs to geocode a placemark to a positional coordinates and reverse geocode coordinates to a placemark.
 
-## Getting Started
+## Get started
+
+[!include[](~/essentials/includes/get-started.md)]
 
 To access the **Geocoding** functionality the following platform specific setup is required.
 
@@ -29,10 +29,10 @@ No additional setup required.
 
 A Bing Maps API key is required to use geocoding functionality. Sign up for a free [Bing Maps](https://www.bingmapsportal.com/) account. Under **My account > My keys** create a new key and fill out information based on your application type (which should be **Public Windows App (UWP, 8.x, and earlier)** for UWP apps).
 
-Early on in your application's life before calling any **Geocoding** methods set the API key:
+Early on in your application's life before calling any **Geocoding** methods set the API key (which is only available on UWP):
 
 ```csharp
-Geocoding.MapKey = "YOUR-KEY-HERE";
+Platform.MapServiceToken = "YOUR-KEY-HERE";
 ```
 
 -----
@@ -69,7 +69,7 @@ catch (Exception ex)
 }
 ```
 
-The altitude isn't always available. If it is not available, the `Altitude` property might be `null` or the value might be zero. If the altitude is available, the value is in meters above above sea level.
+The altitude isn't always available. If it is not available, the `Altitude` property might be `null` or the value might be zero. If the altitude is available, the value is in meters above sea level.
 
 Getting [placemarks](xref:Xamarin.Essentials.Placemark) for an existing set of coordinates:
 

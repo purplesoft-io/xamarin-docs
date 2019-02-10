@@ -4,12 +4,14 @@ description: "Data bindings allow properties of two objects to be linked so that
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 10/25/2017
 ---
 
 # Part 4. Data Binding Basics
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
 _Data bindings allow properties of two objects to be linked so that a change in one causes a change in the other. This is a very valuable tool, and while data bindings can be defined entirely in code, XAML provides shortcuts and convenience. Consequently, one of the most important markup extensions in Xamarin.Forms is Binding._
 
@@ -64,7 +66,7 @@ The `Slider` contains an `x:Name` attribute that is referenced by the two `Label
 
 The `x:Reference` binding extension defines a property named `Name` to set to the name of the referenced element, in this case `slider`. However, the `ReferenceExtension` class that defines the `x:Reference` markup extension also defines a `ContentProperty` attribute for `Name`, which means that it isn’t explicitly required. Just for variety, the first `x:Reference` includes “Name=” but the second does not:
 
-```csharp
+```xaml
 BindingContext="{x:Reference Name=slider}"
 …
 BindingContext="{x:Reference slider}"
@@ -72,7 +74,7 @@ BindingContext="{x:Reference slider}"
 
 The `Binding` markup extension itself can have several properties, just like the `BindingBase` and `Binding` class. The `ContentProperty` for `Binding` is `Path`, but the “Path=” part of the markup extension can be omitted if the path is the first item in the `Binding` markup extension. The first example has “Path=” but the second example omits it:
 
-```csharp
+```xaml
 Rotation="{Binding Path=Value}"
 …
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
@@ -80,7 +82,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 The properties can all be on one line or separated into multiple lines:
 
-```csharp
+```xaml
 Text="{Binding Value,
                StringFormat='The angle is {0:F0} degrees'}"
 ```
@@ -89,7 +91,7 @@ Do whatever is convenient.
 
 Notice the `StringFormat` property in the second `Binding` markup extension. In Xamarin.Forms, bindings do not perform any implicit type conversions, and if you need to display a non-string object as a string you must provide a type converter or use `StringFormat`. Behind the scenes, the static `String.Format` method is used to implement `StringFormat`. That’s potentially a problem, because .NET formatting specifications involve curly braces, which are also used to delimit markup extensions. This creates a risk of confusing the XAML parser. To avoid that, put the entire formatting string in single quotation marks:
 
-```csharp
+```xaml
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 ```
 
@@ -194,6 +196,9 @@ The bindings on three of the `Slider` views are `OneWayToSource`, meaning that t
 However, the binding for the `Scale` property is `TwoWay`. This is because the `Scale` property has a default value of 1, and using a `TwoWay` binding causes the `Slider` initial value to be set at 1 rather than 0. If that binding were `OneWayToSource`, the `Scale` property would initially be set to 0 from the `Slider` default value. The `Label` would not be visible, and that might cause some confusion to the user.
 
  [![](data-binding-basics-images/slidertransforms.png "Backwards Bindings")](data-binding-basics-images/slidertransforms-large.png#lightbox "Backwards Bindings")
+
+ > [!NOTE]
+ > The [`VisualElement`](xref:Xamarin.Forms.VisualElement) class also has [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) and [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) properties, which scale the `VisualElement` on the x-axis and y-axis respectively.
 
 ## Bindings and Collections
 
@@ -319,7 +324,7 @@ Much better. Now all that’s needed is to spruce up the item template with more
 </ContentPage>
 ```
 
-Notice the use of `OnPlatform` to define the size of a `BoxView` and the height of the `ListView` rows. Although the values for all three platforms are the same, the markup could easily be adapted for other values to fine-tune the display.
+Notice the use of `OnPlatform` to define the size of a `BoxView` and the height of the `ListView` rows. Although the values for all the platforms are the same, the markup could easily be adapted for other values to fine-tune the display.
 
 ## Binding Value Converters
 

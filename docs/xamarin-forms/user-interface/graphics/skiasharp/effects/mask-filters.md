@@ -4,12 +4,14 @@ description: "Learn how to use the mask filter to create blurs and other alpha e
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 940422A1-8BC0-4039-8AD7-26C61320F858
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 08/27/2018
 ---
 
 # SkiaSharp mask filters
+
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 Mask filters are effects that manipulate the geometry and alpha channel of graphical objects. To use a mask filter, set the [`MaskFilter`](xref:SkiaSharp.SKPaint.MaskFilter) property of `SKPaint` to an object of type [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) that you've created by calling one of the `SKMaskFilter` static methods.
 

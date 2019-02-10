@@ -11,6 +11,8 @@ ms.date: 08/09/2016
 
 # Checking Battery Status
 
+[![Download Sample](~/media/shared/download.png) Download the sample](https://developer.xamarin.com/samples/DependencyService)
+
 This article walks through the creation of an application that checks battery status. This article is based on the Battery Plugin by James Montemagno. For more information, see the [GitHub repo](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery).
 
 Because Xamarin.Forms does not include functionality for checking the current battery status, this application will need to use [`DependencyService`](xref:Xamarin.Forms.DependencyService) to take advantage of native APIs.  This article will cover the following steps for using `DependencyService`:
@@ -70,7 +72,7 @@ Coding against this interface in the shared code will allow the Xamarin.Forms ap
 
 ## iOS Implementation
 
-The `IBattery` interface must be implemented in each platform-specific application project. The iOS implementation will use the native [`UIDevice`](https://developer.xamarin.com/api/type/UIKit.UIDevice/) APIs to access battery information. Note that the following class has a parameterless constructor so that the `DependencyService` can create new instances:
+The `IBattery` interface must be implemented in each platform-specific application project. The iOS implementation will use the native [`UIDevice`](xref:UIKit.UIDevice) APIs to access battery information. Note that the following class has a parameterless constructor so that the `DependencyService` can create new instances:
 
 ```csharp
 using UIKit;

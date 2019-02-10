@@ -13,7 +13,7 @@ featureFlags:
     <div class="container">
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="~/xamarin-forms/get-started/index.md">
+                <a href="~/get-started/index.md">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
@@ -81,17 +81,17 @@ featureFlags:
                         <a data-default="true" href="#XamarinForms">Xamarin.Forms</a>
                         <ul id="XamarinForms" class="cardsC">
                             <li>
-                                <a href="~/xamarin-forms/get-started/index.md">
+                                <a href="~/get-started/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Getting Started" src="~/media/index/xamarin-cross-platform-get-started.svg?branch=master" data-linktype="external">
+                                                        <img alt="Get Started" src="~/media/index/xamarin-cross-platform-get-started.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Getting Started</h3>
+                                                    <h3>Get Started</h3>
                                                     <p>Tutorials to get you up and running with Xamarin.Forms. Make sure everything is installed correctly, and build your first app.</p>
                                                 </div>
                                             </div>
@@ -252,25 +252,6 @@ featureFlags:
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/samples/index.yml">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Sample Apps</h3>
-                                                    <p>Complete apps and code demos for Xamarin.Forms, running on Android, iOS, and Windows.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
                                 <a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
@@ -308,6 +289,44 @@ featureFlags:
                                     </div>
                                 </a>
                             </li>
+                            <li>
+                                <a href="~/xamarin-forms/user-interface/graphics/skiasharp/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="SkiaSharp Graphics in Xamarin.Forms" src="~/media/index/xamarin-graphics-skia.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>SkiaSharp Graphics ebook</h3>
+                                                    <p>Cross-platform vector graphics and animation with SkiaSharp.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/xamarin-forms/samples/index.yml">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Sample Apps</h3>
+                                                    <p>Complete apps and code demos for Xamarin.Forms, running on Android, iOS, and Windows.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -320,11 +339,11 @@ featureFlags:
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Getting Started" src="~/media/index/xamarin-android-get-started.svg?branch=master" data-linktype="external">
+                                                        <img alt="Get Started" src="~/media/index/xamarin-android-get-started.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Getting Started with Android</h3>
+                                                    <h3>Get Started with Android</h3>
                                                     <p>Tutorials to get you up and running with Xamarin.Android. Make sure everything is installed correctly, and build your first app.</p>
                                                 </div>
                                             </div>
@@ -491,7 +510,7 @@ featureFlags:
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -515,11 +534,11 @@ featureFlags:
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Getting Started" src="~/media/index/xamarin-ios-get-started.svg?branch=master" data-linktype="external">
+                                                        <img alt="Get Started" src="~/media/index/xamarin-ios-get-started.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Getting Started with iOS</h3>
+                                                    <h3>Get Started with iOS</h3>
                                                     <p>Tutorials to get you up and running with Xamarin.iOS. Make sure everything is installed correctly, and build your first app.</p>
                                                 </div>
                                             </div>
@@ -705,7 +724,7 @@ featureFlags:
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -729,11 +748,11 @@ featureFlags:
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Getting Started" src="~/media/index/xamarin-mac-get-started.svg?branch=master" data-linktype="external">
+                                                        <img alt="Get Started" src="~/media/index/xamarin-mac-get-started.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Getting Started with Mac</h3>
+                                                    <h3>Get Started with Mac</h3>
                                                     <p>Tutorials to get you up and running with Xamarin.Mac. Make sure everything is installed correctly, and build your first app.</p>
                                                 </div>
                                             </div>
@@ -843,7 +862,7 @@ featureFlags:
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -867,11 +886,11 @@ featureFlags:
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Getting Started" src="~/media/index/xamarin-cross-platform-get-started.svg?branch=master" data-linktype="external">
+                                                        <img alt="Get Started" src="~/media/index/xamarin-cross-platform-get-started.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Getting Started</h3>
+                                                    <h3>Get Started</h3>
                                                     <p>Get started building cross-platform apps for desktop and mobile platforms using Xamarin for Android, iOS, macOS, UWP, and more.</p>
                                                 </div>
                                             </div>
@@ -981,7 +1000,7 @@ featureFlags:
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -1004,7 +1023,7 @@ featureFlags:
                         <a href="#architecture1"></a>
                         <ul id="architecture1" class="cardsC">
                             <li>
-                                <a href="~/graphics-games/skiasharp/index.md">
+                                <a href="~/xamarin-forms/user-interface/graphics/skiasharp/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -1153,7 +1172,7 @@ featureFlags:
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="https://docs.microsoft.com/en-us/media/illustrations/dynamics-resource-library.svg" alt="Xamarin Workbooks" />
+                                                        <img src="https://docs.microsoft.com/media/illustrations/dynamics-resource-library.svg" alt="Xamarin Workbooks" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -1191,7 +1210,7 @@ featureFlags:
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="https://docs.microsoft.com/en-us/media/illustrations/teams-fast-track.svg" alt="Continuous Integration" />
+                                                        <img src="https://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt="Continuous Integration" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">

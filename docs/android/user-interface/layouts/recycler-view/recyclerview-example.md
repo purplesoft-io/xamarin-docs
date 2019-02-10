@@ -4,8 +4,8 @@ description: "An example app that demonstrates how to use RecyclerView."
 ms.prod: xamarin
 ms.assetid: A50520D2-1214-40E1-9B27-B0891FE11584
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/30/2018
 ---
 
@@ -149,7 +149,7 @@ This code resides in the main activity's `OnCreate` method. The
 constructor to the layout manager requires a *context*, so the
 `MainActivity` is passed using `this` as seen above.
 
-Instead of using the the predefind `LinearLayoutManager`, you can
+Instead of using the predefined `LinearLayoutManager`, you can
 plug in a custom layout manager that displays two `CardView` items
 side-by-side, implementing a page-turning animation effect to traverse
 through the collection of photos. Later in this guide, you will see an
@@ -507,7 +507,7 @@ scrolling is horizontal rather than vertical:
 
 [![Example screenshot of app with horizontally-scrolling photos in a grid](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
 
-By changing only one line of code, is is possible to modify the
+By changing only one line of code, it is possible to modify the
 photo-viewing app to use a different layout with different behavior.
 Notice that neither the adapter code nor the layout XML had to be
 modified to change the layout style. 

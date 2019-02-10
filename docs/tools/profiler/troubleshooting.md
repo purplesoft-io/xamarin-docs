@@ -3,8 +3,8 @@ title: "Xamarin Profiler Troubleshooting"
 description: "This document provides troubleshooting information related to the Xamarin Profiler. It describes issues related to logging and diagnostics, the IDE, and other topics."
 ms.prod: xamarin
 ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 10/27/2017
 ---
 
@@ -74,7 +74,7 @@ It is normally due to being unable to launch to the Simulator / Emulator. Try an
 
 #### To watch a specific thread
 
-If you have a thread that you wanted to specifically watch, it would be ideal to name the thread at the very beginning of its creation so that get get `ThreadName` instead of `0x0`. For example to set the thread name as UI, you could use the following code:
+If you have a thread that you wanted to specifically watch, it would be ideal to name the thread at the very beginning of its creation to get `ThreadName` instead of `0x0`. For example to set the thread name as `UI`, you could use the following code:
 
 ```csharp
 RunOnUiThread (() => {

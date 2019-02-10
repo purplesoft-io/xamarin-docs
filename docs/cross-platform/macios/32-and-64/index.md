@@ -3,8 +3,8 @@ title: "32/64-bit platform considerations"
 description: "This document describes various considerations to keep in mind when targeting 32-bit and 64-bit architectures for a Xamarin.iOS or Xamarin.Mac application."
 ms.prod: xamarin
 ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
-author: bradumbaugh
-ms.author: brumbaug
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
 ---
 
@@ -37,7 +37,7 @@ use the [Unified API](~/cross-platform/macios/unified/index.md)
 
 For Xamarin.iOS mobile applications that have been converted to the Unified API, developers must manually update the build settings to target 64-bit:
 
-# [Visual Studio for Mac](#tab/vsmac)
+# [Visual Studio for Mac](#tab/macos)
 
 1. In the **Solution Pad**, double-click the app's project to open the **Project Options** window.
 2. Select **iOS Build**.
@@ -52,7 +52,7 @@ For Xamarin.iOS mobile applications that have been converted to the Unified API,
 5. Click **OK**.
 6. Perform a clean build.
 
-# [Visual Studio](#tab/vswin)
+# [Visual Studio](#tab/windows)
 
 1. In the **Solution Explorer**, right-click the app's project and select **Properties**.
 2. Select **iOS Build**.
